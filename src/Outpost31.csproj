@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Startup.cs" />
+    <Compile Include="Core\Logger\PrimevalLog.cs" />
+    <Compile Include="Core\Runtime\Startup.cs" />
     <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,7 +53,8 @@
     <Folder Include="XmlDoc\GeneratedXml\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="XmlDoc\Outpost31.Core_doc.xml" />
+    <Content Include="XmlDoc\Outpost31.CoreLogger.PrimevalLog_doc.xml" />
+    <Content Include="XmlDoc\Outpost31.Core.Runtime.Startup_doc.xml" />
     <Content Include="XmlDoc\Outpost31.WelcomeToOutpost31_doc.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

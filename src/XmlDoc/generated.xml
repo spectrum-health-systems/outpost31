@@ -4,25 +4,18 @@
         <name>Outpost31</name>
     </assembly>
     <members>
-        <member name="T:Outpost31.Core.Startup">
+        <member name="T:Outpost31.Core.Runtime.Startup">
             <summary>Performs startup processes.</summary>
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+            <!-- No matching elements were found for the following include tag --><include file="XmlDoc/Outpost31.Core.Runtime.Startup_doc.xml" path="Outpost31.Core.Runtime.Startup/Type[@name=&quot;Class&quot;]/Startup/*" />
         </member>
-        <member name="M:Outpost31.Core.Startup.GetSystemCode">
+        <member name="P:Outpost31.Core.Runtime.Startup.ExeAsm">
+            <summary>The executing Assembly name.</summary>
+            <remarks>A required component for writing log files, defined here so it can be used throughout the class.</remarks>
+        </member>
+        <member name="M:Outpost31.Core.Runtime.Startup.GetSystemCode">
             <summary>Get the Avatar System Code that the Tingen Web Service will use.</summary>
-            <returns>An Avatar System Code.</returns>
-            <remarks>
-                <para>
-                    The Tingen Web Service determines which Avatar System Code it will use by reading the contents of the
-                    <c>./AppData/Runtime/system.code</c> file.<br />
-                    <br />
-                    This file should contain a single line of text with one of the following values:
-                    <list type="bullet">
-                        <item>LIVE</item>
-                        <item>UAT</item>
-                    </list>
-                </para>
-            </remarks>
+            <returns>The Avatar System Code the Tingen Web Service will use.</returns>
+            <!-- No matching elements were found for the following include tag --><include file="XmlDoc/Outpost31.Core.Runtime.Startup_doc.xml" path="Outpost31.Core.Runtime.Startup/Type[@name=&quot;Method&quot;]/GetSystemCode/*" />
         </member>
         <member name="T:Outpost31.WelcomeToOutpost31">
             <summary>A place for Outpost31 details and stuff.</summary>

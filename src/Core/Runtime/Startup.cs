@@ -4,10 +4,10 @@
 using System.IO;
 using System.Reflection;
 
-namespace Outpost31.Core
+namespace Outpost31.Core.Runtime
 {
     /// <summary>Performs startup processes.</summary>
-    /// <include file='XmlDoc/Outpost31.Core_doc.xml' path='Outpost31.Core/Type[@name="Class"]/Startup/*'/>
+    /// <include file='XmlDoc/Outpost31.Core.Runtime.Startup_doc.xml' path='Outpost31.Core.Runtime.Startup/Type[@name="Class"]/Startup/*'/>
     public static class Startup
     {
         /// <summary>The executing Assembly name.</summary>
@@ -16,7 +16,7 @@ namespace Outpost31.Core
 
         /// <summary>Get the Avatar System Code that the Tingen Web Service will use.</summary>
         /// <returns>The Avatar System Code the Tingen Web Service will use.</returns>
-        /// <include file='XmlDoc/Outpost31.Core_doc.xml' path='Outpost31.Core/Type[@name="Method"]/GetSystemCode/*'/>
+        /// <include file='XmlDoc/Outpost31.Core.Runtime.Startup_doc.xml' path='Outpost31.Core.Runtime.Startup/Type[@name="Method"]/GetSystemCode/*'/>
         public static string GetSystemCode()
         {
             /* Trace Logs can't go here because the logging infrastructure hasn't been initialized yet, so if you
@@ -43,15 +43,9 @@ namespace Outpost31.Core
 
             return systemCode;
         }
-
-
         public static string GetTngnMode()
         {
-
-
             return "";
-
         }
-
     }
 }
