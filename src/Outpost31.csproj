@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>b0dbedeb-4b64-4fb6-8ef6-0e3e3d2d63d9</ProjectGuid>
+    <ProjectGuid>{B0DBEDEB-4B64-4FB6-8EF6-0E3E3D2D63D9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Outpost31</RootNamespace>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>AppData\XmlDocumentation\Generated\Generated.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,24 +32,51 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Core\Avatar\SystemCode.cs" />
+    <Compile Include="Core\Catalog\Data\FileList.cs" />
+    <Compile Include="Core\Catalog\Path\Directories.cs" />
+    <Compile Include="Core\Catalog\Path\Files.cs" />
+    <Compile Include="Core\Catalog\Path\Folders.cs" />
+    <Compile Include="Core\Runtime\TngnApp.cs" />
+    <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppData\Generated\" />
+    <Folder Include="AppData\XmlDocumentation\Module\" />
+    <Folder Include="Core\Catalog\Message\" />
+    <Folder Include="Core\Catalog\Session\" />
+    <Folder Include="Core\Configuration\" />
+    <Folder Include="Core\Framework\" />
+    <Folder Include="Core\Logger\" />
+    <Folder Include="Core\Session\" />
+    <Folder Include="Core\Utilities\Du\" />
+    <Folder Include="Module\Admin\" />
+    <Folder Include="Module\OpenIncident\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppData\XmlDocumentation\Core\Avatar.xml" />
+    <Content Include="AppData\XmlDocumentation\Core\Runtime.xml" />
+    <Content Include="AppData\XmlDocumentation\Core\Logger.xml" />
+    <Content Include="AppData\XmlDocumentation\Core\Catalog.xml" />
+    <Content Include="AppData\XmlDocumentation\template.xml" />
+    <Content Include="AppData\XmlDocumentation\WelcomeToOutpost31.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tingen-ThirdParty\ScriptLinkStandard\ScriptLinkStandard.csproj">
+      <Project>{8e27472e-2bba-44d5-bb42-85effd15a5ad}</Project>
+      <Name>ScriptLinkStandard</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

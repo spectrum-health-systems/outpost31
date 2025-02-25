@@ -1,0 +1,52 @@
+﻿<Catalog>
+  
+    <!-- ======================================================================
+    Catalog.Path.Directories.cs
+    ======================================================================= -->
+    <Class name="Directories">
+        <Directories>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </Directories>
+        <!-- Catalog.Path.Directories.Required() -->
+        <Required>
+            <remarks>
+            </remarks>
+        </Required>
+    </Class>
+
+    <!-- ======================================================================
+    Catalog.Path.Files.cs
+    ======================================================================= -->
+    <Class name="Files">
+        <Files>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </Files>    
+        <!-- Catalog.Path.Files.Required() -->
+        <Required>
+            <remarks>
+                <para>
+                    When the Tingen Web Service starts, there are a few required file paths that we need to setup:
+                    <list type="bullet">
+                        <term>TngnSystemCode</term>
+                        <description>The Avatar System Code that the Tingen Web Service will interface with.</description>
+                    </list>
+                </para>
+            </remarks>
+        </Required>
+    </Class>
+
+    <!-- ======================================================================
+    Catalog.Path.Folders.cs
+    ======================================================================= -->
+    <Class name="Folders">
+        <Directories>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </Directories>
+        <!-- Catalog.Path.Folders.Required() -->
+        <Required>
+            <remarks>
+            </remarks>
+        </Required>
+    </Class>
+
+</Catalog>

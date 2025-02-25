@@ -1,9 +1,8 @@
 ﻿<!--
-    u241031
-    This is the external XML Documentation file for the Outpost31.WelcomeToOutpost31 class.
+    u250225
 -->
 
-<Outpost31.WelcomeToOutpost31>
+<WelcomeToOutpost31>
 
     <!-- Classes -->
     <Type name="Class">
@@ -28,4 +27,4 @@
 
     </Type>
 
-</Outpost31.WelcomeToOutpost31>
+</WelcomeToOutpost31>
