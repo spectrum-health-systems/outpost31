@@ -1,27 +1,34 @@
-﻿<Catalog>
+﻿<Core.Catalog.Path>
   
     <!-- ======================================================================
-    Catalog.Path.Directories.cs
-    ======================================================================= -->
+    Directories.cs
+    ======================================================================= -->    
     <Class name="Directories">
+
+        <!-- Directories.cs -->
         <Directories>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </Directories>
-        <!-- Catalog.Path.Directories.Required() -->
+
+        <!-- Required() -->
         <Required>
             <remarks>
             </remarks>
         </Required>
+
     </Class>
 
     <!-- ======================================================================
-    Catalog.Path.Files.cs
+    Files.cs
     ======================================================================= -->
     <Class name="Files">
+
+        <!-- Files.cs -->
         <Files>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </Files>    
-        <!-- Catalog.Path.Files.Required() -->
+        </Files>   
+
+        <!-- Required() -->
         <Required>
             <remarks>
                 <para>
@@ -33,20 +40,25 @@
                 </para>
             </remarks>
         </Required>
+
     </Class>
 
     <!-- ======================================================================
-    Catalog.Path.Folders.cs
+    Folders.cs
     ======================================================================= -->
     <Class name="Folders">
+
+        <!-- Folders.cs -->
         <Directories>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </Directories>
-        <!-- Catalog.Path.Folders.Required() -->
+
+        <!-- Required() -->
         <Required>
             <remarks>
             </remarks>
         </Required>
+        
     </Class>
 
-</Catalog>
+</Core.Catalog.Path>

@@ -1,25 +1,28 @@
-﻿<Runtime>
+﻿<Core.Runtime>
 
-    <!-- Runtime.TngnApp.cs -->
+    <!-- ======================================================================
+    TngnApp.cs
+    ======================================================================= -->    
     <Class name="TngnApp">
-        
+
+        <!-- ngnApp.cs -->
         <TngnApp>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </TngnApp>
 
-        <!-- Runtime.TngnApp.Startup() -->
+        <!-- Startup() -->
         <Startup>
             <remarks>
             </remarks>
         </Startup>
 
-        <!-- Runtime.TngnApp.Shutdown() -->        
+        <!-- Shutdown() -->        
         <Shutdown>
             <remarks>
             </remarks>        
         </Shutdown>
 
-        <!-- Runtime.TngnApp.GetTngnMode() -->
+        <!-- GetTngnMode() -->
         <GetTngnMode>
             <remarks>
                 Get the current TNGN mode.
@@ -28,4 +31,4 @@
 
     </Class>
 
-</Runtime>
+</Core.Runtime>

@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>AppData\XmlDocumentation\Generated\Generated.xml</DocumentationFile>
+    <DocumentationFile>AppData\XmlDoc\Generated.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -52,8 +52,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppData\Generated\" />
-    <Folder Include="AppData\XmlDocumentation\Module\" />
     <Folder Include="Core\Catalog\Message\" />
     <Folder Include="Core\Catalog\Session\" />
     <Folder Include="Core\Configuration\" />
@@ -65,18 +63,16 @@
     <Folder Include="Module\OpenIncident\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppData\XmlDocumentation\Core\Avatar.xml" />
-    <Content Include="AppData\XmlDocumentation\Core\Runtime.xml" />
-    <Content Include="AppData\XmlDocumentation\Core\Logger.xml" />
-    <Content Include="AppData\XmlDocumentation\Core\Catalog.xml" />
-    <Content Include="AppData\XmlDocumentation\template.xml" />
-    <Content Include="AppData\XmlDocumentation\WelcomeToOutpost31.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Tingen-ThirdParty\ScriptLinkStandard\ScriptLinkStandard.csproj">
       <Project>{8e27472e-2bba-44d5-bb42-85effd15a5ad}</Project>
       <Name>ScriptLinkStandard</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
+    <Content Include="AppData\XmlDoc\Core.Runtime.xml" />
+    <Content Include="AppData\XmlDoc\WelcomeToOutpost31.xml" />
+    <Content Include="AppData\XmlDoc\XmlDocumentationTemplate.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

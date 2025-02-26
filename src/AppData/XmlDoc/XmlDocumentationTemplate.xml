@@ -1,0 +1,85 @@
+﻿<!--
+
+XML documentation notes:
+
+* The top level namespace is assumed.  
+  E.g., "Outpost31" does not need to be included.
+
+* The filename is the namespace.  
+  E.g., "Core.Avatar" is the filename "Core.Avatar.xml".
+
+* Files contain documentation for all classes in a namespace.  
+  E.g., "Core.Avatar" contains documentation for all classes in the "Core.Avatar" namespace.
+
+XML documentation template:
+
+<%NameSpace%>
+
+    <== ======================================================================
+    %NameSpace%.%Class-Name_A%
+    ======================================================================= -==>  
+    <%Class-Name_A%>
+
+        <== %Class-Name_A%.cs ==>
+        <%Class-Name_01%>
+            // Documentation goes here.
+        </%Class-Name_01%>
+
+        <== %type% %Property-Name_01% ==>
+        <%Property-Name_01%>
+            // Documentation goes here.
+        </%Property-Name_01%>
+
+        <== %type% %Property-Name_02% ==>
+        <%Property-Name_02%>
+            // Documentation goes here.
+        </%Property-Name_02%>
+
+        <== %Method-Name_01%() ==>
+        <%Method-Name_01%>
+            // Documentation goes here.
+        </%Method-Name_01%>
+
+        <== %Method-Name_02%() ==>
+        <%Method-Name_02%>
+            // Documentation goes here.
+        </%Method-Name_02%>
+
+    </%Class-Name_A%>
+
+</%NameSpace%>
+
+-->
+
+<Core.Avatar>
+
+    <!-- ======================================================================
+    SystemCode.cs
+    ======================================================================= -->  
+    <Class name="SystemCode">
+
+        <!-- SystemCode.cs -->
+        <SystemCode>
+            <remarks>This is a test</remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </SystemCode>
+        
+        <!-- GetSystemCode() -->
+        <GetSystemCode>
+            <remarks>
+                <para>
+                    The Tingen Web Service determines which Avatar System Code it will use by reading the contents of the
+                    <c>./AppData/Runtime/system.code</c> file.<br/>
+                    <br/>
+                    This file should contain a single line of text with one of the following values:
+                    <list type="bullet">
+                        <item>LIVE</item>
+                        <item>UAT</item>
+                    </list>
+                </para>
+            </remarks>
+        </GetSystemCode>
+    
+    </Class>
+    
+</Core.Avatar>

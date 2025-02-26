@@ -1,12 +1,11 @@
-﻿<!--
-    u250225
--->
+﻿<WelcomeToOutpost31>
 
-<WelcomeToOutpost31>
+    <!-- ======================================================================
+    WelcomeToOutpost31
+    ======================================================================= -->  
+    <Class name="WelcomeToOutpost31">
 
-    <!-- Classes -->
-    <Type name="Class">
-
+        <!-- WelcomeToOutpost31.cs -->
         <WelcomeToOutpost31>
             <remarks>
                 <para>
@@ -25,6 +24,6 @@
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </WelcomeToOutpost31>
 
-    </Type>
+    </Class>
 
 </WelcomeToOutpost31>

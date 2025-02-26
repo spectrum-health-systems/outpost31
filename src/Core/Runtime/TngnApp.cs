@@ -1,5 +1,5 @@
 ﻿// u250225_code
-// u250225_documentation
+// u250226_documentation
 
 using System.Reflection;
 
@@ -8,7 +8,7 @@ using Outpost31.Core.Catalog.Path;
 namespace Outpost31.Core.Runtime
 {
     /// <summary>Runtime logic.</summary>
-    /// <include file='AppData/XmlDocumentation/Core/Runtime.xml' path='Runtime.TngnApp/Class[@name="TngnApp"]/*'/>
+    /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnApp"]/*'/>
     public static class TngnApp
     {
         /// <summary>The executing Assembly name.</summary>
@@ -16,20 +16,20 @@ namespace Outpost31.Core.Runtime
         public static string ExeAsm { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Startup processes.</summary>
-        /// <include file='AppData/XmlDocumentation/Core/Runtime.xml' path='Runtime.TngnApp/Class[@name="TngnApp"]/Startup/*'/>
+        /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnApp"]/Startup/*'/>
         public static void Startup()
         {
            
         }
 
         /// <summary>Shutdown processes.</summary>
-        /// <include file='AppData/XmlDocumentation/Core/Runtime.xml' path='Runtime.TngnApp/Class[@name="TngnApp"]/Shutdown/*'/>
+        /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnApp"]/Shutdown/*'/>
         public static void Shutdown()
         {
         }
 
         /// <summary>Get the Tingen mode.</summary>
-        /// <include file='AppData/XmlDocumentation/Core/Runtime.xml' path='Runtime.TngnApp/Class[@name="TngnApp"]/GetTngnMode/*'/>
+        /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnApp"]/GetTngnMode/*'/>
         public static string GetTngnMode()
         {
             return "";

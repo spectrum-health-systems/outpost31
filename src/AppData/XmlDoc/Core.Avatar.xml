@@ -1,15 +1,17 @@
-﻿<Avatar> <!-- NAMESPACE/FOLDER-->
+﻿<Core.Avatar>
 
-    <!-- Avatar.SystemCode.cs -->
-    <Class name="SystemCode"> <!-- CLASS NAME-->
+    <!-- ======================================================================
+    SystemCode.cs
+    ======================================================================= -->  
+    <Class name="SystemCode">
         
+        <!-- SystemCode.cs -->
         <SystemCode>
-            <remarks>This is a test</remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </SystemCode>
         
-        <!-- Avatar.SystemCode.GetSystemCode() -->
-        <GetSystemCode>  <!-- METHOD NAME-->
+        <!-- GetSystemCode() -->
+        <GetSystemCode>
             <remarks>
                 <para>
                     The Tingen Web Service determines which Avatar System Code it will use by reading the contents of the
@@ -26,4 +28,4 @@
     
     </Class>
     
-</Avatar>
+</Core.Avatar>

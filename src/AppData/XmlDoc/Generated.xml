@@ -6,22 +6,7 @@
     <members>
         <member name="T:Outpost31.Core.Avatar.SystemCode">
             <summary>Logic for Avatar System Codes.</summary>
-            <SystemCode>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </SystemCode><GetSystemCode>
-            <remarks>
-                <para>
-                    The Tingen Web Service determines which Avatar System Code it will use by reading the contents of the
-                    <c>./AppData/Runtime/system.code</c> file.<br />
-                    <br />
-                    This file should contain a single line of text with one of the following values:
-                    <list type="bullet">
-                        <item>LIVE</item>
-                        <item>UAT</item>
-                    </list>
-                </para>
-            </remarks>
-        </GetSystemCode>
         </member>
         <member name="M:Outpost31.Core.Avatar.SystemCode.GetSystemCode">
             <summary>Get the Avatar System Code that the Tingen Web Service will use.</summary>
@@ -67,7 +52,7 @@
                     When the Tingen Web Service starts, there are a few required file paths that we need to setup:
                     <list type="bullet">
                         <term>TngnSystemCode</term>
-                        <description>The Avatar System Code that the Tingen Web Service will interface with</description>
+                        <description>The Avatar System Code that the Tingen Web Service will interface with.</description>
                     </list>
                 </para>
             </remarks>
@@ -80,18 +65,30 @@
                     When the Tingen Web Service starts, there are a few required file paths that we need to setup:
                     <list type="bullet">
                         <term>TngnSystemCode</term>
-                        <description>The Avatar System Code that the Tingen Web Service will interface with</description>
+                        <description>The Avatar System Code that the Tingen Web Service will interface with.</description>
                     </list>
                 </para>
             </remarks>
         </member>
         <member name="T:Outpost31.Core.Catalog.Path.Folders">
             <summary>The entry point for the Tingen web service.</summary>
-            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDocumentation/Core/Catalog.xml" path="Catalog/Type[@name=&quot;Class&quot;]/AtStartup/*" />
+            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Catalog.Path.xml" path="Core.Catalog.Path/Type[@name=&quot;Class&quot;]/AtStartup/*" />
         </member>
         <member name="T:Outpost31.Core.Runtime.TngnApp">
             <summary>Runtime logic.</summary>
-            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDocumentation/Core/Runtime.xml" path="Runtime.TngnApp/Class[@name=&quot;TngnApp&quot;]/*" />
+            <TngnApp>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </TngnApp><Startup>
+            <remarks>
+            </remarks>
+        </Startup><Shutdown>
+            <remarks>
+            </remarks>        
+        </Shutdown><GetTngnMode>
+            <remarks>
+                Get the current TNGN mode.
+            </remarks>
+        </GetTngnMode>
         </member>
         <member name="P:Outpost31.Core.Runtime.TngnApp.ExeAsm">
             <summary>The executing Assembly name.</summary>
@@ -99,32 +96,23 @@
         </member>
         <member name="M:Outpost31.Core.Runtime.TngnApp.Startup">
             <summary>Startup processes.</summary>
-            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDocumentation/Core/Runtime.xml" path="Runtime.TngnApp/Class[@name=&quot;TngnApp&quot;]/Startup/*" />
+            <remarks>
+            </remarks>
         </member>
         <member name="M:Outpost31.Core.Runtime.TngnApp.Shutdown">
             <summary>Shutdown processes.</summary>
-            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDocumentation/Core/Runtime.xml" path="Runtime.TngnApp/Class[@name=&quot;TngnApp&quot;]/Shutdown/*" />
+            <remarks>
+            </remarks>
         </member>
         <member name="M:Outpost31.Core.Runtime.TngnApp.GetTngnMode">
             <summary>Get the Tingen mode.</summary>
-            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDocumentation/Core/Runtime.xml" path="Runtime.TngnApp/Class[@name=&quot;TngnApp&quot;]/GetTngnMode/*" />
+            <remarks>
+                Get the current TNGN mode.
+            </remarks>
         </member>
         <member name="T:Outpost31.WelcomeToOutpost31">
             <summary>A place for Outpost31 details and stuff.</summary>
-            <remarks>
-                <para>
-                    Outpost31 is the back-end logic for the Tingen web service.<br />
-                    <br />
-                    This class is just a placeholder for documentation, and where the Outpost31 version number is<br />
-                    updated (see the header above).<br />
-                    <br />
-                    While you're here, take a look at this stuff:
-                    <list type="bullet">
-                        <item>The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen Documentation</see></item>
-                    </list>
-                    Uh...I guess that's it. Thanks for stopping by!
-                </para>
-            </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+            <!-- Failed to insert some or all of included XML --><include file="AppData/XmlDoc/WelcomeToOutpost31.xml" path="WelcomeToOutpost31/Type[@name=&quot;Class&quot;]/WelcomeToOutpost31/WelcomeToOutpost31*" />
         </member>
     </members>
 </doc>
