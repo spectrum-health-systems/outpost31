@@ -7,6 +7,12 @@
         
         <!-- SystemCode.cs -->
         <SystemCode>
+          <remarks>
+            <para>
+                Avatar uses a <c>SystemCode</c> that indicates its environment. While there are many possible values for this code, the<br/>
+                Tingen Web Service only uses two: <c>LIVE</c> and <c>UAT</c>.<br/>
+            </para>
+          </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </SystemCode>
         
