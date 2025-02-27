@@ -1,4 +1,9 @@
-﻿<Core.Avatar>
+﻿<!--
+XML documentation for:
+    * Core.Avatar.SystemCode.cs (u250227)
+-->
+
+<Core.Avatar>
 
     <!-- ======================================================================
     SystemCode.cs
@@ -7,12 +12,7 @@
         
         <!-- SystemCode.cs -->
         <SystemCode>
-          <remarks>
-            <para>
-                Avatar uses a <c>SystemCode</c> that indicates its environment. While there are many possible values for this code, the<br/>
-                Tingen Web Service only uses two: <c>LIVE</c> and <c>UAT</c>.<br/>
-            </para>
-          </remarks>
+            <!-- No additional XML documentation -->
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </SystemCode>
         
@@ -20,10 +20,18 @@
         <GetSystemCode>
             <remarks>
                 <para>
-                    The Tingen Web Service determines which Avatar System Code it will use by reading the contents of the
-                    <c>./AppData/Runtime/system.code</c> file.<br/>
+                    The Tingen Web Service determines which Avatar System Code it will use by reading the contents of<br/>
+                    the <c>TingenWebService/AppData/Runtime/systemcode.tngn</c> file.<br/>
                     <br/>
-                    This file should contain a single line of text with one of the following values:
+                    <b>You heard that right!</b> The <c>systemcode.tngn</c> file is located in the <c>TingenWebService/AppData/Runtime/</c> folder!<br/>
+                    <br/>
+                    When the Tingen Web Service (and Outpost31) are built, everything should end up where it's supposed to end up. But if you are<br/>
+                    developing Tingen/Outpost31, you should know that the <c>system.code</c> file is part of the <i>Tingen Web Service</i> project, not the<br/>
+                    <i>Outpost31</i> project.<br/>
+                    <br/>
+                </para>
+                <para>
+                    The <c>systemcode.tngn</c> file should contain a single line of text with one of the following values:
                     <list type="bullet">
                         <item>LIVE</item>
                         <item>UAT</item>

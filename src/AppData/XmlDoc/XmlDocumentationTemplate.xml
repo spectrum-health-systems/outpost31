@@ -51,6 +51,11 @@ XML documentation template:
 
 -->
 
+<!--
+XML documentation for:
+    * Core.Avatar.cs (u250227)
+-->
+
 <Core.Avatar>
 
     <!-- ======================================================================

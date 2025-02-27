@@ -4,119 +4,152 @@
         <name>Outpost31</name>
     </assembly>
     <members>
-        <member name="T:Outpost31.Core.Avatar.SystemCode">
-            <summary>Logic for Avatar System Codes.</summary>
-            <remarks>
-            <para>
-                Avatar uses a <c>SystemCode</c> that indicates its environment. While there are many possible values for this code, the<br />
-                Tingen Web Service only uses two: <c>LIVE</c> and <c>UAT</c>.<br />
-            </para>
-          </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        <member name="T:Outpost31.Core.Configuration.RuntimeSettings">
+            <summary>Runtime setting logic for the Tingen Web Service.</summary>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </member>
-        <member name="M:Outpost31.Core.Avatar.SystemCode.GetSystemCode">
-            <summary>Get the Avatar System Code that the Tingen Web Service will use.</summary>
-            <returns>The Avatar System Code the Tingen Web Service will use.</returns>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.TngnVersion">
+            <summary>The Tingen Web Service version.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.TngnBuild">
+            <summary>The Tingen Web Service build.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.TngnSystemCode">
+            <summary>The Tingen Web Service System Code.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.TngnMode">
+            <summary>The Tingen Web Service build.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.DateStamp">
+            <summary>The current date.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.TimeStamp">
+            <summary>The current time.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.RequiredDirectories">
+            <summary>Directories required by the Tingen Web Service.</summary>
+            <remarks>
+                <!-- No additional XML documentation -->
+            </remarks>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.RequiredFiles">
+            <summary>Files required by the Tingen Web Service.</summary>
             <remarks>
                 <para>
-                    The Tingen Web Service determines which Avatar System Code it will use by reading the contents of the
-                    <c>./AppData/Runtime/system.code</c> file.<br />
+                    The Tingen Web Service requires the following files to be present in the <c>./AppData/Runtime</c> directory:
+                    <list type="bullet">
+                        <item>
+                            <term>tngn.build</term>
+                            <description>The Tingen Web Service build information.</description>
+                        </item>
+                        <item>
+                            <term>tngn.mode</term>
+                            <description>The Tingen Web Service mode.</description>
+                        </item>
+                        <item>
+                            <term>tngn.systemcode</term>
+                            <description>The Avatar System Code that the Tingen Web Service will interface with.</description>
+                        </item>
+                    </list>
+                </para>
+            </remarks>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.RequiredFolders">
+            <summary>Folders required by the Tingen Web Service.</summary>
+            <remarks>
+                <!-- No additional XML documentation -->
+            </remarks>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.ValidSystemCodes">
+            <summary>The list of valid System Codes.</summary>
+            <remarks>
+                <para>
+                    The Tingen Web Service will only interface with the following Avatar System Codes:
+                    <list type="bullet">
+                        <item>
+                            <term>LIVE</term>
+                            <description>The Avatar production environment</description>
+                        </item>
+                        <item>
+                            <term>UAT</term>
+                            <description>The Avatar testing environment</description>
+                        </item>
+                    </list>
+                </para>
+            </remarks>
+        </member>
+        <member name="P:Outpost31.Core.Configuration.RuntimeSettings.ValidTngnModes">
+            <summary>The list of valid Tingen Web Service modes.</summary>
+            <remarks>
+                <para>
+                    The Tingen Web Service can have one of the following modes:
+                    <list type="bullet">
+                        <item>
+                            <term>DISABLED</term>
+                            <description>The Tingen Web Service does not do any work.</description>
+                        </item>
+                        <item>
+                            <term>ENABLED</term>
+                            <description>The Tingen Web Service functions normally.</description>
+                        </item>
+                        <item>
+                            <term>PASSTHROUGH</term>
+                            <description>The Tingen Web Service writes log files, but does not make any modifications to data.</description>
+                        </item>
+                    </list>
+                </para>
+            </remarks>
+        </member>
+        <member name="M:Outpost31.Core.Configuration.RuntimeSettings.Load(System.String)">
+            <summary>Load the runtime settings for the Tingen Web Service.</summary>
+            <param name="tngnVersion">The Tingen Web Service version</param>
+            <returns>Runtime settings for the Tingen Web Service.</returns>
+            /// <remarks>
+                <!-- No additional XML documentation -->
+            </remarks>
+        </member>
+        <member name="M:Outpost31.Core.Configuration.RuntimeSettings.AreValid(Outpost31.Core.Configuration.RuntimeSettings)">
+            <summary>Verify the Tingen Web Service settings.</summary>
+            <param name="runtimeSettings">The Tingen Session object.</param>
+            <exception cref="T:System.Exception" />
+            <remarks>
+                <para>
+                    All of the RuntimeSettings must be valid before the Tingen Web Service can start.<br />     
                     <br />
-                    This file should contain a single line of text with one of the following values:
+                    
                     <list type="bullet">
-                        <item>LIVE</item>
-                        <item>UAT</item>
+                        <item>The Tingen Web Service mode</item>
+                        <item>The Avatar System Code</item>
+                        <item>The Tingen Web Service build</item>
                     </list>
                 </para>
             </remarks>
         </member>
-        <member name="T:Outpost31.Core.Catalog.Data.FileList">
-            <summary>The entry point for the Tingen web service.</summary>
-            <!-- Failed to insert some or all of included XML --><include file="XmlDocumentation/TingenWebService.xml" path="TingenWebService/Type[@name=&quot;Class&quot;]/TingenWebService/*" />
+        <member name="T:Outpost31.Core.Utilities.Du.DuFile">
+            <summary>Logic related to files.</summary>
         </member>
-        <member name="T:Outpost31.Core.Catalog.Path.Directories">
-            <summary>The entry point for the Tingen web service.</summary>
-            <Directories>
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </Directories><Required>
+        <member name="M:Outpost31.Core.Utilities.Du.DuFile.ReturnContent(System.String)">
+            <summary>Returns the contents or status of a file. </summary>
+            <param name="filePath">The path to the file.</param>
+            <returns>The content or status of the file.</returns>
             <remarks>
-            </remarks>
-        </Required>
-        </member>
-        <member name="M:Outpost31.Core.Catalog.Path.Directories.Required">
-            <summary>Returns a list of required directories.</summary>
-            <remarks>
+              <para>
+              </para>
             </remarks>
         </member>
-        <member name="T:Outpost31.Core.Catalog.Path.Files">
-            <summary>The entry point for the Tingen web service.</summary>
-            <Files>
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </Files><Required>
+        <member name="M:Outpost31.Core.Utilities.Du.DuFile.ReturnVerifiedContent(System.String,System.Collections.Generic.List{System.String})">
+            <summary>Returns the contents (if valid) or status of a file. </summary>
+            <param name="filePath">The path to the file.</param>
+            <param name="validContent">A list of valid content.</param>
+            <returns>The verified content or status of the file.</returns>
             <remarks>
-                <para>
-                    When the Tingen Web Service starts, there are a few required file paths that we need to setup:
-                    <list type="bullet">
-                        <term>TngnSystemCode</term>
-                        <description>The Avatar System Code that the Tingen Web Service will interface with.</description>
-                    </list>
-                </para>
-            </remarks>
-        </Required>
-        </member>
-        <member name="M:Outpost31.Core.Catalog.Path.Files.Required">
-            <summary>Returns a list of required directories.</summary>
-            <remarks>
-                <para>
-                    When the Tingen Web Service starts, there are a few required file paths that we need to setup:
-                    <list type="bullet">
-                        <term>TngnSystemCode</term>
-                        <description>The Avatar System Code that the Tingen Web Service will interface with.</description>
-                    </list>
-                </para>
-            </remarks>
-        </member>
-        <member name="T:Outpost31.Core.Catalog.Path.Folders">
-            <summary>The entry point for the Tingen web service.</summary>
-            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Catalog.Path.xml" path="Core.Catalog.Path/Type[@name=&quot;Class&quot;]/AtStartup/*" />
-        </member>
-        <member name="T:Outpost31.Core.Runtime.TngnApp">
-            <summary>Runtime logic.</summary>
-            <TngnApp>
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </TngnApp><Startup>
-            <remarks>
-            </remarks>
-        </Startup><Shutdown>
-            <remarks>
-            </remarks>        
-        </Shutdown><GetTngnMode>
-            <remarks>
-                Get the current TNGN mode.
-            </remarks>
-        </GetTngnMode>
-        </member>
-        <member name="P:Outpost31.Core.Runtime.TngnApp.ExeAsm">
-            <summary>The executing Assembly name.</summary>
-            <remarks>A required component for writing log files, defined here so it can be used throughout the class.</remarks>
-        </member>
-        <member name="M:Outpost31.Core.Runtime.TngnApp.Startup">
-            <summary>Startup processes.</summary>
-            <remarks>
-            </remarks>
-        </member>
-        <member name="M:Outpost31.Core.Runtime.TngnApp.Shutdown">
-            <summary>Shutdown processes.</summary>
-            <remarks>
-            </remarks>
-        </member>
-        <member name="M:Outpost31.Core.Runtime.TngnApp.GetTngnMode">
-            <summary>Get the Tingen mode.</summary>
-            <remarks>
-                Get the current TNGN mode.
+              <para>
+              </para>
             </remarks>
         </member>
         <member name="T:Outpost31.WelcomeToOutpost31">
             <summary>A place for Outpost31 details and stuff.</summary>
+            <WelcomeToOutpost31>
             <remarks>
                 <para>
                     Outpost31 is the back-end logic for the Tingen web service.<br />
@@ -130,7 +163,9 @@
                     </list>
                     Uh...I guess that's it. Thanks for stopping by!
                 </para>
-            </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </WelcomeToOutpost31>
         </member>
     </members>
 </doc>

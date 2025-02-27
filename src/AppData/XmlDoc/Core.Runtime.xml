@@ -1,34 +1,37 @@
-﻿<Core.Runtime>
+﻿<!--
+XML documentation for:
+    * Core.Runtime.Spin.cs (u250227)
+-->
+
+<Core.Runtime>
 
     <!-- ======================================================================
-    TngnApp.cs
+    Spin.cs
     ======================================================================= -->    
-    <Class name="TngnApp">
+    <Class name="Spin">
 
-        <!-- ngnApp.cs -->
-        <TngnApp>
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </TngnApp>
-
-        <!-- Startup() -->
-        <Startup>
-            <remarks>
-            </remarks>
-        </Startup>
-
-        <!-- Shutdown() -->        
+        <!-- Spin.cs -->
         <Shutdown>
             <remarks>
-            </remarks>        
+                <!-- No additional XML documentation -->
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </Shutdown>
 
-        <!-- GetTngnMode() -->
-        <GetTngnMode>
+        <!-- Up -->
+        <Up>
             <remarks>
-                Get the current TNGN mode.
-            </remarks>
-        </GetTngnMode>
+                <!-- No additional XML documentation -->
+            </remarks>        
+        </Up>
 
+        <!-- Down -->
+        <Down>
+            <remarks>
+                <!-- No additional XML documentation -->
+            </remarks>
+        </Down>
+        
     </Class>
 
 </Core.Runtime>

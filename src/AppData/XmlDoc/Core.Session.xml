@@ -1,0 +1,23 @@
+﻿<!--
+XML documentation for:
+    * Core.Session.TngnSession.cs (u250227)
+-->
+
+<Core.Session>
+
+    <!-- ======================================================================
+    TngnSession.cs
+    ======================================================================= -->
+    <Class name="TngnSession">
+
+        <!-- Shutdown.cs -->
+        <TngnSession>
+            <remarks>
+                <!-- No additional XML documentation -->
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </TngnSession>
+
+    </Class>
+
+</Core.Session>

@@ -1,4 +1,11 @@
-﻿<Core.Catalog.Path>
+﻿<!--
+XML documentation for:
+    * Core.Catalog.Path.Directories.cs (u250227)
+    * Core.Catalog.Path.Files.cs (u250227)
+    * Core.Catalog.Path.Folders.cs (u250227)
+-->
+
+<Core.Catalog.Path>
   
     <!-- ======================================================================
     Directories.cs
@@ -7,13 +14,13 @@
 
         <!-- Directories.cs -->
         <Directories>
+            <!-- No additional XML documentation -->
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </Directories>
 
         <!-- Required() -->
         <Required>
-            <remarks>
-            </remarks>
+            <!-- No additional XML documentation -->
         </Required>
 
     </Class>
@@ -25,6 +32,7 @@
 
         <!-- Files.cs -->
         <Files>
+            <!-- No additional XML documentation -->
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </Files>   
 
@@ -50,13 +58,13 @@
 
         <!-- Folders.cs -->
         <Directories>
+            <!-- No additional XML documentation -->
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </Directories>
 
         <!-- Required() -->
         <Required>
-            <remarks>
-            </remarks>
+            <!-- No additional XML documentation -->
         </Required>
         
     </Class>

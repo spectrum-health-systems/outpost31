@@ -42,23 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Avatar\SystemCode.cs" />
-    <Compile Include="Core\Catalog\Data\FileList.cs" />
-    <Compile Include="Core\Catalog\Path\Directories.cs" />
-    <Compile Include="Core\Catalog\Path\Files.cs" />
-    <Compile Include="Core\Catalog\Path\Folders.cs" />
-    <Compile Include="Core\Runtime\TngnApp.cs" />
+    <Compile Include="Core\Configuration\RuntimeSettings.cs" />
+    <Compile Include="Core\Runtime\Spin.cs" />
+    <Compile Include="Core\Session\TngnSession.cs" />
+    <Compile Include="Core\Utilities\Du\DuFile.cs" />
+    <Compile Include="Core\Utilities\Du\DuJson.cs" />
     <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AppData\Runtime\" />
+    <Folder Include="Core\Avatar\" />
+    <Folder Include="Core\Catalog\Data\" />
     <Folder Include="Core\Catalog\Message\" />
+    <Folder Include="Core\Catalog\Path\" />
     <Folder Include="Core\Catalog\Session\" />
-    <Folder Include="Core\Configuration\" />
     <Folder Include="Core\Framework\" />
     <Folder Include="Core\Logger\" />
-    <Folder Include="Core\Session\" />
-    <Folder Include="Core\Utilities\Du\" />
     <Folder Include="Module\Admin\" />
     <Folder Include="Module\OpenIncident\" />
   </ItemGroup>
@@ -70,8 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
+    <Content Include="AppData\XmlDoc\Core.Catalog.Path.xml" />
+    <Content Include="AppData\XmlDoc\Core.Session.xml" />
     <Content Include="AppData\XmlDoc\Core.Runtime.xml" />
     <Content Include="AppData\XmlDoc\WelcomeToOutpost31.xml" />
+    <Content Include="AppData\XmlDoc\Core.Configuration.xml" />
     <Content Include="AppData\XmlDoc\XmlDocumentationTemplate.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

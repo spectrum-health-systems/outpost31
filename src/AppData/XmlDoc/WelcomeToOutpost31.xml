@@ -1,8 +1,13 @@
-﻿<WelcomeToOutpost31>
+﻿<!--
+XML documentation for:
+    * WelcomeToOutpost31.cs (u250227)
+-->
+
+<WelcomeToOutpost31>
 
     <!-- ======================================================================
     WelcomeToOutpost31
-    ======================================================================= -->  
+    ======================================================================= -->
     <Class name="WelcomeToOutpost31">
 
         <!-- WelcomeToOutpost31.cs -->
