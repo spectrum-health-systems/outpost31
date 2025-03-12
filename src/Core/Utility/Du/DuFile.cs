@@ -4,13 +4,13 @@
 // ██║  ██║██║   ██║   ██╔══╝  ██║██║     ██╔══╝  
 // ██████╔╝╚██████╔╝██╗██║     ██║███████╗███████╗
 // ╚═════╝  ╚═════╝ ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝
-//                             Do stuff with files                                              
-// u250227_code
-// u250227_documentation            
+//                             Du stuff with files                                              
+// u250311_code
+// u250311_documentation
 
 using System.Collections.Generic;
 
-namespace Outpost31.Core.Utilities.Du
+namespace Outpost31.Core.Utility.Du
 {
     /// <summary>Logic related to files.</summary>
     public static class DuFile
@@ -22,9 +22,9 @@ namespace Outpost31.Core.Utilities.Du
         ///   <para>
         ///   </para>
         /// </remarks>
-        public  static string ReturnContent(string filePath)
+        public static string GetContent(string filePath)
         {
-            if (!System.IO.File.Exists(filePath))
+            if (System.IO.File.Exists(filePath))
             {
                 var fileContent = System.IO.File.ReadAllText(filePath);
 
@@ -34,7 +34,7 @@ namespace Outpost31.Core.Utilities.Du
             }
             else
             {
-                return "Non-existent";
+                return $@"File {filePath} does not exist";
             }
         }
 
@@ -46,22 +46,13 @@ namespace Outpost31.Core.Utilities.Du
         ///   <para>
         ///   </para>
         /// </remarks>
-        public static string ReturnVerifiedContent(string filePath, List<string> validContent)
+        public static string GetVerifiedContent(string filePath, List<string> validContent)
         {
-            if (!System.IO.File.Exists(filePath))
-            {
-                var fileContent = System.IO.File.ReadAllText(filePath);
+            var fileContent = GetContent(filePath);
 
-                return fileContent == null
-                    ? "Empty"
-                    : validContent.Contains(fileContent)
-                        ? fileContent
-                        : "Invalid";
-            }
-            else
-            {
-                return "Non-existent";
-            }
+            return validContent.Contains(fileContent)
+                ? fileContent
+                : "Invalid";
         }
     }
 }

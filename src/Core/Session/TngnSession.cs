@@ -1,19 +1,24 @@
 ﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███ 
 //  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██ 
 //  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██ 
-//                           Outpost31.Core.Session.TngnSession.cs
-//                        Session logic for the Tingen Web Service
-// u250227_code
-// u250227_documentation
+//                                     Core.Session.TngnSession.cs
+//                           Logic for Tingen Web Service sessions
+// u250311_code
+// u250311_documentation
 
-using Outpost31.Core.Configuration;
+using System.Collections.Generic;
+using System;
+
+using Outpost31.Core.Runtime;
 
 namespace Outpost31.Core.Session
 {
     /// <summary> Session logic for the Tingen Web Service.</summary>
-    /// <include file='AppData/XmlDoc/Core.Session.xml' path='Core.Session/Class[@name="Session"]/Up/*'/>
+    /// <include file='AppData/XmlDoc/Core.Session.xml' path='Core.Session/Class[@name="TngnSession"]/TngnSession/*'/>
     public class TngnSession
     {
-        public RuntimeSettings RuntimeSettings { get; set; }
+        /// <summary> The runtime settings for the current session.</summary>
+        public RuntimeConfiguration RuntimeConfig { get; set; }
+
     }
 }

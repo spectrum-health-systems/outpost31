@@ -4,17 +4,11 @@
 // ██║  ██║██║   ██║   ██   ██║╚════██║██║   ██║██║╚██╗██║
 // ██████╔╝╚██████╔╝██╗╚█████╔╝███████║╚██████╔╝██║ ╚████║
 // ╚═════╝  ╚═════╝ ╚═╝ ╚════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝
-// Do things with JSON data                                                       
-// u250227_code
-// u250227_documentation
+//                                Du things with JSON data
+// u250311_code
+// u250311_documentation
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Outpost31.Core.Utilities.Du
+namespace Outpost31.Core.Utility.Du
 {
     class DuJson
     {

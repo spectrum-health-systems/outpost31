@@ -42,11 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Configuration\RuntimeSettings.cs" />
+    <Compile Include="Core\Runtime\RuntimeCatalog.cs" />
+    <Compile Include="Core\Runtime\RuntimeConfig.cs" />
     <Compile Include="Core\Runtime\Spin.cs" />
     <Compile Include="Core\Session\TngnSession.cs" />
-    <Compile Include="Core\Utilities\Du\DuFile.cs" />
-    <Compile Include="Core\Utilities\Du\DuJson.cs" />
+    <Compile Include="Core\Session\SessionCatalog.cs" />
+    <Compile Include="Core\Utility\DataExport.cs" />
+    <Compile Include="Core\Utility\DataImport.cs" />
+    <Compile Include="Core\Utility\Du\DuFile.cs" />
+    <Compile Include="Core\Utility\Du\DuJson.cs" />
     <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +61,7 @@
     <Folder Include="Core\Catalog\Message\" />
     <Folder Include="Core\Catalog\Path\" />
     <Folder Include="Core\Catalog\Session\" />
+    <Folder Include="Core\Configuration\" />
     <Folder Include="Core\Framework\" />
     <Folder Include="Core\Logger\" />
     <Folder Include="Module\Admin\" />
