@@ -5,31 +5,35 @@
 // ██████╔╝╚██████╔╝██╗██║     ██║███████╗███████╗
 // ╚═════╝  ╚═════╝ ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝
 //                             Du stuff with files                                              
-// u250311_code
-// u250311_documentation
+
+// u250404_code
+// u250404_documentation
 
 using System.Collections.Generic;
 
 namespace Outpost31.Core.Utility.Du
 {
-    /// <summary>Logic related to files.</summary>
+    /// <summary>Logic related to files input/output.</summary>
     public static class DuFile
     {
         /// <summary>Returns the contents or status of a file. </summary>
         /// <param name="filePath">The path to the file.</param>
-        /// <returns>The content or status of the file.</returns>
         /// <remarks>
-        ///   <para>
-        ///   </para>
+        ///     <para>
+        ///         If the file exists <i>and has content</i>, that content is returned.<br/>
+        ///         <br/>
+        ///         If the file <i>does not exist</i>, or exists <i>but is empty</i>, an error message is returned.
+        ///     </para>
         /// </remarks>
-        public static string GetContent(string filePath)
+        /// <returns>The content or status of the file.</returns>
+        public static string ReadLocal(string filePath)
         {
             if (System.IO.File.Exists(filePath))
             {
                 var fileContent = System.IO.File.ReadAllText(filePath);
 
                 return fileContent == null
-                    ? "Empty"
+                    ? $@"File {filePath} does not contain data."
                     : fileContent;
             }
             else
@@ -41,18 +45,33 @@ namespace Outpost31.Core.Utility.Du
         /// <summary>Returns the contents (if valid) or status of a file. </summary>
         /// <param name="filePath">The path to the file.</param>
         /// <param name="validContent">A list of valid content.</param>
-        /// <returns>The verified content or status of the file.</returns>
         /// <remarks>
-        ///   <para>
-        ///   </para>
+        ///     <para>
+        ///         GetContent() returns the contents or status of the file.<br/>
+        ///         <br/>
+        ///         If the file contains data, that data is checked against the list of valid content.
+        ///     </para>
         /// </remarks>
-        public static string GetVerifiedContent(string filePath, List<string> validContent)
+        /// <returns>The verified content or status of the file.</returns>
+        public static string ReadAndVerifyLocal(string filePath, List<string> validContent)
         {
-            var fileContent = GetContent(filePath);
+            var fileContent = ReadLocal(filePath);
 
-            return validContent.Contains(fileContent)
-                ? fileContent
-                : "Invalid";
+            if (fileContent.Contains("does not exist") || fileContent.Contains("does not contain data"))
+            {
+                return fileContent;
+            }
+            else
+            {
+                return validContent.Contains(fileContent)
+                    ? fileContent
+                    : $@"The contents of {filePath} are not valid.";
+            }
+        }
+
+        public static void WriteLocal(string filePath, string content)
+        {
+            System.IO.File.WriteAllText(filePath, content);
         }
     }
 }

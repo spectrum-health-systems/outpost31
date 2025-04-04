@@ -42,11 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Runtime\RuntimeCatalog.cs" />
-    <Compile Include="Core\Runtime\RuntimeConfig.cs" />
+    <Compile Include="Core\Runtime\TngnConfiguration.Properties.cs" />
+    <Compile Include="Core\Runtime\TngnConfiguration.Catalog.cs" />
+    <Compile Include="Core\Runtime\TngnConfiguration.cs" />
     <Compile Include="Core\Runtime\Spin.cs" />
     <Compile Include="Core\Session\TngnSession.cs" />
-    <Compile Include="Core\Session\SessionCatalog.cs" />
+    <Compile Include="Core\Session\TngnSession.Catalog.cs" />
     <Compile Include="Core\Utility\DataExport.cs" />
     <Compile Include="Core\Utility\DataImport.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />

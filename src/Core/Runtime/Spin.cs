@@ -1,20 +1,22 @@
 ﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███ 
 //  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██ 
 //  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██ 
-//                                            Core.Runtime.Spin.cs
-//               Startup/shutdown logic for the Tingen Web Service
-// u250311_code
-// u250311_documentation
+
+// u250404_code
+// u250404_documentation
+
+// Ignore Spelling: tngn
 
 using Outpost31.Core.Session;
+using Outpost31.Core.Utility.Du;
 
 using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Runtime
 {
     /// <summary>Startup/shutdown logic for the Tingen Web Service.</summary>
-    /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="Spin"]/Spin/*'/>
-    public class Spin
+    /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="Spin"]/ClassDescription/*'/>
+    public static class Spin
     {
         /// <summary>Spin up a new Tingen Web Service session.</summary>
         /// <param name="tngnSession">The (empty) Tingen Web Service session object.</param>
@@ -22,20 +24,31 @@ namespace Outpost31.Core.Runtime
         /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="Spin"]/Up/*'/>
         public static void Up(TngnSession tngnSession, string tngnVersion, OptionObject2015 sentOptionObject, string sentScriptParameter)
         {
-            tngnSession.RuntimeConfig = RuntimeConfiguration.Load(tngnVersion);
+            tngnSession.TngnConfig = TngnConfiguration.Load(tngnVersion);
 
-            bool validRuntimeConfig = RuntimeConfiguration.AreValid(tngnSession.RuntimeConfig);
+            var wpath = $@"{tngnSession.TngnConfig.TngnHostDataPath}/{tngnSession.TngnConfig.TngnSystemCode}/Debugging/Runtime.config";
 
-            if (validRuntimeConfig)
-            {
-                Utility.DataExport.RteConfigToFile(tngnSession.RuntimeConfig.RuntimeSummary);
 
-            }
-            else
-            {
-                // Log an error message.
-                // Maybe throw an OptObj error?
-            }
+
+
+            DuFile.WriteLocal(wpath, tngnSession.TngnConfig.ConfigurationSummary);
+            
+            //Utility.DataExport.RteConfigToFile(tngnSession.RuntimeConfig.RuntimeSummary);
+
+
+
+            //bool validRuntimeConfig = TngnConfiguration.AreValid(tngnSession.RuntimeConfig);
+
+            //if (validRuntimeConfig)
+            //{
+            //    Utility.DataExport.RteConfigToFile(tngnSession.RuntimeConfig.RuntimeSummary);
+
+            //}
+            //else
+            //{
+            //    // Log an error message.
+            //    // Maybe throw an OptObj error?
+            //}
         }
 
         /// <summary>Spin down the Tingen Web Service.</summary>

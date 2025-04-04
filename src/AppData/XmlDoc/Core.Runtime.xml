@@ -1,73 +1,83 @@
-﻿<!--
-    XML documentation for:
-    * Core.Runtime.RuntimeCatalog.cs (u250311)
-    * Core.Runtime.Config.cs (u250311)
-    * Core.Runtime.Spin.cs (u250311)
+﻿<!-- u250404 -->
+
+<!-- 
+===========
+[NAMESPACE] Outpost31.Core.Runtime
+===========
+XML Documentation for the following classes:
+    * TngnConfiguration.cs
+    * Spin.cs
 -->
 
 <Core.Runtime>
 
-    <!-- ======================================================================
-    RuntimeCatalog.cs
-    ======================================================================= -->
-    <Class name="RuntimeCatalog">
+    <!-- 
+    =======
+    [CLASS] TngnConfiguration.cs
+    =======
+    XML Documentation for the following:
+        * TngnConfiguration.cs
+        * TngnConfiguration.Catalog.cs
+        * TngnConfiguration.Properties.cs
+    -->
 
-        <!-- Spin.cs -->
-        <RuntimeCatalog>
-            <remarks>
-                <!-- No additional XML documentation -->
-            </remarks>
-        </RuntimeCatalog>
+    <Class name="TngnConfiguration">
 
-    </Class>
-
-
-    <!-- ======================================================================
-    RuntimeConfig.cs
-    ======================================================================= -->
-    <Class name="RuntimeConfig">
-
-        <!-- RuntimeConfig.cs -->
-        <RuntimeConfig>
+        <!-- Class description -->
+        <ClassDescription>
             <remarks>
                 <para>
                     This class is used to set the runtime configurations for the Tingen Web Service.
                 </para>
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </RuntimeConfig>
+        </ClassDescription>
 
-        <!-- RuntimeConfig.Properties.cs - Dictionary <string,string> RequiredDirectories -->
-        <RequiredDirectories>
+        <!-- TngnConfiguration.Load() -->
+        <Load>
             <remarks>
                 <para>
-                    Directories are locations on the file system where files and folders are stored.
+                    This method creates a Tingen Web Service configuration object at runtime.<br/>
+                    <br/>
+                    Some of these properties are validated against hardcoded values.<br/>
+
                 </para>
+            </remarks>
+        </Load>
+
+
+        <!-- cat_RequiredDirectories() -->
+        <cat_RequiredDirectories>
+            <remarks>
                 <para>
-                    The Tingen Web Service requires the following directories to be present in the <c>./AppData</c> directory:
+                    The Tingen Web Service requires the following directories to be present:
                     <list type="bullet">
                         <item>
-                            <term>Runtime</term>
-                            <description>Runtime data.</description>
+                            <term>AppData</term>
+                            <description>Various Tingen Web Service data.</description>
+                        </item>
+                        <item>
+                            <term>AppData/Runtime</term>
+                            <description>Data the Tingen Web Service needs at runtime.</description>
                         </item>
                     </list>
                 </para>
             </remarks>
-        </RequiredDirectories>
+        </cat_RequiredDirectories>
 
-        <!-- RuntimeConfig.Properties.cs - Dictionary <string,string> RequiredFiles -->
-        <RequiredFiles>
+        <!-- cat_RequiredFiles() -->
+        <cat_RequiredFiles>
             <remarks>
                 <para>
-                    The Tingen Web Service requires the following files to be present in the <c>./AppData/Runtime</c> directory:
+                    The Tingen Web Service requires the following files to be present in the <c>.TingenWebService/AppData/Runtime</c> directory:
                     <list type="bullet">
                         <item>
                             <term>tngn.build</term>
                             <description>The Tingen Web Service build information.</description>
                         </item>
                         <item>
-                            <term>tngn.mode</term>
-                            <description>The Tingen Web Service mode.</description>
+                            <term>tngn.hostdatapath</term>
+                            <description>The path on the host where the Tingen Web Service will store/retrieve data.</description>
                         </item>
                         <item>
                             <term>tngn.systemcode</term>
@@ -75,11 +85,20 @@
                         </item>
                     </list>
                 </para>
+                <para>
+                    The Tingen Web Service requires the following files to be present in the <c>%DataPath%\%SystemCode%\Congfig\Runtime</c> directory:
+                    <list type="bullet">
+                        <item>
+                            <term>tngn.mode</term>
+                            <description>The Tingen Web Service mode.</description>
+                        </item>
+                    </list>
+                </para>
             </remarks>
-        </RequiredFiles>
+        </cat_RequiredFiles>
 
-        <!-- RuntimeConfig.Properties.cs - List<string> ValidSystemCodes -->
-        <ValidSystemCodes>
+        <!-- cat_ValidSystemCodes() -->
+        <cat_ValidSystemCodes>
             <remarks>
                 <para>
                     The Tingen Web Service will only interface with the following Avatar System Codes:
@@ -95,10 +114,10 @@
                     </list>
                 </para>
             </remarks>
-        </ValidSystemCodes>
+        </cat_ValidSystemCodes>
 
-        <!-- RuntimeConfig.Properties.cs - List<string> ValidTngnModes -->
-        <ValidTngnModes>
+        <!-- cat_ValidTngnModes()-->
+        <cat_ValidTngnModes>
             <remarks>
                 <para>
                     The Tingen Web Service can have one of the following modes:
@@ -118,40 +137,21 @@
                     </list>
                 </para>
             </remarks>
-        </ValidTngnModes>
-
-        <!-- RuntimeConfig.cs - Verify() -->
-        <Verify>
-            <remarks>
-                <para>
-                    All of the Config must be valid before the Tingen Web Service can start.<br/>
-                    <br/>
-
-                    <list type="bullet">
-                        <item>The Tingen Web Service mode</item>
-                        <item>The Avatar System Code</item>
-                        <item>The Tingen Web Service build</item>
-                    </list>
-                </para>
-            </remarks>
-        </Verify>
-
-        <!-- RuntimeConfig.cs - Load() -->
-        <Load>
-            <remarks>
-                <!-- No additional XML documentation -->
-            </remarks>
-        </Load>
+        </cat_ValidTngnModes>
 
     </Class>
 
-    <!-- ======================================================================
-    Spin.cs
-    ======================================================================= -->
+    <!-- 
+    =======
+    [CLASS] Spin.cs
+    =======
+    XML Documentation for the following:
+        * Spin.cs
+    -->
     <Class name="Spin">
 
-        <!-- Spin.cs -->
-        <Spin>
+        <!-- Class description -->
+        <ClassDescription>
             <remarks>
                 <para>
                     This method contains two methods that startup/shutdown the Tingen Web Service:
@@ -169,19 +169,20 @@
                     most part, it just hands information to  <see href="https://github.com/spectrum-health-systems/Outpost31">Outpost31</see>, where the heavy lifting is done.<br/>
                 </para>
             </remarks>
-        </Spin>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </ClassDescription>
 
-        <!-- Up -->
+        <!-- Up() -->
         <Up>
             <remarks>
-                <!-- No additional XML documentation -->
+                test
             </remarks>
         </Up>
 
-        <!-- Down -->
+        <!-- Down() -->
         <Down>
             <remarks>
-                <!-- No additional XML documentation -->
+                test2
             </remarks>
         </Down>
 

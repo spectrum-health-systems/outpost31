@@ -2,21 +2,14 @@
 //  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 //  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //
-// u250311_code
-// u250311_documentation
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// u250404_code
+// u250404_documentation
 
 using Outpost31.Core.Runtime;
 
 namespace Outpost31.Core.Session
 {
-    /// <summary>Preset values for the Core.Session namespace.</summary>
-    internal static class SessionCatalog
+    public partial class TngnSession
     {
 
     }

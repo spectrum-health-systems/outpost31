@@ -1,22 +1,33 @@
-﻿<!--
-XML documentation for:
-    * Core.Session.TngnSession.cs (u250311)
+﻿<!-- u250404 -->
+
+<!-- 
+===========
+[NAMESPACE] Outpost31.Core.Session
+===========
+XML Documentation for the following classes:
+    * Core.Session.TngnSession.cs
 -->
 
 <Core.Session>
 
-    <!-- ======================================================================
-    TngnSession.cs
-    ======================================================================= -->
+    <!-- 
+    =======
+    [CLASS] TngnSession.cs
+    =======
+    XML Documentation for the following:
+        * TngnSession.cs
+        * TngnSession.Catalog.cs
+    
+    -->
     <Class name="TngnSession">
 
-        <!-- Shutdown.cs -->
-        <TngnSession>
+        <!-- Class description -->
+        <ClassDescription>
             <remarks>
-                <!-- No additional XML documentation -->
+                Additional information about this class TBA.
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </TngnSession>
+        </ClassDescription>
 
     </Class>
 
