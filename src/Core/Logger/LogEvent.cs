@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 
 namespace Outpost31.Core.Logger
 {
-    internal static class LogEvent
+    public static class LogEvent
     {
         public static void Primeval(string primevalPath, string assemblyName, string message = "Tingen primeval log", [CallerFilePath] string fromPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int line = 0)
         {

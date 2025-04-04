@@ -45,6 +45,7 @@
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Logger\PrimevalLog.Catalog.cs" />
     <Compile Include="Core\Logger\PrimevalLog.cs" />
+    <Compile Include="Core\Avatar\OptObj.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.Properties.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.Catalog.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.cs" />
@@ -60,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\Runtime\" />
-    <Folder Include="Core\Avatar\" />
     <Folder Include="Core\Catalog\Data\" />
     <Folder Include="Core\Catalog\Message\" />
     <Folder Include="Core\Catalog\Path\" />
@@ -68,6 +68,7 @@
     <Folder Include="Core\Configuration\" />
     <Folder Include="Core\Framework\" />
     <Folder Include="Module\Admin\" />
+    <Folder Include="Module\FormComponent\" />
     <Folder Include="Module\OpenIncident\" />
   </ItemGroup>
   <ItemGroup>

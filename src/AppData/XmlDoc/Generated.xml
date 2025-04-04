@@ -27,6 +27,30 @@
             <summary>Removes old Primeval logs.</summary>
             <remarks>Not currently used.</remarks>
         </member>
+        <member name="P:Outpost31.Core.Avatar.OptObj.SystemCode">
+            <summary>The Avatar System Code that Tingen will interface with.</summary>
+            <!-- Failed to insert some or all of included XML --><include file="XmlDoc/Outpost31-Common_doc.xml" path="Outpost31-Common/Type[@name=&quot;AvatarSystemCodes&quot;]/AvatarSystemCode/*" />
+        </member>
+        <member name="P:Outpost31.Core.Avatar.OptObj.SentOptionObject">
+            <summary>The original data structure sent from Avatar.</summary>
+            <!-- Failed to insert some or all of included XML --><include file="XmlDoc/Outpost31-Common_doc.xml" path="Outpost31-Common/Type[@name=&quot;OptionObjects&quot;]/SentOptionObject/*" />
+        </member>
+        <member name="P:Outpost31.Core.Avatar.OptObj.SentScriptParameter">
+            <summary>The original Script Parameter sent from Avatar.</summary>
+            <!-- Failed to insert some or all of included XML --><include file="XmlDoc/Outpost31-Common_doc.xml" path="Outpost31-Common/Type[@name=&quot;OptionObjects&quot;]/SentOptionObject/*" />
+        </member>
+        <member name="P:Outpost31.Core.Avatar.OptObj.WorkOptionObject">
+            <summary>The data structure that (is potentially) modified during a Tingen Session.</summary>
+            <!-- Failed to insert some or all of included XML --><include file="XmlDoc/Outpost31-Common_doc.xml" path="Outpost31-Common/Type[@name=&quot;OptionObjects&quot;]/WorkOptionObject/*" />
+        </member>
+        <member name="P:Outpost31.Core.Avatar.OptObj.ReturnOptionObject">
+            <summary>The data structure that is returned to Avatar.</summary>
+            <!-- Failed to insert some or all of included XML --><include file="XmlDoc/Outpost31-Common_doc.xml" path="Outpost31-Common/Type[@name=&quot;OptionObjects&quot;]/ReturnOptionObject/*" />
+        </member>
+        <member name="P:Outpost31.Core.Avatar.OptObj.ExeAsm">
+            <summary>The executing assembly name.</summary>
+            <remarks>This is defined here so it can be used to write log files throughout the class.</remarks>
+        </member>
         <member name="T:Outpost31.Core.Runtime.TngnConfiguration">
             <summary>Runtime setting logic for the Tingen Web Service.</summary>
             <remarks>
