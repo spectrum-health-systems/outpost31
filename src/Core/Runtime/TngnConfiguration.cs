@@ -5,8 +5,6 @@
 // u250404_code
 // u250404_documentation
 
-// Ignore Spelling: Tngn
-
 using System;
 
 using Outpost31.Core.Utility.Du;
@@ -33,7 +31,8 @@ namespace Outpost31.Core.Runtime
             tngnConfig.TngnHostDataPath     = DuFile.ReadLocal(tngnConfig.RequiredFiles["TngnDataPath"]);
             tngnConfig.DateStamp            = DateTime.Now.ToString("YYMMDD");
             tngnConfig.TimeStamp            = DateTime.Now.ToString("HHMMSS");
-            tngnConfig.RequiredDirectories  = cat_RequiredDirectories(tngnConfig.TngnHostDataPath);
+            tngnConfig.TngnDirectories      = cat_TngnDirectories(tngnConfig.TngnHostDataPath, tngnConfig.TngnSystemCode);
+            tngnConfig.RequiredDirectories  = cat_RequiredDirectories(tngnConfig.TngnHostDataPath); //?
             tngnConfig.RequiredFiles        = cat_RequiredFiles(tngnConfig.TngnHostDataPath);
             tngnConfig.ValidSystemCodes     = cat_ValidSystemCodes();
             tngnConfig.ValidTngnModes       = cat_ValidTngnModes();

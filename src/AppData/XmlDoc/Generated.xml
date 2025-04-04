@@ -4,6 +4,29 @@
         <name>Outpost31</name>
     </assembly>
     <members>
+        <member name="M:Outpost31.Core.Logger.PrimevalLog.cat_PrimevalHeader(System.String,System.String,System.String,System.String,System.String)">
+            <summary>Basic log information</summary>
+            <param name="assemblyName">The executing assembly name.</param>
+            <param name="callPath">The path of the calling class.</param>
+            <param name="callMember">The path of the calling method</param>
+            <param name="callLine">The line of code</param>
+            <param name="message">The log message</param>
+            <remarks>Creates standard log content string.</remarks>
+            <returns>The basic log content.</returns>
+        </member>
+        <member name="M:Outpost31.Core.Logger.PrimevalLog.Create(System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>Creates a Primeval log.</summary>
+            <param name="assemblyName">The executing assembly name.</param>
+            <param name="message">The log message</param>
+            <param name="fromClass">The path of the calling class.</param>
+            <param name="fromMethod">The path of the calling method</param>
+            <param name="line">The line of code</param>
+            <!-- Failed to insert some or all of included XML --><include file="XmlDoc/Outpost31.Core.Logger.PrimevalLog_doc.xml" path="Outpost31.Core.Logger.PrimevalLog/Type[@name=&quot;Method&quot;]/Create/*" />
+        </member>
+        <member name="M:Outpost31.Core.Logger.PrimevalLog.DevelopmentCleanup">
+            <summary>Removes old Primeval logs.</summary>
+            <remarks>Not currently used.</remarks>
+        </member>
         <member name="T:Outpost31.Core.Runtime.TngnConfiguration">
             <summary>Runtime setting logic for the Tingen Web Service.</summary>
             <remarks>
@@ -43,6 +66,10 @@
         <member name="P:Outpost31.Core.Runtime.TngnConfiguration.TimeStamp">
             <summary>The current time.</summary>
             <remarks>Now!</remarks> 
+        </member>
+        <member name="P:Outpost31.Core.Runtime.TngnConfiguration.TngnDirectories">
+            <summary>Directories required by the Tingen Web Service.</summary>
+            <remarks>The Tingen Web Service requires these directories to be present.</remarks>
         </member>
         <member name="P:Outpost31.Core.Runtime.TngnConfiguration.RequiredDirectories">
             <summary>Directories required by the Tingen Web Service.</summary>
@@ -224,6 +251,10 @@
                     most part, it just hands information to  <see href="https://github.com/spectrum-health-systems/Outpost31">Outpost31</see>, where the heavy lifting is done.<br />
                 </para>
             </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </member>
+        <member name="P:Outpost31.Core.Runtime.Spin.ExeAsm">
+            <summary>The executing Assembly name.</summary>
+            <remarks>A required component for writing log files, defined here so it can be used throughout the class.</remarks>
         </member>
         <member name="M:Outpost31.Core.Runtime.Spin.Up(Outpost31.Core.Session.TngnSession,System.String,ScriptLinkStandard.Objects.OptionObject2015,System.String)">
             <summary>Spin up a new Tingen Web Service session.</summary>

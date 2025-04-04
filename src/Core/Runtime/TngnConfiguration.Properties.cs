@@ -51,6 +51,10 @@ namespace Outpost31.Core.Runtime
 
         /// <summary>Directories required by the Tingen Web Service.</summary>
         /// <remarks>The Tingen Web Service requires these directories to be present.</remarks>
+        public Dictionary<string, string> TngnDirectories { get; set; }
+
+        /// <summary>Directories required by the Tingen Web Service.</summary>
+        /// <remarks>The Tingen Web Service requires these directories to be present.</remarks>
         public Dictionary<string, string> RequiredDirectories { get; set; }
 
         /// <summary>Files required by the Tingen Web Service.</summary>

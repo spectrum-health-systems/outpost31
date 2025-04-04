@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Logger\LogEvent.cs" />
+    <Compile Include="Core\Logger\PrimevalLog.Catalog.cs" />
+    <Compile Include="Core\Logger\PrimevalLog.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.Properties.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.Catalog.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.cs" />
@@ -64,7 +67,6 @@
     <Folder Include="Core\Catalog\Session\" />
     <Folder Include="Core\Configuration\" />
     <Folder Include="Core\Framework\" />
-    <Folder Include="Core\Logger\" />
     <Folder Include="Module\Admin\" />
     <Folder Include="Module\OpenIncident\" />
   </ItemGroup>

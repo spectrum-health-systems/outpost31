@@ -14,6 +14,14 @@ namespace Outpost31.Core.Runtime
 {
     public partial class TngnConfiguration
     {
+
+        internal static Dictionary<string, string> cat_TngnDirectories(string dataPath, string systemCode) => new Dictionary<string, string>
+        {
+            { "RuntimeData",     @"./AppData/Runtime" },
+            { "DataPathRoot",   $@"{dataPath}/{systemCode}"},
+            { "LogPathRoot",    $@"{dataPath}/{systemCode}/Logs" }
+        };
+
         /// <summary>Tingen Web Service required directories.</summary>
         /// <returns>A dictionary of directories required by the Tingen Web Service.</returns>
         /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnConfiguration"]/cat_RequiredDirectories/*'/>
