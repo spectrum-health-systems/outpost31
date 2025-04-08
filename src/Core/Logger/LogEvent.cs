@@ -5,7 +5,6 @@
 // u250404_code
 // u250404_documentation
 
-
 using System.Linq;
 using System.Runtime.CompilerServices;
 

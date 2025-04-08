@@ -42,10 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Avatar\ScriptParameter.cs" />
+    <Compile Include="Core\Avatar\SystemCode.cs" />
+    <Compile Include="Core\Framework\Requirements.Catalog.cs" />
+    <Compile Include="Core\Framework\Requirements.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Logger\PrimevalLog.Catalog.cs" />
     <Compile Include="Core\Logger\PrimevalLog.cs" />
-    <Compile Include="Core\Avatar\OptObj.cs" />
+    <Compile Include="Core\Avatar\OptionObjects.cs" />
+    <Compile Include="Core\Runtime\RuntimeSettings.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.Properties.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.Catalog.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.cs" />
@@ -56,6 +61,10 @@
     <Compile Include="Core\Utility\DataImport.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
+    <Compile Include="OptionObjects\ErrorCode.cs" />
+    <Compile Include="OptionObjects\ReturnOptObj.cs" />
+    <Compile Include="OptionObjects\SentOptObj.cs" />
+    <Compile Include="OptionObjects\WorkOptObj.cs" />
     <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,7 +75,6 @@
     <Folder Include="Core\Catalog\Path\" />
     <Folder Include="Core\Catalog\Session\" />
     <Folder Include="Core\Configuration\" />
-    <Folder Include="Core\Framework\" />
     <Folder Include="Module\Admin\" />
     <Folder Include="Module\FormComponent\" />
     <Folder Include="Module\OpenIncident\" />

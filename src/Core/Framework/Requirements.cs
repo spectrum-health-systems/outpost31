@@ -1,21 +1,19 @@
 ﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 //  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 //  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                      Core.Utility.DataExport.cs
-//            Logic for exporting data from the Tingen Web Service
-// u250311_code
-// u250311_documentation
 
-using Outpost31.Core.Runtime;
+// u250408_code
+// u250408_documentation
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Outpost31.Core.Utility
+namespace Outpost31.Core.Framework
 {
-    public class DataExport
+    public partial class Requirements
     {
-        public static void ConfigSummary(string configSummary, string path)
-        {
-
-        }
     }
 }

@@ -1,21 +1,13 @@
 ﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 //  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 //  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                      Core.Utility.DataExport.cs
-//            Logic for exporting data from the Tingen Web Service
-// u250311_code
-// u250311_documentation
 
-using Outpost31.Core.Runtime;
+// u250408_code
+// u250408_documentation
 
-
-namespace Outpost31.Core.Utility
+namespace Outpost31.OptionObjects
 {
-    public class DataExport
+    internal class WorkOptObj
     {
-        public static void ConfigSummary(string configSummary, string path)
-        {
-
-        }
     }
 }
