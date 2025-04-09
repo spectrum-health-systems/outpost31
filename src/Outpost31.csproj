@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Avatar\OptionObjects.Properties.cs" />
+    <Compile Include="Core\Avatar\OptionObjects.Catalog.cs" />
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
+    <Compile Include="Core\Avatar\SystemCode.Properties.cs" />
+    <Compile Include="Core\Avatar\SystemCode.Catalog.cs" />
     <Compile Include="Core\Avatar\SystemCode.cs" />
     <Compile Include="Core\Framework\Requirements.Catalog.cs" />
     <Compile Include="Core\Framework\Requirements.cs" />
@@ -50,11 +54,15 @@
     <Compile Include="Core\Logger\PrimevalLog.Catalog.cs" />
     <Compile Include="Core\Logger\PrimevalLog.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
+    <Compile Include="Core\Runtime\RuntimeSettings.Catalog.cs" />
     <Compile Include="Core\Runtime\RuntimeSettings.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.Properties.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.Catalog.cs" />
     <Compile Include="Core\Runtime\TngnConfiguration.cs" />
-    <Compile Include="Core\Runtime\Spin.cs" />
+    <Compile Include="Core\Runtime\SpinUp.cs" />
+    <Compile Include="Core\Service\Mode.Properties.cs" />
+    <Compile Include="Core\Service\Mode.Catalog.cs" />
+    <Compile Include="Core\Service\Mode.cs" />
     <Compile Include="Core\Session\TngnSession.cs" />
     <Compile Include="Core\Session\TngnSession.Catalog.cs" />
     <Compile Include="Core\Utility\DataExport.cs" />
@@ -65,6 +73,7 @@
     <Compile Include="OptionObjects\ReturnOptObj.cs" />
     <Compile Include="OptionObjects\SentOptObj.cs" />
     <Compile Include="OptionObjects\WorkOptObj.cs" />
+    <Compile Include="Core\Runtime\SpinDown.cs" />
     <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +102,9 @@
     <Content Include="AppData\XmlDoc\WelcomeToOutpost31.xml" />
     <Content Include="AppData\XmlDoc\Core.Configuration.xml" />
     <Content Include="AppData\XmlDoc\XmlDocumentationTemplate.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Avatar\README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

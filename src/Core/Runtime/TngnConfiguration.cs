@@ -21,14 +21,14 @@ namespace Outpost31.Core.Runtime
         /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnConfiguration"]/Load/*'/>
         public static TngnConfiguration New(string tngnVersion)
         {
-            RuntimeSettings runtimeSetting = RuntimeSettings.Get();
+            RuntimeSettings runtimeSetting = RuntimeSettings.New();
 
             return new TngnConfiguration()
             {
                 TngnVersion    = tngnVersion,
                 TngnBuild      = runtimeSetting.TngnBuild,
-                TngnSystemCode = DuFile.ReadAndVerifyLocal(runtimeSetting.SystemCode, cat_ValidSystemCodes()),
-                TngnMode       = DuFile.ReadAndVerifyLocal(runtimeSetting.TngnMode, cat_ValidTngnModes()),
+               // TngnSystemCode = DuFile.ReadAndVerifyLocal(runtimeSetting.SystemCode, cat_ValidSystemCodes()),
+             //   TngnMode       = DuFile.ReadAndVerifyLocal(runtimeSetting.TngnMode, cat_ValidTngnModes()),
                 TngnHostName   = Environment.MachineName,
                 TngnDataPath   = DuFile.ReadLocal(runtimeSetting.TngnDataPath),
                 CurrentDate    = runtimeSetting.DateStamp,

@@ -1,34 +1,61 @@
-﻿<!--
-XML documentation for:
-    * Core.Avatar.SystemCode.cs (u250227)
+﻿<!-- u250409 -->
+
+<!-- 
+===========
+[NAMESPACE] Outpost31.Core.Avatar
+===========
+XML Documentation for the following classes:
+    * OptionObjects.cs
+    * ScriptParameter.cs
 -->
 
 <Core.Avatar>
 
-    <!-- ======================================================================
-    SystemCode.cs
-    ======================================================================= -->  
-    <Class name="SystemCode">
-        
-        <!-- SystemCode.cs -->
-        <SystemCode>
-            <!-- No additional XML documentation -->
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </SystemCode>
-        
-        <!-- GetSystemCode() -->
-        <GetSystemCode>
+    <!-- 
+    =======
+    [CLASS] OptionObjects.cs
+    =======
+    XML Documentation for the following:
+        * OptionObjects.cs
+        * OptionObjects.Catalog.cs
+        * OptionObjects.Properties.cs
+    -->
+    
+    <Class name="OptionObjects">
+
+        <!-- Class description -->
+        <ClassDescription>
             <remarks>
                 <para>
-                    The Tingen Web Service determines which Avatar System Code it will use by reading the contents of<br/>
-                    the <c>TingenWebService/AppData/Runtime/systemcode.tngn</c> file.<br/>
+                    Additional information about the OptionObjects class TBA.
+                </para>
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </ClassDescription>
+        
+        <!-- ConvertErrorString() -->
+        <ConvertErrorString>
+            <remarks>
+                <para>
+                    When an OptionObject is returned to Avatar, it requires an "error code", which is an integer value.<br/>
                     <br/>
-                    <b>You heard that right!</b> The <c>systemcode.tngn</c> file is located in the <c>TingenWebService/AppData/Runtime/</c> folder!<br/>
-                    <br/>
-                    When the Tingen Web Service (and Outpost31) are built, everything should end up where it's supposed to end up. But if you are<br/>
-                    developing Tingen/Outpost31, you should know that the <c>system.code</c> file is part of the <i>Tingen Web Service</i> project, not the<br/>
-                    <i>Outpost31</i> project.<br/>
-                    <br/>
+                    In order to make this a little easier when developing the Tingen Web Service, there is the option of<br/>
+                    using one of the following "error string" instead of the integer value (which will be converted to the<br/>
+                    appropriate integer value):
+                    <list type="table">
+                        <listheader>
+                            <term>Error string</term>
+                            <description>(Error code) Error description</description>
+                        </listheader>
+                        <item>
+                            <term>clone/none/success</term>
+                            <description>(0) No action taken</description>
+                        </item>
+                        <item>
+                            <term>error</term>
+                            <description>(1) Returns an Error Message and stops further processing of scripts</description>
+                        </item>
+                </list>
                 </para>
                 <para>
                     The <c>systemcode.tngn</c> file should contain a single line of text with one of the following values:
@@ -38,7 +65,7 @@ XML documentation for:
                     </list>
                 </para>
             </remarks>
-        </GetSystemCode>
+        </ConvertErrorString>
     
     </Class>
     
