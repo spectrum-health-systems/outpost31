@@ -10,7 +10,8 @@ namespace Outpost31.Core.Avatar
 {
     public partial class ScriptParameter
     {
-        /* Class properties are defined in the ScriptParameter.Properties.cs partial class. */
+        /// <summary>The original Script Parameter sent from Avatar.</summary>
+        public string SentScriptParam { get; set; }
 
         /// <summary>Builds a new AvatarData data structure.</summary>
         /// <param name="sentOptObj">The SentOptionObject data structure sent from Avatar.</param>

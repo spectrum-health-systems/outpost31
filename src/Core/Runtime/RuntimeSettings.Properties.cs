@@ -6,20 +6,22 @@
 // u250409_code
 // u250409_documentation
 
+// -DEPRECIATED- Class no longer used.
+
 namespace Outpost31.Core.Runtime
 {
     public partial class RuntimeSettings
     {
-        public string TngnEnvironment { get; set; }
+        //public string TngnWbsvBuild { get; set; }
 
-        public string TngnBuild { get; set; }
+        //public string TngnWbsvEnvironment { get; set; }
 
-        public string TngnDataPath { get; set; }
+        //public string TngnWbsvMode { get; set; }
 
-        public string TngnMode { get; set; }
+        //public string TngnWbsvDataPath { get; set; }
 
-        public string DateStamp { get; set; }
+        //public string CurrentDate { get; set; }
 
-        public string TimeStamp { get; set; }
+        //public string CurrentTime { get; set; }
     }
 }

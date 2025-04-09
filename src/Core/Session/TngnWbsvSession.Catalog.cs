@@ -6,9 +6,11 @@
 // u250409_code
 // u250409_documentation
 
+// -DEPRECIATED- Class no longer used.
+
 namespace Outpost31.Core.Session
 {
-    public partial class TngnSession
+    public partial class TngnWbsvSession
     {
         // Not used.
     }

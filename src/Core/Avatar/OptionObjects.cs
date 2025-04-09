@@ -7,8 +7,8 @@
 // u250409_documentation
 
 using System.Reflection;
-
 using Outpost31.Core.Session;
+using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Avatar
 {
@@ -16,7 +16,14 @@ namespace Outpost31.Core.Avatar
     /// <include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="OptionObjects"]/ClassDescription/*'/>
     public partial class OptionObjects
     {
-        /* Class properties are defined in the OptionObject.Properties.cs partial class. */
+        /// <summary>The original OptionObject sent from Avatar.</summary>
+        public OptionObject2015 SentOptObj { get; set; }
+
+        /// <summary>The OptionObject that (is potentially) modified during a Tingen session.</summary>
+        public OptionObject2015 WorkOptObj { get; set; }
+
+        /// <summary>The OptionObject that is returned to Avatar.</summary>
+        public OptionObject2015 ReturnOptObj { get; set; }
 
         /// <summary>The executing Assembly name.</summary>
         /// <remarks>A required component for writing log files, defined here so it can be used throughout the class.</remarks>
@@ -73,7 +80,7 @@ namespace Outpost31.Core.Avatar
         /// <param name="errorCode">The OptionObject Error Code.</param>
         /// <param name="errorMessage">The OptionObject error message.</param>
         /// <include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="OptionObjects"]/Finalize/*'/>
-        public static void Finalize(TngnSession tngnSession, int errorCode, string errorMessage = "")
+        public static void Finalize(TngnWbsvSession tngnSession, int errorCode, string errorMessage = "")
         {
             //LogEvent.Trace(1, ExeAsm, tnSession.TraceInfo);
 

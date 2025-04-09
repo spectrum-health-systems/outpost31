@@ -25,7 +25,7 @@ namespace Outpost31.Core.Service
         /// <param name="tngnSession">The (empty) Tingen Web Service session object.</param>
         /// <param name="tngnVersion">The Tingen Web Service current version.</param>
         /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="Spin"]/Up/*'/>
-        public static void Up(TngnSession tngnSession)
+        public static void Up(TngnWbsvSession tngnSession)
         {
             //Utility.DataExport.ConfigSummary(TngnConfig.ConfigSummary(tngnSession.TngnConfig), tngnSession.TngnConfig.TngnDataPath);
         }

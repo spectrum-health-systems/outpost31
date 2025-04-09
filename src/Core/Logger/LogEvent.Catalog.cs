@@ -6,6 +6,8 @@
 // u250409_code
 // u250409_documentation
 
+// -DEPRECIATED- Class no longer used.
+
 using System.Linq;
 using System.Runtime.CompilerServices;
 
