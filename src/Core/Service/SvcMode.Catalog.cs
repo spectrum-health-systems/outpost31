@@ -1,7 +1,7 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                 Core.Framework.Requirements.cs
+//                                Core.Service.SvcMode.Catalog.cs
 
 // u250409_code
 // u250409_documentation
@@ -12,9 +12,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Outpost31.Core.Framework
+namespace Outpost31.Core.Service
 {
-    public partial class Requirements
+    public partial class SvcMode
     {
+        /// <summary>Valid Tingen Web Service modes.</summary>
+        /// <returns>A dictionary of valid Tingen Web Service modes.</returns>
+        internal static List<string> cat_ValidServiceModes() => new List<string>()
+        {
+            "ENABLED",
+            "DISABLED",
+            "PASSTHROUGH"
+        };
     }
 }

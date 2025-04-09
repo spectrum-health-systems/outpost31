@@ -1,6 +1,7 @@
-﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-//  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-//  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
+// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
+// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+//                                        Core.RuntimeSettings.cs
 
 // u250409_code
 // u250409_documentation
@@ -13,17 +14,7 @@ namespace Outpost31.Core.Runtime
 {
     public partial class RuntimeSettings
     {
-        public string TngnBuild { get; set; }
-
-        public string SystemCode { get; set; }
-
-        public string TngnDataPath { get; set; }
-
-        public string TngnMode { get; set; }
-
-        public string DateStamp { get; set; }
-
-        public string TimeStamp { get; set; }
+        /* Class properties are defined in the RuntimeSettings.Properties.cs partial class. */
 
         public static RuntimeSettings New()
         {
@@ -42,9 +33,10 @@ namespace Outpost31.Core.Runtime
             return new RuntimeSettings()
             {
                 TngnBuild    = "250408",
-              //  SystemCode   = sysCode,
-               // TngnDataPath = tngnDataPath,
-              //  TngnMode     = tngnMode,
+                TngnEnvironment = "UAT",
+                //  SystemCode   = sysCode,
+                // TngnDataPath = tngnDataPath,
+                //  TngnMode     = tngnMode,
                 DateStamp    = DateTime.Now.ToString("YYMMDD"),
                 TimeStamp    = DateTime.Now.ToString("HHMMSS"),
             };

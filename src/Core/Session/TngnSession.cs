@@ -1,9 +1,10 @@
-﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███ 
-//  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██ 
-//  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██ 
+﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
+// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
+// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+//                                         Core.Avatar.Session.cs
 
-// u250408_code
-// u250408_documentation
+// u250409_code
+// u250409_documentation
 
 using Outpost31.Core.Runtime;
 
@@ -15,24 +16,25 @@ namespace Outpost31.Core.Session
     /// <include file='AppData/XmlDoc/Core.Session.xml' path='Core.Session/Class[@name="TngnSession"]/ClassDescription/*'/>
     public partial class TngnSession
     {
-        /// <summary> The runtime settings for the current session.</summary>
-        public TngnConfiguration TngnConfig { get; set; }
+        /* Class properties are defined in the TngnSession.Properties.cs partial class. */
 
-        public OptionObject2015 SentOptObj { get; set; }
-
-        public OptionObject2015 WorkOptObj { get; set; }
-
-        public OptionObject2015 ReturnOptObj { get; set; }
-
-        public string ScriptParam { get; set; }
-
-        public string SysCode { get; set; }
-
+        /// <summary>Creates a new Tingen Web Service session object.</summary>
+        /// <param name="sentOptObj"></param>
+        /// <param name="sentScriptParam"></param>
+        /// <param name="tngnVersion"></param>
+        /// <returns>A new Tingen Web Service session object.</returns>
+        /// <include file='AppData/XmlDoc/Core.Session.xml' path='Core.Session/Class[@name="TngnSession"]/New/*'/>
         public static TngnSession New(OptionObject2015 sentOptObj, string sentScriptParam, string tngnVersion)
         {
+            var tngnConfig = Core.Configuration.TngnConfig.New(tngnVersion);
+
+            //validate all config
+
+
+
             return new TngnSession
             {
-                TngnConfig   = TngnConfiguration.New(tngnVersion),
+                TngnConfig   = Core.Configuration.TngnConf.New(tngnVersion),
                 SentOptObj   = sentOptObj,
                 WorkOptObj   = sentOptObj.Clone(),
                 ReturnOptObj = null,

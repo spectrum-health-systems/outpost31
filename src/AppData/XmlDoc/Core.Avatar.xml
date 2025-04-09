@@ -7,6 +7,7 @@
 XML Documentation for the following classes:
     * OptionObjects.cs
     * ScriptParameter.cs
+    * SystemCode.cs
 -->
 
 <Core.Avatar>
@@ -19,15 +20,72 @@ XML Documentation for the following classes:
         * OptionObjects.cs
         * OptionObjects.Catalog.cs
         * OptionObjects.Properties.cs
-    -->
-    
+    -->  
     <Class name="OptionObjects">
 
         <!-- Class description -->
         <ClassDescription>
             <remarks>
                 <para>
-                    Additional information about the OptionObjects class TBA.
+                    The OptionObjects class contains the logic for managing OptionObjects, which contain<br/>
+                    all of the content and metadata of the Avatar form that is sent to the Tingen Web<br/>
+                    Service.
+                </para>
+                <para>
+                    <b>ERROR CODES</b><br/>
+                    When an OptionObject is returned to Avatar, it requires one of the following<br/>
+                    "Error Code" (which is an integer value):
+                    <list type="table">
+                        <listheader>
+                            <term>Error Code</term>
+                            <description>Description</description>
+                        </listheader>
+                        <item>
+                            <term>0</term>
+                            <description>No action taken</description>
+                        </item>
+                        <item>
+                            <term>1</term>
+                            <description>Returns an Error Message with an "Ok" button, and stops further processing of scripts</description>
+                        </item>
+                        <item>
+                            <term>2</term>
+                            <description>Returns an Error Message with "OK" and "Cancel" buttons, and stops further scripts the user clicks "Cancel")</description>
+                        </item>
+                        <item>
+                            <term>3</term>
+                            <description>Returns an Error Message with "Ok" button</description>
+                        </item>
+                        <item>
+                            <term>4</term>
+                            <description>Returns an Error Message with "Yes" and "No" buttons and stops further scripts the user clicks "No")</description>
+                        </item>
+                        <item>
+                            <term>5</term>
+                            <description>Returns a URL to be opened in a new browser</description>
+                        </item>
+                        <item>
+                            <term>6</term>
+                            <description>Returns a form to be opened in Avatar</description>
+                        </item>
+                    </list>
+                </para>
+                <para>
+                    The most common Error Codes are:
+                    <list type="bullet">
+                        <item>
+                            <term>1</term>
+                            <description>Used when you don't want the user to take an action, such as submitting a form</description>
+                        </item>
+                        <item>
+                            <term>3</term>
+                            <description>Used when you would like to notify the user of something</description>
+                        </item>
+                        <item>
+                            <term>4</term>
+                            <description>Used when you want warn the user they may want to make changes, and give them the option to stop further processing, or continuing</description>
+                        </item>
+                    </list>
                 </para>
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
@@ -37,36 +95,102 @@ XML Documentation for the following classes:
         <ConvertErrorString>
             <remarks>
                 <para>
-                    When an OptionObject is returned to Avatar, it requires an "error code", which is an integer value.<br/>
-                    <br/>
-                    In order to make this a little easier when developing the Tingen Web Service, there is the option of<br/>
-                    using one of the following "error string" instead of the integer value (which will be converted to the<br/>
-                    appropriate integer value):
+                    In order to make assigning an Error Code a little easier when developing the<br/>
+                    Tingen Web Service, there is the option of using an "error string" instead of<br/>
+                    the integer value (which will be converted to the appropriate integer value):
                     <list type="table">
                         <listheader>
                             <term>Error string</term>
-                            <description>(Error code) Error description</description>
+                            <description>Error Code</description>
                         </listheader>
                         <item>
-                            <term>clone/none/success</term>
-                            <description>(0) No action taken</description>
+                            <term>"clone" or "none or "success"</term>
+                            <description>0</description>
                         </item>
                         <item>
-                            <term>error</term>
-                            <description>(1) Returns an Error Message and stops further processing of scripts</description>
+                            <term>"error"</term>
+                            <description>1</description>
                         </item>
-                </list>
-                </para>
-                <para>
-                    The <c>systemcode.tngn</c> file should contain a single line of text with one of the following values:
-                    <list type="bullet">
-                        <item>LIVE</item>
-                        <item>UAT</item>
+                        <item>
+                            <term>"okcancel"</term>
+                            <description>2</description>
+                        </item>
+                        <item>
+                            <term>"info"</term>
+                            <description>3</description>
+                        </item>
+                        <item>
+                            <term>"yesno"</term>
+                            <description>4</description>
+                        </item>
+                        <item>
+                            <term>"openurl"</term>
+                            <description>5</description>
+                        </item>
+                        <item>
+                            <term>"openform"</term>
+                            <description>6</description>
+                        </item>
                     </list>
+                    Please see the <see cref="OptionObjects"/> class documentation for more information about<br/>
+                    Error Codes.
                 </para>
             </remarks>
         </ConvertErrorString>
-    
+
+        <!-- Finalize() -->
+        <Finalize>
+            <remarks>
+                <para>
+                    Before an OptionObject can be returned to Avatar, we need to make sure that all of the required components exist and/or are modified correctly.<br/>
+                </para>
+                <para>
+                    Please see the <see cref="OptionObjects"/> class documentation for more information about Error Codes.<br/>
+                </para>
+            </remarks>
+        </Finalize>
+        
+    </Class>
+
+    <!-- 
+    =======
+    [CLASS] ScriptParameter.cs
+    =======
+    XML Documentation for the following:
+        * ScriptParameter.cs
+        * ScriptParameter.Catalog.cs
+        * ScriptParameter.Properties.cs
+    -->
+    <Class name="ScriptParameter">
+
+        <!-- Class description -->
+        <ClassDescription>
+            <remarks>
+                
+            </remarks>
+        </ClassDescription>
+        
+    </Class>
+
+
+    <!-- 
+    =======
+    [CLASS] SystemCode.cs
+    =======
+    XML Documentation for the following:
+        * SystemCode.cs
+        * SystemCode.Catalog.cs
+        * SystemCode.Properties.cs
+    -->
+    <Class name="SystemCode">
+
+        <!-- Class description -->
+        <ClassDescription>
+            <remarks>
+
+            </remarks>
+        </ClassDescription>
+
     </Class>
     
 </Core.Avatar>

@@ -1,15 +1,16 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                 Core.Avatar.Session.Catalog.cs
+//                      Core.Avatar.ScriptParameter.Properties.cs
 
 // u250409_code
 // u250409_documentation
 
-namespace Outpost31.Core.Session
+namespace Outpost31.Core.Avatar
 {
-    public partial class TngnSession
+    public partial class ScriptParameter
     {
-        // Not used.
+        /// <summary>The original Script Parameter sent from Avatar.</summary>
+        public string SentScriptParam { get; set; }
     }
 }

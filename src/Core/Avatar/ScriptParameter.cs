@@ -1,17 +1,16 @@
-﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-//  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-//  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
+// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
+// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+//                                 Core.Avatar.ScriptParameter.cs
 
-// u250408_code
-// u250408_documentation
+// u250409_code
+// u250409_documentation
 
 namespace Outpost31.Core.Avatar
 {
-    public class ScriptParameter
+    public partial class ScriptParameter
     {
-        /// <summary>The original Script Parameter sent from Avatar.</summary>
-
-        public string SentScriptParam { get; set; }
+        /* Class properties are defined in the ScriptParameter.Properties.cs partial class. */
 
         /// <summary>Builds a new AvatarData data structure.</summary>
         /// <param name="sentOptObj">The SentOptionObject data structure sent from Avatar.</param>

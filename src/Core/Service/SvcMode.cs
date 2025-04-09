@@ -1,7 +1,7 @@
-﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-//  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-//  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                            Core.Service.Mode.cs
+﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
+// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
+// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+//                                        Core.Service.SvcMode.cs
 
 // u250409_code
 // u250409_documentation
@@ -11,7 +11,7 @@ using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Service
 {
-    public partial class Mode
+    public partial class SvcMode
     {
         /// <summary>Builds a new AvatarData data structure.</summary>
         /// <param name="sentOptObj">The SentOptionObject data structure sent from Avatar.</param>
@@ -22,12 +22,12 @@ namespace Outpost31.Core.Service
             /* Trace Logs won't work here. */
 
             string sysCodeFile = tngnModeFilePath;
-            string sysCode     = DuFile.ReadAndVerifyLocal(sysCodeFile, cat_ValidTngnModes());
+            string sysCode     = DuFile.ReadAndVerifyLocal(sysCodeFile, cat_ValidServiceModes());
 
             if (sysCode.Contains("The contents of are not valid.")) // test
             {
                 // Log this.
-                SpinDown.ExitImmediately();
+                Spin.DownImmediately();
             }
 
             //#DEVNOTE# Test to make sure this works if the contents are not valid.

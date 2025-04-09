@@ -1,15 +1,20 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                 Core.Avatar.Session.Catalog.cs
+//                             Core.Service.SvcMode.Properties.cs
 
 // u250409_code
 // u250409_documentation
 
-namespace Outpost31.Core.Session
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Outpost31.Core.Service
 {
-    public partial class TngnSession
+    public partial class SvcMode
     {
-        // Not used.
     }
 }

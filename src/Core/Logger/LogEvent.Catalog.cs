@@ -1,7 +1,7 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                        Core.Logger.LogEvent.cs
+//                                Core.Logger.LogEvent.Catalog.cs
 
 // u250409_code
 // u250409_documentation
@@ -13,13 +13,6 @@ namespace Outpost31.Core.Logger
 {
     public static partial class LogEvent
     {
-        public static void Primeval(string primevalPath, string assemblyName, string message = "Tingen primeval log", [CallerFilePath] string fromPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int line = 0)
-        {
-            /* Trace/Primeval Logs won't work here. */
-
-            var fromClass = fromPath.Split('\\').Last();
-
-            PrimevalLog.Create(primevalPath, assemblyName, message, fromClass, fromMethod, line);
-        }
+        // Not used.
     }
 }

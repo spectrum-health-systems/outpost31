@@ -44,49 +44,45 @@
   <ItemGroup>
     <Compile Include="Core\Avatar\OptionObjects.Properties.cs" />
     <Compile Include="Core\Avatar\OptionObjects.Catalog.cs" />
+    <Compile Include="Core\Avatar\ScriptParameter.Catalog.cs" />
+    <Compile Include="Core\Avatar\ScriptParameter.Properties.cs" />
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
-    <Compile Include="Core\Avatar\SystemCode.Properties.cs" />
-    <Compile Include="Core\Avatar\SystemCode.Catalog.cs" />
-    <Compile Include="Core\Avatar\SystemCode.cs" />
+    <Compile Include="Core\Logger\LogEvent.Catalog.cs" />
+    <Compile Include="Core\Service\SvcEnvironment.Properties.cs" />
+    <Compile Include="Core\Service\SvcEnvironment.Catalog.cs" />
+    <Compile Include="Core\Service\SvcEnvironment.cs" />
     <Compile Include="Core\Framework\Requirements.Catalog.cs" />
     <Compile Include="Core\Framework\Requirements.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Logger\PrimevalLog.Catalog.cs" />
     <Compile Include="Core\Logger\PrimevalLog.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
+    <Compile Include="Core\Runtime\RuntimeSettings.Properties.cs" />
     <Compile Include="Core\Runtime\RuntimeSettings.Catalog.cs" />
     <Compile Include="Core\Runtime\RuntimeSettings.cs" />
-    <Compile Include="Core\Runtime\TngnConfiguration.Properties.cs" />
-    <Compile Include="Core\Runtime\TngnConfiguration.Catalog.cs" />
-    <Compile Include="Core\Runtime\TngnConfiguration.cs" />
-    <Compile Include="Core\Runtime\SpinUp.cs" />
-    <Compile Include="Core\Service\Mode.Properties.cs" />
-    <Compile Include="Core\Service\Mode.Catalog.cs" />
-    <Compile Include="Core\Service\Mode.cs" />
+    <Compile Include="Core\Configuration\TngnConfig.Properties.cs" />
+    <Compile Include="Core\Configuration\TngnConfig.Catalog.cs" />
+    <Compile Include="Core\Configuration\TngnConfig.cs" />
+    <Compile Include="Core\Service\SvcMode.Properties.cs" />
+    <Compile Include="Core\Service\SvcMode.Catalog.cs" />
+    <Compile Include="Core\Service\SvcMode.cs" />
+    <Compile Include="Core\Session\TngnSession.Properties.cs" />
     <Compile Include="Core\Session\TngnSession.cs" />
     <Compile Include="Core\Session\TngnSession.Catalog.cs" />
     <Compile Include="Core\Utility\DataExport.cs" />
     <Compile Include="Core\Utility\DataImport.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
-    <Compile Include="OptionObjects\ErrorCode.cs" />
-    <Compile Include="OptionObjects\ReturnOptObj.cs" />
-    <Compile Include="OptionObjects\SentOptObj.cs" />
-    <Compile Include="OptionObjects\WorkOptObj.cs" />
-    <Compile Include="Core\Runtime\SpinDown.cs" />
+    <Compile Include="Core\Service\Spin.cs" />
     <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\Runtime\" />
-    <Folder Include="Core\Catalog\Data\" />
-    <Folder Include="Core\Catalog\Message\" />
-    <Folder Include="Core\Catalog\Path\" />
-    <Folder Include="Core\Catalog\Session\" />
-    <Folder Include="Core\Configuration\" />
     <Folder Include="Module\Admin\" />
     <Folder Include="Module\FormComponent\" />
     <Folder Include="Module\OpenIncident\" />
+    <Folder Include="OptionObjects\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Tingen-ThirdParty\ScriptLinkStandard\ScriptLinkStandard.csproj">

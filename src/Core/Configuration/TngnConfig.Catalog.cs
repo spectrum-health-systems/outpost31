@@ -1,16 +1,18 @@
-﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-//  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-//  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
+// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
+// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+//                       Core.Configuration.TngnConfig.Catalog.cs
 
-// u250408_code
-// u250408_documentation
+// u250409_code
+// u250409_documentation
+
 
 using System;
 using System.Collections.Generic;
 
-namespace Outpost31.Core.Runtime
+namespace Outpost31.Core.Configuration
 {
-    public partial class TngnConfiguration
+    public partial class TngnConfig
     {
 
         //internal static Dictionary<string, string> cat_TngnDirectories(string dataPath, string systemCode) => new Dictionary<string, string>
@@ -71,7 +73,7 @@ namespace Outpost31.Core.Runtime
 
         /// <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
         /// <return>A summary of the Tingen Web Service configuration at runtime.</return>
-        internal static string ConfigSummary(TngnConfiguration tngnConfig) =>
+        internal static string ConfigSummary(TngnConfig tngnConfig) =>
             $"----------------------------------------{Environment.NewLine}" +
             $"Tingen Web Service runtime configuration{Environment.NewLine}" +
             $"----------------------------------------{Environment.NewLine}" +

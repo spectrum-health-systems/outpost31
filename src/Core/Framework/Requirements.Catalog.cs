@@ -1,9 +1,10 @@
-﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-//  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-//  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
+// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
+// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+//                         Core.Framework.Requirements.Catalog.cs
 
-// u250408_code
-// u250408_documentation
+// u250409_code
+// u250409_documentation
 
 using System.Collections.Generic;
 
@@ -18,7 +19,6 @@ namespace Outpost31.Core.Framework
         internal static Dictionary<string, string> cat_TngnDirectories() => new Dictionary<string, string>
         {
             { "RuntimeData",  @"./AppData/Runtime" },
-
         };
 
         /// <summary>Tingen Web Service required files.</summary>

@@ -1,4 +1,4 @@
-﻿<!-- u250404 -->
+﻿ <!-- u250404 -->
 
 <!-- 
 ===========
@@ -17,18 +17,24 @@ XML Documentation for the following classes:
     XML Documentation for the following:
         * TngnSession.cs
         * TngnSession.Catalog.cs
-    
     -->
     <Class name="TngnSession">
 
         <!-- Class description -->
         <ClassDescription>
             <remarks>
-                Additional information about this class TBA.
+                Additional information about the TgngSession class TBD.
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </ClassDescription>
 
+        <!-- TngnSesion.New() -->
+        <New>
+            <remarks>
+                Additional information about the TgngSession.New() method TBD.
+            </remarks>
+        </New>
+        
     </Class>
 
 </Core.Session>

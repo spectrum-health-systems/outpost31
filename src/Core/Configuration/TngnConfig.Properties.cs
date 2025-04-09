@@ -1,16 +1,17 @@
-﻿//  ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-//  ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-//  ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
+// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
+// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
+//                    Core.Configuration.TngnConfig.Properties.cs
 
-// u250408_code
-// u250408_documentation
+// u250409_code
+// u250409_documentation
 
 using System;
 using System.Collections.Generic;
 
-namespace Outpost31.Core.Runtime
+namespace Outpost31.Core.Configuration
 {
-    public partial class TngnConfiguration
+    public partial class TngnConfig
     {
         /* Defined at runtime
          */
@@ -68,7 +69,7 @@ namespace Outpost31.Core.Runtime
         public string CurrentDate { get; set; }
 
         /// <summary>The current time.</summary>
-        /// <remarks>Now!</remarks> 
+        /// <remarks>Now!</remarks>
         public string CurrentTime { get; set; }
 
         /// <summary>A summary of the runtime settings for exporting.</summary>

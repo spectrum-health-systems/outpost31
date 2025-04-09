@@ -5,23 +5,79 @@
     </assembly>
     <members>
         <member name="T:Outpost31.Core.Avatar.OptionObjects">
-            <summary>The data structure that is used to pass information between Tingen and Avatar.</summary>
-            <summary>The data structure that is used to pass information between Tingen and Avatar.</summary>
             <summary>The data structure that is used to pass information between Avatar and the Tingen Web Service.</summary>
             <remarks>
                 <para>
-                    Additional information about the OptionObjects class TBA.
+                    The OptionObjects class contains the logic for managing OptionObjects, which contain<br />
+                    all of the content and metadata of the Avatar form that is sent to the Tingen Web<br />
+                    Service.
+                </para>
+                <para>
+                    <b>ERROR CODES</b><br />
+                    When an OptionObject is returned to Avatar, it requires one of the following<br />
+                    "Error Code" (which is an integer value):
+                    <list type="table">
+                        <listheader>
+                            <term>Error Code</term>
+                            <description>Description</description>
+                        </listheader>
+                        <item>
+                            <term>0</term>
+                            <description>No action taken</description>
+                        </item>
+                        <item>
+                            <term>1</term>
+                            <description>Returns an Error Message with an "Ok" button, and stops further processing of scripts</description>
+                        </item>
+                        <item>
+                            <term>2</term>
+                            <description>Returns an Error Message with "OK" and "Cancel" buttons, and stops further scripts the user clicks "Cancel")</description>
+                        </item>
+                        <item>
+                            <term>3</term>
+                            <description>Returns an Error Message with "Ok" button</description>
+                        </item>
+                        <item>
+                            <term>4</term>
+                            <description>Returns an Error Message with "Yes" and "No" buttons and stops further scripts the user clicks "No")</description>
+                        </item>
+                        <item>
+                            <term>5</term>
+                            <description>Returns a URL to be opened in a new browser</description>
+                        </item>
+                        <item>
+                            <term>6</term>
+                            <description>Returns a form to be opened in Avatar</description>
+                        </item>
+                    </list>
+                </para>
+                <para>
+                    The most common Error Codes are:
+                    <list type="bullet">
+                        <item>
+                            <term>1</term>
+                            <description>Used when you don't want the user to take an action, such as submitting a form</description>
+                        </item>
+                        <item>
+                            <term>3</term>
+                            <description>Used when you would like to notify the user of something</description>
+                        </item>
+                        <item>
+                            <term>4</term>
+                            <description>Used when you want warn the user they may want to make changes, and give them the option to stop further processing, or continuing</description>
+                        </item>
+                    </list>
                 </para>
             </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </member>
         <member name="P:Outpost31.Core.Avatar.OptionObjects.SentOptObj">
-            <summary>The original data structure sent from Avatar.</summary>
+            <summary>The original OptionObject sent from Avatar.</summary>
         </member>
         <member name="P:Outpost31.Core.Avatar.OptionObjects.WorkOptObj">
-            <summary>The data structure that (is potentially) modified during a Tingen Session.</summary>
+            <summary>The OptionObject that (is potentially) modified during a Tingen session.</summary>
         </member>
         <member name="P:Outpost31.Core.Avatar.OptionObjects.ReturnOptObj">
-            <summary>The data structure that is returned to Avatar.</summary>
+            <summary>The OptionObject that is returned to Avatar.</summary>
         </member>
         <member name="P:Outpost31.Core.Avatar.OptionObjects.ExeAsm">
             <summary>The executing Assembly name.</summary>
@@ -30,43 +86,64 @@
         <member name="M:Outpost31.Core.Avatar.OptionObjects.ConvertErrorString(System.String)">
             <summary>Converts a human-readable error string to the corresponding OptionObject error value.</summary>
             <param name="errorString">The human-readable error string.</param>
-            <returns>An OptionObject error value.</returns>
+            <returns>An OptionObject Error Code.</returns>
             <remarks>
                 <para>
-                    When an OptionObject is returned to Avatar, it requires an "error code", which is an integer value.<br />
-                    <br />
-                    In order to make this a little easier when developing the Tingen Web Service, there is the option of<br />
-                    using one of the following "error string" instead of the integer value (which will be converted to the<br />
-                    appropriate integer value):
+                    In order to make assigning an Error Code a little easier when developing the<br />
+                    Tingen Web Service, there is the option of using an "error string" instead of<br />
+                    the integer value (which will be converted to the appropriate integer value):
                     <list type="table">
                         <listheader>
                             <term>Error string</term>
-                            <description>(Error code) Error description</description>
+                            <description>Error Code</description>
                         </listheader>
                         <item>
-                            <term>clone/none/success</term>
-                            <description>(0) No action taken</description>
+                            <term>"clone" or "none or "success"</term>
+                            <description>0</description>
                         </item>
                         <item>
-                            <term>error</term>
-                            <description>(1) Returns an Error Message and stops further processing of scripts</description>
+                            <term>"error"</term>
+                            <description>1</description>
                         </item>
-                </list>
-                </para>
-                <para>
-                    The <c>systemcode.tngn</c> file should contain a single line of text with one of the following values:
-                    <list type="bullet">
-                        <item>LIVE</item>
-                        <item>UAT</item>
+                        <item>
+                            <term>"okcancel"</term>
+                            <description>2</description>
+                        </item>
+                        <item>
+                            <term>"info"</term>
+                            <description>3</description>
+                        </item>
+                        <item>
+                            <term>"yesno"</term>
+                            <description>4</description>
+                        </item>
+                        <item>
+                            <term>"openurl"</term>
+                            <description>5</description>
+                        </item>
+                        <item>
+                            <term>"openform"</term>
+                            <description>6</description>
+                        </item>
                     </list>
+                    Please see the <see cref="T:Outpost31.Core.Avatar.OptionObjects" /> class documentation for more information about<br />
+                    Error Codes.
                 </para>
             </remarks>
         </member>
         <member name="M:Outpost31.Core.Avatar.OptionObjects.Finalize(Outpost31.Core.Session.TngnSession,System.Int32,System.String)">
             <summary>Finalize an OptionObject so it can be returned to Avatar.</summary>
             <param name="tngnSession">The Tingen Session data structure object.</param>
-            <param name="errorCode">The OptionObject error string.</param>
-            <param name="errorMessage">The OptionObject error message .</param>
+            <param name="errorCode">The OptionObject Error Code.</param>
+            <param name="errorMessage">The OptionObject error message.</param>
+            <remarks>
+                <para>
+                    Before an OptionObject can be returned to Avatar, we need to make sure that all of the required components exist and/or are modified correctly.<br />
+                </para>
+                <para>
+                    Please see the <see cref="T:Outpost31.Core.Avatar.OptionObjects" /> class documentation for more information about Error Codes.<br />
+                </para>
+            </remarks>
         </member>
         <member name="P:Outpost31.Core.Avatar.ScriptParameter.SentScriptParam">
             <summary>The original Script Parameter sent from Avatar.</summary>
@@ -263,11 +340,36 @@
         <member name="T:Outpost31.Core.Session.TngnSession">
             <summary> Session logic for the Tingen Web Service.</summary>
             <remarks>
-                Additional information about this class TBA.
+                Additional information about the TgngSession class TBD.
             </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </member>
         <member name="P:Outpost31.Core.Session.TngnSession.TngnConfig">
-            <summary> The runtime settings for the current session.</summary>
+            <summary>The Tingen Web Service configuration.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Session.TngnSession.SentOptObj">
+            <summary>The original OptionObject sent from Avatar.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Session.TngnSession.WorkOptObj">
+            <summary>The OptionObject that (is potentially) modified during a Tingen session.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Session.TngnSession.ReturnOptObj">
+            <summary>The OptionObject that is returned to Avatar. </summary>
+        </member>
+        <member name="P:Outpost31.Core.Session.TngnSession.ScriptParam">
+            <summary>The script parameter that is passed to the Tingen Web Service.</summary>
+        </member>
+        <member name="P:Outpost31.Core.Session.TngnSession.SysCode">
+            <summary>The system code that the Tingen Web Service will interface with.</summary>
+        </member>
+        <member name="M:Outpost31.Core.Session.TngnSession.New(ScriptLinkStandard.Objects.OptionObject2015,System.String,System.String)">
+            <summary>Creates a new Tingen Web Service session object.</summary>
+            <param name="sentOptObj" />
+            <param name="sentScriptParam" />
+            <param name="tngnVersion" />
+            <returns>A new Tingen Web Service session object.</returns>
+            <remarks>
+                Additional information about the TgngSession.New() method TBD.
+            </remarks>
         </member>
         <member name="T:Outpost31.Core.Utility.Du.DuFile">
             <summary>Logic related to files input/output.</summary>
@@ -299,23 +401,7 @@
         </member>
         <member name="T:Outpost31.WelcomeToOutpost31">
             <summary>A place for Outpost31 details and stuff.</summary>
-            <WelcomeToOutpost31>
-            <remarks>
-                <para>
-                    Outpost31 is the back-end logic for the Tingen web service.<br />
-                    <br />
-                    This class is just a placeholder for documentation, and where the Outpost31 version number is<br />
-                    updated (see the header above).<br />
-                    <br />
-                    While you're here, take a look at this stuff:
-                    <list type="bullet">
-                        <item>The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen Documentation</see></item>
-                    </list>
-                    Uh...I guess that's it. Thanks for stopping by!
-                </para>
-            </remarks>
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </WelcomeToOutpost31>
+            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/WelcomeToOutpost31.xml" path="WelcomeToOutpost31/Class[@name=&quot;ClassDescription&quot;]/*" />
         </member>
     </members>
 </doc>

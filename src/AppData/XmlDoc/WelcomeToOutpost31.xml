@@ -1,17 +1,26 @@
-﻿<!--
-XML documentation for:
-    * WelcomeToOutpost31.cs (u250227)
+﻿<!-- u250404 -->
+
+<!-- 
+===========
+[NAMESPACE] Outpost31
+===========
+XML Documentation for the following classes:
+    * WelcomeToOutpost31.cs
 -->
 
 <WelcomeToOutpost31>
 
-    <!-- ======================================================================
-    WelcomeToOutpost31
-    ======================================================================= -->
+    <!-- 
+    =======
+    [CLASS] WelcomeToOutpost31.cs
+    =======
+    XML Documentation for the following:
+        * WelcomeToOutpost31.cs
+    -->
     <Class name="WelcomeToOutpost31">
 
-        <!-- WelcomeToOutpost31.cs -->
-        <WelcomeToOutpost31>
+        <!-- Class Description -->
+        <ClassDescription>
             <remarks>
                 <para>
                     Outpost31 is the back-end logic for the Tingen web service.<br/>
@@ -27,7 +36,7 @@ XML documentation for:
                 </para>
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </WelcomeToOutpost31>
+        </ClassDescription>
 
     </Class>
 
