@@ -3,8 +3,8 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                   Core.Avatar.OptionObjects.cs
 
-// u250409_code
-// u250409_documentation
+// u250410_code
+// u250410_documentation
 
 using System.Reflection;
 using Outpost31.Core.Session;
@@ -14,7 +14,7 @@ namespace Outpost31.Core.Avatar
 {
     /// <summary>The data structure that is used to pass information between Avatar and the Tingen Web Service.</summary>
     /// <include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="OptionObjects"]/ClassDescription/*'/>
-    public partial class OptionObjects
+    public class OptionObjects
     {
         /// <summary>The original OptionObject sent from Avatar.</summary>
         public OptionObject2015 SentOptObj { get; set; }

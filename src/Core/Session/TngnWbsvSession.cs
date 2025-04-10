@@ -3,8 +3,8 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                         Core.Avatar.Session.cs
 
-// u250409_code
-// u250409_documentation
+// u250410_code
+// u250410_documentation
 
 using Outpost31.Core.Configuration;
 using ScriptLinkStandard.Objects;
@@ -12,7 +12,7 @@ namespace Outpost31.Core.Session
 {
     /// <summary> Session logic for the Tingen Web Service.</summary>
     /// <include file='AppData/XmlDoc/Core.Session.xml' path='Core.Session/Class[@name="TngnSession"]/ClassDescription/*'/>
-    public partial class TngnWbsvSession
+    public class TngnWbsvSession
     {
         /// <summary>The Tingen Web Service configuration.</summary>
         public TngnWbsvConfiguration TngnConfig { get; set; }

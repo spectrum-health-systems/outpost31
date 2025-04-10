@@ -4,10 +4,6 @@
 ===========
 [NAMESPACE] Outpost31.Core.Avatar
 ===========
-XML Documentation for the following classes:
-    * OptionObjects.cs
-    * ScriptParameter.cs
-    * SystemCode.cs
 -->
 
 <Core.Avatar>
@@ -16,10 +12,6 @@ XML Documentation for the following classes:
     =======
     [CLASS] OptionObjects.cs
     =======
-    XML Documentation for the following:
-        * OptionObjects.cs
-        * OptionObjects.Catalog.cs
-        * OptionObjects.Properties.cs
     -->  
     <Class name="OptionObjects">
 
@@ -157,9 +149,6 @@ XML Documentation for the following classes:
     [CLASS] ScriptParameter.cs
     =======
     XML Documentation for the following:
-        * ScriptParameter.cs
-        * ScriptParameter.Catalog.cs
-        * ScriptParameter.Properties.cs
     -->
     <Class name="ScriptParameter">
 
@@ -170,27 +159,6 @@ XML Documentation for the following classes:
             </remarks>
         </ClassDescription>
         
-    </Class>
-
-
-    <!-- 
-    =======
-    [CLASS] SystemCode.cs
-    =======
-    XML Documentation for the following:
-        * SystemCode.cs
-        * SystemCode.Catalog.cs
-        * SystemCode.Properties.cs
-    -->
-    <Class name="SystemCode">
-
-        <!-- Class description -->
-        <ClassDescription>
-            <remarks>
-
-            </remarks>
-        </ClassDescription>
-
     </Class>
     
 </Core.Avatar>

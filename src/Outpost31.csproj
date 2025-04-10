@@ -42,33 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Avatar\OptionObjects.Properties.cs" />
-    <Compile Include="Core\Avatar\OptionObjects.Catalog.cs" />
-    <Compile Include="Core\Avatar\ScriptParameter.Catalog.cs" />
-    <Compile Include="Core\Avatar\ScriptParameter.Properties.cs" />
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
-    <Compile Include="Core\Logger\LogEvent.Catalog.cs" />
-    <Compile Include="Core\Service\SvcEnvironment.Properties.cs" />
-    <Compile Include="Core\Service\SvcEnvironment.Catalog.cs" />
-    <Compile Include="Core\Service\SvcEnvironment.cs" />
     <Compile Include="Core\Framework\Requirements.Catalog.cs" />
     <Compile Include="Core\Framework\Requirements.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
-    <Compile Include="Core\Logger\PrimevalLog.Catalog.cs" />
     <Compile Include="Core\Logger\PrimevalLog.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
-    <Compile Include="Core\Runtime\RuntimeSettings.Properties.cs" />
-    <Compile Include="Core\Runtime\RuntimeSettings.Catalog.cs" />
     <Compile Include="Core\Runtime\RuntimeSettings.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.Properties.cs" />
-    <Compile Include="Core\Configuration\TngnWbsvConfiguration.Catalog.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
-    <Compile Include="Core\Service\SvcMode.Properties.cs" />
-    <Compile Include="Core\Service\SvcMode.Catalog.cs" />
-    <Compile Include="Core\Service\SvcMode.cs" />
-    <Compile Include="Core\Session\TngnWbsvSession.Properties.cs" />
     <Compile Include="Core\Session\TngnWbsvSession.cs" />
-    <Compile Include="Core\Session\TngnWbsvSession.Catalog.cs" />
     <Compile Include="Core\Utility\DataExport.cs" />
     <Compile Include="Core\Utility\DataImport.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
@@ -92,7 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
-    <Content Include="AppData\XmlDoc\Core.Catalog.Path.xml" />
+    <Content Include="AppData\XmlDoc\_Core.Catalog.Path.xml" />
     <Content Include="AppData\XmlDoc\Core.Session.xml" />
     <Content Include="AppData\XmlDoc\Core.Runtime.xml" />
     <Content Include="AppData\XmlDoc\WelcomeToOutpost31.xml" />

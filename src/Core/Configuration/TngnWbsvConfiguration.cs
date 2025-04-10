@@ -3,8 +3,8 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                               Core.Configuration.TngnConfig.cs
 
-// u250409_code
-// u250409_documentation
+// u250410_code
+// u250410_documentation
 
 using System;
 using Outpost31.Core.Runtime;
@@ -38,5 +38,19 @@ namespace Outpost31.Core.Configuration
                 CurrentTime    = runtimeSetting.CurrentTime
             };
         }
+
+        /// <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
+        /// <return>A summary of the Tingen Web Service configuration at runtime.</return>
+        private static string ConfigSummary(TngnWbsvConfiguration tngnConfig) =>
+            $"----------------------------------------{Environment.NewLine}" +
+            $"Tingen Web Service runtime configuration{Environment.NewLine}" +
+            $"----------------------------------------{Environment.NewLine}" +
+            $"    Version: {tngnConfig.TngnWbsvVersion}{Environment.NewLine}" +
+            $"      Build: {tngnConfig.TngnWbsvBuild}{Environment.NewLine}" +
+            $"System Code: {tngnConfig.TngnWbsvEnvironment}{Environment.NewLine}" +
+            $"       Mode: {tngnConfig.TngnWbsvMode}{Environment.NewLine}" +
+            $"       Date: {tngnConfig.CurrentDate}{Environment.NewLine}" +
+            $"       Time: {tngnConfig.CurrentTime}" +
+            $"   Hostname: {tngnConfig.TngnWbsvHostName}{Environment.NewLine}";
     }
 }

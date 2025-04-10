@@ -3,8 +3,8 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                        Core.RuntimeSettings.cs
 
-// u250409_code
-// u250409_documentation
+// u250410_code
+// u250410_documentation
 
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Runtime
 {
-    public partial class RuntimeSettings
+    public class RuntimeSettings
     {
         public string TngnWbsvBuild { get; set; }
 

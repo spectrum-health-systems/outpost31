@@ -3,15 +3,15 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                        Core.Logger.LogEvent.cs
 
-// u250409_code
-// u250409_documentation
+// u250410_code
+// u250410_documentation
 
 using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace Outpost31.Core.Logger
 {
-    public static partial class LogEvent
+    public static class LogEvent
     {
         public static void Primeval(string primevalPath, string assemblyName, string message = "Tingen primeval log", [CallerFilePath] string fromPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int line = 0)
         {

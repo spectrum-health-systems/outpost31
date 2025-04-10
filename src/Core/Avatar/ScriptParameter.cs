@@ -3,12 +3,12 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                 Core.Avatar.ScriptParameter.cs
 
-// u250409_code
-// u250409_documentation
+// u250410_code
+// u250410_documentation
 
 namespace Outpost31.Core.Avatar
 {
-    public partial class ScriptParameter
+    public class ScriptParameter
     {
         /// <summary>The original Script Parameter sent from Avatar.</summary>
         public string SentScriptParam { get; set; }

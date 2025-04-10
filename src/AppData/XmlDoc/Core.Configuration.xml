@@ -1,11 +1,27 @@
-﻿<!--
-XML documentation for:
-    * Core.Configuration.RuntimeSettings.cs (u250311)
-    * Core.Configuration.RuntimeSettings.Properties.cs (u250311)
+﻿<!-- u250410 -->
+
+<!-- 
+===========
+[NAMESPACE] Outpost31.Core.Configuration
+===========
 -->
 
 <Core.Configuration>
 
-
+    <!-- 
+    =======
+    [CLASS] TngnWbsvConfiguration.cs
+    =======
+    -->
+    <!-- Class description -->
+    <ClassDescription>
+        <remarks>
+            <para>
+                Additional information about the TngnWbsvConfiguration class TBD.
+            </para>
+        </remarks>
+        <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+    </ClassDescription>
+    
 
 </Core.Configuration>
