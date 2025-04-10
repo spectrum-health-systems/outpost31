@@ -48,15 +48,17 @@
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Logger\PrimevalLog.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
-    <Compile Include="Core\Runtime\RuntimeSettings.cs" />
+    <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.Properties.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
     <Compile Include="Core\Session\TngnWbsvSession.cs" />
     <Compile Include="Core\Utility\DataExport.cs" />
     <Compile Include="Core\Utility\DataImport.cs" />
+    <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
     <Compile Include="Core\Service\Spin.cs" />
+    <Compile Include="Module\Access\FormAccess.cs" />
     <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,10 +82,6 @@
     <Content Include="AppData\XmlDoc\Core.Runtime.xml" />
     <Content Include="AppData\XmlDoc\WelcomeToOutpost31.xml" />
     <Content Include="AppData\XmlDoc\Core.Configuration.xml" />
-    <Content Include="AppData\XmlDoc\XmlDocumentationTemplate.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Core\Avatar\README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

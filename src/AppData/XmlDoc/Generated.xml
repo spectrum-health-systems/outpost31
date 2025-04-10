@@ -177,130 +177,167 @@
             <remarks>Creates standard log content string.</remarks>
             <returns>The basic log content.</returns>
         </member>
-        <member name="M:Outpost31.Core.Runtime.RuntimeSettings.ValidTngnWbsvEnvironments">
-            <summary>Tingen Web Service valid environments.</summary>
-            <returns>A list of environments that can be used with the Tingen Web Service.</returns>
-        </member>
-        <member name="M:Outpost31.Core.Runtime.RuntimeSettings.ValidTngnWbsvModes">
-            <summary>Valid Tingen Web Service modes.</summary>
-            <returns>A dictionary of valid Tingen Web Service modes.</returns>
-        </member>
-        <member name="T:Outpost31.Core.Configuration.TngnWbsvConfiguration">
-            <summary>Runtime setting logic for the Tingen Web Service.</summary>
+        <member name="T:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings">
+            <summary>Runtime settings for the Tingen Web Service.</summary>
             <remarks>
                 <para>
                     This class is used to set the runtime configurations for the Tingen Web Service.
                 </para>
             </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvDirectory">
-            <summary>Directories required by the Tingen Web Service.</summary>
-            <remarks>The Tingen Web Service requires these directories to be present.</remarks>
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvVersion">
+            <summary>The Tingen Web Service version number.</summary>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvFile">
-            <summary>Files required by the Tingen Web Service.</summary>
-            <remarks>The Tingen Web Service requires these files to be present.</remarks>
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvBuild">
+            <summary>The Tingen Web Service build number.</summary>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvDataDirectory">
-            <summary>Directories required by the Tingen Web Service.</summary>
-            <remarks>The Tingen Web Service requires these directories to be present.</remarks>
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvEnv">
+            <summary>The environment that the Tingen Web Service will interface with.</summary>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvDataFile">
-            <summary>Files required by the Tingen Web Service.</summary>
-            <remarks>The Tingen Web Service requires these files to be present.</remarks>
-        </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvVersion">
-            <summary>The Tingen Web Service version.</summary>
-            <remarks>Pulled from the Executing Assembly.</remarks>
-        </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvBuild">
-            <summary>The Tingen Web Service build.</summary>
-            <remarks>Pulled from AppData\Runtime\tngn.build.</remarks>
-        </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvEnvironment">
-            <summary>The Tingen Web Service environment.</summary>
-            <remarks>Pulled from AppData\Runtime\tngn.environment.</remarks>
-        </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.ValidTngnWbsvEnvironments">
-            <summary>The list of valid System Codes.</summary>
-            <remarks>The Tingen Web Service will only interface with these System Codes.</remarks>
-        </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvMode">
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvMode">
             <summary>The Tingen Web Service mode.</summary>
-            <remarks>Pulled from %HostDataPath%\%SystemCode%\Config\Runtime\tngn.mode.</remarks>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.ValidTngnWbsvModes">
-            <summary>The list of valid Tingen Web Service modes.</summary>
-            <remarks>These are the only modes that the Tingen Web Service (and Modules) will recognize.</remarks>
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvDataPath">
+            <summary>The Tingen Web Service data path.</summary>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvHostName">
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvHostName">
             <summary>The name of the machine running the Tingen Web Service.</summary>
-            <remarks>The host (server) name where the Tingen Web Service runs.</remarks>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvDataPath">
-            <summary>The Tingen Web Service host data path.</summary>
-            <remarks>Pulled from AppData\Runtime\tngn.hostdatapath.</remarks>
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.CurrentDate">
+            <summary>The current date in YYMMDD format.</summary>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.CurrentDate">
-            <summary>The current date.</summary>
-            <remarks>Today!</remarks>
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.CurrentTime">
+            <summary>The current time in HHMMSS format.</summary>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.CurrentTime">
-            <summary>The current time.</summary>
-            <remarks>Now!</remarks>
+        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.New(System.String)">
+            <summary>Creates a new instance of the RuntimeSettings class.</summary>
+            <returns>An object containing the runtime settings for the Tingen Web Service.</returns>
+            <remarks>
+                <para>
+                    This method sets all runtime settings for the Tingen Web Service.
+                </para>
+                <para>                 
+                    The following runtime settings are loaded from external files:
+                    <list type="bullet">
+                        <item>
+                            <b>tngnWbsvEnv</b><br />
+                            The Avatar environment that the Tingen Web Service will interface with.<br />
+                            This value is stored in the <c>.\AppData\Runtime\TngnWbsv.Env</c> file,<br />
+                            and must be a valid Avatar environment.<br />
+                            <i>If this file does not exist, the Tingen Web Service will not start.</i><br />
+                        </item>
+                        <item>
+                            <b>tngnWbsvEnvDataPath</b><br />
+                            The path on the machine that hosts the Tingen Web Service, where all data<br />
+                            required by the Tingen Web Service will be stored. This is per-environment,<br />
+                            and the first part of this path is hardcoded as <c>C:\Tingen_Data\</c>, so<br />
+                            the directory must exist on the hosts machine.
+                        </item>
+                        <item>
+                            <b>tngnWbsvMode</b><br />
+                            The Avatar environment that the Tingen Web Service will interface with.<br />
+                            This value is stored in the <c>.\AppData\Runtime\TngnWbsv.Env</c> file,<br />
+                            and must be a valid Avatar environment.<br />
+                            <i>If this file does not exist, the Tingen Web Service will not start.</i><br />
+                        </item>
+                    </list>
+                </para>
+                <para>
+                    In addition to the above, this method also sets the Tingen Web Service <c>build</c> number,<br />
+                    which is in <c>YYMMDD</c> format. This value must be updated whenever the Tingen Web Service<br />
+                    is deployed to the host machine.
+                </para>
+            </remarks>
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.ConfigurationSummary">
+        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.GetTngnWbsvDetailFromFile(System.String,System.Collections.Generic.List{System.String})">
+            <summary>Get the contents of a file, and validate it.</summary>
+            <param name="filePath">The file path.</param>
+            <param name="validateAgainst">A list of values to validate against.</param>
+            <returns>The valid contents of the file (or we exit the application).</returns>
+            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;TngnWbsvRuntimeSettings&quot;]/TngnWbsvRuntimeSettings.New/*" />
+        </member>
+        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.ValidTngnWbsvEnvironments">
+            <summary>Create a list of Avatar environments that the Tingen Web Service can interface with.</summary>
+            <returns>A list of Avatar environments that the Tingen Web Service can interface with.</returns>
+            <remarks>These are the only Avatar environments that have been tested with the Tingen Web Service</remarks>
+        </member>
+        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.ValidTngnWbsvModes">
+            <summary>Valid Tingen Web Service modes.</summary>
+            <returns>A list of valid Tingen Web Service modes.</returns>
+        </member>
+        <member name="T:Outpost31.Core.Configuration.TngnWbsvConfiguration">
+            <summary>Runtime setting logic for the Tingen Web Service.</summary>
+            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;TngnWbsvConfiguration&quot;]/ClassDescription/*" />
+        </member>
+        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.tngnWbsvConfigSummary">
             <summary>A summary of the runtime settings for exporting.</summary>
         </member>
         <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.New(System.String)">
             <summary>Load the runtime settings for the Tingen Web Service.</summary>
-            <param name="tngnVersion">The Tingen Web Service version</param>
+            <param name="tngnWbsvVersion">The Tingen Web Service version</param>
             <returns>Runtime settings for the Tingen Web Service.</returns>
-            <remarks>
-                <para>
-                    This method creates a Tingen Web Service configuration object at runtime.<br />
-                    <br />
-                    Some of these properties are validated against hardcoded values.<br />
-
-                </para>
-            </remarks>
+            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;TngnWbsvConfiguration&quot;]/ClassDescription/*" />
         </member>
-        <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.ConfigSummary(Outpost31.Core.Configuration.TngnWbsvConfiguration)">
+        <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvConfigSummary(Outpost31.Core.Configuration.TngnWbsvConfiguration)">
             <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
             <return>A summary of the Tingen Web Service configuration at runtime.</return>
         </member>
         <member name="T:Outpost31.Core.Session.TngnWbsvSession">
             <summary> Session logic for the Tingen Web Service.</summary>
             <remarks>
-                Additional information about the TgngSession class TBD.
+                <para>
+                    The TngnWbsvSession class is used to create and initialize a <c>TngnWbsvSession</c> object, which<br />
+                    contains all of the information the Tingen Web Service needs to process a request.
+                </para>
             </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </member>
-        <member name="P:Outpost31.Core.Session.TngnWbsvSession.TngnConfig">
-            <summary>The Tingen Web Service configuration.</summary>
+        <member name="P:Outpost31.Core.Session.TngnWbsvSession.TngnWbsvConfig">
+            <summary>The Tingen Web Service configuration object.</summary>
+            <remarks>The TngnWbsvConfig object contains all runtime and external configuration information.</remarks>
         </member>
         <member name="P:Outpost31.Core.Session.TngnWbsvSession.SentOptObj">
             <summary>The original OptionObject sent from Avatar.</summary>
         </member>
         <member name="P:Outpost31.Core.Session.TngnWbsvSession.WorkOptObj">
-            <summary>The OptionObject that (is potentially) modified during a Tingen session.</summary>
+            <summary>The OptionObject that is (potentially) modified during a Tingen session.</summary>
         </member>
         <member name="P:Outpost31.Core.Session.TngnWbsvSession.ReturnOptObj">
             <summary>The OptionObject that is returned to Avatar. </summary>
         </member>
-        <member name="P:Outpost31.Core.Session.TngnWbsvSession.ScriptParam">
-            <summary>The script parameter that is passed to the Tingen Web Service.</summary>
+        <member name="P:Outpost31.Core.Session.TngnWbsvSession.SlnkScriptParam">
+            <summary>The ScriptLink Script Parameter sent from Avatar.</summary>
         </member>
-        <member name="P:Outpost31.Core.Session.TngnWbsvSession.SysCode">
-            <summary>The system code that the Tingen Web Service will interface with.</summary>
+        <member name="P:Outpost31.Core.Session.TngnWbsvSession.TngnWbsvSysCode">
+            <summary>The Avatar System Code that this instance of the Tingen Web Service will interface with.</summary>
         </member>
         <member name="M:Outpost31.Core.Session.TngnWbsvSession.New(ScriptLinkStandard.Objects.OptionObject2015,System.String,System.String)">
-            <summary>Creates a new Tingen Web Service session object.</summary>
-            <param name="sentOptObj" />
-            <param name="sentScriptParam" />
-            <param name="tngnVersion" />
+            <summary>Creates and initializes a new TngnWbsvSession object</summary>
+            <param name="sentOptObj">The OptionObject that is sent from Avatar.</param>
+            <param name="sentSlnkScriptParam">The Script Parameter that is sent from Avatar.</param>
+            <param name="tngnWbsvVersion">The current version of the Tingen Web Service.</param>
             <returns>A new Tingen Web Service session object.</returns>
             <remarks>
-                Additional information about the TgngSession.New() method TBD.
+                <para>
+                    The TngnWbsvSession object contains:
+                    <list type="bullet">
+                        <item>
+                            <term>The TngnWbsvConfig object</term>
+                            <description>All runtime and external configuration information</description>
+                        </item>
+                        <item>
+                            <term>OptionObjects</term>
+                            <description>All necessary OptionObjects</description>
+                        </item>
+                        <item>
+                            <term>The Scriptlink Script Parameter</term>
+                            <description>The Script Parameter sent from Avatar that contains the request</description>
+                        </item>
+                        <item>
+                            <term>An Avatar System Code</term>
+                            <description>The Avatar System Code that the Tingen Web Service will interface with</description>
+                        </item>
+                    </list>
+                </para>
             </remarks>
         </member>
         <member name="T:Outpost31.Core.Utility.Du.DuFile">
@@ -333,23 +370,7 @@
         </member>
         <member name="T:Outpost31.Core.Service.Spin">
             <summary>Startup/shutdown logic for the Tingen Web Service.</summary>
-            <remarks>
-                <para>
-                    This method contains two methods that startup/shutdown the Tingen Web Service:
-                    <list type="bullet">
-                        <item>
-                            <see cref="!:Up(TngnSession, string, OptionObject2015, string)" />
-                        </item>
-                        <item>
-                            <see cref="M:Outpost31.Core.Service.Spin.Down" />
-                        </item>
-                    </list>
-                </para>
-                <para>
-                    This class doesn't do much actual work, and should remain fairly static. For the<br />
-                    most part, it just hands information to  <see href="https://github.com/spectrum-health-systems/Outpost31">Outpost31</see>, where the heavy lifting is done.<br />
-                </para>
-            </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/ClassDescription/*" />
         </member>
         <member name="P:Outpost31.Core.Service.Spin.ExeAsm">
             <summary>The executing Assembly name.</summary>
@@ -359,15 +380,11 @@
             <summary>Spin up a new Tingen Web Service session.</summary>
             <param name="tngnSession">The (empty) Tingen Web Service session object.</param>
             <param name="tngnVersion">The Tingen Web Service current version.</param>
-            <remarks>
-                test
-            </remarks>
+            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/Up/*" />
         </member>
         <member name="M:Outpost31.Core.Service.Spin.Down">
             <summary>Spin down the Tingen Web Service.</summary>
-            <remarks>
-                test2
-            </remarks>
+            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/Down/*" />
         </member>
         <member name="T:Outpost31.WelcomeToOutpost31">
             <summary>A place for Outpost31 details and stuff.</summary>

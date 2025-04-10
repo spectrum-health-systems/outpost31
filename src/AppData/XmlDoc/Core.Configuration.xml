@@ -13,15 +13,42 @@
     [CLASS] TngnWbsvConfiguration.cs
     =======
     -->
-    <!-- Class description -->
-    <ClassDescription>
-        <remarks>
-            <para>
-                Additional information about the TngnWbsvConfiguration class TBD.
-            </para>
-        </remarks>
-        <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-    </ClassDescription>
-    
+
+    <Class name="TngnWbsvConfiguration">
+
+        <!-- TngnWbsvConfiguration.cs -->
+        <ClassDescription>
+            <remarks>
+                <para>
+                    Additional information about the TngnWbsvConfiguration class TBD.
+                </para>
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </ClassDescription>
+
+        <!-- TngnWbsvConfiguration.New() -->
+        <New>
+            <remarks>
+                <para>
+                    This method sets all configuration settings for the Tingen Web Service.
+                </para>
+                <para>
+                    Some settings are initialized at runtime:
+                    <list type="bullet">
+                        <item>The Tingen Web Service build number</item>
+                        <item>The Avatar environment the Tingen Web Service will interface with</item>
+                        <item>The Tingen Web Service mode</item>
+                        <item>The current date/time</item>
+                    </list>
+                </para>
+                <para>
+                    In addition to the above, this method also sets the Tingen Web Service <c>build</c> number,<br/>
+                    which is in <c>YYMMDD</c> format. This value must be updated whenever the Tingen Web Service<br/>
+                    is deployed to the host machine.
+                </para>
+            </remarks>
+        </New>
+        
+    </Class>
 
 </Core.Configuration>

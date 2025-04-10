@@ -1,29 +1,22 @@
-﻿<!-- u250404 -->
+﻿<!-- u250410 -->
 
 <!-- 
 ===========
 [NAMESPACE] Outpost31.Core.Runtime
 ===========
-XML Documentation for the following classes:
-    * TngnConfiguration.cs
-    * Spin.cs
 -->
 
 <Core.Runtime>
 
     <!-- 
     =======
-    [CLASS] TngnConfiguration.cs
+    [CLASS] TngnWbsvRuntimeSettings.cs
     =======
-    XML Documentation for the following:
-        * TngnConfiguration.cs
-        * TngnConfiguration.Catalog.cs
-        * TngnConfiguration.Properties.cs
     -->
 
-    <Class name="TngnConfiguration">
+    <Class name="TngnWbsvRuntimeSettings">
 
-        <!-- Class description -->
+        <!-- TngnWbsvRuntimeSettings.cs -->
         <ClassDescription>
             <remarks>
                 <para>
@@ -33,158 +26,56 @@ XML Documentation for the following classes:
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </ClassDescription>
 
-        <!-- TngnConfiguration.Load() -->
-        <Load>
+        <!-- TngnWbsvRuntimeSettings.New() -->
+        <New>
             <remarks>
                 <para>
-                    This method creates a Tingen Web Service configuration object at runtime.<br/>
-                    <br/>
-                    Some of these properties are validated against hardcoded values.<br/>
-
+                    This method sets all runtime settings for the Tingen Web Service.
                 </para>
-            </remarks>
-        </Load>
-
-
-        <!-- cat_RequiredDirectories() -->
-        <cat_RequiredDirectories>
-            <remarks>
-                <para>
-                    The Tingen Web Service requires the following directories to be present:
+                <para>                 
+                    The following runtime settings are loaded from external files:
                     <list type="bullet">
                         <item>
-                            <term>AppData</term>
-                            <description>Various Tingen Web Service data.</description>
+                            <b>tngnWbsvEnv</b><br/>
+                            The Avatar environment that the Tingen Web Service will interface with.<br/>
+                            This value is stored in the <c>.\AppData\Runtime\TngnWbsv.Env</c> file,<br/>
+                            and must be a valid Avatar environment.<br/>
+                            <i>If this file does not exist, the Tingen Web Service will not start.</i><br/>
                         </item>
                         <item>
-                            <term>AppData/Runtime</term>
-                            <description>Data the Tingen Web Service needs at runtime.</description>
-                        </item>
-                    </list>
-                </para>
-            </remarks>
-        </cat_RequiredDirectories>
-
-        <!-- cat_RequiredFiles() -->
-        <cat_RequiredFiles>
-            <remarks>
-                <para>
-                    The Tingen Web Service requires the following files to be present in the <c>.TingenWebService/AppData/Runtime</c> directory:
-                    <list type="bullet">
-                        <item>
-                            <term>tngn.build</term>
-                            <description>The Tingen Web Service build information.</description>
+                            <b>tngnWbsvEnvDataPath</b><br/>
+                            The path on the machine that hosts the Tingen Web Service, where all data<br/>
+                            required by the Tingen Web Service will be stored. This is per-environment,<br/>
+                            and the first part of this path is hardcoded as <c>C:\Tingen_Data\</c>, so<br/>
+                            the directory must exist on the hosts machine.
                         </item>
                         <item>
-                            <term>tngn.hostdatapath</term>
-                            <description>The path on the host where the Tingen Web Service will store/retrieve data.</description>
-                        </item>
-                        <item>
-                            <term>tngn.systemcode</term>
-                            <description>The Avatar System Code that the Tingen Web Service will interface with.</description>
+                            <b>tngnWbsvMode</b><br/>
+                            The Avatar environment that the Tingen Web Service will interface with.<br/>
+                            This value is stored in the <c>.\AppData\Runtime\TngnWbsv.Env</c> file,<br/>
+                            and must be a valid Avatar environment.<br/>
+                            <i>If this file does not exist, the Tingen Web Service will not start.</i><br/>
                         </item>
                     </list>
                 </para>
                 <para>
-                    The Tingen Web Service requires the following files to be present in the <c>%DataPath%\%SystemCode%\Congfig\Runtime</c> directory:
-                    <list type="bullet">
-                        <item>
-                            <term>tngn.mode</term>
-                            <description>The Tingen Web Service mode.</description>
-                        </item>
-                    </list>
+                    In addition to the above, this method also sets the Tingen Web Service <c>build</c> number,<br/>
+                    which is in <c>YYMMDD</c> format. This value must be updated whenever the Tingen Web Service<br/>
+                    is deployed to the host machine.
                 </para>
             </remarks>
-        </cat_RequiredFiles>
+        </New>
 
-        <!-- cat_ValidSystemCodes() -->
-        <cat_ValidSystemCodes>
+        <!-- TngnWbsvRuntimeSettings.GetTngnWbsvDetailFromFile() -->
+        <GetTngnWbsvDetailFromFile>
             <remarks>
                 <para>
-                    The Tingen Web Service will only interface with the following Avatar System Codes:
-                    <list type="bullet">
-                        <item>
-                            <term>LIVE</term>
-                            <description>The Avatar production environment</description>
-                        </item>
-                        <item>
-                            <term>UAT</term>
-                            <description>The Avatar testing environment</description>
-                        </item>
-                    </list>
+                    Gets the content of a file, and validates it.<br/>
+                    If the content is valid, it is returned as a string.<br/>
+                    If the content is not valid, we exit the Tingen Web Service.<br/>
                 </para>
             </remarks>
-        </cat_ValidSystemCodes>
-
-        <!-- cat_ValidTngnModes()-->
-        <cat_ValidTngnModes>
-            <remarks>
-                <para>
-                    The Tingen Web Service can have one of the following modes:
-                    <list type="bullet">
-                        <item>
-                            <term>DISABLED</term>
-                            <description>The Tingen Web Service does not do any work.</description>
-                        </item>
-                        <item>
-                            <term>ENABLED</term>
-                            <description>The Tingen Web Service functions normally.</description>
-                        </item>
-                        <item>
-                            <term>PASSTHROUGH</term>
-                            <description>The Tingen Web Service writes log files, but does not make any modifications to data.</description>
-                        </item>
-                    </list>
-                </para>
-            </remarks>
-        </cat_ValidTngnModes>
-
-    </Class>
-
-    <!-- 
-    =======
-    [CLASS] Spin.cs
-    =======
-    XML Documentation for the following:
-        * Spin.cs
-    -->
-    <Class name="Spin">
-
-        <!-- Class description -->
-        <ClassDescription>
-            <remarks>
-                <para>
-                    This method contains two methods that startup/shutdown the Tingen Web Service:
-                    <list type="bullet">
-                        <item>
-                            <see cref="Up(TngnSession, string, OptionObject2015, string)"/>
-                        </item>
-                        <item>
-                            <see cref="Down()"/>
-                        </item>
-                    </list>
-                </para>
-                <para>
-                    This class doesn't do much actual work, and should remain fairly static. For the<br/>
-                    most part, it just hands information to  <see href="https://github.com/spectrum-health-systems/Outpost31">Outpost31</see>, where the heavy lifting is done.<br/>
-                </para>
-            </remarks>
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </ClassDescription>
-
-        <!-- Up() -->
-        <Up>
-            <remarks>
-                test
-            </remarks>
-        </Up>
-
-        <!-- Down() -->
-        <Down>
-            <remarks>
-                test2
-            </remarks>
-        </Down>
+        </GetTngnWbsvDetailFromFile>
 
     </Class>
 

@@ -18,7 +18,6 @@ namespace Outpost31.Core.Logger
         /// <remarks>Why this is important, and why it is what it is.</remarks>
         //public static string PrimevalLogPath { get; set; } = @"C:\TingenData\Primeval";
 
-        /* [DN01] */
         /// <summary>Creates a Primeval log.</summary>
         /// <param name="assemblyName">The executing assembly name.</param>
         /// <param name="message">The log message</param>

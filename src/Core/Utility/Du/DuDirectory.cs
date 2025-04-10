@@ -4,14 +4,18 @@
 // ██║  ██║██║   ██║
 // ██████╔╝╚██████╔╝
 // ╚═════╝  ╚═════╝
-// Du.Json.cs
-
-// u250410_code
-// u250410_documentation
+// Du.Directory.cs
 
 namespace Outpost31.Core.Utility.Du
 {
-    class DuJson
+    public class DuDirectory
     {
+        public static void ConfirmExists(string path)
+        {
+            if (!System.IO.Directory.Exists(path))
+            {
+                System.IO.Directory.CreateDirectory(path);
+            }
+        }
     }
 }

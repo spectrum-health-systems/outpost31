@@ -1,40 +1,59 @@
-﻿ <!-- u250404 -->
+﻿ <!-- u250410 -->
 
 <!-- 
 ===========
 [NAMESPACE] Outpost31.Core.Session
 ===========
-XML Documentation for the following classes:
-    * Core.Session.TngnSession.cs
+
 -->
 
 <Core.Session>
 
     <!-- 
     =======
-    [CLASS] TngnSession.cs
+    [CLASS] TngnWbsvSession.cs
     =======
-    XML Documentation for the following:
-        * TngnSession.cs
-        * TngnSession.Catalog.cs
     -->
-    <Class name="TngnSession">
+    <Class name="TngnWbsvSession">
 
         <!-- Class description -->
         <ClassDescription>
             <remarks>
-                Additional information about the TgngSession class TBD.
+                <para>
+                    The TngnWbsvSession class is used to create and initialize a <c>TngnWbsvSession</c> object, which<br/>
+                    contains all of the information the Tingen Web Service needs to process a request.
+                </para>
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </ClassDescription>
 
-        <!-- TngnSesion.New() -->
-        <New>
+        <!-- TngnWbsvSession.New() -->
+        <TngnWbsvSession.New>
             <remarks>
-                Additional information about the TgngSession.New() method TBD.
+                <para>
+                    The TngnWbsvSession object contains:
+                    <list type="bullet">
+                        <item>
+                            <term>The TngnWbsvConfig object</term>
+                            <description>All runtime and external configuration information</description>
+                        </item>
+                        <item>
+                            <term>OptionObjects</term>
+                            <description>All necessary OptionObjects</description>
+                        </item>
+                        <item>
+                            <term>The Scriptlink Script Parameter</term>
+                            <description>The Script Parameter sent from Avatar that contains the request</description>
+                        </item>
+                        <item>
+                            <term>An Avatar System Code</term>
+                            <description>The Avatar System Code that the Tingen Web Service will interface with</description>
+                        </item>
+                    </list>
+                </para>
             </remarks>
-        </New>
-        
-    </Class>
+        </TngnWbsvSession.New>    
+    
+</Class>
 
 </Core.Session>
