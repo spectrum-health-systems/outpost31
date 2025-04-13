@@ -59,6 +59,8 @@
     <Compile Include="Core\Utility\Du\DuJson.cs" />
     <Compile Include="Core\Service\Spin.cs" />
     <Compile Include="Module\Access\FormAccess.cs" />
+    <Compile Include="Module\Prototype\DocSysCode.cs" />
+    <Compile Include="Module\Prototype\Run.cs" />
     <Compile Include="WelcomeToOutpost31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
