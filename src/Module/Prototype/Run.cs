@@ -3,27 +3,25 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                          Core.Prototype.Run.cs
 
-// u250412_code
-// u250412_documentation
+// u250414_code
+// u250414_documentation
 
 using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Module.Prototype
 {
+    /// <summary>Run things.</summary>
     public class Run
     {
+        /// <summary>Code</summary>
+        /// <param name="sentOptObj"></param>
+        /// <param name="sentSlnkScriptParam"></param>
+        /// <returns></returns>
         public static OptionObject2015 Code(OptionObject2015 sentOptObj, string sentSlnkScriptParam)
         {
-            if (sentSlnkScriptParam == "_pDocSysCodeDenyAccessToForm")
-            {
-                return DocSysCode.DenyAccessToForm(sentOptObj, sentSlnkScriptParam);
-            }
-            else
-            {
-                return sentOptObj.ToReturnOptionObject(0, "");
-            }
+            return sentSlnkScriptParam == "_pDocSysCodeDenyAccessToForm"
+                ? DocSysCode.DenyAccessToForm(sentOptObj, sentSlnkScriptParam)
+                : sentOptObj;
         }
     }
-
-
 }

@@ -386,6 +386,13 @@
             <summary>Spin down the Tingen Web Service.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/Down/*" />
         </member>
+        <member name="M:Outpost31.Module.Prototype.DocSysCode.DenyAccessToForm(ScriptLinkStandard.Objects.OptionObject2015,System.String)">
+            <summary>Deny access to the form if the System Code is "DOC".</summary>
+            <param name="sentOptObj">The OptionObject sent from Avatar.</param>
+            <param name="sentSlnkScriptParam">The Script Parameter sent from Avatar.</param>
+            <remarks>Script Parameter: "_pDocSysCodeDenyAccessToForm".</remarks>
+            <returns>An OptionObject.</returns>
+        </member>
         <member name="T:Outpost31.WelcomeToOutpost31">
             <summary>A place for Outpost31 details and stuff.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/WelcomeToOutpost31.xml" path="WelcomeToOutpost31/Class[@name=&quot;ClassDescription&quot;]/*" />

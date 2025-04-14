@@ -45,7 +45,6 @@ namespace Outpost31.Core.Logger
            //Framework.Maintenance.RefreshDirectory(PrimevalLogPath);
         }
 
-        /* [DN01] */
         /// <summary>Basic log information</summary>
         /// <param name="assemblyName">The executing assembly name.</param>
         /// <param name="callPath">The path of the calling class.</param>
@@ -54,7 +53,7 @@ namespace Outpost31.Core.Logger
         /// <param name="message">The log message</param>
         /// <remarks>Creates standard log content string.</remarks>
         /// <returns>The basic log content.</returns>
-        public static string cat_PrimevalHeader(string assemblyName, string calledClass, string calledMethod, string line, string message)
+        private static string cat_PrimevalHeader(string assemblyName, string calledClass, string calledMethod, string line, string message)
         {
             return $"[ASSEMBLY] {assemblyName}{Environment.NewLine}" +
                    $"   [CLASS] {calledClass}{Environment.NewLine}" +

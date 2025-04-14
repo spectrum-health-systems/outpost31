@@ -45,6 +45,7 @@
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
     <Compile Include="Core\Framework\Requirements.Catalog.cs" />
     <Compile Include="Core\Framework\Requirements.cs" />
+    <Compile Include="Core\Logger\Defcon1Log.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Logger\PrimevalLog.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
