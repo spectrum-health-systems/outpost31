@@ -23,7 +23,7 @@ namespace Outpost31.Module.Prototype
         {
             var msg = $"Access Denied{Environment.NewLine}" +
                       Environment.NewLine +
-                     "Please access this data via the Console Widget Viewer.";
+                     "Please access this data via the Console Widget Viewer!";
 
             if (sentOptObj.SystemCode == "DOC")
             {
