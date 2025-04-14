@@ -16,7 +16,7 @@ namespace Outpost31.Module.Prototype
         {
             if (sentSlnkScriptParam == "_pDocSysCodeDenyAccessToForm")
             {
-                return DocSysCode.DenyAccessToForm(sentOptObj);
+                return DocSysCode.DenyAccessToForm(sentOptObj, sentSlnkScriptParam);
             }
             else
             {

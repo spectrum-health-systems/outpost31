@@ -85,5 +85,8 @@
     <Content Include="AppData\XmlDoc\WelcomeToOutpost31.xml" />
     <Content Include="AppData\XmlDoc\Core.Configuration.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Module\Prototype\README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
