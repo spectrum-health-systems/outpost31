@@ -4,15 +4,6 @@
         <name>Outpost31</name>
     </assembly>
     <members>
-        <member name="P:Outpost31.Core.Avatar.ScriptParameter.SentScriptParam">
-            <summary>The original Script Parameter sent from Avatar.</summary>
-        </member>
-        <member name="M:Outpost31.Core.Avatar.ScriptParameter.Build(System.String)">
-            <summary>Builds a new AvatarData data structure.</summary>
-            <param name="sentOptObj">The SentOptionObject data structure sent from Avatar.</param>
-            <param name="sentScriptParam">The SentScriptParameter sent from Avatar.</param>
-            <returns>All of the data/information Tingen needs in order to do work.</returns>
-        </member>
         <member name="T:Outpost31.Core.Avatar.OptionObjects">
             <summary>The data structure that is used to pass information between Avatar and the Tingen Web Service.</summary>
             <remarks>
@@ -153,6 +144,33 @@
                     Please see the <see cref="T:Outpost31.Core.Avatar.OptionObjects" /> class documentation for more information about Error Codes.<br />
                 </para>
             </remarks>
+        </member>
+        <member name="T:Outpost31.Core.Logger.DebugglerLog">
+            <summary>What is a Debuggler log?</summary>
+        </member>
+        <member name="M:Outpost31.Core.Logger.DebugglerLog.Create(System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>Creates a Debuggler log.</summary>
+            <param name="assemblyName">The executing assembly name.</param>
+            <param name="message">The log message</param>
+            <param name="fromClass">The path of the calling class.</param>
+            <param name="fromMethod">The path of the calling method</param>
+            <param name="line">The line of code</param>
+        </member>
+        <member name="M:Outpost31.Core.Logger.DebugglerLog.DebugglerHeader(System.String,System.String,System.String,System.String,System.String)">
+            <summary>Basic log information</summary>
+            <param name="asmName">The executing assembly name.</param>
+            <param name="callPath">The path of the calling class.</param>
+            <param name="callMember">The path of the calling method</param>
+            <param name="callLine">The line of code</param>
+            <param name="message">The log message</param>
+            <remarks>Creates standard log content string.</remarks>
+            <returns>The basic log content.</returns>
+        </member>
+        <member name="T:Outpost31.Core.Logger.DefconLog">
+            <summary>If you're writing a Defcon file, you're probably having a bad time.</summary>
+        </member>
+        <member name="T:Outpost31.Core.Logger.LogEvent">
+            <summary>Methods for creating different types of logs.</summary>
         </member>
         <member name="M:Outpost31.Core.Logger.PrimevalLog.Create(System.String,System.String,System.String,System.String,System.String,System.Int32)">
             <summary>Creates a Primeval log.</summary>
@@ -386,12 +404,24 @@
             <summary>Spin down the Tingen Web Service.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/Down/*" />
         </member>
+        <member name="M:Outpost31.Module.FormAccess.Deny.DeptOfCx">
+            <summary>Deny access to the form if the System Code is "DOC".</summary>
+        </member>
         <member name="M:Outpost31.Module.Prototype.DocSysCode.DenyAccessToForm(ScriptLinkStandard.Objects.OptionObject2015,System.String)">
             <summary>Deny access to the form if the System Code is "DOC".</summary>
             <param name="sentOptObj">The OptionObject sent from Avatar.</param>
             <param name="sentSlnkScriptParam">The Script Parameter sent from Avatar.</param>
             <remarks>Script Parameter: "_pDocSysCodeDenyAccessToForm".</remarks>
             <returns>An OptionObject.</returns>
+        </member>
+        <member name="T:Outpost31.Module.Prototype.Run">
+            <summary>Run things.</summary>
+        </member>
+        <member name="M:Outpost31.Module.Prototype.Run.Code(ScriptLinkStandard.Objects.OptionObject2015,System.String)">
+            <summary>Code</summary>
+            <param name="sentOptObj"></param>
+            <param name="sentSlnkScriptParam"></param>
+            <returns></returns>
         </member>
         <member name="T:Outpost31.WelcomeToOutpost31">
             <summary>A place for Outpost31 details and stuff.</summary>

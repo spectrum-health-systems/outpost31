@@ -1,24 +1,18 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                 Core.Avatar.ScriptParameter.cs
+//                                      Module.FormAccess.Deny.cs
 
-// u250410_code
-// u250410_documentation
+// u250415_code
+// u250415_documentation
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Outpost31.Core.Avatar
+namespace Outpost31.Module.FormAccess
 {
-    public class ScriptParameter
+    public class Deny
     {
-        public static void Parse(string sentScriptParam)
+        /// <summary>Deny access to the form if the System Code is "DOC".</summary>
+        public static void DeptOfCx()
         {
-            /* Trace Logs won't work here. */
-
-            var test = sentScriptParam.Split(new[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
         }
     }
 }

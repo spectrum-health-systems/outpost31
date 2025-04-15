@@ -1,10 +1,10 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                   Core.Prototype.DocSysCode.cs
+//                                 Module.Prototype.DocSysCode.cs
 
-// u250414_code
-// u250414_documentation
+// u250415_code
+// u250415_documentation
 
 /* #DEVNOTE#
  * This is prototype code!
@@ -42,7 +42,6 @@ namespace Outpost31.Module.Prototype
                    Environment.NewLine +
                    "Please access this data via the Console Widget Viewer.";
         }
-
         private static string LogContents (OptionObject2015 sentOptObj, string sentSlnkScriptParam)
         {
             return "EntityID: " + sentOptObj.EntityID + Environment.NewLine +
