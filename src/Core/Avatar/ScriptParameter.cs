@@ -14,6 +14,10 @@ namespace Outpost31.Core.Avatar
 {
     public class ScriptParameter
     {
+        /// <summary>
+        /// Parse the script parameter.
+        /// </summary>
+        /// <param name="sentScriptParam">The original Script Parameter sent from Avatar.</param>
         public static void Parse(string sentScriptParam)
         {
             /* Trace Logs won't work here. */

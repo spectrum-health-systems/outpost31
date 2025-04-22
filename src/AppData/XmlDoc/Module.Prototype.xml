@@ -1,0 +1,81 @@
+﻿ <!-- u250421 -->
+
+<!--
+===========
+[NAMESPACE] Outpost31.Module.Prototype
+===========
+
+-->
+
+<Module.Prototype>
+
+    <!--
+    =======
+    [CLASS] Run.cs
+    =======
+    -->
+    <Class name="Run">
+
+        <!-- Class description -->
+        <ClassDescription>
+            <remarks>
+                <note title="About this class">
+                    <i>Prototype requests</i>, which start with <c>_p</c>, are used to test new functionality.<br/>
+                    <br/>
+                    Once the functionality is tested and ready for production, it is moved to the proper Core/Module class, and is depreciated here.<br/>
+                    <br/>
+                    In general, prototype code is not removed.<br/>
+                </note>
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </ClassDescription>
+
+        <!-- Code() -->
+        <Code>
+            <remarks>
+                The current list of prototype requests:
+                <list type="table">
+                    <listheader>
+                        <term>Prototype request</term>
+                        <description>Description</description>
+                    </listheader>
+                    <item>
+                        <term>_pDocSysCodeDenyAccessToForm</term>
+                        <description>Deny access to speicific forms for the DOC System Code.</description>
+                    </item>
+                </list>
+            </remarks>
+        </Code>
+
+    </Class>
+
+    <!--
+    =======
+    [CLASS] DocSysCode.cs
+    =======
+    -->
+    <Class name="DocSysCode">
+
+        <!-- Class description -->
+        <ClassDescription>
+            <remarks>
+                This class determines where prototype requests should be sent.<br/>
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </ClassDescription>
+
+        <!-- Code() -->
+        <Code>
+            <remarks>
+                <note title="About this method">
+                    <i>Prototype requests</i>, which start with <c>_p</c>, are used to test new functionality.<br/>
+                    <br/>
+                    Once   the functionality is tested and ready for production, it is moved to the proper Core/Module class, and is depreciated here.<br/>
+                    <br/>
+                    In general, prototype code is not removed.<br/>
+                </note>
+            </remarks>
+        </Code>
+
+    </Class>
+</Module.Prototype>

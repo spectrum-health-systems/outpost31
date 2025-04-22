@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
+    <Content Include="AppData\XmlDoc\Module.Prototype.xml" />
     <Content Include="AppData\XmlDoc\_Core.Catalog.Path.xml" />
     <Content Include="AppData\XmlDoc\Core.Session.xml" />
     <Content Include="AppData\XmlDoc\Core.Runtime.xml" />
