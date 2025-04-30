@@ -32,8 +32,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\Microsoft.Bcl.AsyncInterfaces.9.0.4\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.IO.Pipelines.9.0.4\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.Text.Encodings.Web.9.0.4\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.Text.Json.9.0.4\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\Tingen-WebService\src\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,21 +76,20 @@
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
     <Compile Include="Core\Framework\Requirements.Catalog.cs" />
     <Compile Include="Core\Framework\Requirements.cs" />
-    <Compile Include="Core\Logger\DebugglerLog.cs" />
-    <Compile Include="Core\Logger\DefconLog.cs" />
+    <Compile Include="Core\Logger\LogComponent.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
-    <Compile Include="Core\Logger\PrimevalLog.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
     <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
-    <Compile Include="Core\Configuration\TngnWbsvConfiguration.Properties.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
     <Compile Include="Core\Session\TngnWbsvSession.cs" />
+    <Compile Include="Core\Utility\CreateTemplate.cs" />
     <Compile Include="Core\Utility\DataExport.cs" />
     <Compile Include="Core\Utility\DataImport.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
     <Compile Include="Core\Service\Spin.cs" />
+    <Compile Include="Module\Admin\Status.cs" />
     <Compile Include="Module\FormAccess\Restrict.cs" />
     <Compile Include="Module\FormAccess\Deny.cs" />
     <Compile Include="Module\Prototype\DocSysCode.cs" />
@@ -69,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\Runtime\" />
-    <Folder Include="Module\Admin\" />
+    <Folder Include="Core\Template\" />
     <Folder Include="Module\FormComponent\" />
     <Folder Include="Module\OpenIncident\" />
   </ItemGroup>
@@ -89,7 +119,9 @@
     <Content Include="AppData\XmlDoc\Core.Configuration.xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Module\Prototype\README.md" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

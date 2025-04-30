@@ -3,45 +3,56 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                        Core.Logger.LogEvent.cs
 
-// u250414_code
-// u250414_documentation
+// u250430_code
+// u250430_documentation
 
-using System.Linq;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Logger
 {
     /// <summary>Methods for creating different types of logs.</summary>
     public static class LogEvent
     {
-        public static void Debuggler(string filePath, string asmName, string message = "Tingen Web Service Debuggler Log", [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "", [CallerLineNumber] int callerLineNumber = 0)
+        public static void Critical(string tngnWbsvEnvironment, string message = "Critical")
+        {
+            /* Trace/Defcon1 Logs won't work here. */
+            Dictionary<string, string> logComponent = LogComponent.CreateBasicLog("Critical", tngnWbsvEnvironment, message);
+
+            WriteLogToFile(logComponent);
+        }
+
+        public static void Debuggler(string tngnWbsvEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
+        {
+            /* Trace/Debuggler Logs won't work here. */
+
+            Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Debuggler", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
+
+            WriteLogToFile(logComponent);
+        }
+
+        public static void Primeval(string tngnWbsvEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
         {
             /* Trace/Primeval Logs won't work here. */
 
-            var callerClassName = GetCallerClassName(callerFilePath);
+            Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Primeval", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
 
-            DebugglerLog.Create(filePath, asmName, message, callerClassName, callerMemberName, callerLineNumber);
+            WriteLogToFile(logComponent);
         }
 
-        public static void Defcon1(string pathPrefix, string message = "Tingen Web Service Defcon 1 Log")
+        public static void Trace(string tngnWbsvEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
         {
-            /* Trace/Primeval Logs won't work here. */
+            /* Trace/Debuggler Logs won't work here. */
 
-            DefconLog.CreateDefcon1(pathPrefix, message);
+            Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Trace", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
+
+            WriteLogToFile(logComponent);
         }
 
-        public static void Primeval(string filePath, string assemblyName, string message = "Tingen Web Service Primeval Log", [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "", [CallerLineNumber] int callerLineNumber = 0)
+        private static void WriteLogToFile(Dictionary<string, string> logComponent)
         {
-            /* Trace/Primeval Logs won't work here. */
-
-            var callerClassName = GetCallerClassName(callerFilePath);
-
-            PrimevalLog.Create(filePath, assemblyName, message, callerClassName, callerMemberName, callerLineNumber);
-        }
-
-        private static string GetCallerClassName(string callerFilePath)
-        {
-            return callerFilePath.Split('\\').Last();
+            DuFile.WriteLocal(logComponent["FullPath"], logComponent["LogContent"]);
         }
     }
 }

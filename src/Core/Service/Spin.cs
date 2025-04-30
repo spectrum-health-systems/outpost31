@@ -3,8 +3,8 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                           Core.Service.Spin.cs
 
-// u250409_code
-// u250409_documentation
+// u250430_code
+// u250430_documentation
 
 using System;
 using System.Reflection;
@@ -27,6 +27,10 @@ namespace Outpost31.Core.Service
         /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="Spin"]/Up/*'/>
         public static void Up(TngnWbsvSession tngnSession)
         {
+            Module.Admin.Status.Current(tngnSession);
+            
+
+
             //Utility.DataExport.ConfigSummary(TngnConfig.ConfigSummary(tngnSession.TngnConfig), tngnSession.TngnConfig.TngnDataPath);
         }
 

@@ -6,9 +6,8 @@
 // ╚═════╝  ╚═════╝
 // Du.File.cs                                          
 
-// u250410_code
-// u250410_documentation
-
+// u250430_code
+// u250430_documentation
 using System.Collections.Generic;
 
 namespace Outpost31.Core.Utility.Du
@@ -73,5 +72,20 @@ namespace Outpost31.Core.Utility.Du
         {
             System.IO.File.WriteAllText(filePath, content);
         }
+
+        public static void WriteLocal(string filePath, string content, bool overwrite)
+        {
+            if (overwrite)
+            {
+                if (System.IO.File.Exists(filePath))
+                {
+                    // Delete the file if it exists.
+                    System.IO.File.Delete(filePath);
+                }
+            }
+
+            System.IO.File.WriteAllText(filePath, content);
+        }
+
     }
 }

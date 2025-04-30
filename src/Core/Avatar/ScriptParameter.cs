@@ -3,12 +3,10 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                 Core.Avatar.ScriptParameter.cs
 
-// u250410_code
-// u250410_documentation
+// u250430_code
+// u250430_documentation
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Outpost31.Core.Avatar
 {
@@ -26,3 +24,5 @@ namespace Outpost31.Core.Avatar
         }
     }
 }
+
+//Module.Admin.

@@ -3,10 +3,11 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                         Core.Avatar.Session.cs
 
-// u250410_code
-// u250410_documentation
+// u250430_code
+// u250430_documentation
 
 using Outpost31.Core.Configuration;
+using Outpost31.Core.Runtime;
 using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Session
@@ -15,6 +16,8 @@ namespace Outpost31.Core.Session
     /// <include file='AppData/XmlDoc/Core.Session.xml' path='Core.Session/Class[@name="TngnWbsvSession"]/ClassDescription/*'/>
     public class TngnWbsvSession
     {
+        public TngnWbsvRuntimeSettings TngnWbsvRuntimeSettings { get; set; }
+
         /// <summary>The Tingen Web Service configuration object.</summary>
         /// <remarks>The TngnWbsvConfig object contains all runtime and external configuration information.</remarks>
         public TngnWbsvConfiguration TngnWbsvConfig { get; set; }
@@ -40,21 +43,19 @@ namespace Outpost31.Core.Session
         /// <param name="tngnWbsvVersion">The current version of the Tingen Web Service.</param>
         /// <returns>A new Tingen Web Service session object.</returns>
         /// <include file='AppData/XmlDoc/Core.Session.xml' path='Core.Session/Class[@name="TngnWbsvSession"]/TngnWbsvSession.New/*'/>
-        public static TngnWbsvSession New(OptionObject2015 sentOptObj, string sentSlnkScriptParam, string tngnWbsvVersion)
+        public static TngnWbsvSession New(OptionObject2015 sentOptObj, string sentSlnkScriptParam, string tngnWbsvVersion, string tngnWbsvEnvironment)
         {
-            //-DEPRECIATED-
-            //TngnWbsvConfiguration tngnWbsvConfig = TngnWbsvConfiguration.New(tngnWbsvVersion);
-
             //#DEVNOTE# We need to validate that these values are valid.
 
             return new TngnWbsvSession
             {
-                TngnWbsvConfig  = TngnWbsvConfiguration.New(tngnWbsvVersion),
-                SentOptObj      = sentOptObj,
-                WorkOptObj      = sentOptObj.Clone(),
-                ReturnOptObj    = null,
-                SlnkScriptParam = sentSlnkScriptParam,
-                TngnWbsvSysCode = sentOptObj.SystemCode
+                TngnWbsvRuntimeSettings = TngnWbsvRuntimeSettings.New(tngnWbsvVersion, tngnWbsvEnvironment),
+                TngnWbsvConfig          = TngnWbsvConfiguration.New(),
+                SentOptObj              = sentOptObj,
+                WorkOptObj              = sentOptObj.Clone(),
+                ReturnOptObj            = null,
+                SlnkScriptParam         = sentSlnkScriptParam,
+                TngnWbsvSysCode         = sentOptObj.SystemCode
             };
         }
     }

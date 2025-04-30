@@ -136,55 +136,26 @@
                 </para>
             </remarks>
         </member>
-        <member name="T:Outpost31.Core.Logger.DebugglerLog">
-            <summary>What is a Debuggler log?</summary>
-        </member>
-        <member name="M:Outpost31.Core.Logger.DebugglerLog.Create(System.String,System.String,System.String,System.String,System.String,System.Int32)">
-            <summary>Creates a Debuggler log.</summary>
-            <param name="assemblyName">The executing assembly name.</param>
-            <param name="message">The log message</param>
-            <param name="fromClass">The path of the calling class.</param>
-            <param name="fromMethod">The path of the calling method</param>
-            <param name="line">The line of code</param>
-        </member>
-        <member name="M:Outpost31.Core.Logger.DebugglerLog.DebugglerHeader(System.String,System.String,System.String,System.String,System.String)">
+        <member name="M:Outpost31.Core.Logger.LogComponent.BuildBasicHeader(System.String)">
             <summary>Basic log information</summary>
-            <param name="asmName">The executing assembly name.</param>
-            <param name="callPath">The path of the calling class.</param>
-            <param name="callMember">The path of the calling method</param>
-            <param name="callLine">The line of code</param>
+            <param name="logType"></param>
             <param name="message">The log message</param>
             <remarks>Creates standard log content string.</remarks>
             <returns>The basic log content.</returns>
         </member>
-        <member name="T:Outpost31.Core.Logger.DefconLog">
-            <summary>If you're writing a Defcon file, you're probably having a bad time.</summary>
+        <member name="M:Outpost31.Core.Logger.LogComponent.BuildStandardHeader(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>Basic log information</summary>
+            <param name="logType"></param>
+            <param name="asmName">The executing assembly name.</param>
+            <param name="callingClass"></param>
+            <param name="callingMethod"></param>
+            <param name="methodLine"></param>
+            <param name="message">The log message</param>
+            <remarks>Creates standard log content string.</remarks>
+            <returns>The basic log content.</returns>
         </member>
         <member name="T:Outpost31.Core.Logger.LogEvent">
             <summary>Methods for creating different types of logs.</summary>
-        </member>
-        <member name="M:Outpost31.Core.Logger.PrimevalLog.Create(System.String,System.String,System.String,System.String,System.String,System.Int32)">
-            <summary>Creates a Primeval log.</summary>
-            <param name="assemblyName">The executing assembly name.</param>
-            <param name="message">The log message</param>
-            <param name="fromClass">The path of the calling class.</param>
-            <param name="fromMethod">The path of the calling method</param>
-            <param name="line">The line of code</param>
-            <!-- Failed to insert some or all of included XML --><include file="XmlDoc/Outpost31.Core.Logger.PrimevalLog_doc.xml" path="Outpost31.Core.Logger.PrimevalLog/Type[@name=&quot;Method&quot;]/Create/*" />
-        </member>
-        <member name="M:Outpost31.Core.Logger.PrimevalLog.DevelopmentCleanup">
-            <summary>Removes old Primeval logs.</summary>
-            <remarks>Not currently used.</remarks>
-        </member>
-        <member name="M:Outpost31.Core.Logger.PrimevalLog.cat_PrimevalHeader(System.String,System.String,System.String,System.String,System.String)">
-            <summary>Basic log information</summary>
-            <param name="assemblyName">The executing assembly name.</param>
-            <param name="callPath">The path of the calling class.</param>
-            <param name="callMember">The path of the calling method</param>
-            <param name="callLine">The line of code</param>
-            <param name="message">The log message</param>
-            <remarks>Creates standard log content string.</remarks>
-            <returns>The basic log content.</returns>
         </member>
         <member name="T:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings">
             <summary>Runtime settings for the Tingen Web Service.</summary>
@@ -200,7 +171,7 @@
         <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvBuild">
             <summary>The Tingen Web Service build number.</summary>
         </member>
-        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvEnv">
+        <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvEnvironment">
             <summary>The environment that the Tingen Web Service will interface with.</summary>
         </member>
         <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvMode">
@@ -218,7 +189,7 @@
         <member name="P:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.CurrentTime">
             <summary>The current time in HHMMSS format.</summary>
         </member>
-        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.New(System.String)">
+        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.New(System.String,System.String)">
             <summary>Creates a new instance of the RuntimeSettings class.</summary>
             <returns>An object containing the runtime settings for the Tingen Web Service.</returns>
             <remarks>
@@ -258,17 +229,16 @@
                 </para>
             </remarks>
         </member>
-        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.GetTngnWbsvDetailFromFile(System.String,System.Collections.Generic.List{System.String})">
+        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.GetTngnWbsvMode(System.String,System.Collections.Generic.List{System.String})">
             <summary>Get the contents of a file, and validate it.</summary>
             <param name="filePath">The file path.</param>
             <param name="validateAgainst">A list of values to validate against.</param>
             <returns>The valid contents of the file (or we exit the application).</returns>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;TngnWbsvRuntimeSettings&quot;]/TngnWbsvRuntimeSettings.New/*" />
         </member>
-        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.ValidTngnWbsvEnvironments">
-            <summary>Create a list of Avatar environments that the Tingen Web Service can interface with.</summary>
-            <returns>A list of Avatar environments that the Tingen Web Service can interface with.</returns>
-            <remarks>These are the only Avatar environments that have been tested with the Tingen Web Service</remarks>
+        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvRuntimeSettingsSummary(Outpost31.Core.Runtime.TngnWbsvRuntimeSettings,System.String)">
+            <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
+            <return>A summary of the Tingen Web Service configuration at runtime.</return>
         </member>
         <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.ValidTngnWbsvModes">
             <summary>Valid Tingen Web Service modes.</summary>
@@ -278,16 +248,13 @@
             <summary>Runtime setting logic for the Tingen Web Service.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;TngnWbsvConfiguration&quot;]/ClassDescription/*" />
         </member>
-        <member name="P:Outpost31.Core.Configuration.TngnWbsvConfiguration.tngnWbsvConfigSummary">
-            <summary>A summary of the runtime settings for exporting.</summary>
-        </member>
-        <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.New(System.String)">
+        <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.New">
             <summary>Load the runtime settings for the Tingen Web Service.</summary>
             <param name="tngnWbsvVersion">The Tingen Web Service version</param>
             <returns>Runtime settings for the Tingen Web Service.</returns>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;TngnWbsvConfiguration&quot;]/ClassDescription/*" />
         </member>
-        <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvConfigSummary(Outpost31.Core.Configuration.TngnWbsvConfiguration)">
+        <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.TngnWbsvConfigSummary(Outpost31.Core.Configuration.TngnWbsvConfiguration,System.String)">
             <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
             <return>A summary of the Tingen Web Service configuration at runtime.</return>
         </member>
@@ -319,7 +286,7 @@
         <member name="P:Outpost31.Core.Session.TngnWbsvSession.TngnWbsvSysCode">
             <summary>The Avatar System Code that this instance of the Tingen Web Service will interface with.</summary>
         </member>
-        <member name="M:Outpost31.Core.Session.TngnWbsvSession.New(ScriptLinkStandard.Objects.OptionObject2015,System.String,System.String)">
+        <member name="M:Outpost31.Core.Session.TngnWbsvSession.New(ScriptLinkStandard.Objects.OptionObject2015,System.String,System.String,System.String)">
             <summary>Creates and initializes a new TngnWbsvSession object</summary>
             <param name="sentOptObj">The OptionObject that is sent from Avatar.</param>
             <param name="sentSlnkScriptParam">The Script Parameter that is sent from Avatar.</param>
@@ -377,6 +344,47 @@
             </remarks>
             <returns>The verified content or status of the file.</returns>
         </member>
+        <member name="M:Outpost31.Core.Utility.Du.DuJson.ExportToLocalFile``1(``0,System.String,System.Boolean)">
+            <summary>Export JSON data to an external file.</summary>
+            <typeparam name="JsonObject">The JSON object type.</typeparam>
+            <param name="jsonObject">The JSON object.</param>
+            <param name="filePath">The export file path.</param>
+            <param name="formatJson">Determines if the JSON data is formatted.</param>
+            <remarks>
+                <para>
+                    <example>
+                        To export a nicely-formatted JSON object:
+                        <code>
+                            TheObject theObject = new TheObject();
+                            DuJson.ExportToLocalFile&lt;TheObject&gt;(theObject, "/Path/To/Export/File");
+                        </code>
+                    </example>
+                    <example>
+                        To export an unformatted JSON object:
+                        <code>
+                            TheObject theObject = new TheObject();
+                            DuJson.ExportToLocalFile&lt;TheObject&gt;(theObject, "/Path/To/Export/File", false);
+                        </code>
+                    </example>
+                </para>
+            </remarks>
+        </member>
+        <member name="M:Outpost31.Core.Utility.Du.DuJson.ImportFromLocalFile``1(System.String)">
+            <summary>Import JSON data from an external file. [250108]</summary>
+            <typeparam name="JsonObject">The JSON object type.</typeparam>
+            <param name="filePath">The import file path.</param>
+            <remarks>
+                <para>
+                    <example>
+                        To import a JSON object from a local file:
+                        <code>
+                            TheObject theObject = DuJson.ImportFromLocalFile&lt;TheObject&gt;("/Path/To/Import/File");
+                        </code>
+                    </example>
+                </para>
+            </remarks>
+            <returns>The contents of the file as a JSON object.</returns>
+        </member>
         <member name="T:Outpost31.Core.Service.Spin">
             <summary>Startup/shutdown logic for the Tingen Web Service.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/ClassDescription/*" />
@@ -398,23 +406,42 @@
         <member name="M:Outpost31.Module.FormAccess.Deny.DeptOfCx">
             <summary>Deny access to the form if the System Code is "DOC".</summary>
         </member>
-        <member name="M:Outpost31.Module.Prototype.DocSysCode.DenyAccessToForm(ScriptLinkStandard.Objects.OptionObject2015,System.String)">
-            <summary>Deny access to the form if the System Code is "DOC".</summary>
-            <param name="sentOptObj">The OptionObject sent from Avatar.</param>
-            <param name="sentSlnkScriptParam">The Script Parameter sent from Avatar.</param>
-            <remarks>Script Parameter: "_pDocSysCodeDenyAccessToForm".</remarks>
-            <returns>An OptionObject.</returns>
-        </member>
-        <member name="T:Outpost31.Module.Prototype.Run">
-            <summary>Run prototype requests.</summary>
+        <member name="T:Outpost31.Module.Prototype.DocSysCode">
+            <summary>Prototype code for the DOC System Code.</summary>
             <remarks>
                 <note title="About this class">
-                    <i>Prototype requests</i>, which start with <c>_p</c>, are used to test new functionality.<br />
-                    <br />
-                    Once the functionality is tested and ready for production, it is moved to the proper Core/Module class, and is depreciated here.<br />
-                    <br />
-                    In general, prototype code is not removed.<br />
+                    Any prototype code related to the DOC System Code should be located here.<br />
                 </note>
+                <note type="warning" title="About this class">
+                    Please keep in mind that code in this class:
+                    <list type="bullet">
+                        <item>Should not be used in production</item>
+                        <item>Is most likely super ugly</item>
+                        <item>Probably doesn't follow best practices</item>
+                    </list>
+                </note>
+            </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </member>
+        <member name="M:Outpost31.Module.Prototype.DocSysCode.DenyAccessToForm(ScriptLinkStandard.Objects.OptionObject2015,System.String)">
+            <summary>Deny access to the form for anyone using the DOC System Code.</summary>
+            <param name="sentOptObj">The OptionObject sent from Avatar.</param>
+            <param name="sentSlnkScriptParam">The Script Parameter sent from Avatar.</param>
+            <returns>An OptionObject.</returns>
+            <remarks>
+                <note title="Snapple Fact #1416: Mangoes can get sunburned." />
+                <para>
+                    To deny access to a form for a specific DOC System Code, set the <c>Form Load</c> event <c>Script Parameter</c> to <c>_pDocSysCodeDenyAccessToForm</c>
+                </para>
+            </remarks>
+        </member>
+        <member name="M:Outpost31.Module.Prototype.DocSysCode.MsgAccessDenied">
+            <summary>The Access Denied error code message.</summary>
+            <returns>The Access Denied error code message.</returns>
+        </member>
+        <member name="T:Outpost31.Module.Prototype.Run">
+            <summary>Handles prototype requests.</summary>
+            <remarks>
+                <note title="Snapple Fact #1522: Some cats are allergic to humans." />
             </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </member>
         <member name="M:Outpost31.Module.Prototype.Run.Code(ScriptLinkStandard.Objects.OptionObject2015,System.String)">
@@ -423,6 +450,10 @@
             <param name="sentSlnkScriptParam">The original Script Parameter sent from Avatar.</param>
             <returns>A finalized OptionObject.</returns>
             <remarks>
+                <note title="About this method">
+                    When the Tingen Web Service receives a prototype request,<br />
+                    it needs to be sent somewhere specific.
+                </note>
                 The current list of prototype requests:
                 <list type="table">
                     <listheader>
@@ -431,7 +462,7 @@
                     </listheader>
                     <item>
                         <term>_pDocSysCodeDenyAccessToForm</term>
-                        <description>Deny access to speicific forms for the DOC System Code.</description>
+                        <description>Deny access to specific forms for the DOC System Code.</description>
                     </item>
                 </list>
             </remarks>
@@ -442,17 +473,14 @@
                 <note title="About this class">
                     Outpost31 is the back-end logic for the Tingen Web Service.<br />
                     <br />
-                    This class doesn't do any work, and should remain fairly static.<br />
-                    For the most part, it just hands information to <see href="https://github.com/spectrum-health-systems/Outpost31">Outpost31</see>,<br />
-                    where the heavy lifting is done.<br />
-                    <br />
+                    This class doesn't doesn't contain any code, it's just a placeholder<br />
+                    for information about Outpost31.
                 </note>
                 <para>
                     While you're here, take a look at this stuff:
                     <list type="bullet">
-                        <item>
-                            The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen Documentation</see>
-                        </item>
+                        <item> The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen Documentation</see></item>
+                        <item>The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation/tree/main/docs">Tingen Web Service API Documentation</see></item>
                     </list>
                 </para>
             </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>

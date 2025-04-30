@@ -1,4 +1,4 @@
-﻿ <!-- u250421 -->
+﻿ <!-- u250430 -->
 
 <!--
 ===========
@@ -19,13 +19,7 @@
         <!-- Class description -->
         <ClassDescription>
             <remarks>
-                <note title="About this class">
-                    <i>Prototype requests</i>, which start with <c>_p</c>, are used to test new functionality.<br/>
-                    <br/>
-                    Once the functionality is tested and ready for production, it is moved to the proper Core/Module class, and is depreciated here.<br/>
-                    <br/>
-                    In general, prototype code is not removed.<br/>
-                </note>
+                <note title="Snapple Fact #1522: Some cats are allergic to humans."></note>
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </ClassDescription>
@@ -33,6 +27,10 @@
         <!-- Code() -->
         <Code>
             <remarks>
+                <note title="About this method">
+                    When the Tingen Web Service receives a prototype request,<br/>
+                    it needs to be sent somewhere specific.
+                </note>
                 The current list of prototype requests:
                 <list type="table">
                     <listheader>
@@ -41,7 +39,7 @@
                     </listheader>
                     <item>
                         <term>_pDocSysCodeDenyAccessToForm</term>
-                        <description>Deny access to speicific forms for the DOC System Code.</description>
+                        <description>Deny access to specific forms for the DOC System Code.</description>
                     </item>
                 </list>
             </remarks>
@@ -59,23 +57,38 @@
         <!-- Class description -->
         <ClassDescription>
             <remarks>
-                This class determines where prototype requests should be sent.<br/>
+                <note title="About this class">
+                    Any prototype code related to the DOC System Code should be located here.<br/>
+                </note>
+                <note type="warning" title="About this class">
+                    Please keep in mind that code in this class:
+                    <list type="bullet">
+                        <item>Should not be used in production</item>
+                        <item>Is most likely super ugly</item>
+                        <item>Probably doesn't follow best practices</item>
+                    </list>
+                </note>
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </ClassDescription>
 
-        <!-- Code() -->
-        <Code>
+        <!-- DenyAccessToForm() -->
+        <DenyAccessToForm>
             <remarks>
-                <note title="About this method">
-                    <i>Prototype requests</i>, which start with <c>_p</c>, are used to test new functionality.<br/>
-                    <br/>
-                    Once   the functionality is tested and ready for production, it is moved to the proper Core/Module class, and is depreciated here.<br/>
-                    <br/>
-                    In general, prototype code is not removed.<br/>
-                </note>
+                <note title="Snapple Fact #1416: Mangoes can get sunburned."></note>
+                <para>
+                    To deny access to a form for a specific DOC System Code, set the <c>Form Load</c> event <c>Script Parameter</c> to <c>_pDocSysCodeDenyAccessToForm</c>
+                </para>
             </remarks>
-        </Code>
+        </DenyAccessToForm>
+
+        <!-- MsgAccessDenied() -->
+        <MsgAccessDenied>
+            <remarks>
+                <note title="Snapple Fact #970: Dolphins are unable to smell."></note>
+            </remarks>
+        </MsgAccessDenied>
 
     </Class>
+    
 </Module.Prototype>

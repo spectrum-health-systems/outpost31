@@ -1,4 +1,4 @@
-﻿<!-- u250421 -->
+﻿<!-- u250430 -->
 
 <!--
 ===========
@@ -21,17 +21,14 @@
                 <note title="About this class">
                     Outpost31 is the back-end logic for the Tingen Web Service.<br/>
                     <br/>
-                    This class doesn't do any work, and should remain fairly static.<br/>
-                    For the most part, it just hands information to <see href="https://github.com/spectrum-health-systems/Outpost31">Outpost31</see>,<br/>
-                    where the heavy lifting is done.<br/>
-                    <br/>
+                    This class doesn't doesn't contain any code, it's just a placeholder<br/>
+                    for information about Outpost31.
                 </note>
                 <para>
                     While you're here, take a look at this stuff:
                     <list type="bullet">
-                        <item>
-                            The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen Documentation</see>
-                        </item>
+                        <item> The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen Documentation</see></item>
+                        <item>The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation/tree/main/docs">Tingen Web Service API Documentation</see></item>
                     </list>
                 </para>
             </remarks>

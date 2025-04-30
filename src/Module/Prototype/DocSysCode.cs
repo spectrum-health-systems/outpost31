@@ -3,62 +3,40 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                 Module.Prototype.DocSysCode.cs
 
-// u250415_code
-// u250415_documentation
+// u250430_code
+// u250430_documentation
 
-/* #DEVNOTE#
- * This is prototype code!
- *
- * It's ugly! It doesn't follow best practices or style guides!
- *
- * This particular code is for blocking the "DOC" Avatar System Code
- *
- * To deny access to a form, add the "_pDocSysCodeDenyAccessToForm" Script Parameter to the Tingen Web Service.
- */
-
-using System;
+using System.IO;
 using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Module.Prototype
 {
+    /// <summary>Prototype code for the DOC System Code.</summary>
+    /// <include file='AppData/XmlDoc/Module.Prototype.xml' path='Module.Prototype/Class[@name="DocSysCode"]/ClassDescription/*'/>
     public class DocSysCode
     {
-
-        /// <summary>Deny access to the form if the System Code is "DOC".</summary>
+        /// <summary>Deny access to the form for anyone using the DOC System Code.</summary>
         /// <param name="sentOptObj">The OptionObject sent from Avatar.</param>
         /// <param name="sentSlnkScriptParam">The Script Parameter sent from Avatar.</param>
-        /// <remarks>Script Parameter: "_pDocSysCodeDenyAccessToForm".</remarks>
         /// <returns>An OptionObject.</returns>
+        /// <include file='AppData/XmlDoc/Module.Prototype.xml' path='Module.Prototype/Class[@name="DocSysCode"]/DenyAccessToForm/*'/>
         public static OptionObject2015 DenyAccessToForm(OptionObject2015 sentOptObj, string sentSlnkScriptParam)
         {
-            return sentOptObj.SystemCode == "DOC"
-                ? sentOptObj.ToReturnOptionObject(1, MsgAccessDenied())
-                : sentOptObj.ToReturnOptionObject(0, "");
+            if (sentOptObj.SystemCode == "DOC")
+            {
+                return sentOptObj.ToReturnOptionObject(1, MsgAccessDenied());
+            }
+            else
+            {
+                return sentOptObj.ToReturnOptionObject(0, "");
+            }
         }
 
+        /// <summary>The Access Denied error code message.</summary>
+        /// <returns>The Access Denied error code message.</returns>
         private static string MsgAccessDenied()
         {
-            return "Access Denied" + Environment.NewLine +
-                   Environment.NewLine +
-                   "Please access this data via the Console Widget Viewer.";
-        }
-        private static string LogContents (OptionObject2015 sentOptObj, string sentSlnkScriptParam)
-        {
-            return "EntityID: " + sentOptObj.EntityID + Environment.NewLine +
-                   "EpisodeNumber: " + sentOptObj.EpisodeNumber + Environment.NewLine +
-                   "ErrorCode: " + sentOptObj.ErrorCode + Environment.NewLine +
-                   "ErrorMesg: " + sentOptObj.ErrorMesg + Environment.NewLine +
-                   "Facility: " + sentOptObj.Facility + Environment.NewLine +
-                   "NamespaceName: " + sentOptObj.NamespaceName + Environment.NewLine +
-                   "OptionId: " + sentOptObj.OptionId + Environment.NewLine +
-                   "OptionStaffId: " + sentOptObj.OptionStaffId + Environment.NewLine +
-                   "OptionUserId: " + sentOptObj.OptionUserId + Environment.NewLine +
-                   "ParentNamespace: " + sentOptObj.ParentNamespace + Environment.NewLine +
-                   "ServerName: " + sentOptObj.ServerName + Environment.NewLine +
-                   "SystemCode: " + sentOptObj.SystemCode + Environment.NewLine +
-                   "SessionToken: " + sentOptObj.SessionToken + Environment.NewLine +
-                   "OptionId: " + sentOptObj.OptionId + Environment.NewLine +
-                   "Script Parameter: " + sentSlnkScriptParam + Environment.NewLine;
+            return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\ErrorCodeMessages\Module.Prototype.DocSysCode.AccessDenied");
         }
     }
 }

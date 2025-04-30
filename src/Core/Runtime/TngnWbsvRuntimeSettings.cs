@@ -3,11 +3,13 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                        Core.RuntimeSettings.cs
 
-// u250410_code
-// u250410_documentation
+// u250430_code
+// u250430_documentation
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using Outpost31.Core.Configuration;
 using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Runtime
@@ -23,7 +25,7 @@ namespace Outpost31.Core.Runtime
         public string TngnWbsvBuild { get; set; }
 
         /// <summary>The environment that the Tingen Web Service will interface with.</summary>
-        public string TngnWbsvEnv { get; set; }
+        public string TngnWbsvEnvironment { get; set; }
 
         /// <summary>The Tingen Web Service mode.</summary>
         public string TngnWbsvMode { get; set; }
@@ -43,26 +45,25 @@ namespace Outpost31.Core.Runtime
         /// <summary>Creates a new instance of the RuntimeSettings class.</summary>
         /// <returns>An object containing the runtime settings for the Tingen Web Service.</returns>
         /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnWbsvRuntimeSettings"]/New/*'/>
-        public static TngnWbsvRuntimeSettings New(string tngnWbsvVersion)
+        public static TngnWbsvRuntimeSettings New(string tngnWbsvVersion, string tngnWbsvEnvironment)
         {
             /* #DEVNOTE#
              * Please read the XML Documentation for this method for important information.
              */
 
-            string tngnWbsvEnv         = GetTngnWbsvDetailFromFile(@".\AppData\Runtime\TngnWbsv.Env", ValidTngnWbsvEnvironments()); // rename
-            string tngnWbsvEnvDataPath = $@"C:\Tingen_Data\{tngnWbsvEnv}";
-            string tngnWbsvMode        = GetTngnWbsvDetailFromFile(@".\AppData\Runtime\TngnWbsv.Mode", ValidTngnWbsvModes()); // rename
+            string tngnWbsvDataPath    = $@"C:\Tingen_Data\WebService\{tngnWbsvEnvironment}";
+            string tngnWbsvMode        = GetTngnWbsvMode($@"{tngnWbsvDataPath}\Runtime\TngnWbsv.Mode", ValidTngnWbsvModes());
 
             return new TngnWbsvRuntimeSettings()
             {
-                TngnWbsvVersion  = tngnWbsvVersion,
-                TngnWbsvBuild    = "250408",
-                TngnWbsvEnv      = tngnWbsvEnv,
-                TngnWbsvMode     = tngnWbsvMode,
-                TngnWbsvDataPath = tngnWbsvEnvDataPath,
-                TngnWbsvHostName = Environment.MachineName,
-                CurrentDate      = DateTime.Now.ToString("YYMMDD"),
-                CurrentTime      = DateTime.Now.ToString("HHMMSS"),
+                TngnWbsvVersion     = tngnWbsvVersion,
+                TngnWbsvBuild       = "250430",
+                TngnWbsvEnvironment = tngnWbsvEnvironment,
+                TngnWbsvMode        = tngnWbsvMode,
+                TngnWbsvDataPath    = tngnWbsvDataPath,
+                TngnWbsvHostName    = Environment.MachineName,
+                CurrentDate         = DateTime.Now.ToString("YYMMDD"),
+                CurrentTime         = DateTime.Now.ToString("HHMMSS"),
             };
         }
 
@@ -71,38 +72,50 @@ namespace Outpost31.Core.Runtime
         /// <param name="validateAgainst">A list of values to validate against.</param>
         /// <returns>The valid contents of the file (or we exit the application).</returns>
         /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnWbsvRuntimeSettings"]/TngnWbsvRuntimeSettings.New/*'/>
-        private static string GetTngnWbsvDetailFromFile(string filePath, List<string> validateAgainst)
+        private static string GetTngnWbsvMode(string filePath, List<string> validateAgainst)
         {
             /* Trace Logs won't work here. */
 
-            string tngnWbsvDetail = DuFile.ReadAndVerifyLocal(filePath, validateAgainst);
+            string tngnWbsvMode = DuFile.ReadAndVerifyLocal(filePath, validateAgainst);
 
-            if (tngnWbsvDetail.Contains("The contents of are not valid.")) // test
+            if (tngnWbsvMode.Contains("The contents of are not valid.")) // test
             {
                 // Log this.
                 Service.Spin.DownImmediately();
             }
 
             //#DEVNOTE# Test to make sure this works if the contents are not valid.
-            return tngnWbsvDetail;
+            return tngnWbsvMode;
         }
 
-        /// <summary>Create a list of Avatar environments that the Tingen Web Service can interface with.</summary>
-        /// <returns>A list of Avatar environments that the Tingen Web Service can interface with.</returns>
-        /// <remarks>These are the only Avatar environments that have been tested with the Tingen Web Service</remarks>
-        private static List<string> ValidTngnWbsvEnvironments() => new List<string>()
+        /// <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
+        /// <return>A summary of the Tingen Web Service configuration at runtime.</return>
+        public static void TngnWbsvRuntimeSettingsSummary(TngnWbsvRuntimeSettings tngnWbsvRuntimeSettings, string path)
         {
-            "LIVE",
-            "UAT"
-        };
+            var runtimeSettings = $"========================================{Environment.NewLine}" +
+                                  $"Tingen Web Service - Runtime Details{Environment.NewLine}" +
+                                  $"========================================{Environment.NewLine}" +
+                                  $"Updated {DateTime.Now:MM/dd/yyyy HH:mm:ss}{Environment.NewLine}" +
+                                  $"------------------------------------{Environment.NewLine}" +
+                                  $"Version:     {tngnWbsvRuntimeSettings.TngnWbsvVersion}{Environment.NewLine}" +
+                                  $"Build:       {tngnWbsvRuntimeSettings.TngnWbsvBuild}{Environment.NewLine}" +
+                                  $"Environment: {tngnWbsvRuntimeSettings.TngnWbsvEnvironment}{Environment.NewLine}" +
+                                  $"Mode:        {tngnWbsvRuntimeSettings.TngnWbsvMode}{Environment.NewLine}" +
+                                  $"Data Path:   {tngnWbsvRuntimeSettings.TngnWbsvDataPath}{Environment.NewLine}" +
+                                  $"Host Name:   {tngnWbsvRuntimeSettings.TngnWbsvHostName}{Environment.NewLine}" +
+                                  $"{Environment.NewLine}" +
+                                  "To update this information, launch the \"Web Service Testing\" form.";
+
+            DuFile.WriteLocal(path, runtimeSettings, true);
+        }
 
         /// <summary>Valid Tingen Web Service modes.</summary>
         /// <returns>A list of valid Tingen Web Service modes.</returns>
         private static List<string> ValidTngnWbsvModes() => new List<string>()
         {
-            "ENABLED",
-            "DISABLED",
-            "PASSTHROUGH"
+            "enabled",
+            "disabled",
+            "passthrough"
         };
     }
 }
