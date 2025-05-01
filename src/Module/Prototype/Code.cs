@@ -1,23 +1,25 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                      Module.FormAccess.Deny.cs
+//                                       Module.Prototype.Code.cs
 
 // u250501_code
 // u250501_documentation
 
 using Outpost31.Core.Session;
 
-namespace Outpost31.Module.FormAccess
+namespace Outpost31.Module.Prototype
 {
-    public class Deny
+    /// <summary>Prototype code</summary>
+    public class Code
     {
-        /// <summary>Deny access to the form if the System Code is "DOC".</summary>
-        public static void DocSysCode(TngnWbsvSession tngnWbsvSession)
+        /// <summary>Deny access to the form for anyone using the DOC System Code.</summary>
+        /// <remarks>This functionality was added as a standard request on 5-1-2025.</remarks>
+        public static void FormAccessDocSysCodeDeny(TngnWbsvSession tngnWbsvSession)
         {
             tngnWbsvSession.ReturnOptObj =(tngnWbsvSession.SentOptObj.SystemCode == "DOC")
-                ? tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.ErrorCodeMessages.FormAccessDenied())
-                : tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, "");
+                ? tngnWbsvSession.ReturnOptObj.ToReturnOptionObject(1, "Access denied")
+                : tngnWbsvSession.ReturnOptObj.ToReturnOptionObject(0, "");
         }
     }
 }

@@ -3,26 +3,25 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                 Core.Avatar.ScriptParameter.cs
 
-// u250430_code
-// u250430_documentation
+// u250501_code
+// u250501_documentation
 
-using System;
+using Outpost31.Core.Session;
 
 namespace Outpost31.Core.Avatar
 {
     public class ScriptParameter
     {
-        /// <summary>
-        /// Parse the script parameter.
-        /// </summary>
-        /// <param name="sentScriptParam">The original Script Parameter sent from Avatar.</param>
-        public static void Parse(string sentScriptParam)
+        public static void Request(TngnWbsvSession tngnWbsvSession)
         {
-            /* Trace Logs won't work here. */
-
-            var test = sentScriptParam.Split(new[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
+            if (tngnWbsvSession.SentScriptParam.ToLower().StartsWith("_p"))
+            {
+                Core.Request.Prototype.Parse(tngnWbsvSession);
+            }
+            else
+            {
+                Core.Request.Standard.Parse(tngnWbsvSession);
+            }
         }
     }
 }
-
-//Module.Admin.

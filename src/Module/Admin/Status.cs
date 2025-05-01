@@ -3,10 +3,11 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                         Module.Admin.Status.cs
 
-// u250430_code
-// u250430_documentation
+// u250501_code
+// u250501_documentation
 
 using Outpost31.Core.Session;
+using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Module.Admin
 {
@@ -16,10 +17,9 @@ namespace Outpost31.Module.Admin
         {
             var path = $@"{tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvDataPath}\RuntimeDetails.txt";
 
-            Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvRuntimeSettingsSummary(tngnWbsvSession.TngnWbsvRuntimeSettings, path);
+            var details = Core.Template.Details.Runtime(tngnWbsvSession.TngnWbsvRuntimeSettings);
 
-
+            DuFile.WriteLocal(path, details, true);
         }
-
     }
 }

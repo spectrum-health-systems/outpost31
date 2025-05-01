@@ -1,0 +1,106 @@
+﻿<!-- u250501 -->
+
+<!--
+===========
+[NAMESPACE] Outpost31
+===========
+-->
+
+<Core.Service>
+
+    <!--
+    =======
+    [CLASS] Work.cs
+    =======
+    -->
+    <Class name="Work">
+
+        <!-- Class Description -->
+        <ClassDescription>
+            <remarks>
+                <note title="About this class">
+                    This is the Outpost31 entry point, and kicks everything off.
+                </note>
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </ClassDescription>
+
+        <!-- Request.cs -->
+        <Request>
+           
+        </Request>
+        
+    </Class>
+
+</Core.Service>
+
+
+<!--
+
+  <para>
+                    When Avatar calls the Tingen Web Service, it passes two components:
+                    <list type="definition">
+                        <item>
+                            <term>The OptionObject</term>
+                            <description>
+                                Contains all of the content of and metadata describing the calling<br/>
+                                Avatar form.
+                            </description>
+                        </item>
+                        <item>
+                            <term>The Script Parameter</term>
+                            <description>Contains information about the requested action(s)</description>
+                        </item>
+                    </list>
+                </para>
+                <para>
+                    When the Tingen Web Service receives a request (via the Script Parameter)<br/>
+                    from Avatar, the first thing it does is determine if it is a <i>prototype</i> or<br/>
+                    <i>standard</i> request:<br/>
+                    <list type="definition">
+                        <item>
+                            <term>Prototype requests</term>
+                            <description>
+                                Used to test new functionality. They start with <c>_p</c>, are handed off<br/>
+                                to <c>Module.Prototype</c>, and potentially follow their own set of rules<br/>
+                                and workflows.
+                            </description>
+                        </item>
+                        <item>
+                            <term>Standard requests</term>
+                            <description>
+                                Existing functionality, requests are handed off to the necessary <c>Module</c>,<br/>
+                                and follow the standard Tingen Web Service rules and workflows.
+                            </description>
+                        </item>
+                    </list>
+                    <note type="information" title="Request examples">
+                        Example of a prototype request:<br/>
+                        <c>_pDocSysCode.DenyAccessToForm</c><br/>
+                        <br/>
+                        Example of a standard request:<br/>
+                        <c>DocSysCode.DenyAccessToForm</c><br/>
+                    </note>
+                </para>
+                <para>
+                    While prototype requests follow their own workflows, the <i>standard</i> request workflow is:
+                    <list type="number">
+                        <item>
+                            Receive the <c>SentOptionObject</c> and <c>ScriptParameter</c> from Avatar
+                        </item>
+                        <item>Initialize a new Tingen Session</item>
+                        <item>Start the Tingen Web Service</item>
+                        <item>
+                            Pass the <c>SentOptionObject</c> and <c>ScriptParameter</c> to the Outpost31
+                        </item>
+                        <item>
+                            Outpost31 processes the request and returns a finalized <c>OptionObject</c>
+                        </item>
+                        <item>
+                            Return the finalized <c>OptionObject</c> to Avatar
+                        </item>
+                    </list>
+                </para>
+            </remarks>
+
+-->

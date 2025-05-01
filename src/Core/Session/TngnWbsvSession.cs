@@ -1,10 +1,10 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                         Core.Avatar.Session.cs
+//                                 Core.Avatar.TngnWbsvSession.cs
 
-// u250430_code
-// u250430_documentation
+// u250501_code
+// u250501_documentation
 
 using Outpost31.Core.Configuration;
 using Outpost31.Core.Runtime;
@@ -32,7 +32,7 @@ namespace Outpost31.Core.Session
         public OptionObject2015 ReturnOptObj { get; set; }
 
         /// <summary>The ScriptLink Script Parameter sent from Avatar.</summary>
-        public string SlnkScriptParam { get; set; }
+        public string SentScriptParam { get; set; }
 
         /// <summary>The Avatar System Code that this instance of the Tingen Web Service will interface with.</summary>
         public string TngnWbsvSysCode { get; set; }
@@ -54,7 +54,7 @@ namespace Outpost31.Core.Session
                 SentOptObj              = sentOptObj,
                 WorkOptObj              = sentOptObj.Clone(),
                 ReturnOptObj            = null,
-                SlnkScriptParam         = sentSlnkScriptParam,
+                SentScriptParam         = sentSlnkScriptParam,
                 TngnWbsvSysCode         = sentOptObj.SystemCode
             };
         }

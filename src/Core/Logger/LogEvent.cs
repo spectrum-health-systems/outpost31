@@ -3,8 +3,8 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                        Core.Logger.LogEvent.cs
 
-// u250430_code
-// u250430_documentation
+// u250501_code
+// u250501_documentation
 
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;

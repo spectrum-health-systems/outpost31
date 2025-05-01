@@ -3,13 +3,11 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                        Core.RuntimeSettings.cs
 
-// u250430_code
-// u250430_documentation
+// u250501_code
+// u250501_documentation
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using Outpost31.Core.Configuration;
 using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Runtime
@@ -86,27 +84,6 @@ namespace Outpost31.Core.Runtime
 
             //#DEVNOTE# Test to make sure this works if the contents are not valid.
             return tngnWbsvMode;
-        }
-
-        /// <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
-        /// <return>A summary of the Tingen Web Service configuration at runtime.</return>
-        public static void TngnWbsvRuntimeSettingsSummary(TngnWbsvRuntimeSettings tngnWbsvRuntimeSettings, string path)
-        {
-            var runtimeSettings = $"========================================{Environment.NewLine}" +
-                                  $"Tingen Web Service - Runtime Details{Environment.NewLine}" +
-                                  $"========================================{Environment.NewLine}" +
-                                  $"Updated {DateTime.Now:MM/dd/yyyy HH:mm:ss}{Environment.NewLine}" +
-                                  $"------------------------------------{Environment.NewLine}" +
-                                  $"Version:     {tngnWbsvRuntimeSettings.TngnWbsvVersion}{Environment.NewLine}" +
-                                  $"Build:       {tngnWbsvRuntimeSettings.TngnWbsvBuild}{Environment.NewLine}" +
-                                  $"Environment: {tngnWbsvRuntimeSettings.TngnWbsvEnvironment}{Environment.NewLine}" +
-                                  $"Mode:        {tngnWbsvRuntimeSettings.TngnWbsvMode}{Environment.NewLine}" +
-                                  $"Data Path:   {tngnWbsvRuntimeSettings.TngnWbsvDataPath}{Environment.NewLine}" +
-                                  $"Host Name:   {tngnWbsvRuntimeSettings.TngnWbsvHostName}{Environment.NewLine}" +
-                                  $"{Environment.NewLine}" +
-                                  "To update this information, launch the \"Web Service Testing\" form.";
-
-            DuFile.WriteLocal(path, runtimeSettings, true);
         }
 
         /// <summary>Valid Tingen Web Service modes.</summary>

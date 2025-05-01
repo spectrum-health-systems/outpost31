@@ -1,12 +1,11 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                               Core.Configuration.TngnConfig.cs
+//                    Core.Configuration.TngnWbsvConfiguration.cs
 
-// u250430_code
-// u250430_documentation
+// u250501_code
+// u250501_documentation
 
-using System;
 using System.IO;
 using Outpost31.Core.Runtime;
 
@@ -17,9 +16,6 @@ namespace Outpost31.Core.Configuration
     public class TngnWbsvConfiguration
     {
         public TngnWbsvRuntimeSettings tngnWbsvRuntimeSettings { get; set; }
-
-        ///// <summary>A summary of the runtime settings for exporting.</summary>
-        //public string tngnWbsvConfigSummary { get; set; }
 
         /// <summary>Load the runtime settings for the Tingen Web Service.</summary>
         /// <param name="tngnWbsvVersion">The Tingen Web Service version</param>

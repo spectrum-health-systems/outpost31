@@ -4,12 +4,6 @@
         <name>Outpost31</name>
     </assembly>
     <members>
-        <member name="M:Outpost31.Core.Avatar.ScriptParameter.Parse(System.String)">
-            <summary>
-            Parse the script parameter.
-            </summary>
-            <param name="sentScriptParam">The original Script Parameter sent from Avatar.</param>
-        </member>
         <member name="T:Outpost31.Core.Avatar.OptionObjects">
             <summary>The data structure that is used to pass information between Avatar and the Tingen Web Service.</summary>
             <remarks>
@@ -236,10 +230,6 @@
             <returns>The valid contents of the file (or we exit the application).</returns>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;TngnWbsvRuntimeSettings&quot;]/TngnWbsvRuntimeSettings.New/*" />
         </member>
-        <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.TngnWbsvRuntimeSettingsSummary(Outpost31.Core.Runtime.TngnWbsvRuntimeSettings,System.String)">
-            <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
-            <return>A summary of the Tingen Web Service configuration at runtime.</return>
-        </member>
         <member name="M:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings.ValidTngnWbsvModes">
             <summary>Valid Tingen Web Service modes.</summary>
             <returns>A list of valid Tingen Web Service modes.</returns>
@@ -280,7 +270,7 @@
         <member name="P:Outpost31.Core.Session.TngnWbsvSession.ReturnOptObj">
             <summary>The OptionObject that is returned to Avatar. </summary>
         </member>
-        <member name="P:Outpost31.Core.Session.TngnWbsvSession.SlnkScriptParam">
+        <member name="P:Outpost31.Core.Session.TngnWbsvSession.SentScriptParam">
             <summary>The ScriptLink Script Parameter sent from Avatar.</summary>
         </member>
         <member name="P:Outpost31.Core.Session.TngnWbsvSession.TngnWbsvSysCode">
@@ -315,6 +305,14 @@
                     </list>
                 </para>
             </remarks>
+        </member>
+        <member name="M:Outpost31.Core.Template.ErrorCodeMessages.FormAccessDenied">
+            <summary>The Access Denied error code message.</summary>
+            <returns>The Access Denied error code message.</returns>
+        </member>
+        <member name="M:Outpost31.Core.Template.Details.Runtime(Outpost31.Core.Runtime.TngnWbsvRuntimeSettings)">
+            <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
+            <return>A summary of the Tingen Web Service configuration at runtime.</return>
         </member>
         <member name="T:Outpost31.Core.Utility.Du.DuFile">
             <summary>Logic related to files input/output.</summary>
@@ -393,97 +391,25 @@
             <summary>The executing Assembly name.</summary>
             <remarks>A required component for writing log files, defined here so it can be used throughout the class.</remarks>
         </member>
-        <member name="M:Outpost31.Core.Service.Spin.Up(Outpost31.Core.Session.TngnWbsvSession)">
-            <summary>Spin up a new Tingen Web Service session.</summary>
-            <param name="tngnSession">The (empty) Tingen Web Service session object.</param>
-            <param name="tngnVersion">The Tingen Web Service current version.</param>
-            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/Up/*" />
+        <member name="M:Outpost31.Core.Service.Spin.Up(Outpost31.Core.Session.TngnWbsvSession,ScriptLinkStandard.Objects.OptionObject2015,System.String,System.String,System.String)">
+            <summary>The Tingen current version number.</summary>
+            <param name="sentOptObj"></param>
+            <param name="sentScriptParam"></param>
+            <returns></returns>
         </member>
         <member name="M:Outpost31.Core.Service.Spin.Down">
             <summary>Spin down the Tingen Web Service.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/Down/*" />
         </member>
-        <member name="M:Outpost31.Module.FormAccess.Deny.DeptOfCx">
+        <member name="M:Outpost31.Module.FormAccess.Deny.DocSysCode(Outpost31.Core.Session.TngnWbsvSession)">
             <summary>Deny access to the form if the System Code is "DOC".</summary>
         </member>
-        <member name="T:Outpost31.Module.Prototype.DocSysCode">
-            <summary>Prototype code for the DOC System Code.</summary>
-            <remarks>
-                <note title="About this class">
-                    Any prototype code related to the DOC System Code should be located here.<br />
-                </note>
-                <note type="warning" title="About this class">
-                    Please keep in mind that code in this class:
-                    <list type="bullet">
-                        <item>Should not be used in production</item>
-                        <item>Is most likely super ugly</item>
-                        <item>Probably doesn't follow best practices</item>
-                    </list>
-                </note>
-            </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        <member name="T:Outpost31.Module.Prototype.Code">
+            <summary>Prototype code</summary>
         </member>
-        <member name="M:Outpost31.Module.Prototype.DocSysCode.DenyAccessToForm(ScriptLinkStandard.Objects.OptionObject2015,System.String)">
+        <member name="M:Outpost31.Module.Prototype.Code.FormAccessDocSysCodeDeny(Outpost31.Core.Session.TngnWbsvSession)">
             <summary>Deny access to the form for anyone using the DOC System Code.</summary>
-            <param name="sentOptObj">The OptionObject sent from Avatar.</param>
-            <param name="sentSlnkScriptParam">The Script Parameter sent from Avatar.</param>
-            <returns>An OptionObject.</returns>
-            <remarks>
-                <note title="Snapple Fact #1416: Mangoes can get sunburned." />
-                <para>
-                    To deny access to a form for a specific DOC System Code, set the <c>Form Load</c> event <c>Script Parameter</c> to <c>_pDocSysCodeDenyAccessToForm</c>
-                </para>
-            </remarks>
-        </member>
-        <member name="M:Outpost31.Module.Prototype.DocSysCode.MsgAccessDenied">
-            <summary>The Access Denied error code message.</summary>
-            <returns>The Access Denied error code message.</returns>
-        </member>
-        <member name="T:Outpost31.Module.Prototype.Run">
-            <summary>Handles prototype requests.</summary>
-            <remarks>
-                <note title="Snapple Fact #1522: Some cats are allergic to humans." />
-            </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-        </member>
-        <member name="M:Outpost31.Module.Prototype.Run.Code(ScriptLinkStandard.Objects.OptionObject2015,System.String)">
-            <summary>Determines where to send prototype requests.</summary>
-            <param name="sentOptObj">The original OptionObject sent from Avatar.</param>
-            <param name="sentSlnkScriptParam">The original Script Parameter sent from Avatar.</param>
-            <returns>A finalized OptionObject.</returns>
-            <remarks>
-                <note title="About this method">
-                    When the Tingen Web Service receives a prototype request,<br />
-                    it needs to be sent somewhere specific.
-                </note>
-                The current list of prototype requests:
-                <list type="table">
-                    <listheader>
-                        <term>Prototype request</term>
-                        <description>Description</description>
-                    </listheader>
-                    <item>
-                        <term>_pDocSysCodeDenyAccessToForm</term>
-                        <description>Deny access to specific forms for the DOC System Code.</description>
-                    </item>
-                </list>
-            </remarks>
-        </member>
-        <member name="T:Outpost31.WelcomeToOutpost31">
-            <summary>A place for Outpost31 details and stuff.</summary>
-            <remarks>
-                <note title="About this class">
-                    Outpost31 is the back-end logic for the Tingen Web Service.<br />
-                    <br />
-                    This class doesn't doesn't contain any code, it's just a placeholder<br />
-                    for information about Outpost31.
-                </note>
-                <para>
-                    While you're here, take a look at this stuff:
-                    <list type="bullet">
-                        <item> The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen Documentation</see></item>
-                        <item>The <see href="https://github.com/spectrum-health-systems/Tingen-Documentation/tree/main/docs">Tingen Web Service API Documentation</see></item>
-                    </list>
-                </para>
-            </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+            <remarks>This functionality was added as a standard request on 5-1-2025.</remarks>
         </member>
     </members>
 </doc>

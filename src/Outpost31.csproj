@@ -74,34 +74,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
-    <Compile Include="Core\Framework\Requirements.Catalog.cs" />
-    <Compile Include="Core\Framework\Requirements.cs" />
     <Compile Include="Core\Logger\LogComponent.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
+    <Compile Include="Core\Request\Prototype.cs" />
+    <Compile Include="Core\Request\Standard.cs" />
     <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
     <Compile Include="Core\Session\TngnWbsvSession.cs" />
-    <Compile Include="Core\Utility\CreateTemplate.cs" />
-    <Compile Include="Core\Utility\DataExport.cs" />
-    <Compile Include="Core\Utility\DataImport.cs" />
+    <Compile Include="Core\Template\ErrorCodeMessages.cs" />
+    <Compile Include="Core\Template\Details.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
     <Compile Include="Core\Service\Spin.cs" />
     <Compile Include="Module\Admin\Status.cs" />
-    <Compile Include="Module\FormAccess\Restrict.cs" />
     <Compile Include="Module\FormAccess\Deny.cs" />
-    <Compile Include="Module\Prototype\DocSysCode.cs" />
-    <Compile Include="Module\Prototype\Run.cs" />
-    <Compile Include="WelcomeToOutpost31.cs" />
+    <Compile Include="Module\Prototype\Code.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\Runtime\" />
-    <Folder Include="Core\Template\" />
-    <Folder Include="Module\FormComponent\" />
-    <Folder Include="Module\OpenIncident\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Tingen-ThirdParty\ScriptLinkStandard\ScriptLinkStandard.csproj">
@@ -115,7 +108,7 @@
     <Content Include="AppData\XmlDoc\_Core.Catalog.Path.xml" />
     <Content Include="AppData\XmlDoc\Core.Session.xml" />
     <Content Include="AppData\XmlDoc\Core.Runtime.xml" />
-    <Content Include="AppData\XmlDoc\WelcomeToOutpost31.xml" />
+    <Content Include="AppData\XmlDoc\Core.Service.xml" />
     <Content Include="AppData\XmlDoc\Core.Configuration.xml" />
   </ItemGroup>
   <ItemGroup>

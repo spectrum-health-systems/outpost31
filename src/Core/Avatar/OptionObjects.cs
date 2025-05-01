@@ -3,8 +3,8 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                   Core.Avatar.OptionObjects.cs
 
-// u250421_code
-// u250421_documentation
+// u250501_code
+// u250501_documentation
 
 using System.Reflection;
 using Outpost31.Core.Session;
