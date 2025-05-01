@@ -57,7 +57,7 @@ namespace Outpost31.Core.Runtime
             return new TngnWbsvRuntimeSettings()
             {
                 TngnWbsvVersion     = tngnWbsvVersion,
-                TngnWbsvBuild       = "250430",
+                TngnWbsvBuild       = "250501",
                 TngnWbsvEnvironment = tngnWbsvEnvironment,
                 TngnWbsvMode        = tngnWbsvMode,
                 TngnWbsvDataPath    = tngnWbsvDataPath,
