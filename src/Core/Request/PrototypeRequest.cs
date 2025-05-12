@@ -1,27 +1,25 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                       Core.Request.Standard.cs
+//                                      Core.Request.Prototype.cs
 
-// u250501_code
-// u250501_documentation
+// u250508_code
+// u250508_documentation
 
 using Outpost31.Core.Session;
 
 namespace Outpost31.Core.Request
 {
-    public class Standard
+    /// <summary>Handles prototype requests.</summary>
+    public class PrototypeRequest
     {
+        /// <summary>Parse the request and call the appropriate module.</summary>
         public static void Parse(TngnWbsvSession tngnWbsvSession)
         {
             switch (tngnWbsvSession.SentScriptParam.ToLower())
             {
-                case "admin.status.current":
-                    Module.Admin.Status.Current(tngnWbsvSession);// Handle the standard request
-                    break;
-
-                case "formaccess.deny.docsyscode":
-                    Module.FormAccess.Deny.DocSysCode(tngnWbsvSession);
+                case "_pformaccess.deny.docsyscode":
+                    Module.Prototype.Code.FormAccessDocSysCodeDeny(tngnWbsvSession);
                     break;
 
                 default:

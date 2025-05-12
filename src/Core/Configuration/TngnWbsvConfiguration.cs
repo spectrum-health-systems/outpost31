@@ -15,7 +15,7 @@ namespace Outpost31.Core.Configuration
     /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnWbsvConfiguration"]/ClassDescription/*'/>
     public class TngnWbsvConfiguration
     {
-        public TngnWbsvRuntimeSettings tngnWbsvRuntimeSettings { get; set; }
+        ////public TngnWbsvRuntimeSettings tngnWbsvRuntimeSettings { get; set; } // DEP
 
         /// <summary>Load the runtime settings for the Tingen Web Service.</summary>
         /// <param name="tngnWbsvVersion">The Tingen Web Service version</param>

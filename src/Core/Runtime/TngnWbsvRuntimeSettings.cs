@@ -55,7 +55,7 @@ namespace Outpost31.Core.Runtime
             return new TngnWbsvRuntimeSettings()
             {
                 TngnWbsvVersion     = tngnWbsvVersion,
-                TngnWbsvBuild       = "250501",
+                TngnWbsvBuild       = "250508",
                 TngnWbsvEnvironment = tngnWbsvEnvironment,
                 TngnWbsvMode        = tngnWbsvMode,
                 TngnWbsvDataPath    = tngnWbsvDataPath,
@@ -88,11 +88,14 @@ namespace Outpost31.Core.Runtime
 
         /// <summary>Valid Tingen Web Service modes.</summary>
         /// <returns>A list of valid Tingen Web Service modes.</returns>
-        private static List<string> ValidTngnWbsvModes() => new List<string>()
+        private static List<string> ValidTngnWbsvModes()
         {
-            "enabled",
-            "disabled",
-            "passthrough"
-        };
+            return new List<string>()
+            {
+                "enabled",
+                "disabled",
+                "passthrough"
+            };
+        }
     }
 }

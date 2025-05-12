@@ -151,6 +151,27 @@
         <member name="T:Outpost31.Core.Logger.LogEvent">
             <summary>Methods for creating different types of logs.</summary>
         </member>
+        <member name="T:Outpost31.Core.Request.PrototypeRequest">
+            <summary>Handles prototype requests.</summary>
+        </member>
+        <member name="M:Outpost31.Core.Request.PrototypeRequest.Parse(Outpost31.Core.Session.TngnWbsvSession)">
+            <summary>Parse the request and call the appropriate module.</summary>
+        </member>
+        <member name="T:Outpost31.Core.Request.StandardRequest">
+            <summary>Handles standard requests.</summary>
+        </member>
+        <member name="M:Outpost31.Core.Request.StandardRequest.Parse(Outpost31.Core.Session.TngnWbsvSession)">
+            <summary>Parse the request and call the appropriate module.</summary>
+        </member>
+        <member name="M:Outpost31.Core.Request.StandardRequest.Admin(Outpost31.Core.Session.TngnWbsvSession)">
+            <summary>Admin requests.</summary>
+        </member>
+        <member name="M:Outpost31.Core.Request.StandardRequest.FormAccess(Outpost31.Core.Session.TngnWbsvSession)">
+            <summary>Form access requests.</summary>
+        </member>
+        <member name="M:Outpost31.Core.Request.StandardRequest.FormAccessFromList(Outpost31.Core.Session.TngnWbsvSession)">
+            <summary>Form access from a list.</summary>
+        </member>
         <member name="T:Outpost31.Core.Runtime.TngnWbsvRuntimeSettings">
             <summary>Runtime settings for the Tingen Web Service.</summary>
             <remarks>
@@ -306,7 +327,7 @@
                 </para>
             </remarks>
         </member>
-        <member name="M:Outpost31.Core.Template.ErrorCodeMessages.FormAccessDenied">
+        <member name="M:Outpost31.Core.Template.ErrorCodeMessages.FormAccessDeniedGeneral">
             <summary>The Access Denied error code message.</summary>
             <returns>The Access Denied error code message.</returns>
         </member>
@@ -385,14 +406,18 @@
         </member>
         <member name="T:Outpost31.Core.Service.Spin">
             <summary>Startup/shutdown logic for the Tingen Web Service.</summary>
-            <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/ClassDescription/*" />
+            <remarks>
+                <note title="About this class">
+                    Starup/shutdown class for the Tingen Web Service.
+                </note>
+            </remarks><seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
         </member>
         <member name="P:Outpost31.Core.Service.Spin.ExeAsm">
             <summary>The executing Assembly name.</summary>
             <remarks>A required component for writing log files, defined here so it can be used throughout the class.</remarks>
         </member>
         <member name="M:Outpost31.Core.Service.Spin.Up(Outpost31.Core.Session.TngnWbsvSession,ScriptLinkStandard.Objects.OptionObject2015,System.String,System.String,System.String)">
-            <summary>The Tingen current version number.</summary>
+            <summary>Spin up a new instance of the Tingen Web Service.</summary>
             <param name="sentOptObj"></param>
             <param name="sentScriptParam"></param>
             <returns></returns>
@@ -401,8 +426,14 @@
             <summary>Spin down the Tingen Web Service.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/Down/*" />
         </member>
-        <member name="M:Outpost31.Module.FormAccess.Deny.DocSysCode(Outpost31.Core.Session.TngnWbsvSession)">
+        <member name="M:Outpost31.Module.FormAccess.Deny.SysCodeDoc(Outpost31.Core.Session.TngnWbsvSession)">
             <summary>Deny access to the form if the System Code is "DOC".</summary>
+        </member>
+        <member name="M:Outpost31.Module.FormAccess.Deny.SysCodeDocHoc(Outpost31.Core.Session.TngnWbsvSession)">
+            <summary>Deny access to the form if the System Code is "DOC" or starts with "HOC".</summary>
+        </member>
+        <member name="M:Outpost31.Module.FormAccess.Deny.SysCodeFromList(Outpost31.Core.Session.TngnWbsvSession,System.Collections.Generic.List{System.String})">
+            <summary>Deny access to the form if the System Code is a member of a list.</summary>
         </member>
         <member name="T:Outpost31.Module.Prototype.Code">
             <summary>Prototype code</summary>

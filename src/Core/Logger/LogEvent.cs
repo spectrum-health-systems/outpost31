@@ -23,11 +23,20 @@ namespace Outpost31.Core.Logger
             WriteLogToFile(logComponent);
         }
 
-        public static void Debuggler(string tngnWbsvEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
+        public static void Debug(string tngnWbsvEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
         {
             /* Trace/Debuggler Logs won't work here. */
 
             Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Debuggler", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
+
+            WriteLogToFile(logComponent);
+        }
+
+        public static void Debuggler(string tngnWbsvEnvironment, string msg)
+        {
+            /* Trace/Debuggler Logs won't work here. */
+
+            Dictionary<string, string> logComponent = LogComponent.CreateBasicLog("Debuggler", tngnWbsvEnvironment, msg);
 
             WriteLogToFile(logComponent);
         }

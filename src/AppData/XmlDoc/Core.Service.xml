@@ -10,16 +10,16 @@
 
     <!--
     =======
-    [CLASS] Work.cs
+    [CLASS] Spin.cs
     =======
     -->
-    <Class name="Work">
+    <Class name="Spin">
 
         <!-- Class Description -->
         <ClassDescription>
             <remarks>
                 <note title="About this class">
-                    This is the Outpost31 entry point, and kicks everything off.
+                    Starup/shutdown class for the Tingen Web Service.
                 </note>
             </remarks>
             <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
@@ -27,9 +27,9 @@
 
         <!-- Request.cs -->
         <Request>
-           
+
         </Request>
-        
+
     </Class>
 
 </Core.Service>

@@ -83,7 +83,7 @@ namespace Outpost31.Core.Logger
 
         private static string BuildLogBasePath(string tngnWbsvEnvironment, string logType)
         {
-            return $@"C:\Tingen_Data\{tngnWbsvEnvironment}\{logType}";
+            return $@"C:\Tingen_Data\WebService\{tngnWbsvEnvironment}\Logs\{logType}";
         }
 
         private static string BuildLogFullPath(string tngnWbsvEnvironment, string logType)

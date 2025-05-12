@@ -77,8 +77,8 @@
     <Compile Include="Core\Logger\LogComponent.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
-    <Compile Include="Core\Request\Prototype.cs" />
-    <Compile Include="Core\Request\Standard.cs" />
+    <Compile Include="Core\Request\PrototypeRequest.cs" />
+    <Compile Include="Core\Request\StandardRequest.cs" />
     <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
     <Compile Include="Core\Session\TngnWbsvSession.cs" />

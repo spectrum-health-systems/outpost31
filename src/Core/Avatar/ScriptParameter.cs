@@ -16,11 +16,11 @@ namespace Outpost31.Core.Avatar
         {
             if (tngnWbsvSession.SentScriptParam.ToLower().StartsWith("_p"))
             {
-                Core.Request.Prototype.Parse(tngnWbsvSession);
+                Core.Request.PrototypeRequest.Parse(tngnWbsvSession);
             }
             else
             {
-                Core.Request.Standard.Parse(tngnWbsvSession);
+                Core.Request.StandardRequest.Parse(tngnWbsvSession);
             }
         }
     }
