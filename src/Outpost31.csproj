@@ -82,7 +82,7 @@
     <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
     <Compile Include="Core\Session\TngnWbsvSession.cs" />
-    <Compile Include="Core\Template\ErrorCodeMessages.cs" />
+    <Compile Include="Core\Template\Messages.cs" />
     <Compile Include="Core\Template\Details.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />

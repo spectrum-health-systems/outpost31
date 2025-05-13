@@ -20,7 +20,7 @@ namespace Outpost31.Module.FormAccess
         {
             if ((tngnWbsvSession.SentOptObj.SystemCode == "DOC"))
             {
-                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.ErrorCodeMessages.FormAccessDeniedGeneral());
+                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.Messages.FormAccessDeniedGeneral());
             }
             else
             {
@@ -33,7 +33,7 @@ namespace Outpost31.Module.FormAccess
         {
             if ((tngnWbsvSession.SentOptObj.SystemCode == "DOC") || (tngnWbsvSession.SentOptObj.SystemCode.Contains("HOC")))
             {
-                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.ErrorCodeMessages.FormAccessDeniedGeneral());
+                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.Messages.FormAccessDeniedGeneral());
             }
             else
             {
@@ -46,7 +46,7 @@ namespace Outpost31.Module.FormAccess
         {
             if (sysCodeList.Contains(tngnWbsvSession.SentOptObj.SystemCode))
             {
-                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.ErrorCodeMessages.FormAccessDeniedGeneral());
+                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.Messages.FormAccessDeniedGeneral());
             }
             else
             {

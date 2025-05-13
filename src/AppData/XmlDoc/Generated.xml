@@ -327,7 +327,7 @@
                 </para>
             </remarks>
         </member>
-        <member name="M:Outpost31.Core.Template.ErrorCodeMessages.FormAccessDeniedGeneral">
+        <member name="M:Outpost31.Core.Template.Messages.FormAccessDeniedGeneral">
             <summary>The Access Denied error code message.</summary>
             <returns>The Access Denied error code message.</returns>
         </member>

@@ -1,25 +1,35 @@
 ﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
 // ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                             Core.Template.ErrorCodeMessages.cs
+//                                      Core.Template.Messages.cs
 
-// u250508_code
-// u250508_documentation
+// u250512_code
+// u250512_documentation
 
 using System.IO;
 
 namespace Outpost31.Core.Template
 {
-    public class ErrorCodeMessages
+    public class Messages
     {
         public static string TngnWbsvCriticalFailure()
         {
-            return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\ErrorCodeMessages\TngnWbsv.CriticalFailure.msg");
+            return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.CriticalFailure.msg");
         }
+
+        public static string TngnWbsvCriticalFailureDetail(string optObjStatus, string scriptParamStatus)
+        {
+            var basemsg = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.CriticalFailure.Detail.msg");
+
+            return basemsg.Replace("{OptObjStatus}", optObjStatus)
+                          .Replace("{ScriptParamStatus}", scriptParamStatus);
+        }
+
+
 
         public static string TngnWbsvUnknownRequest(string request)
         {
-            var baseMsg = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\ErrorCodeMessages\TngnWbsv.UnknownRequest.msg");
+            var baseMsg = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.UnknownRequest.msg");
 
             return baseMsg.Replace("{Request}", request);
         }
@@ -28,7 +38,7 @@ namespace Outpost31.Core.Template
         /// <returns>The Access Denied error code message.</returns>
         public static string FormAccessDeniedGeneral()
         {
-            return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\ErrorCodeMessages\FormAccess.Denied.General.msg");
+            return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\FormAccess.Denied.General.msg");
         }
     }
 }

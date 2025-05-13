@@ -8,6 +8,7 @@
 
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Logger
@@ -36,6 +37,7 @@ namespace Outpost31.Core.Logger
         {
             /* Trace/Debuggler Logs won't work here. */
 
+            Thread.Sleep(1000); // Simulate a delay for debugging purposes
             Dictionary<string, string> logComponent = LogComponent.CreateBasicLog("Debuggler", tngnWbsvEnvironment, msg);
 
             WriteLogToFile(logComponent);
