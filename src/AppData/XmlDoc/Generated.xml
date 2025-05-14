@@ -259,7 +259,7 @@
             <summary>Runtime setting logic for the Tingen Web Service.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;TngnWbsvConfiguration&quot;]/ClassDescription/*" />
         </member>
-        <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.New">
+        <member name="M:Outpost31.Core.Configuration.TngnWbsvConfiguration.New(System.String)">
             <summary>Load the runtime settings for the Tingen Web Service.</summary>
             <param name="tngnWbsvVersion">The Tingen Web Service version</param>
             <returns>Runtime settings for the Tingen Web Service.</returns>
@@ -300,7 +300,7 @@
         <member name="M:Outpost31.Core.Session.TngnWbsvSession.New(ScriptLinkStandard.Objects.OptionObject2015,System.String,System.String,System.String)">
             <summary>Creates and initializes a new TngnWbsvSession object</summary>
             <param name="sentOptObj">The OptionObject that is sent from Avatar.</param>
-            <param name="sentSlnkScriptParam">The Script Parameter that is sent from Avatar.</param>
+            <param name="sentScriptParam">The Script Parameter that is sent from Avatar.</param>
             <param name="tngnWbsvVersion">The current version of the Tingen Web Service.</param>
             <returns>A new Tingen Web Service session object.</returns>
             <remarks>
@@ -327,11 +327,11 @@
                 </para>
             </remarks>
         </member>
-        <member name="M:Outpost31.Core.Template.Messages.FormAccessDeniedGeneral">
+        <member name="M:Outpost31.Core.Template.Message.FormAccessDeniedGeneral">
             <summary>The Access Denied error code message.</summary>
             <returns>The Access Denied error code message.</returns>
         </member>
-        <member name="M:Outpost31.Core.Template.Details.Runtime(Outpost31.Core.Runtime.TngnWbsvRuntimeSettings)">
+        <member name="M:Outpost31.Core.Template.Detail.Runtime(Outpost31.Core.Runtime.TngnWbsvRuntimeSettings)">
             <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
             <return>A summary of the Tingen Web Service configuration at runtime.</return>
         </member>
@@ -425,6 +425,9 @@
         <member name="M:Outpost31.Core.Service.Spin.Down">
             <summary>Spin down the Tingen Web Service.</summary>
             <!-- No matching elements were found for the following include tag --><include file="AppData/XmlDoc/Core.Runtime.xml" path="Core.Runtime/Class[@name=&quot;Spin&quot;]/Down/*" />
+        </member>
+        <member name="M:Outpost31.Module.Admin.Parse.Request(Outpost31.Core.Session.TngnWbsvSession)">
+            <summary>Admin requests.</summary>
         </member>
         <member name="M:Outpost31.Module.FormAccess.Deny.SysCodeDoc(Outpost31.Core.Session.TngnWbsvSession)">
             <summary>Deny access to the form if the System Code is "DOC".</summary>

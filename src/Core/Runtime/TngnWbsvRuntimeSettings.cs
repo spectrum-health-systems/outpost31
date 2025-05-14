@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections.Generic;
+using Outpost31.Core.Logger;
 using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Runtime
@@ -49,10 +50,18 @@ namespace Outpost31.Core.Runtime
              * Please read the XML Documentation for this method for important information.
              */
 
+            LogEvent.Debuggler(tngnWbsvEnvironment, $"[CREATE DATA PATH]");
+
             string tngnWbsvDataPath    = $@"C:\Tingen_Data\WebService\{tngnWbsvEnvironment}";
+
+            LogEvent.Debuggler(tngnWbsvEnvironment, $"[GET MODE]");
+
             string tngnWbsvMode        = GetTngnWbsvMode($@"{tngnWbsvDataPath}\Runtime\TngnWbsv.Mode", ValidTngnWbsvModes());
 
-            return new TngnWbsvRuntimeSettings()
+            LogEvent.Debuggler(tngnWbsvEnvironment, $"[CREATING RUNTIME SETTINGS]");
+
+
+            var thing = new TngnWbsvRuntimeSettings()
             {
                 TngnWbsvVersion     = tngnWbsvVersion,
                 TngnWbsvBuild       = "250512",
@@ -63,6 +72,22 @@ namespace Outpost31.Core.Runtime
                 CurrentDate         = DateTime.Now.ToString("YYMMDD"),
                 CurrentTime         = DateTime.Now.ToString("HHMMSS"),
             };
+
+            LogEvent.Debuggler(tngnWbsvEnvironment, $"[RUNTIME SETTINGS CREATED]");
+
+            return thing;
+
+            //return new TngnWbsvRuntimeSettings()
+            //{
+            //    TngnWbsvVersion     = tngnWbsvVersion,
+            //    TngnWbsvBuild       = "250512",
+            //    TngnWbsvEnvironment = tngnWbsvEnvironment,
+            //    TngnWbsvMode        = tngnWbsvMode,
+            //    TngnWbsvDataPath    = tngnWbsvDataPath,
+            //    TngnWbsvHostName    = Environment.MachineName,
+            //    CurrentDate         = DateTime.Now.ToString("YYMMDD"),
+            //    CurrentTime         = DateTime.Now.ToString("HHMMSS"),
+            //};
         }
 
         /// <summary>Get the contents of a file, and validate it.</summary>

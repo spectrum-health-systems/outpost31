@@ -86,5 +86,12 @@ namespace Outpost31.Core.Avatar
                     break;
             }
         }
+
+        public static string Validate(OptionObject2015 sentOptObj)
+        {
+            return (sentOptObj == null)
+                ? "The sent OptionObject does not exist."
+                : "The sent OptionObject does exist.";
+        }
     }
 }

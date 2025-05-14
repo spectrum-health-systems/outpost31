@@ -11,7 +11,7 @@ using Outpost31.Core.Runtime;
 
 namespace Outpost31.Core.Template
 {
-    public class Details
+    public class Detail
     {
         /// <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
         /// <return>A summary of the Tingen Web Service configuration at runtime.</return>

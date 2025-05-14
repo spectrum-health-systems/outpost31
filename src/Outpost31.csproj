@@ -82,12 +82,14 @@
     <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
     <Compile Include="Core\Session\TngnWbsvSession.cs" />
-    <Compile Include="Core\Template\Messages.cs" />
-    <Compile Include="Core\Template\Details.cs" />
+    <Compile Include="Core\Template\Message.cs" />
+    <Compile Include="Core\Template\Detail.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
     <Compile Include="Core\Service\Spin.cs" />
+    <Compile Include="Module\Admin\Parse.cs" />
+    <Compile Include="Module\Admin\Reset.cs" />
     <Compile Include="Module\Admin\Status.cs" />
     <Compile Include="Module\FormAccess\Deny.cs" />
     <Compile Include="Module\Prototype\Code.cs" />

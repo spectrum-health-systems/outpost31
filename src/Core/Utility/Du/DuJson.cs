@@ -11,6 +11,7 @@
 
 using System.IO;
 using System.Text.Json;
+using Outpost31.Core.Session;
 
 namespace Outpost31.Core.Utility.Du
 {
@@ -41,14 +42,23 @@ namespace Outpost31.Core.Utility.Du
         /// </remarks>
         public static void ExportToLocalFile<JsonObject>(JsonObject jsonObject, string filePath, bool formatJson = true)
         {
+
+            DuFile.WriteLocal(@"C:\IT\TEST1.txt", filePath);
+
             JsonSerializerOptions jsonFormat = new JsonSerializerOptions
             {
                 WriteIndented = formatJson
             };
 
-            string fileContent = JsonSerializer.Serialize(jsonObject, jsonFormat);
+            DuFile.WriteLocal(@"C:\IT\TEST2.txt", $"HI");
+
+            var fileContent = JsonSerializer.Serialize(jsonObject, jsonFormat);
+
+            DuFile.WriteLocal(@"C:\IT\TEST3.txt", $"{fileContent}");
 
             File.WriteAllText(filePath, fileContent);
+
+            DuFile.WriteLocal(@"C:\IT\TEST4.txt", $"HI");
         }
 
         /// <summary>Import JSON data from an external file. [250108]</summary>

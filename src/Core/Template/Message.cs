@@ -3,27 +3,36 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                      Core.Template.Messages.cs
 
-// u250512_code
-// u250512_documentation
+// u250514_code
+// u250514_documentation
 
 using System.IO;
+using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Template
 {
-    public class Messages
+    public class Message
     {
+        /* Critical error messages.
+         */
+
         public static string TngnWbsvCriticalFailure()
         {
             return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.CriticalFailure.msg");
         }
 
-        public static string TngnWbsvCriticalFailureDetail(string optObjStatus, string scriptParamStatus)
+        public static string TngnWbsvCriticalMissingArguments(OptionObject2015 sentOptObj, string sentScriptParam)
         {
+            string optObjStatus = Outpost31.Core.Avatar.OptionObjects.Validate(sentOptObj);
+            string scriptParamStatus = (Outpost31.Core.Avatar.ScriptParameter.Validate(sentScriptParam));
+
             var basemsg = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.CriticalFailure.Detail.msg");
 
-            return basemsg.Replace("{OptObjStatus}", optObjStatus)
-                          .Replace("{ScriptParamStatus}", scriptParamStatus);
+            return basemsg.Replace("~OptObjStatus~", optObjStatus)
+                          .Replace("~ScriptParamStatus~", scriptParamStatus);
         }
+
+
 
 
 

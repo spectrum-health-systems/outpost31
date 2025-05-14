@@ -7,6 +7,7 @@
 // u250501_documentation
 
 using Outpost31.Core.Configuration;
+using Outpost31.Core.Logger;
 using Outpost31.Core.Runtime;
 using ScriptLinkStandard.Objects;
 
@@ -39,24 +40,40 @@ namespace Outpost31.Core.Session
 
         /// <summary>Creates and initializes a new TngnWbsvSession object</summary>
         /// <param name="sentOptObj">The OptionObject that is sent from Avatar.</param>
-        /// <param name="sentSlnkScriptParam">The Script Parameter that is sent from Avatar.</param>
+        /// <param name="sentScriptParam">The Script Parameter that is sent from Avatar.</param>
         /// <param name="tngnWbsvVersion">The current version of the Tingen Web Service.</param>
         /// <returns>A new Tingen Web Service session object.</returns>
         /// <include file='AppData/XmlDoc/Core.Session.xml' path='Core.Session/Class[@name="TngnWbsvSession"]/TngnWbsvSession.New/*'/>
-        public static TngnWbsvSession New(OptionObject2015 sentOptObj, string sentSlnkScriptParam, string tngnWbsvVersion, string tngnWbsvEnvironment)
+        public static TngnWbsvSession New(OptionObject2015 sentOptObj, string sentScriptParam, string tngnWbsvVersion, string tngnWbsvEnvironment)
         {
             //#DEVNOTE# We need to validate that these values are valid.
+            LogEvent.Debuggler(tngnWbsvEnvironment, $"[CREATING NEW SESSION]");
 
-            return new TngnWbsvSession
+            var thing =  new TngnWbsvSession
             {
                 TngnWbsvRuntimeSettings = TngnWbsvRuntimeSettings.New(tngnWbsvVersion, tngnWbsvEnvironment),
-                TngnWbsvConfig          = TngnWbsvConfiguration.New(),
+                TngnWbsvConfig          = TngnWbsvConfiguration.New(tngnWbsvEnvironment),
                 SentOptObj              = sentOptObj,
                 WorkOptObj              = sentOptObj.Clone(),
                 ReturnOptObj            = null,
-                SentScriptParam         = sentSlnkScriptParam,
+                SentScriptParam         = sentScriptParam,
                 TngnWbsvSysCode         = sentOptObj.SystemCode
             };
+
+            LogEvent.Debuggler(tngnWbsvEnvironment, $"[NEW SESSION CREATED] - {sentOptObj.SystemCode}");
+
+            return thing;
+
+            //return new TngnWbsvSession
+            //{
+            //    TngnWbsvRuntimeSettings = TngnWbsvRuntimeSettings.New(tngnWbsvVersion, tngnWbsvEnvironment),
+            //    TngnWbsvConfig          = TngnWbsvConfiguration.New(tngnWbsvEnvironment),
+            //    SentOptObj              = sentOptObj,
+            //    WorkOptObj              = sentOptObj.Clone(),
+            //    ReturnOptObj            = null,
+            //    SentScriptParam         = sentSlnkScriptParam,
+            //    TngnWbsvSysCode         = sentOptObj.SystemCode
+            //};
         }
     }
 }

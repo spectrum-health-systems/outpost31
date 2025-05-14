@@ -28,7 +28,7 @@ namespace Outpost31.Core.Logger
         {
             /* Trace/Debuggler Logs won't work here. */
 
-            Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Debuggler", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
+            Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Debug", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
 
             WriteLogToFile(logComponent);
         }
@@ -52,7 +52,7 @@ namespace Outpost31.Core.Logger
             WriteLogToFile(logComponent);
         }
 
-        public static void Trace(string tngnWbsvEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
+        public static void Trace(int traceLevel, string tngnWbsvEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
         {
             /* Trace/Debuggler Logs won't work here. */
 
