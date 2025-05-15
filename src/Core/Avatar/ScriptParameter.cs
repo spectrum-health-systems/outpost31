@@ -15,6 +15,15 @@ namespace Outpost31.Core.Avatar
 {
     public class ScriptParameter
     {
+        /// <summary>
+        /// Processes a request based on the parameters provided in the specified session.
+        /// </summary>
+        /// <remarks>The method determines the type of request by analyzing the <see
+        /// cref="TngnWbsvSession.SentScriptParam"/> property  and delegates the processing to the appropriate handler.
+        /// Supported request types include prototype requests,  admin requests, and form access requests. If the
+        /// request type is unrecognized, a default response is returned.</remarks>
+        /// <param name="tngnWbsvSession">The session object containing the request parameters and runtime settings.  This parameter cannot be
+        /// <c>null</c>.</param>
         public static void Request(TngnWbsvSession tngnWbsvSession)
         {
             LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSE REQUEST A] '{tngnWbsvSession.SentScriptParam}'");

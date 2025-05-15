@@ -4,6 +4,17 @@
         <name>Outpost31</name>
     </assembly>
     <members>
+        <member name="M:Outpost31.Core.Avatar.ScriptParameter.Request(Outpost31.Core.Session.TngnWbsvSession)">
+            <summary>
+            Processes a request based on the parameters provided in the specified session.
+            </summary>
+            <remarks>The method determines the type of request by analyzing the <see
+            cref="P:Outpost31.Core.Session.TngnWbsvSession.SentScriptParam"/> property  and delegates the processing to the appropriate handler.
+            Supported request types include prototype requests,  admin requests, and form access requests. If the
+            request type is unrecognized, a default response is returned.</remarks>
+            <param name="tngnWbsvSession">The session object containing the request parameters and runtime settings.  This parameter cannot be
+            <c>null</c>.</param>
+        </member>
         <member name="T:Outpost31.Core.Avatar.OptionObjects">
             <summary>The data structure that is used to pass information between Avatar and the Tingen Web Service.</summary>
             <remarks>
@@ -150,6 +161,76 @@
         </member>
         <member name="T:Outpost31.Core.Logger.LogEvent">
             <summary>Methods for creating different types of logs.</summary>
+        </member>
+        <member name="M:Outpost31.Core.Logger.LogEvent.Trace(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>Creates Trace Log.</summary>
+            <remarks>
+                <note title="About this method">
+                    <list type="bullet">
+                        <item>
+                            This method creates Trace Logs, which are used for debugging<br/>
+                            and tracking the flow of the application.
+                        </item>
+                        <item>
+                            Trace Logs can't go here because the logging infrastructure<br/>
+                            hasn't been initialized yet. If you need to create a log here,<br/>
+                            use a Debuggler Log instead.
+                        </item>
+                    </list>
+                </note>
+                <para>
+                    Trace Logs are assigned a level between 0 and 9,:
+                    <list type="table">
+                        <item>
+                            <term>0</term>
+                            <description>None</description>
+                         </item>
+                        <item>
+                            <term>1</term>
+                            <description>Methods</description>
+                         </item>
+                        <item>
+                            <term>2</term>
+                            <description>Conditional statements</description>
+                         </item>
+                        <item>
+                            <term>3</term>
+                            <description>TBD.</description>
+                         </item>
+                        <item>
+                            <term>4</term>
+                            <description>TBD.</description>
+                         </item>
+                        <item>
+                            <term>5</term>
+                            <description>TBD.</description>
+                         </item>
+                        <item>
+                            <term>6</term>
+                            <description>TBD.</description>
+                         </item>
+                        <item>
+                            <term>7</term>
+                            <description>TBD.</description>
+                         </item>
+                        <item>
+                            <term>8</term>
+                            <description>TBD.</description>
+                         </item>
+                        <item>
+                            <term>9</term>
+                            <description>All</description>
+                         </item>
+                    </list>
+                </para>
+            </remarks>
+            <param name="traceLevel">The Trace Log level.</param>
+            <param name="tngnWbsvEnvironment">The Avatar environment that interfaces with the Tingen Web Service.</param>
+            <param name="asmName">The name of the assembly generating the trace.</param>
+            <param name="callerFilePath">The full file path of the source code file that invoked the method.</param>
+            <param name="callingMethod">The name of the method that invoked the trace.</param>
+            <param name="methodLine">The line number in the source code file where the trace was invoked.</param>
+            <param name="message">The message to include in the trace log. Defaults to "No message." if not specified.</param>
         </member>
         <member name="T:Outpost31.Core.Request.PrototypeRequest">
             <summary>Handles prototype requests.</summary>
