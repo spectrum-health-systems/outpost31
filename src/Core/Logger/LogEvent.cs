@@ -20,7 +20,7 @@ namespace Outpost31.Core.Logger
         public static void Critical(string tngnWbsvEnvironment, string message = "Critical")
         {
             /* Trace/Defcon1 Logs won't work here. */
-            Dictionary<string, string> logComponent = LogComponent.CreateBasicLog("Critical", tngnWbsvEnvironment, message);
+            Dictionary<string, string> logComponent = Builder.BuildLog("Critical", tngnWbsvEnvironment, message);
 
             WriteLogToFile(logComponent);
         }
@@ -29,7 +29,7 @@ namespace Outpost31.Core.Logger
         {
             /* Trace/Debuggler Logs won't work here. */
 
-            Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Debug", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
+            Dictionary<string, string> logComponent = Builder.BuildLog("Debug", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
 
             WriteLogToFile(logComponent);
         }
@@ -39,7 +39,7 @@ namespace Outpost31.Core.Logger
             /* Trace/Debuggler Logs won't work here. */
 
             Thread.Sleep(1000); // Simulate a delay for debugging purposes
-            Dictionary<string, string> logComponent = LogComponent.CreateBasicLog("Debuggler", tngnWbsvEnvironment, msg);
+            Dictionary<string, string> logComponent = Builder.BuildLog("Debuggler", tngnWbsvEnvironment, msg);
 
             WriteLogToFile(logComponent);
         }
@@ -48,7 +48,7 @@ namespace Outpost31.Core.Logger
         {
             /* Trace/Primeval Logs won't work here. */
 
-            Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Primeval", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
+            Dictionary<string, string> logComponent = Builder.BuildLog("Primeval", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
 
             WriteLogToFile(logComponent);
         }
@@ -69,61 +69,25 @@ namespace Outpost31.Core.Logger
         ///         </list>
         ///     </note>
         ///     <para>
-        ///         Trace Logs are assigned a level between 0 and 9,:
-        ///         <list type="table">
-        ///             <item>
-        ///                 <term>0</term>
-        ///                 <description>None</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>1</term>
-        ///                 <description>Methods</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>2</term>
-        ///                 <description>Conditional statements</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>3</term>
-        ///                 <description>TBD.</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>4</term>
-        ///                 <description>TBD.</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>5</term>
-        ///                 <description>TBD.</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>6</term>
-        ///                 <description>TBD.</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>7</term>
-        ///                 <description>TBD.</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>8</term>
-        ///                 <description>TBD.</description>
-        ///              </item>
-        ///             <item>
-        ///                 <term>9</term>
-        ///                 <description>All</description>
-        ///              </item>
+        ///         Trace Logs are assigned a level between 0 and 9:
+        ///         <list type="bullet">
+        ///             <item>0 - None</item>
+        ///             <item>1 - Methods</item>
+        ///             <item>2 - Conditional statements</item>
+        ///             <item>9 - All</item>
         ///         </list>
         ///     </para>
         /// </remarks>
         /// <param name="traceLevel">The Trace Log level.</param>
-        /// <param name="tngnWbsvEnvironment">The Avatar environment that interfaces with the Tingen Web Service.</param>
+        /// <param name="avatarEnvironment">The Avatar environment that interfaces with the Tingen Web Service.</param>
         /// <param name="asmName">The name of the assembly generating the trace.</param>
         /// <param name="callerFilePath">The full file path of the source code file that invoked the method.</param>
         /// <param name="callingMethod">The name of the method that invoked the trace.</param>
         /// <param name="methodLine">The line number in the source code file where the trace was invoked.</param>
         /// <param name="message">The message to include in the trace log. Defaults to "No message." if not specified.</param>
-        public static void Trace(int traceLevel, string tngnWbsvEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
+        public static void Trace(int traceLevel, string avatarEnvironment, string asmName, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callingMethod = "", [CallerLineNumber] int methodLine = 0, string message = "No message.")
         {
-            Dictionary<string, string> logComponent = LogComponent.CreateStandardLog("Trace", tngnWbsvEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
+            Dictionary<string, string> logComponent = Builder.BuildLog("Trace", avatarEnvironment, asmName, callerFilePath, callingMethod, methodLine, message);
 
             WriteLogToFile(logComponent);
         }
