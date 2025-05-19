@@ -16,12 +16,12 @@ namespace Outpost31.Core.Template
         /* Critical error messages.
          */
 
-        public static string TngnWbsvCriticalFailure()
+        public static string ServiceCriticalFailure()
         {
             return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.CriticalFailure.msg");
         }
 
-        public static string TngnWbsvCriticalMissingArguments(OptionObject2015 sentOptObj, string sentScriptParam)
+        public static string ServiceMissingArguments(OptionObject2015 sentOptObj, string sentScriptParam)
         {
             string optObjStatus = Outpost31.Core.Avatar.OptionObjects.Validate(sentOptObj);
             string scriptParamStatus = (Outpost31.Core.Avatar.ScriptParameter.Validate(sentScriptParam));
@@ -36,7 +36,7 @@ namespace Outpost31.Core.Template
 
 
 
-        public static string TngnWbsvUnknownRequest(string request)
+        public static string ServiceUnknownRequest(string request)
         {
             var baseMsg = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.UnknownRequest.msg");
 

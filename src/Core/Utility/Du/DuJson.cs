@@ -9,9 +9,14 @@
 // u250430_code
 // u250430_documentation
 
+/* IMPORTANT NOTE:
+ * This does not work with System.Text.Json v9.0.5 or later.
+ * Use System.Text.Json v9.0.4 .
+ */
+
+
 using System.IO;
 using System.Text.Json;
-using Outpost31.Core.Session;
 
 namespace Outpost31.Core.Utility.Du
 {

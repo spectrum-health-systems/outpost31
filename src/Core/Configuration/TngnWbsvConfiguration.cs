@@ -3,19 +3,27 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                    Core.Configuration.TngnWbsvConfiguration.cs
 
-// u250501_code
-// u250501_documentation
+// u250519_code
+// u250519_documentation
 
 using System.IO;
 using System.Text.Json;
 using Outpost31.Core.Logger;
-using Outpost31.Core.Runtime;
-using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Configuration
 {
     /// <summary>Runtime setting logic for the Tingen Web Service.</summary>
-    /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnWbsvConfiguration"]/ClassDescription/*'/>
+    /// <remarks>
+    ///     <note title="About this class">
+    ///         This class handles all configuration logic for the Tingen Web Service.<br/>
+    ///         <list type="bullet">
+    ///             <item>Should not be used in production</item>
+    ///             <item>Is most likely super ugly</item>
+    ///             <item>Probably doesn't follow best practices</item>
+    ///         </list>
+    ///     </note>
+    /// </remarks>
+    /// <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
     public class TngnWbsvConfiguration
     {
         public string TraceLevel { get; set; }
