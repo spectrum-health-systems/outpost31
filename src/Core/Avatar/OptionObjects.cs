@@ -6,14 +6,32 @@
 // u250501_code
 // u250501_documentation
 
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Dynamic;
 using System.Reflection;
+using System.Security.Policy;
+using System.Threading;
 using Outpost31.Core.Session;
 using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Avatar
 {
-    /// <summary>The data structure that is used to pass information between Avatar and the Tingen Web Service.</summary>
-    /// <include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="OptionObjects"]/ClassDescription/*'/>
+    /// <summary>OptionObject logic.</summary>
+    /// <remarks>
+    ///     The OptionObject holds all of the content of and metadata describing the<br/>
+    ///     calling myAvatar form.<br/>
+    ///     <br/>
+    ///     There are three types of OptionObjects:
+    ///     <list type = "bullet">
+    ///         <item><see cref= "SentOptObj">SentOptObj</see></item>
+    ///         <item><see cref= "WorkOptObj">WorkOptObj</see></item>
+    ///         <item><see cref= "ReturnOptObj">ReturnOptObj</see></item>
+    ///     </list>
+    /// </remarks>
+    /// <seealso href= "https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
     public class OptionObjects
     {
         /// <summary>The original OptionObject sent from Avatar.</summary>
@@ -33,10 +51,46 @@ namespace Outpost31.Core.Avatar
         public static string ExeAsm { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Finalize an OptionObject so it can be returned to Avatar.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         Before an OptionObject can be returned to Avatar, we need to make sure<br/>
+        ///         that all of the required OptionObject components exist and/or are<br/>
+        ///         modified correctly.<br/>
+        ///         <br/>
+        ///         This is done by calling the OptionObject's built in <c>ToReturnOptionObject()</c><br/>
+        ///         method on the OptionObject, then sending it back to Avatar.
+        ///     </para>
+        ///     <para>
+        ///         When an OptionObject is returned to Avatar, it requires an <see href= "https://spectrum-health-systems.github.io/tingen-documentation/static/optionobject-error-codes">OptionObject Error Code</see><br/>
+        ///         <br/>
+        ///         The most common error codes are:
+        ///         <list type="bullet">
+        ///             <item>
+        ///                 <term>1</term>
+        ///                 <description>
+        ///                     Used when you don't want the user to take an action, such as<br/>
+        ///                     submitting a form
+        ///                 </description>
+        ///             </item>
+        ///             <item>
+        ///                 <term>3</term>
+        ///                 <description>Used when you would like to notify the user of something</description>
+        ///             </item>
+        ///             <item>
+        ///                 <term>4</term>
+        ///                 <description>
+        ///                     Used when you want warn the user they may want to make<br/>
+        ///                     changes, and give them the option to stop further processing,<br/>
+        ///                     or continuing
+        ///                 </description>
+        ///             </item>
+        ///         </list>
+        ///     </para>
+        /// </remarks>
         /// <param name="tngnSession">The Tingen Session data structure object.</param>
         /// <param name="errorCode">The OptionObject Error Code.</param>
         /// <param name="errorMessage">The OptionObject error message.</param>
-        /// <include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="OptionObjects"]/Finalize/*'/>
+        /// <seealso href= "https://spectrum-health-systems.github.io/tingen-documentation/static/optionobject-error-codes">OptionObject Error Codes</seealso>
         public static void Finalize(TngnWbsvSession tngnSession, int errorCode, string errorMessage = "")
         {
             //LogEvent.Trace(1, ExeAsm, tnSession.TraceInfo);

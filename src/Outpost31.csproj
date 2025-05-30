@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
+    <Compile Include="Core\Template\Blueprint\OptObjErrorMessage.cs" />
     <Compile Include="Core\Logger\LogBuilder.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
@@ -109,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\Runtime\" />
+    <Folder Include="Core\Template\Orangeprint\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />

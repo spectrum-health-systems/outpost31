@@ -7,6 +7,19 @@
 -->
 
 <Core.Avatar>
+    
+        ///     <note title="Important information about this method">
+    ///         Before an OptionObject can be returned to Avatar, we need to make sure<br/>
+    ///         that all of the required OptionObject components exist and/or are<br/>
+    ///         modified correctly.<br/>
+    ///         <br/>
+    ///         This is done by calling the OptionObject's built<br/>
+    ///         in <c>ToReturnOptionObject()</c> method on the OptionObject, then<br/>
+    ///         sending it back to Avatar.
+    ///     </note>
+    
+    
+    
 
     <!--
     =======
@@ -17,22 +30,7 @@
 
         <!-- OptionObjects.cs description -->
         <ClassDescription>
-            <remarks>
-                <para>
-                    The OptionObjects class contains the logic for managing OptionObjects, which<br/>
-                    contain all of the content and metadata of the Avatar form that is sent to<br/>
-                    the Tingen Web Service.
-                </para>
-                <para>
-                    There are three types of OptionObjects:
-                    <list type="bullet">
-                        <item><see cref="SentOptObj">SentOptObj</see></item>
-                        <item><see cref="WorkOptObj">WorkOptObj</see></item>
-                        <item><see cref="ReturnOptObj">ReturnOptObj</see></item>
-                    </list>
-                </para>
-            </remarks>
-            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+           
         </ClassDescription>
 
         <!-- OptionObjects.Finalize() -->
