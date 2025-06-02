@@ -3,8 +3,8 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                  Core.Template.Blueprint.OptObjErrorMessage.cs
 
-// u250529_code
-// u250529_documentation
+// u250602_code
+// u250602_documentation
 
 namespace Outpost31.Core.Blueprint
 {

@@ -3,15 +3,15 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                       Core.Template.Details.cs
 
-// u250501_code
-// u250501_documentation
+// u250602_code
+// u250602_documentation
 
 using System;
 using Outpost31.Core.Runtime;
 
-namespace Outpost31.Core.Template
+namespace Outpost31.Core.Blueprint
 {
-    public class Detail
+    public class LogDetail
     {
         /// <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
         /// <return>A summary of the Tingen Web Service configuration at runtime.</return>

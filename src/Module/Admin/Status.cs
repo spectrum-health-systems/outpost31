@@ -20,7 +20,7 @@ namespace Outpost31.Module.Admin
 
             var path = $@"{tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvDataPath}\RuntimeDetails.txt";
 
-            var details = Core.Template.Detail.Runtime(tngnWbsvSession.TngnWbsvRuntimeSettings);
+            var details = Core.Blueprint.LogDetail.Runtime(tngnWbsvSession.TngnWbsvRuntimeSettings);
 
             DuFile.WriteLocal(path, details, true);
         }

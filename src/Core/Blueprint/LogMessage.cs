@@ -3,15 +3,15 @@
 // ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
 //                                      Core.Template.Messages.cs
 
-// u250514_code
-// u250514_documentation
+// u250602_code
+// u250602_documentation
 
 using System.IO;
 using ScriptLinkStandard.Objects;
 
-namespace Outpost31.Core.Template
+namespace Outpost31.Core.Blueprint
 {
-    public class Message
+    public class LogMessage
     {
         /* Critical error messages.
          */

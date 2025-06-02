@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Outpost31.Core.Session;
-using Outpost31.Core.Template;
+using Outpost31.Core.Blueprint;
 
 namespace Outpost31.Core.Request
 {
@@ -30,7 +30,7 @@ namespace Outpost31.Core.Request
             }
             else
             {
-                tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, Message.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
             }
         }
 
@@ -44,7 +44,7 @@ namespace Outpost31.Core.Request
                     break;
 
                 default:
-                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, Message.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
                     break;
             }
         }
@@ -69,7 +69,7 @@ namespace Outpost31.Core.Request
                         break;
 
                     default:
-                        tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, Message.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                        tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
                         break;
                 }
             }
@@ -88,7 +88,7 @@ namespace Outpost31.Core.Request
             }
             else
             {
-                tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, Message.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
             }
         }
     }
