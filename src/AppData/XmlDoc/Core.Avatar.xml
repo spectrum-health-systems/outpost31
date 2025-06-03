@@ -1,0 +1,144 @@
+﻿<!-- u2250421 -->
+
+<!--
+===========
+[NAMESPACE] Outpost31.Core.Avatar
+===========
+-->
+
+<Core.Avatar>
+    
+        ///     <note title="Important information about this method">
+    ///         Before an OptionObject can be returned to Avatar, we need to make sure<br/>
+    ///         that all of the required OptionObject components exist and/or are<br/>
+    ///         modified correctly.<br/>
+    ///         <br/>
+    ///         This is done by calling the OptionObject's built<br/>
+    ///         in <c>ToReturnOptionObject()</c> method on the OptionObject, then<br/>
+    ///         sending it back to Avatar.
+    ///     </note>
+    
+    
+    
+
+    <!--
+    =======
+    [CLASS] Core.Avatar.OptionObjects.cs
+    =======
+    -->
+    <Class name="OptionObjects">
+
+        <!-- OptionObjects.cs description -->
+        <ClassDescription>
+           
+        </ClassDescription>
+
+        <!-- OptionObjects.Finalize() -->
+        <Finalize>
+            <remarks>
+                <note title="Important information about this method">
+                    Before an OptionObject can be returned to Avatar, we need to make sure<br/>
+                    that all of the required OptionObject components exist and/or are<br/>
+                    modified correctly.<br/>
+                    <br/>
+                    This is done by calling the OptionObject's built<br/>
+                    in <c>ToReturnOptionObject()</c> method on the OptionObject, then<br/>
+                    sending it back to Avatar.
+                </note>
+                <para>
+                    <b>Error Codes</b><br/>
+                    When an OptionObject is returned to Avatar, it requires one of the following<br/>
+                    single-digit integer Error Codes:
+                    <list type="table">
+                        <listheader>
+                            <term>Error Code</term>
+                            <description>Description</description>
+                        </listheader>
+                        <item>
+                            <term>0</term>
+                            <description>No action taken</description>
+                        </item>
+                        <item>
+                            <term>1</term>
+                            <description>
+                                Returns an Error Message with an "Ok" button, and stops<br/>
+                                further processing of scripts
+                            </description>
+                        </item>
+                        <item>
+                            <term>2</term>
+                            <description>
+                                Returns an Error Message with "OK" and "Cancel" buttons,<br/>
+                                and stops further scripts the user clicks "Cancel")
+                            </description>
+                        </item>
+                        <item>
+                            <term>3</term>
+                            <description>Returns an Error Message with "Ok" button</description>
+                        </item>
+                        <item>
+                            <term>4</term>
+                            <description>
+                                Returns an Error Message with "Yes" and "No" buttons<br/>
+                                and stops further scripts the user clicks "No")
+                            </description>
+                        </item>
+                        <item>
+                            <term>5</term>
+                            <description>Returns a URL to be opened in a new browser</description>
+                        </item>
+                        <item>
+                            <term>6</term>
+                            <description>Returns a form to be opened in Avatar</description>
+                        </item>
+                    </list>
+                </para>
+                <note title="Common Error Codes">
+                    The most common error codes are:
+                    <list type="bullet">
+                        <item>
+                            <term>1</term>
+                            <description>
+                                Used when you don't want the user to take an action, such as<br/>
+                                submitting a form
+                            </description>
+                        </item>
+                        <item>
+                            <term>3</term>
+                            <description>Used when you would like to notify the user of something</description>
+                        </item>
+                        <item>
+                            <term>4</term>
+                            <description>
+                                Used when you want warn the user they may want to make<br/>
+                                changes, and give them the option to stop further processing,<br/>
+                                or continuing
+                            </description>
+                        </item>
+                    </list>
+                </note>
+                <para>
+                    Please see the <see cref="OptionObjects"/> class documentation for more information about Error Codes.<br/>
+                </para>
+            </remarks>
+        </Finalize>
+
+    </Class>
+
+    <!--
+    =======
+    [CLASS] Core.Avatar.ScriptParameter.cs
+    =======
+    -->
+    
+    <Class name="ScriptParameter">
+
+        <!-- Class description -->
+        <ClassDescription>
+            <remarks>
+            </remarks>
+        </ClassDescription>
+
+    </Class>
+
+</Core.Avatar>

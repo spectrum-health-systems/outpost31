@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Outpost31")]
-[assembly: AssemblyDescription("The Tingen web service logic.")]
+[assembly: AssemblyDescription("The Tingen web service logic")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("A Pretty Cool Program & Spectrum Health Systems")]
+[assembly: AssemblyCompany("A Pretty Cool Program")]
 [assembly: AssemblyProduct("Outpost31")]
-[assembly: AssemblyCopyright("Copyright 2015-2025 A Pretty Cool Program")]
+[assembly: AssemblyCopyright("Copyright (c) A Pretty Cool Program")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("89ec105e-b456-479d-a328-ee3afff39473")]
+[assembly: Guid("b0dbedeb-4b64-4fb6-8ef6-0e3e3d2d63d9")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -28,8 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Build and Revision Numbers
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("25.1.0.0")]
-[assembly: AssemblyFileVersion("25.1.0.0")]
+[assembly: AssemblyVersion("25.5.0.0")]
+[assembly: AssemblyFileVersion("25.5.0.0")]
