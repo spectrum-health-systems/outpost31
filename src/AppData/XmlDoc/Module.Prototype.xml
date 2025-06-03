@@ -1,0 +1,94 @@
+﻿ <!-- u250430 -->
+
+<!--
+===========
+[NAMESPACE] Outpost31.Module.Prototype
+===========
+
+-->
+
+<Module.Prototype>
+
+    <!--
+    =======
+    [CLASS] Run.cs
+    =======
+    -->
+    <Class name="Run">
+
+        <!-- Class description -->
+        <ClassDescription>
+            <remarks>
+                <note title="Snapple Fact #1522: Some cats are allergic to humans."></note>
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </ClassDescription>
+
+        <!-- Code() -->
+        <Code>
+            <remarks>
+                <note title="About this method">
+                    When the Tingen Web Service receives a prototype request,<br/>
+                    it needs to be sent somewhere specific.
+                </note>
+                The current list of prototype requests:
+                <list type="table">
+                    <listheader>
+                        <term>Prototype request</term>
+                        <description>Description</description>
+                    </listheader>
+                    <item>
+                        <term>_pDocSysCodeDenyAccessToForm</term>
+                        <description>Deny access to specific forms for the DOC System Code.</description>
+                    </item>
+                </list>
+            </remarks>
+        </Code>
+
+    </Class>
+
+    <!--
+    =======
+    [CLASS] DocSysCode.cs
+    =======
+    -->
+    <Class name="DocSysCode">
+
+        <!-- Class description -->
+        <ClassDescription>
+            <remarks>
+                <note title="About this class">
+                    Any prototype code related to the DOC System Code should be located here.<br/>
+                </note>
+                <note type="warning" title="About this class">
+                    Please keep in mind that code in this class:
+                    <list type="bullet">
+                        <item>Should not be used in production</item>
+                        <item>Is most likely super ugly</item>
+                        <item>Probably doesn't follow best practices</item>
+                    </list>
+                </note>
+            </remarks>
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </ClassDescription>
+
+        <!-- DenyAccessToForm() -->
+        <DenyAccessToForm>
+            <remarks>
+                <note title="Snapple Fact #1416: Mangoes can get sunburned."></note>
+                <para>
+                    To deny access to a form for a specific DOC System Code, set the <c>Form Load</c> event <c>Script Parameter</c> to <c>_pDocSysCodeDenyAccessToForm</c>
+                </para>
+            </remarks>
+        </DenyAccessToForm>
+
+        <!-- MsgAccessDenied() -->
+        <MsgAccessDenied>
+            <remarks>
+                <note title="Snapple Fact #970: Dolphins are unable to smell."></note>
+            </remarks>
+        </MsgAccessDenied>
+
+    </Class>
+    
+</Module.Prototype>
