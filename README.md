@@ -4,7 +4,7 @@
 
   ![logo](./.github/image/logo/Outpost31_logo_320x420.png)
   
-  ![Release 25.6](https://github.com/spectrum-health-systems/tingen/blob/main/.github/image/releases/release-25.6.png)
+  ![Release 25.6](https://github.com/spectrum-health-systems/tingen/blob/main/.github/image/release/release-25.6.png)
   
 </div>
 
