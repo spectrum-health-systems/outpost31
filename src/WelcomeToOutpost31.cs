@@ -6,7 +6,7 @@
  * ╚██████╔╝╚██████╔╝   ██║   ██║     ╚██████╔╝███████║   ██║       ██████╔╝ ██║
  *  ╚═════╝  ╚═════╝    ╚═╝   ╚═╝      ╚═════╝ ╚══════╝   ╚═╝       ╚═════╝  ╚═╝
  *                                 The back-end logic for the Tingen Web Service
- *                                                           Release YY.MM.Patch
+ *                                                                Release 25.6.0
  * https://github.com/spectrum-health-systems/Outpost31
  * Copyright(c) A Pretty Cool Program. All rights reserved.
  * Licensed under the Apache 2.0 license.
