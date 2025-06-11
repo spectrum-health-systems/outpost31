@@ -8,12 +8,10 @@
   
 </div>
 
-> HI THERE!  
->
-> This is the **development version** of Outpost31, and actually doesn't do anything on it's own.
->
-> You're probably looking for the development version of [Tingen](https://github.com/spectrum-health-systems/Tingen_development).
-
 # About Outpost31
 
-Outpost31 is a class library for the [Tingen Web Service](https://github.com/spectrum-health-systems/tingen-web-service).
+Outpost31 is a class library that provides the back-end functionality for the [Tingen Web Service](https://github.com/spectrum-health-systems/tingen-web-service).
+
+Since the majority of Outpost31 development is done in the Tingen Web Service, you'll find all [CHANGELOG](https://github.com/spectrum-health-systems/tingen-web-service/blob/development/CHANGELOG.md) and [ROADMAP](https://github.com/spectrum-health-systems/tingen-web-service/blob/main/ROADMAP.md) information there.
+
+The [API documentation](https://spectrum-health-systems.github.io/tingen-documentation/api/shfb-outpost31/html/ffe49fad-6cb2-4f4b-a8af-9ba9a7d06fc1.htm) is also available.
