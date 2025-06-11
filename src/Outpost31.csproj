@@ -80,7 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
-    <Compile Include="Core\Template\Blueprint\OptObjErrorMessage.cs" />
+    <Compile Include="Core\Blueprint\OptObjErrorMessage.cs" />
     <Compile Include="Core\Logger\LogBuilder.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Avatar\OptionObjects.cs" />
@@ -90,8 +90,8 @@
     <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
     <Compile Include="Core\Session\TngnWbsvSession.cs" />
-    <Compile Include="Core\Template\Message.cs" />
-    <Compile Include="Core\Template\Detail.cs" />
+    <Compile Include="Core\Blueprint\LogMessage.cs" />
+    <Compile Include="Core\Blueprint\LogDetail.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
@@ -107,10 +107,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="WelcomeToOutpost31.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\Runtime\" />
-    <Folder Include="Core\Template\Orangeprint\" />
+    <Folder Include="Core\Template\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />

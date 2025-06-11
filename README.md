@@ -2,12 +2,9 @@
 
 <div align="center">
 
-  ![logo](./.github/images/logos/Outpost31_README.png)
+  ![logo](./.github/image/logo/Outpost31_logo_320x420.png)
   
-  ![DEVELOPMENT_VERSION](https://img.shields.io/badge/release-24.11--development-firebrick?style=flat-square)&nbsp;&nbsp;
-  ![DotNet](https://img.shields.io/badge/.net-Framework_4.8-darkslateblue?style=flat-square)&nbsp;&nbsp;
-  ![Platform](https://img.shields.io/badge/platform-Windows-blue?style=flat-square)&nbsp;&nbsp;
-  ![License](https://img.shields.io/github/license/spectrum-health-systems/Outpost31?style=flat-square)&nbsp;&nbsp;
+  ![Release 25.6](https://github.com/APrettyCoolProgram/aprettycoolprogram/blob/main/profile/pub/verel/r/r25.6.png)
   
 </div>
 

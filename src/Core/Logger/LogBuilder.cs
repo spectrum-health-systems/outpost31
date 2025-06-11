@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                      Core.Logger.LogBuilder.cs
+﻿/* Core
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *                Logger.LogBuilder.cs
 
-// u250519_code
-// u250519_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using System;
 using System.Collections.Generic;

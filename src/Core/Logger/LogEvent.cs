@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                        Core.Logger.LogEvent.cs
+﻿/* Core
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *                  Logger.LogEvent.cs
 
-// u250519_code
-// u250519_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;

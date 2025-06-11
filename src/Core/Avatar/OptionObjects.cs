@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                   Core.Avatar.OptionObjects.cs
+﻿/* Core
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *             Avatar.OptionObjects.cs
 
-// u250501_code
-// u250501_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using System;
 using System.Collections;

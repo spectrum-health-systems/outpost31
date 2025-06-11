@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                 Core.Avatar.TngnWbsvSession.cs
+﻿/* Core
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *          Session.TngnWbsvSession.cs
 
-// u250501_code
-// u250501_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using Outpost31.Core.Configuration;
 using Outpost31.Core.Logger;

@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                        Core.RuntimeSettings.cs
+﻿/* Core
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *  Runtime.TngnWbsvRuntimeSettings.cs
 
-// u250501_code
-// u250501_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using System;
 using System.Collections.Generic;

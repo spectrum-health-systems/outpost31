@@ -1,19 +1,20 @@
-﻿// ██████╗ ██╗   ██╗
-// ██╔══██╗██║   ██║
-// ██║  ██║██║   ██║
-// ██║  ██║██║   ██║
-// ██████╔╝╚██████╔╝
-// ╚═════╝  ╚═════╝
-// Du.Json.cs
+﻿/* Du
+ * ██████╗ ██╗   ██╗
+ * ██╔══██╗██║   ██║
+ * ██║  ██║██║   ██║
+ * ██║  ██║██║   ██║
+ * ██████╔╝╚██████╔╝
+ * ╚═════╝  ╚═════╝
+ *          Json.cs
 
-// u250430_code
-// u250430_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 /* IMPORTANT NOTE:
  * This does not work with System.Text.Json v9.0.5 or later.
  * Use System.Text.Json v9.0.4 .
  */
-
 
 using System.IO;
 using System.Text.Json;

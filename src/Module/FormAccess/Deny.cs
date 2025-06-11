@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                      Module.FormAccess.Deny.cs
+﻿/* Module
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *                  FormAccess.Deny.cs
 
-// u250508_code
-// u250508_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using System.Collections.Generic;
 using System.IO;
@@ -20,7 +22,7 @@ namespace Outpost31.Module.FormAccess
         {
             if ((tngnWbsvSession.SentOptObj.SystemCode == "DOC"))
             {
-                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.Message.FormAccessDeniedGeneral());
+                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Blueprint.LogMessage.FormAccessDeniedGeneral());
             }
             else
             {
@@ -33,7 +35,7 @@ namespace Outpost31.Module.FormAccess
         {
             if ((tngnWbsvSession.SentOptObj.SystemCode == "DOC") || (tngnWbsvSession.SentOptObj.SystemCode.Contains("HOC")))
             {
-                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.Message.FormAccessDeniedGeneral());
+                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Blueprint.LogMessage.FormAccessDeniedGeneral());
             }
             else
             {
@@ -46,7 +48,7 @@ namespace Outpost31.Module.FormAccess
         {
             if (sysCodeList.Contains(tngnWbsvSession.SentOptObj.SystemCode))
             {
-                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Template.Message.FormAccessDeniedGeneral());
+                tngnWbsvSession.ReturnOptObj =tngnWbsvSession.SentOptObj.ToReturnOptionObject(1, Core.Blueprint.LogMessage.FormAccessDeniedGeneral());
             }
             else
             {

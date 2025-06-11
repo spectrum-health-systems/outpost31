@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                    Core.Configuration.TngnWbsvConfiguration.cs
+﻿/* Core
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ * Configuration.TngnWbsvConfiguration.cs
 
-// u250519_code
-// u250519_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using System.IO;
 using System.Text.Json;

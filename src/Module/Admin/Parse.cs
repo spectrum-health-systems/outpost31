@@ -1,11 +1,21 @@
-﻿using System;
+﻿/* Module
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *                      Admin.Parse.cs
+
+/* u250603_code
+ * u250603_documentation
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
-using Outpost31.Core.Template;
+using Outpost31.Core.Blueprint;
 
 namespace Outpost31.Module.Admin
 {
@@ -30,7 +40,7 @@ namespace Outpost31.Module.Admin
 
                 default:
                     LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING DEFAULT REQUEST] '{tngnWbsvSession.SentScriptParam}'");
-                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, Message.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
                     break;
             }
 

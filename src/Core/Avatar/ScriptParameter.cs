@@ -1,14 +1,16 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                 Core.Avatar.ScriptParameter.cs
+﻿/* Core
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *           Avatar.ScriptParameter.cs
 
-// u250501_code
-// u250501_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
-using Outpost31.Core.Template;
+using Outpost31.Core.Blueprint;
 using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Avatar
@@ -49,7 +51,7 @@ namespace Outpost31.Core.Avatar
                 }
                 else
                 {
-                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, Message.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
                 }
 
                 ////LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"PARSEING STANDARD REQUEST: {tngnWbsvSession.SentScriptParam}");

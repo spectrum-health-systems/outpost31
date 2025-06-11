@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                         Module.Admin.Status.cs
+﻿/* Module
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *                     Admin.Status.cs
 
-// u250501_code
-// u250501_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
@@ -20,7 +22,7 @@ namespace Outpost31.Module.Admin
 
             var path = $@"{tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvDataPath}\RuntimeDetails.txt";
 
-            var details = Core.Template.Detail.Runtime(tngnWbsvSession.TngnWbsvRuntimeSettings);
+            var details = Core.Blueprint.LogDetail.Runtime(tngnWbsvSession.TngnWbsvRuntimeSettings);
 
             DuFile.WriteLocal(path, details, true);
         }

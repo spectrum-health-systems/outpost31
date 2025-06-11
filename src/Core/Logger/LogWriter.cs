@@ -1,10 +1,12 @@
-﻿// ██████  ██  ██ ██████ █████ ██████ █████  ██████   ██████  ███
-// ██  ██  ██  ██   ██   █████ ██  ██ ██████   ██        ███   ██
-// ██████  ██████   ██   ██    ██████  █████   ██     ██████   ██
-//                                       Core.Logger.LogWriter.cs
+﻿/* Core
+ * ███ █ █ ███ ███ ███ ███  ███ ███ ██
+ * █ █ █ █  █  ███ █ █ ████  █   ██  █
+ * ███ ███  █  █   ███  ███  █  ███  █
+ *                 Logger.LogWriter.cs
 
-// u250519_code
-// u250519_documentation
+/* u250603_code
+ * u250603_documentation
+ */
 
 using System.Collections.Generic;
 using Outpost31.Core.Utility.Du;
