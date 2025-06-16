@@ -1,11 +1,6 @@
-﻿/* Core
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *       Avatar.Blueprint.LogDetail.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Core.Blueprint.LogDetail.cs
+ * u250616_code
+ * u250616_documentation
  */
 
 using System;

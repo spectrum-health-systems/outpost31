@@ -1,3 +1,3 @@
 CHANGLOG: Outpost 31
 
-All changelog entries for Outpost31 can be found in the [Tingen Web Service CHANGELOG](https://github.com/spectrum-health-systems/tingen-web-service/blob/development/CHANGELOG.md).
+The changelog for both the Tingen Web Service and Outpost31 can be found [here](https://github.com/orgs/spectrum-health-systems/projects/51/views/4).

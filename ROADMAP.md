@@ -1,3 +1,3 @@
 ROADMAP: Outpost31
 
-All roadmap entries for Outpost31 can be found in the [Tingen Web Service ROADMAP](https://github.com/spectrum-health-systems/tingen-web-service/blob/main/ROADMAP.md).
+The roadmap for both the Tingen Web Service and Outpost31 can be found [here](https://github.com/orgs/spectrum-health-systems/projects/51/views/3).

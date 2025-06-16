@@ -1,12 +1,8 @@
-﻿/* Core
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *                     Service.Spin.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Core.Service.Spin.cs
+ * u250616_code
+ * u250616_documentation
  */
+
 
 using System;
 using System.Reflection;

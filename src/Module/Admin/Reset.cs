@@ -1,11 +1,6 @@
-﻿/* Module
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *                      Admin.Reset.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Module.Admin.Reset.cs
+ * u250616_code
+ * u250616_documentation
  */
 
 using System;

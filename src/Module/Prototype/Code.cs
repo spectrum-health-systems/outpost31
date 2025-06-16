@@ -1,11 +1,6 @@
-﻿/* Module
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *                   Prototype.Code.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Module.Prototype.Code.cs
+ * u250616_code
+ * u250616_documentation
  */
 
 using Outpost31.Core.Session;

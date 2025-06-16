@@ -1,13 +1,7 @@
-﻿/* Core
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *     Blueprint.OptObjErrorMessage.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Core.Blueprint.OptObjMessage.cs
+ * u250616_code
+ * u250616_documentation
  */
-
 namespace Outpost31.Core.Blueprint
 {
     public class OptObjErrorMessage
