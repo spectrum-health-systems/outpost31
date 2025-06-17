@@ -29,7 +29,7 @@ namespace Outpost31.Core.Avatar
     ///     </list>
     /// </remarks>
     /// <seealso href= "https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-    public class OptionObjects
+    public class OptionObject
     {
         /// <summary>The original OptionObject sent from Avatar.</summary>
         /// <remarks>This is never modified during a Tingen Web Service session.</remarks>

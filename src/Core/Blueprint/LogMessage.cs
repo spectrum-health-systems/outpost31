@@ -20,7 +20,7 @@ namespace Outpost31.Core.Blueprint
 
         public static string ServiceMissingArguments(OptionObject2015 sentOptObj, string sentScriptParam)
         {
-            string optObjStatus = Outpost31.Core.Avatar.OptionObjects.Validate(sentOptObj);
+            string optObjStatus = Outpost31.Core.Avatar.OptionObject.Validate(sentOptObj);
             string scriptParamStatus = (Outpost31.Core.Avatar.ScriptParameter.Validate(sentScriptParam));
 
             var basemsg = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.CriticalFailure.Detail.msg");

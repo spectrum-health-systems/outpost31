@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.Logger.LogEvent.cs
- * u250616_code
- * u250616_documentation
+ * u250617_code
+ * u250617_documentation
  */
 
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace Outpost31.Core.Logger
     ///             <item><see cref="Critical(string, string)"/></item>
     ///             <item><see cref="Debug(string, string, string, string, int, string)"/></item>
     ///             <item><see cref="Debuggler(string, string)"/></item>
-    ///             <item><see cref="Primeval(string, string, string, string, int, string)"/></item>
+    ///             <item><see cref="Primeval(string, string)"/></item>
     ///             <item><see cref="Trace(int, string, string, string, string, int, string)"/></item>
     ///         </list>
     ///     </note>
@@ -26,11 +26,19 @@ namespace Outpost31.Core.Logger
     public static class LogEvent
     {
         /// <summary>Critical logs indicate a critical failure with the Tingen Web Service.</summary>
-        /// <param name="wbsvEnvironment">The Avatar environment that the Tingen Web Service has interfaced with.</param>
+        /// <remarks>
+        ///     Examples of when to use a Critical log:
+        ///     <list type="bullet">
+        ///         <item>When a valid <see cref="Avatar.OptionObject.OptionObject"/> is not passed from Avatar.</item>
+        ///         <item>When a valid <see cref="Avatar.ScriptParameter.ScriptParameter"/>is not passed from Avatar.</item>        
+        ///     </list>
+        /// </remarks>
+        /// <param name="avtrEnvironment">The Avatar environment that the Tingen Web Service has interfaced with.</param>
         /// <param name="logMessage">The log message, which defaults to "Critical log." if not specified.</param>
-        public static void Critical(string avtrEnv, string logMessage = "Critical log.")
+        /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation/blob/main/static/project-guidelines.md#critical-logs">Tingen documentation</seealso> 
+        public static void Critical(string avtrEnvironment, string logMessage = "Critical log.")
         {
-            Dictionary < string, string > logComponent = LogBuilder.BasicLog("Critical", avtrEnv, logMessage);
+            Dictionary < string, string > logComponent = LogBuilder.BasicLog("Critical", avtrEnvironment, logMessage);
             LogWriter.WriteLogToFile(logComponent);
         }
 
@@ -86,18 +94,18 @@ namespace Outpost31.Core.Logger
             LogWriter.WriteLogToFile(logComponent);
         }
 
-        /// <summary>Primeval logs are used where other logs cannot.</summary>
+        /// <summary>Primeval logs are used when the advanced logging infrastructure isn't available.</summary>
         /// <remarks>
         ///     <para>
         ///         Primeval logs should removed before deploying to production.<br/>
         ///         <br/>
-        ///         Since debuggler logs may be written very quickly, there is a 1000ms delay<br/>
-        ///         before committing to file.
+        ///         Since primeval logs may be written very quickly, there is a 1000ms delay<br/>
+        ///         before committing data.
         ///     </para>
         ///     <para>
         ///        Syntax:
         ///         <code>
-        ///             LogEvent.Debuggler(wbsvEnvironment, "Your message here.");
+        ///             LogEvent.Primeval(wbsvEnvironment, "Your message here.");
         ///         </code>
         ///     </para>
         /// </remarks>

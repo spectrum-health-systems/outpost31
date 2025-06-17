@@ -83,7 +83,7 @@
     <Compile Include="Core\Blueprint\OptObjErrorMessage.cs" />
     <Compile Include="Core\Logger\LogBuilder.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
-    <Compile Include="Core\Avatar\OptionObjects.cs" />
+    <Compile Include="Core\Avatar\OptionObject.cs" />
     <Compile Include="Core\Logger\LogWriter.cs" />
     <Compile Include="Core\Request\PrototypeRequest.cs" />
     <Compile Include="Core\Request\StandardRequest.cs" />
