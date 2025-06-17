@@ -35,7 +35,7 @@ namespace Outpost31.Core.Logger
         /// </remarks>
         /// <param name="avtrEnvironment">The Avatar environment that the Tingen Web Service has interfaced with.</param>
         /// <param name="logMessage">The log message, which defaults to "Critical log." if not specified.</param>
-        /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation/blob/main/static/project-guidelines.md#critical-logs">Tingen documentation</seealso> 
+        /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation/blob/main/static/tngnwsvc.md#critical-logs">Tingen documentation</seealso> 
         public static void Critical(string avtrEnvironment, string logMessage = "Critical log.")
         {
             Dictionary < string, string > logComponent = LogBuilder.BasicLog("Critical", avtrEnvironment, logMessage);
