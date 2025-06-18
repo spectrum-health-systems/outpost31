@@ -12,25 +12,25 @@ namespace Outpost31.Core.Runtime
 {
     /// <summary>Runtime settings for the Tingen Web Service.</summary>
     /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnWbsvRuntimeSettings"]/ClassDescription/*'/>
-    public class TngnWbsvRuntimeSettings
+    public class WsvcRuntime
     {
         /// <summary>The Tingen Web Service version number.</summary>
-        public string TngnWbsvVersion { get; set; }
+        public string TngnWsvcVer { get; set; }
 
         /// <summary>The Tingen Web Service build number.</summary>
-        public string TngnWbsvBuild { get; set; }
+        public string TngnWsvcBuild { get; set; }
 
-        /// <summary>The environment that the Tingen Web Service will interface with.</summary>
-        public string TngnWbsvEnvironment { get; set; }
+        /// <summary>The Avatar System that the Tingen Web Service will interface with.</summary>
+        public string TngnWsvcAvtrSys { get; set; }
 
         /// <summary>The Tingen Web Service mode.</summary>
-        public string TngnWbsvMode { get; set; }
+        public string TngnWsvcMode { get; set; }
 
         /// <summary>The Tingen Web Service data path.</summary>
-        public string TngnWbsvDataPath { get; set; }
+        public string TngnWsvcDataPath { get; set; }
 
         /// <summary>The name of the machine running the Tingen Web Service.</summary>
-        public string TngnWbsvHostName { get; set; }
+        public string TngnWsvcHostName { get; set; }
 
         /// <summary>The current date in YYMMDD format.</summary>
         public string CurrentDate { get; set; }
@@ -41,7 +41,7 @@ namespace Outpost31.Core.Runtime
         /// <summary>Creates a new instance of the RuntimeSettings class.</summary>
         /// <returns>An object containing the runtime settings for the Tingen Web Service.</returns>
         /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnWbsvRuntimeSettings"]/New/*'/>
-        public static TngnWbsvRuntimeSettings New(string tngnWbsvVersion, string tngnWbsvEnvironment)
+        public static WsvcRuntime New(string tngnWbsvVersion, string tngnWbsvEnvironment)
         {
             /* #DEVNOTE#
              * Please read the XML Documentation for this method for important information.
@@ -58,14 +58,14 @@ namespace Outpost31.Core.Runtime
             LogEvent.Debuggler(tngnWbsvEnvironment, $"[CREATING RUNTIME SETTINGS]");
 
 
-            var thing = new TngnWbsvRuntimeSettings()
+            var thing = new WsvcRuntime()
             {
-                TngnWbsvVersion     = tngnWbsvVersion,
-                TngnWbsvBuild       = "250512",
-                TngnWbsvEnvironment = tngnWbsvEnvironment,
-                TngnWbsvMode        = tngnWbsvMode,
-                TngnWbsvDataPath    = tngnWbsvDataPath,
-                TngnWbsvHostName    = Environment.MachineName,
+                TngnWsvcVer     = tngnWbsvVersion,
+                TngnWsvcBuild       = "250512",
+                TngnWsvcAvtrSys = tngnWbsvEnvironment,
+                TngnWsvcMode        = tngnWbsvMode,
+                TngnWsvcDataPath    = tngnWbsvDataPath,
+                TngnWsvcHostName    = Environment.MachineName,
                 CurrentDate         = DateTime.Now.ToString("YYMMDD"),
                 CurrentTime         = DateTime.Now.ToString("HHMMSS"),
             };

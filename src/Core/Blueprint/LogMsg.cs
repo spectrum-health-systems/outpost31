@@ -1,6 +1,6 @@
-﻿/* Outpost31.Core.Blueprint.LogMessage.cs
- * u250616_code
- * u250616_documentation
+﻿/* Outpost31.Core.Blueprint.LogMsg.cs
+ * u250618_code
+ * u250618_documentation
  */
 
 using System.IO;
@@ -8,30 +8,28 @@ using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Blueprint
 {
-    public class LogMessage
+    public class LogMsg
     {
-        /* Critical error messages.
+        /* ========================
+         * Critical error messages.
+         * ========================
          */
 
-        public static string ServiceCriticalFailure()
+        public static string WsvcCritFail()
         {
-            return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.CriticalFailure.msg");
+            return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\WsvcCritFail.txt");
         }
 
-        public static string ServiceMissingArguments(OptionObject2015 sentOptObj, string sentScriptParam)
+        public static string WsvcMissingArgs(OptionObject2015 sentOptObj, string sentScriptParam)
         {
-            string optObjStatus = Outpost31.Core.Avatar.OptionObject.Validate(sentOptObj);
-            string scriptParamStatus = (Outpost31.Core.Avatar.ScriptParameter.Validate(sentScriptParam));
+            string optObjStatus = Outpost31.Core.Avatar.OptionObject.CheckExistance(sentOptObj);
+            string scriptParamStatus = (Outpost31.Core.Avatar.ScriptParameter.CheckExistance(sentScriptParam));
 
             var basemsg = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Templates\Messages\TngnWbsv.CriticalFailure.Detail.msg");
 
             return basemsg.Replace("~OptObjStatus~", optObjStatus)
                           .Replace("~ScriptParamStatus~", scriptParamStatus);
         }
-
-
-
-
 
         public static string ServiceUnknownRequest(string request)
         {

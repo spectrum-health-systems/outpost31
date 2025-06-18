@@ -24,13 +24,13 @@ namespace Outpost31.Core.Service
         /// <param name="sentOptObj"></param>
         /// <param name="sentScriptParam"></param>
         /// <returns></returns>
-        public static void Up(TngnWbsvSession tngnWbsvSession, OptionObject2015 sentOptObj, string sentScriptParam, string tngnWbsvVersion, string tngnWbsvEnvironment)
+        public static void Up(WsvcSession tngnWbsvSession, OptionObject2015 sentOptObj, string sentScriptParam, string tngnWbsvVersion, string tngnWbsvEnvironment)
         {
             LogEvent.Debuggler(tngnWbsvEnvironment, $"[SPINNING UP]");
 
-            tngnWbsvSession = TngnWbsvSession.New(sentOptObj, sentScriptParam, tngnWbsvVersion, tngnWbsvEnvironment);
+            tngnWbsvSession = WsvcSession.New(sentOptObj, sentScriptParam, tngnWbsvVersion, tngnWbsvEnvironment);
 
-            LogEvent.Debuggler(tngnWbsvEnvironment, $"[SPUN UP] {tngnWbsvSession.SentScriptParam}");
+            LogEvent.Debuggler(tngnWbsvEnvironment, $"[SPUN UP] {tngnWbsvSession.ScriptParam.Original}");
         }
 
         /// <summary>Spin down the Tingen Web Service.</summary>

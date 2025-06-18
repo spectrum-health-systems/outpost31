@@ -17,29 +17,29 @@ namespace Outpost31.Module.Admin
     public class Parse
     {
         /// <summary>Admin requests.</summary>
-        public static void Request(TngnWbsvSession tngnWbsvSession)
+        public static void Request(WsvcSession tngnWbsvSession)
         {
-            LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING ADMIN REQUEST] '{tngnWbsvSession.SentScriptParam}'");
+            LogEvent.Debuggler(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING ADMIN REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
 
-            switch (tngnWbsvSession.SentScriptParam.ToLower())
+            switch (tngnWbsvSession.ScriptParam.Original.ToLower())
             {
                 case "admin.reset.config":
-                    LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING RESET CONFIG] '{tngnWbsvSession.SentScriptParam}'");
-                    Reset.Config(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment);
+                    LogEvent.Debuggler(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING RESET CONFIG] '{tngnWbsvSession.ScriptParam.Original}'");
+                    Reset.Config(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys);
                     break;
 
                 case "admin.status.current":
-                    LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING STATUS CURRENT] '{tngnWbsvSession.SentScriptParam}'");
+                    LogEvent.Debuggler(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING STATUS CURRENT] '{tngnWbsvSession.ScriptParam.Original}'");
                     Status.Current(tngnWbsvSession);
                     break;
 
                 default:
-                    LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING DEFAULT REQUEST] '{tngnWbsvSession.SentScriptParam}'");
-                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                    LogEvent.Debuggler(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING DEFAULT REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
+                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, LogMsg.ServiceUnknownRequest(tngnWbsvSession.ScriptParam.Original));
                     break;
             }
 
-            LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING NOTHING] '{tngnWbsvSession.SentScriptParam}'");
+            LogEvent.Debuggler(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING NOTHING] '{tngnWbsvSession.ScriptParam.Original}'");
         }
     }
 }

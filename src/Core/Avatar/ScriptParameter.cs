@@ -1,52 +1,60 @@
 ﻿/* Outpost31.Core.Avatar.ScriptParameter.cs
- * u250616_code
- * u250616_documentation
+ * u250618_code
+ * u250618_documentation
  */
 
+using Outpost31.Core.Blueprint;
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
-using Outpost31.Core.Blueprint;
-using Outpost31.Core.Utility.Du;
 
 namespace Outpost31.Core.Avatar
 {
+    /// <summary>Script parameter logic</summary>
+    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project/blob/main/static/avtr/script-param.md">The Script Parameter</seealso>
+    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
     public class ScriptParameter
     {
-        /// <summary>
-        /// Processes a request based on the parameters provided in the specified session.
-        /// </summary>
-        /// <remarks>The method determines the type of request by analyzing the <see
-        /// cref="TngnWbsvSession.SentScriptParam"/> property  and delegates the processing to the appropriate handler.
-        /// Supported request types include prototype requests,  admin requests, and form access requests. If the
-        /// request type is unrecognized, a default response is returned.</remarks>
-        /// <param name="tngnWbsvSession">The session object containing the request parameters and runtime settings.  This parameter cannot be
-        /// <c>null</c>.</param>
-        public static void Request(TngnWbsvSession tngnWbsvSession)
-        {
-            LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSE REQUEST A] '{tngnWbsvSession.SentScriptParam}'");
+        /// <summary>The original script parameter sent from Avatar.</summary>
+        public string Original { get; set; }
 
-            if (tngnWbsvSession.SentScriptParam.ToLower().StartsWith("_p"))
+        /// <summary>Processes a request based on the parameters provided in the specified session.</summary>
+        /// <remarks>
+        ///     None yet.
+        /// </remarks>
+        /// <param name="wsvcSession">The session object containing the request parameters and runtime settings</param>
+        public static void Request(WsvcSession wsvcSession)
+        {
+            /* TESTING */
+            LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSE REQUEST A] '{wsvcSession.ScriptParam.Original}'");
+
+            if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("_p"))
             {
-                LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING PROTOTYPE REQUEST] '{tngnWbsvSession.SentScriptParam}'");
-                Core.Request.PrototypeRequest.Parse(tngnWbsvSession);
+                /* TESTING */
+                LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING PROTOTYPE REQUEST] '{wsvcSession.ScriptParam.Original}'");
+
+                Core.Request.PrototypeRequest.Parse(wsvcSession);
             }
             else
             {
-                LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING STANDARD REQUEST] '{tngnWbsvSession.SentScriptParam}'");
+                /* TESTING */
+                LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING STANDARD REQUEST] '{wsvcSession.ScriptParam.Original}'");
 
-                if (tngnWbsvSession.SentScriptParam.ToLower().StartsWith("admin"))
+                if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("admin"))
                 {
-                    LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING ADMIN REQUEST] '{tngnWbsvSession.SentScriptParam}'");
-                    Module.Admin.Parse.Request(tngnWbsvSession);
+                    /* TESTING */
+                    LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING ADMIN REQUEST] '{wsvcSession.ScriptParam.Original}'");
+
+                    Module.Admin.Parse.Request(wsvcSession);
                 }
-                else if (tngnWbsvSession.SentScriptParam.ToLower().StartsWith("formaccess"))
+                else if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("formaccess"))
                 {
-                    LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING FORM ACCESS REQUEST] '{tngnWbsvSession.SentScriptParam}'");
+                    /* TESTING */
+                    LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING FORM ACCESS REQUEST] '{wsvcSession.ScriptParam.Original}'");
                     // TODO FormAccess(tngnWbsvSession);
                 }
                 else
                 {
-                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                    wsvcSession.OptObj.Finalized = wsvcSession.OptObj.Original.ToReturnOptionObject(0, LogMsg.ServiceUnknownRequest(wsvcSession.ScriptParam.Original));
                 }
 
                 ////LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"PARSEING STANDARD REQUEST: {tngnWbsvSession.SentScriptParam}");
@@ -54,11 +62,18 @@ namespace Outpost31.Core.Avatar
             }
         }
 
-        public static string Validate(string sentScriptParam)
+
+
+
+
+        /// <summary>Validates whether the provided script parameter is null, empty, or consists only of white-space characters.</summary>
+        /// <param name="origParam">The script parameter to validate.</param>
+        /// <returns>A message indicating whether the provided script parameter exists or does not exist.</returns>
+        public static string CheckExistance(string origParam)
         {
-            return (string.IsNullOrWhiteSpace(sentScriptParam))
-                ? $"The sent Script Parameter ('{sentScriptParam}') does not exist."
-                : $"The sent Script Parameter ('{sentScriptParam}') does exist.";
+            return string.IsNullOrWhiteSpace(origParam)
+                ? $"The sent script parameter ('{origParam}') does not exist."
+                : $"The sent script parameter ('{origParam}') does exist.";
         }
     }
 }

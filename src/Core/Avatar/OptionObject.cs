@@ -1,16 +1,10 @@
-﻿/* Outpost31.Core.Avatar.OptionObjects.cs
- * u250616_code
- * u250616_documentation
+﻿/* Outpost31.Core.Avatar.OptionObject.cs
+ * u250618_code
+ * u250618_documentation
  */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Dynamic;
 using System.Reflection;
-using System.Security.Policy;
-using System.Threading;
 using Outpost31.Core.Session;
 using ScriptLinkStandard.Objects;
 
@@ -19,29 +13,22 @@ namespace Outpost31.Core.Avatar
     /// <summary>OptionObject logic.</summary>
     /// <remarks>
     ///     The OptionObject holds all of the content of and metadata describing the<br/>
-    ///     calling myAvatar form.<br/>
-    ///     <br/>
-    ///     There are three types of OptionObjects:
-    ///     <list type = "bullet">
-    ///         <item><see cref= "SentOptObj">SentOptObj</see></item>
-    ///         <item><see cref= "WorkOptObj">WorkOptObj</see></item>
-    ///         <item><see cref= "ReturnOptObj">ReturnOptObj</see></item>
-    ///     </list>
-    /// </remarks>
-    /// <seealso href= "https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+    ///     calling myAvatar form.
+    ///  </remarks>
+    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
     public class OptionObject
     {
         /// <summary>The original OptionObject sent from Avatar.</summary>
-        /// <remarks>This is never modified during a Tingen Web Service session.</remarks>
-        public OptionObject2015 SentOptObj { get; set; }
+        /// <remarks>This is <i>never</i> modified during a Tingen Web Service session.</remarks>
+        public OptionObject2015 Original { get; set; }
 
-        /// <summary>Where OptionObject work is done.</summary>
-        /// <remarks>This object is potentially modified during a Tingen Web Service session.</remarks>
-        public OptionObject2015 WorkOptObj { get; set; }
+        /// <summary>The OptionObject work is done.</summary>
+        /// <remarks>This object is <i>potentially</i> modified during a Tingen Web Service session.</remarks>
+        public OptionObject2015 Worker { get; set; }
 
-        /// <summary>The OptionObject that is returned to Avatar.</summary>
+        /// <summary>The finalized OptionObject that is returned to Avatar.</summary>
         /// <remarks>This is the finalized WorkOptObj, ready to be returned to Avatar.</remarks>
-        public OptionObject2015 ReturnOptObj { get; set; }
+        public OptionObject2015 Finalized { get; set; }
 
         /// <summary>The executing Assembly name.</summary>
         /// <remarks>A required component for writing log files, defined here so it can be used throughout the class.</remarks>
@@ -50,85 +37,63 @@ namespace Outpost31.Core.Avatar
         /// <summary>Finalize an OptionObject so it can be returned to Avatar.</summary>
         /// <remarks>
         ///     <para>
-        ///         Before an OptionObject can be returned to Avatar, we need to make sure<br/>
-        ///         that all of the required OptionObject components exist and/or are<br/>
-        ///         modified correctly.<br/>
+        ///         An OptionObject must be finalized before being returned to Avatar.<br/>
         ///         <br/>
-        ///         This is done by calling the OptionObject's built in <c>ToReturnOptionObject()</c><br/>
-        ///         method on the OptionObject, then sending it back to Avatar.
-        ///     </para>
-        ///     <para>
-        ///         When an OptionObject is returned to Avatar, it requires an <see href= "https://spectrum-health-systems.github.io/tingen-documentation/static/optionobject-error-codes">OptionObject Error Code</see><br/>
-        ///         <br/>
-        ///         The most common error codes are:
+        ///         The <see cref="OptionObject2015.ToReturnOptionObject(int, string)"/> method:
         ///         <list type="bullet">
-        ///             <item>
-        ///                 <term>1</term>
-        ///                 <description>
-        ///                     Used when you don't want the user to take an action, such as<br/>
-        ///                     submitting a form
-        ///                 </description>
-        ///             </item>
-        ///             <item>
-        ///                 <term>3</term>
-        ///                 <description>Used when you would like to notify the user of something</description>
-        ///             </item>
-        ///             <item>
-        ///                 <term>4</term>
-        ///                 <description>
-        ///                     Used when you want warn the user they may want to make<br/>
-        ///                     changes, and give them the option to stop further processing,<br/>
-        ///                     or continuing
-        ///                 </description>
-        ///             </item>
+        ///             <item>Ensures that all required components of the OptionObject are valid</item>
+        ///             <item>Assigns an error code to the object</item>
+        ///             <item>Assigns an error message to the object</item>
         ///         </list>
         ///     </para>
+        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.OptionObjects"]/Finalize.ErrorCodes/*'/>    
+        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.OptionObjects"]/Finalize.Example/*'/>    
         /// </remarks>
-        /// <param name="tngnSession">The Tingen Session data structure object.</param>
-        /// <param name="errorCode">The OptionObject Error Code.</param>
-        /// <param name="errorMessage">The OptionObject error message.</param>
-        /// <seealso href= "https://spectrum-health-systems.github.io/tingen-documentation/static/optionobject-error-codes">OptionObject Error Codes</seealso>
-        public static void Finalize(TngnWbsvSession tngnSession, int errorCode, string errorMessage = "")
+        /// <param name="wsvcSession">The Tingen Session data structure object.</param>
+        /// <param name="errCode">The OptionObject error code.</param>
+        /// <param name="errMsg">The OptionObject error message.</param>
+
+        public static void Finalize(WsvcSession wsvcSession, int errCode, string errMsg = "")
         {
             //LogEvent.Trace(1, ExeAsm, tnSession.TraceInfo);
 
-            tngnSession.ReturnOptObj = tngnSession.WorkOptObj.Clone();
+            wsvcSession.OptObj.Finalized = wsvcSession.OptObj.Worker.Clone();
 
-            switch (errorCode)
+            switch (errCode)
             {
                 case 0:
                     //LogEvent.Trace(2, ExeAsm, tnSession.TraceInfo);
-                    tngnSession.ReturnOptObj.ToReturnOptionObject(0, errorMessage);
+                    wsvcSession.OptObj.Finalized.ToReturnOptionObject(0, errMsg);
                     break;
 
                 case 1:
                     //LogEvent.Trace(2, ExeAsm, tnSession.TraceInfo);
-                    tngnSession.ReturnOptObj.ToReturnOptionObject(1, errorMessage);
+                    wsvcSession.OptObj.Finalized.ToReturnOptionObject(1, errMsg);
                     break;
 
                 case 2:
                     //LogEvent.Trace(2, ExeAsm, tnSession.TraceInfo);
-                    tngnSession.ReturnOptObj.ToReturnOptionObject(2, errorMessage);
+                    wsvcSession.OptObj.Finalized.ToReturnOptionObject(2, errMsg);
                     break;
 
                 case 3:
                     //LogEvent.Trace(2, ExeAsm, tnSession.TraceInfo);
-                    tngnSession.ReturnOptObj.ToReturnOptionObject(3, errorMessage);
+                    wsvcSession.OptObj.Finalized.ToReturnOptionObject(3, errMsg);
                     break;
 
                 case 4:
                     //LogEvent.Trace(2, ExeAsm, tnSession.TraceInfo);
-                    tngnSession.ReturnOptObj.ToReturnOptionObject(4, errorMessage);
+                    wsvcSession.OptObj.Finalized.ToReturnOptionObject(4, errMsg);
                     break;
 
                 case 5:
                     //LogEvent.Trace(2, ExeAsm, tnSession.TraceInfo);
-                    tngnSession.ReturnOptObj.ToReturnOptionObject(5, errorMessage);
+                    wsvcSession.OptObj.Finalized.ToReturnOptionObject(5, errMsg);
                     break;
 
                 case 6:
                     //LogEvent.Trace(2, ExeAsm, tnSession.TraceInfo);
-                    tngnSession.ReturnOptObj.ToReturnOptionObject(6, errorMessage);
+                    wsvcSession.OptObj.Finalized.ToReturnOptionObject(6, errMsg);
                     break;
 
                 default:
@@ -138,11 +103,14 @@ namespace Outpost31.Core.Avatar
             }
         }
 
-        public static string Validate(OptionObject2015 sentOptObj)
+        /// <summary> Validates whether the provided <see cref="OptionObject2015"/> instance exists.</summary>
+        /// <param name="origOptObj">The <see cref="OptionObject2015"/> instance to validate.</param>
+        /// <returns>A string indicating the validation result.</returns>
+        public static string CheckExistance(OptionObject2015 origOptObj)
         {
-            return (sentOptObj == null)
-                ? "The sent OptionObject does not exist."
-                : "The sent OptionObject does exist.";
+            return (origOptObj == null)
+                ? "An OptionObject was not sent."
+                : "An OptionObject was sent.";
         }
     }
 }

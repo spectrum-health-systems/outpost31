@@ -11,13 +11,13 @@ namespace Outpost31.Module.Admin
 {
     internal class Status
     {
-        public static void Current(TngnWbsvSession tngnWbsvSession)
+        public static void Current(WsvcSession tngnWbsvSession)
         {
-            LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING STATUS CURRENT REQUEST] '{tngnWbsvSession.SentScriptParam}'");
+            LogEvent.Debuggler(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING STATUS CURRENT REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
 
-            var path = $@"{tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvDataPath}\RuntimeDetails.txt";
+            var path = $@"{tngnWbsvSession.WsvcRun.TngnWsvcDataPath}\RuntimeDetails.txt";
 
-            var details = Core.Blueprint.LogDetail.Runtime(tngnWbsvSession.TngnWbsvRuntimeSettings);
+            var details = Core.Blueprint.LogDetail.Runtime(tngnWbsvSession.WsvcRun);
 
             DuFile.WriteLocal(path, details, true);
         }

@@ -22,20 +22,14 @@ namespace Outpost31.Core.Logger
     ///         </list>
     ///     </note>
     /// </remarks>
-    /// <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation/blob/main/static/tngnwsvc/logging.md">Logging documentation</seealso>
+    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
     public static class LogEvent
     {
-        /// <summary>Critical logs indicate a critical failure with the Tingen Web Service.</summary>
-        /// <remarks>
-        ///     Examples of when to use a Critical log:
-        ///     <list type="bullet">
-        ///         <item>When a valid <see cref="Avatar.OptionObject.OptionObject"/> is not passed from Avatar.</item>
-        ///         <item>When a valid <see cref="Avatar.ScriptParameter.ScriptParameter"/>is not passed from Avatar.</item>        
-        ///     </list>
-        /// </remarks>
+        /// <summary>Critical logs indicate a significant failure with the Tingen Web Service.</summary>
         /// <param name="avtrEnvironment">The Avatar environment that the Tingen Web Service has interfaced with.</param>
-        /// <param name="logMessage">The log message, which defaults to "Critical log." if not specified.</param>
-        /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation/blob/main/static/tngnwsvc-logging.md#critical-logs">Tingen documentation</seealso> 
+        /// <param name="logMessage">The log message to write.</param>
+        /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation/blob/main/static/tngnwsvc/logging.md#critical-logs">Critical log documentation</seealso>
         public static void Critical(string avtrEnvironment, string logMessage = "Critical log.")
         {
             Dictionary < string, string > logComponent = LogBuilder.BasicLog("Critical", avtrEnvironment, logMessage);

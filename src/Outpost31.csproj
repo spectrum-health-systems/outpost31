@@ -79,18 +79,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Avatar\Environment.cs" />
     <Compile Include="Core\Avatar\ScriptParameter.cs" />
-    <Compile Include="Core\Blueprint\OptObjErrorMessage.cs" />
+    <Compile Include="Core\Blueprint\OptObjErrMsg.cs" />
     <Compile Include="Core\Logger\LogBuilder.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Avatar\OptionObject.cs" />
     <Compile Include="Core\Logger\LogWriter.cs" />
     <Compile Include="Core\Request\PrototypeRequest.cs" />
     <Compile Include="Core\Request\StandardRequest.cs" />
-    <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
+    <Compile Include="Core\Runtime\WsvcRuntime.cs" />
     <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
-    <Compile Include="Core\Session\TngnWbsvSession.cs" />
-    <Compile Include="Core\Blueprint\LogMessage.cs" />
+    <Compile Include="Core\Session\WsvcSession.cs" />
+    <Compile Include="Core\Blueprint\LogMsg.cs" />
     <Compile Include="Core\Blueprint\LogDetail.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
@@ -114,6 +115,7 @@
     <Folder Include="Core\Template\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppData\XmlDoc\Core.xml" />
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
     <Content Include="AppData\XmlDoc\Module.Prototype.xml" />
     <Content Include="AppData\XmlDoc\_Core.Catalog.Path.xml" />
