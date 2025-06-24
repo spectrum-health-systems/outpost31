@@ -1,4 +1,10 @@
-﻿<!-- u250618 -->
+﻿<!-- 
+    AppData\XMLDoc\Core.xml
+    This file used to provide additional XML documentation about the classes,
+    methods, and properties in the Outpost31.Core namespace.
+    
+    u250623
+-->
 
 <Core>
     <Class name="Avatar.OptionObjects">

@@ -1,13 +1,14 @@
-﻿/* Outpost31.Core.Avatar.Environment.cs
- * u250618_code
- * u250618_documentation
+﻿/* Outpost31.Core.Avatar.AvatarSystemInfo.cs
+ * u250624_code
+ * u250624_documentation
  */
 
 namespace Outpost31.Core.Avatar
 {
-    /// <summary>Avatar environment details.</summary>
+    /// <summary>Avatar system information.</summary>
+    /// <remarks>TBD</remarks>
     /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
-    public class Environment
+    public class AvtrSystemInfo
     {
         /// <summary>The Avatar System that the Tingen Web Service will interface with.</summary>
         /// <remarks>

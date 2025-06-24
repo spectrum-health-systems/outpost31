@@ -79,24 +79,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Avatar\Environment.cs" />
-    <Compile Include="Core\Avatar\ScriptParameter.cs" />
-    <Compile Include="Core\Blueprint\OptObjErrMsg.cs" />
+    <Compile Include="Core\Avatar\AvatarBlueprint.cs" />
+    <Compile Include="Core\Avatar\AvtrSystemInfo.cs" />
+    <Compile Include="Core\Avatar\AvtrParameter.cs" />
+    <Compile Include="Core\Blueprint\DetailBprt.cs" />
+    <Compile Include="Core\Blueprint\BprtError.cs" />
+    <Compile Include="Core\Configuration\ConfigurationBlueprint.cs" />
+    <Compile Include="Core\Logger\LogBlueprint.cs" />
     <Compile Include="Core\Logger\LogBuilder.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
-    <Compile Include="Core\Avatar\OptionObject.cs" />
+    <Compile Include="Core\Avatar\AvtrOptionObject.cs" />
     <Compile Include="Core\Logger\LogWriter.cs" />
     <Compile Include="Core\Request\PrototypeRequest.cs" />
     <Compile Include="Core\Request\StandardRequest.cs" />
-    <Compile Include="Core\Runtime\WsvcRuntime.cs" />
-    <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
+    <Compile Include="Core\Configuration\ConfigModule.cs" />
+    <Compile Include="Core\Configuration\ConfigCore.cs" />
+    <Compile Include="Core\Configuration\ConfigRuntime.cs" />
+    <Compile Include="Core\Configuration\Configuration_.cs" />
     <Compile Include="Core\Session\WsvcSession.cs" />
-    <Compile Include="Core\Blueprint\LogMsg.cs" />
-    <Compile Include="Core\Blueprint\LogDetail.cs" />
+    <Compile Include="Core\Blueprint\BpWsvc.cs" />
+    <Compile Include="Core\Blueprint\BprtLog.cs" />
+    <Compile Include="Core\Tinplate\AvatarTinplate.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
-    <Compile Include="Core\Service\Spin.cs" />
     <Compile Include="Module\Admin\Parse.cs" />
     <Compile Include="Module\Admin\Reset.cs" />
     <Compile Include="Module\Admin\Status.cs" />
@@ -110,18 +116,9 @@
     </Compile>
     <Compile Include="WelcomeToOutpost31.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Template\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="AppData\XmlDoc\Core.xml" />
-    <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
-    <Content Include="AppData\XmlDoc\Module.Prototype.xml" />
-    <Content Include="AppData\XmlDoc\_Core.Catalog.Path.xml" />
-    <Content Include="AppData\XmlDoc\Core.Session.xml" />
-    <Content Include="AppData\XmlDoc\Core.Runtime.xml" />
-    <Content Include="AppData\XmlDoc\Core.Service.xml" />
-    <Content Include="AppData\XmlDoc\Core.Configuration.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

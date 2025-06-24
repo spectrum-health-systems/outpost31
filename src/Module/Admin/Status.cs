@@ -17,7 +17,7 @@ namespace Outpost31.Module.Admin
 
             var path = $@"{tngnWbsvSession.WsvcRun.TngnWsvcDataPath}\RuntimeDetails.txt";
 
-            var details = Core.Blueprint.LogDetail.Runtime(tngnWbsvSession.WsvcRun);
+            var details = Core.Blueprint.BprtLog.Runtime(tngnWbsvSession.WsvcRun);
 
             DuFile.WriteLocal(path, details, true);
         }

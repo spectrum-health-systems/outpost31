@@ -26,7 +26,7 @@ namespace Outpost31.Module.Admin
         {
             LogEvent.Debuggler(tngnWbsvEnvironment, $"[PARSEING RESET CONFIG B]");
 
-            Core.Configuration.TngnWbsvConfiguration.CreateDefault(tngnWbsvEnvironment);
+            Core.Configuration.WsvcConfiguration.CreateDefault(tngnWbsvEnvironment);
         }
     }
 }

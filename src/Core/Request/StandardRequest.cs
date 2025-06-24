@@ -27,7 +27,7 @@ namespace Outpost31.Core.Request
             }
             else
             {
-                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, LogMsg.ServiceUnknownRequest(tngnWbsvSession.ScriptParam.Original));
+                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, BpWsvc.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
             }
         }
 
@@ -41,7 +41,7 @@ namespace Outpost31.Core.Request
                     break;
 
                 default:
-                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, LogMsg.ServiceUnknownRequest(tngnWbsvSession.ScriptParam.Original));
+                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, BpWsvc.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
                     break;
             }
         }
@@ -66,7 +66,7 @@ namespace Outpost31.Core.Request
                         break;
 
                     default:
-                        tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, LogMsg.ServiceUnknownRequest(tngnWbsvSession.ScriptParam.Original));
+                        tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, BpWsvc.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
                         break;
                 }
             }
@@ -85,7 +85,7 @@ namespace Outpost31.Core.Request
             }
             else
             {
-                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, LogMsg.ServiceUnknownRequest(tngnWbsvSession.ScriptParam.Original));
+                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, BpWsvc.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
             }
         }
     }

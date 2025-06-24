@@ -1,78 +1,69 @@
-﻿/* Outpost31.Core.Session.TngnWbsvSession.cs
- * u250616_code
- * u250616_documentation
+﻿/* Outpost31.Core.Session.WsvcSession.cs
+/* u250624_code
+ * u250624_documentation
  */
 
 using Outpost31.Core.Avatar;
-using Outpost31.Core.Configuration;
 using Outpost31.Core.Logger;
 using Outpost31.Core.Runtime;
 using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Session
 {
-    /// <summary> Session logic for the Tingen Web Service.</summary>
+    /// <summary>Session logic for the Tingen Web Service.</summary>
+    /// <remarks>TBD</remarks>
+    ///<seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
     public class WsvcSession
     {
-        public WsvcRuntime WsvcRun { get; set; }
+        public ConfigRuntime RuntimeConfig { get; set; }
 
-        /// <summary>The Tingen Web Service configuration object.</summary>
-        /// <remarks>The TngnWbsvConfig object contains all runtime and external configuration information.</remarks>
-        public TngnWbsvConfiguration WsvcConfig { get; set; }
+        public ConfigCore CoreConfig { get; set; }
+
+        public ConfigModule ModuleConfig { get; set; }
 
         /// <summary>Gets or sets the optional object associated with the avatar.</summary>
-        public Avatar.OptionObject OptObj { get; set; }
+        public AvtrOptionObject OptObj { get; set; }
 
         /// <summary>The ScriptLink Script Parameter sent from Avatar.</summary>
-        public ScriptParameter ScriptParam { get; set; }
+        public AvtrParameter ScriptParam { get; set; }
 
         /// <summary>The Avatar System Code that this instance of the Tingen Web Service will interface with.</summary>
-        public Environment AvtrEnv { get; set; }
+        public AvtrSystemInfo AvtrSysInfo { get; set; }
 
         /// <summary>Creates and initializes a new TngnWbsvSession object</summary>
-        /// <param name="sentOptObj">The OptionObject that is sent from Avatar.</param>
-        /// <param name="sentScriptParam">The Script Parameter that is sent from Avatar.</param>
+        /// <param name="origOptObj">The OptionObject that is sent from Avatar.</param>
+        /// <param name="origScriptParam">The Script Parameter that is sent from Avatar.</param>
         /// <param name="wsvcVer">The current version of the Tingen Web Service.</param>
         /// <returns>A new Tingen Web Service session object.</returns>
-        public static WsvcSession New(OptionObject2015 sentOptObj, string sentScriptParam, string wsvcVer, string avtrSys)
+        public static WsvcSession New(OptionObject2015 origOptObj, string origScriptParam, string wsvcVer, string avtrSys)
         {
             //#DEVNOTE# We need to validate that these values are valid.
-            LogEvent.Debuggler(avtrSys, $"[CREATING NEW SESSION]");
+            LogEvent.Debuggler(avtrSys, $"Creating new session");
 
-            var thing =  new WsvcSession
+            var wsvcSession =  new WsvcSession
             {
-                WsvcRun    = WsvcRuntime.New(wsvcVer, avtrSys),
-                WsvcConfig = TngnWbsvConfiguration.New(avtrSys),
-                OptObj      = new Avatar.OptionObject
+                RuntimeConfig = ConfigRuntime.New(wsvcVer, avtrSys),
+                CoreConfig    = ConfigCore.New(),
+                ModuleConfig  = ConfigModule.New(),
+                OptObj        = new AvtrOptionObject
                 {
-                    Original    = sentOptObj,
-                    Worker = sentOptObj.Clone(),
-                    Finalized  = null
+                    Original  = origOptObj,
+                    Worker    = origOptObj.Clone(),
+                    Finalized = null
                 },
-                ScriptParam = new ScriptParameter
+                ScriptParam = new AvtrParameter
                 {
-                    Original = sentScriptParam
+                    Original = origScriptParam
                 },
-                AvtrEnv = new Environment
+                AvtrSysInfo = new AvtrSystemInfo
                 {
                     AvtrSys = avtrSys
                 },
             };
 
-            LogEvent.Debuggler(avtrSys, $"[NEW SESSION CREATED] - {sentOptObj.SystemCode}");
+            LogEvent.Debuggler(avtrSys, $"New session created.");
 
-            return thing;
-
-            //return new TngnWbsvSession
-            //{
-            //    TngnWbsvRuntimeSettings = TngnWbsvRuntimeSettings.New(tngnWbsvVersion, tngnWbsvEnvironment),
-            //    TngnWbsvConfig          = TngnWbsvConfiguration.New(tngnWbsvEnvironment),
-            //    SentOptObj              = sentOptObj,
-            //    WorkOptObj              = sentOptObj.Clone(),
-            //    ReturnOptObj            = null,
-            //    SentScriptParam         = sentSlnkScriptParam,
-            //    TngnWbsvSysCode         = sentOptObj.SystemCode
-            //};
+            return wsvcSession;
         }
     }
 }

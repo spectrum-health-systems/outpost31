@@ -1,4 +1,4 @@
-﻿/* Outpost31.Core.Avatar.OptionObject.cs
+﻿/* Outpost31.Core.Avatar.ScriptLinkOptionObject.cs
  * u250618_code
  * u250618_documentation
  */
@@ -16,7 +16,7 @@ namespace Outpost31.Core.Avatar
     ///     calling myAvatar form.
     ///  </remarks>
     /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
-    public class OptionObject
+    public class AvtrOptionObject
     {
         /// <summary>The original OptionObject sent from Avatar.</summary>
         /// <remarks>This is <i>never</i> modified during a Tingen Web Service session.</remarks>

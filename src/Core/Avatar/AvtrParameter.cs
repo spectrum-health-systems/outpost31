@@ -1,4 +1,4 @@
-﻿/* Outpost31.Core.Avatar.ScriptParameter.cs
+﻿/* Outpost31.Core.Avatar.ScriptLinkParameter.cs
  * u250618_code
  * u250618_documentation
  */
@@ -10,51 +10,49 @@ using Outpost31.Core.Session;
 namespace Outpost31.Core.Avatar
 {
     /// <summary>Script parameter logic</summary>
-    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project/blob/main/static/avtr/script-param.md">The Script Parameter</seealso>
+    /// <remarks>TBD</remarks>
     /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
-    public class ScriptParameter
+    public class AvtrParameter
     {
         /// <summary>The original script parameter sent from Avatar.</summary>
         public string Original { get; set; }
 
         /// <summary>Processes a request based on the parameters provided in the specified session.</summary>
-        /// <remarks>
-        ///     None yet.
-        /// </remarks>
+        /// <remarks>TBD</remarks>
         /// <param name="wsvcSession">The session object containing the request parameters and runtime settings</param>
         public static void Request(WsvcSession wsvcSession)
         {
             /* TESTING */
-            LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSE REQUEST A] '{wsvcSession.ScriptParam.Original}'");
+            LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSE REQUEST A] '{wsvcSession.ScriptParam.Original}'");
 
             if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("_p"))
             {
                 /* TESTING */
-                LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING PROTOTYPE REQUEST] '{wsvcSession.ScriptParam.Original}'");
+                LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSEING PROTOTYPE REQUEST] '{wsvcSession.ScriptParam.Original}'");
 
                 Core.Request.PrototypeRequest.Parse(wsvcSession);
             }
             else
             {
                 /* TESTING */
-                LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING STANDARD REQUEST] '{wsvcSession.ScriptParam.Original}'");
+                LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSEING STANDARD REQUEST] '{wsvcSession.ScriptParam.Original}'");
 
                 if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("admin"))
                 {
                     /* TESTING */
-                    LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING ADMIN REQUEST] '{wsvcSession.ScriptParam.Original}'");
+                    LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSEING ADMIN REQUEST] '{wsvcSession.ScriptParam.Original}'");
 
                     Module.Admin.Parse.Request(wsvcSession);
                 }
                 else if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("formaccess"))
                 {
                     /* TESTING */
-                    LogEvent.Debuggler(wsvcSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING FORM ACCESS REQUEST] '{wsvcSession.ScriptParam.Original}'");
+                    LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSEING FORM ACCESS REQUEST] '{wsvcSession.ScriptParam.Original}'");
                     // TODO FormAccess(tngnWbsvSession);
                 }
                 else
                 {
-                    wsvcSession.OptObj.Finalized = wsvcSession.OptObj.Original.ToReturnOptionObject(0, LogMsg.ServiceUnknownRequest(wsvcSession.ScriptParam.Original));
+                    wsvcSession.OptObj.Finalized = wsvcSession.OptObj.Original.ToReturnOptionObject(0, BpWsvc.WsvcInvalidRequest(wsvcSession.ScriptParam.Original));
                 }
 
                 ////LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"PARSEING STANDARD REQUEST: {tngnWbsvSession.SentScriptParam}");
