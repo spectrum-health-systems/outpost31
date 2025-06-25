@@ -1,7 +1,8 @@
 ﻿/* Outpost31.Core.Session.WsvcSession.cs
-/* u250624_code
- * u250624_documentation
+ * u250625_code
+ * u250625_documentation
  */
+
 
 using Outpost31.Core.Avatar;
 using Outpost31.Core.Logger;

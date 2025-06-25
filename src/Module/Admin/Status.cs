@@ -1,7 +1,8 @@
 ﻿/* Outpost31.Module.Admin.Status.cs
- * u250616_code
- * u250616_documentation
+* u250625_code
+ * u250625_documentation
  */
+
 
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
@@ -17,7 +18,7 @@ namespace Outpost31.Module.Admin
 
             var path = $@"{tngnWbsvSession.WsvcRun.TngnWsvcDataPath}\RuntimeDetails.txt";
 
-            var details = Core.Blueprint.BprtLog.Runtime(tngnWbsvSession.WsvcRun);
+            var details = Core.Blueprint.LogHeaderBprt.Runtime(tngnWbsvSession.WsvcRun);
 
             DuFile.WriteLocal(path, details, true);
         }

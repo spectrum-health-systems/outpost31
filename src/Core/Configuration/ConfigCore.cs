@@ -1,6 +1,6 @@
-﻿/* Outpost31.Core.Runtime.CoreConfiguration.cs
- * u250624_code
- * u250624_documentation
+﻿/* Outpost31.Core.Configuration.ConfigCore.cs
+ * u250625_code
+ * u250625_documentation
  */
 
 namespace Outpost31.Core.Runtime

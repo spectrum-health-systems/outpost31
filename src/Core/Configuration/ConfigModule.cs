@@ -1,7 +1,8 @@
-﻿/* Outpost31.Core.Runtime.ModuleConfiguration.cs
- * u250624_code
- * u250624_documentation
+﻿/* Outpost31.Core.ConfigModule.cs
+ * u250625_code
+ * u250625_documentation
  */
+
 
 using System.IO;
 using System.Text.Json;

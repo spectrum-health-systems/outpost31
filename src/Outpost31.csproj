@@ -79,13 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Avatar\AvatarBlueprint.cs" />
     <Compile Include="Core\Avatar\AvtrSystemInfo.cs" />
     <Compile Include="Core\Avatar\AvtrParameter.cs" />
-    <Compile Include="Core\Blueprint\DetailBprt.cs" />
-    <Compile Include="Core\Blueprint\BprtError.cs" />
-    <Compile Include="Core\Configuration\ConfigurationBlueprint.cs" />
-    <Compile Include="Core\Logger\LogBlueprint.cs" />
+    <Compile Include="Core\Blueprint\LogDetailBprt.cs" />
+    <Compile Include="Core\Blueprint\BprtError_.cs" />
     <Compile Include="Core\Logger\LogBuilder.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Avatar\AvtrOptionObject.cs" />
@@ -97,9 +94,9 @@
     <Compile Include="Core\Configuration\ConfigRuntime.cs" />
     <Compile Include="Core\Configuration\Configuration_.cs" />
     <Compile Include="Core\Session\WsvcSession.cs" />
-    <Compile Include="Core\Blueprint\BpWsvc.cs" />
-    <Compile Include="Core\Blueprint\BprtLog.cs" />
-    <Compile Include="Core\Tinplate\AvatarTinplate.cs" />
+    <Compile Include="Core\Blueprint\WsvcErrorBprt.cs" />
+    <Compile Include="Core\Blueprint\LogHeaderBprt.cs" />
+    <Compile Include="Core\Tinplate\AvtrTinplate.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />

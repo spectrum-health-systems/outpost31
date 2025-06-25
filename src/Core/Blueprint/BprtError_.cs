@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Outpost31.Core.Configuration
+namespace Outpost31.Core.Blueprint
 {
-    internal class ConfigurationBlueprint
+    internal class BprtError_
     {
     }
 }

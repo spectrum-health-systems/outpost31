@@ -1,6 +1,6 @@
-﻿/* Outpost31.Core.Avatar.AvatarSystemInfo.cs
- * u250624_code
- * u250624_documentation
+﻿/* Outpost31.Core.Avatar.AvtrSystemInfo.cs
+ * u250625_code
+ * u250625_documentation
  */
 
 namespace Outpost31.Core.Avatar

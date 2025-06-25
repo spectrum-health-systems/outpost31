@@ -1,6 +1,6 @@
-﻿/* Outpost31.Core.Blueprint.LogMsg.cs
- * u250618_code
- * u250618_documentation
+﻿/* Outpost31.Core.Blueprint.WsvcErrorBprt.cs
+ * u250625_code
+ * u250625_documentation
  */
 
 using System.IO;
@@ -8,7 +8,8 @@ using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Blueprint
 {
-    public class BpWsvc
+    /// <summary>Blueprints for Tingen Web Service error messages.</summary>
+    public class WsvcErrorBprt
     {      
         public static string WsvcCriticalUnknown()
         {

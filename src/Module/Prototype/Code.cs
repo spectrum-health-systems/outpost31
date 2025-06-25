@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Module.Prototype.Code.cs
- * u250616_code
- * u250616_documentation
+ * u250625_code
+ * u250625_documentation
  */
 
 using Outpost31.Core.Session;

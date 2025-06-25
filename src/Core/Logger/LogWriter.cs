@@ -1,7 +1,8 @@
 ﻿/* Outpost31.Core.Logger.LogWriter.cs
- * u250616_code
- * u250616_documentation
+ * u250625_code
+ * u250625_documentation
  */
+
 
 using System.Collections.Generic;
 using Outpost31.Core.Utility.Du;

@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Module.Admin.Parse.cs
- * u250616_code
- * u250616_documentation
+ * u250625_code
+ * u250625_documentation
  */
 
 using System;
@@ -35,7 +35,7 @@ namespace Outpost31.Module.Admin
 
                 default:
                     LogEvent.Debuggler(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING DEFAULT REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
-                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, BpWsvc.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
+                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, WsvcErrorBprt.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
                     break;
             }
 

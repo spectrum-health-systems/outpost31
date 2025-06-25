@@ -1,9 +1,8 @@
-﻿/* Outpost31.Core.Avatar.ScriptLinkOptionObject.cs
- * u250618_code
- * u250618_documentation
+﻿/* Outpost31.Core.Avatar.AvtrOptionObject.cs
+ * u250625_code
+ * u250625_documentation
  */
 
-using System.Dynamic;
 using System.Reflection;
 using Outpost31.Core.Session;
 using ScriptLinkStandard.Objects;

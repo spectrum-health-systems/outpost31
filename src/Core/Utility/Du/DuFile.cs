@@ -1,14 +1,9 @@
-﻿/* Du
- * ██████╗ ██╗   ██╗
- * ██╔══██╗██║   ██║
- * ██║  ██║██║   ██║
- * ██║  ██║██║   ██║
- * ██████╔╝╚██████╔╝
- * ╚═════╝  ╚═════╝
- *          File.cs
-
-/* u250603_code
- * u250603_documentation
+﻿
+/* DuFile.cs
+ * Does stuff with files.
+ * b250625
+ * A Pretty Cool Program
+ * URL-HERE
  */
 
 using System.Collections.Generic;

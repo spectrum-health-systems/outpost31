@@ -1,6 +1,6 @@
-﻿/* Outpost31.Core.Avatar.ScriptLinkParameter.cs
- * u250618_code
- * u250618_documentation
+﻿/* Outpost31.Core.Avatar.AvtrParameter.cs
+ * u250625_code
+ * u250625_documentation
  */
 
 using Outpost31.Core.Blueprint;
@@ -52,17 +52,13 @@ namespace Outpost31.Core.Avatar
                 }
                 else
                 {
-                    wsvcSession.OptObj.Finalized = wsvcSession.OptObj.Original.ToReturnOptionObject(0, BpWsvc.WsvcInvalidRequest(wsvcSession.ScriptParam.Original));
+                    wsvcSession.OptObj.Finalized = wsvcSession.OptObj.Original.ToReturnOptionObject(0, WsvcErrorBprt.WsvcInvalidRequest(wsvcSession.ScriptParam.Original));
                 }
 
                 ////LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"PARSEING STANDARD REQUEST: {tngnWbsvSession.SentScriptParam}");
                 //Core.Request.StandardRequest.Parse(tngnWbsvSession);
             }
         }
-
-
-
-
 
         /// <summary>Validates whether the provided script parameter is null, empty, or consists only of white-space characters.</summary>
         /// <param name="origParam">The script parameter to validate.</param>

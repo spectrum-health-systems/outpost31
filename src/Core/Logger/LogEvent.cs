@@ -1,7 +1,8 @@
 ﻿/* Outpost31.Core.Logger.LogEvent.cs
- * u250617_code
- * u250617_documentation
+ * u250625_code
+ * u250625_documentation
  */
+
 
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
