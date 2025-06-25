@@ -14,13 +14,15 @@ namespace Outpost31.Module.Admin
     {
         public static void Current(WsvcSession tngnWbsvSession)
         {
-            LogEvent.Debuggler(tngnWbsvSession.WsvcRun.TngnWsvcAvtrSys, $"[PARSEING STATUS CURRENT REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
+            LogEvent.Debuggler(tngnWbsvSession.RuntimeConfig.AvtrSys, $"[PARSEING STATUS CURRENT REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
 
-            var path = $@"{tngnWbsvSession.WsvcRun.TngnWsvcDataPath}\RuntimeDetails.txt";
+            var path = $@"{tngnWbsvSession.RuntimeConfig.AvtrSys}\RuntimeDetails.txt";
 
-            var details = Core.Blueprint.LogHeaderBprt.Runtime(tngnWbsvSession.WsvcRun);
+            /* WTF */
+            ///var details = Core.Blueprint.LogHeaderBprt.Runtime(tngnWbsvSession.WsvcRun);
 
-            DuFile.WriteLocal(path, details, true);
+            /* WTF */
+            ///DuFile.WriteLocal(path, details, true);
         }
     }
 }
