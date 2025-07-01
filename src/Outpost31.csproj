@@ -111,7 +111,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="WelcomeToOutpost31.cs" />
+    <Compile Include="ProjectInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

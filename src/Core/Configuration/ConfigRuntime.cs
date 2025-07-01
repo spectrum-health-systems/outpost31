@@ -45,7 +45,7 @@ namespace Outpost31.Core.Runtime
             return new ConfigRuntime
             {
                 WsvcVer      = wsvcVer,
-                WsvcBuild    = "250624.0852",
+                WsvcBuild    = "250701",
                 AvtrSys      = avtrSys,
                 WsvcMode     = null,
                 WsvcDataPath = $@"C:\Tingen_Data\WebService\{avtrSys}\Data",

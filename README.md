@@ -4,7 +4,8 @@
 
   ![logo](./.github/image/logo/o31-320x420.png)
   
-  ![Release 25.6](https://github.com/APrettyCoolProgram/aprettycoolprogram/blob/main/profile/pub/verel/r/r25.6.png)
+  ![Release](https://img.shields.io/badge/release-25.7-teal)&nbsp;&nbsp;
+  ![License](https://img.shields.io/badge/license-apache-blue)
   
 </div>
 

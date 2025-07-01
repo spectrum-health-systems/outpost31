@@ -23,7 +23,7 @@
 
 namespace Outpost31
 {
-    internal class WelcomeToOutpost31
+    internal class ProjectInfo
     {
         // This class does not contain any logic.
     }
