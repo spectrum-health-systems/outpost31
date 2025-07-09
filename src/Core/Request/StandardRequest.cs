@@ -28,7 +28,7 @@ namespace Outpost31.Core.Request
             }
             else
             {
-                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, WsvcErrorBprt.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
+                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
             }
         }
 
@@ -42,7 +42,7 @@ namespace Outpost31.Core.Request
                     break;
 
                 default:
-                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, WsvcErrorBprt.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
+                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
                     break;
             }
         }
@@ -67,7 +67,7 @@ namespace Outpost31.Core.Request
                         break;
 
                     default:
-                        tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, WsvcErrorBprt.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
+                        tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
                         break;
                 }
             }
@@ -86,7 +86,7 @@ namespace Outpost31.Core.Request
             }
             else
             {
-                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, WsvcErrorBprt.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
+                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
             }
         }
     }

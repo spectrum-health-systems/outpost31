@@ -35,7 +35,7 @@ namespace Outpost31.Module.Admin
 
                 default:
                     LogEvent.Debuggler(tngnWbsvSession.RuntimeConfig.AvtrSys, $"[PARSEING DEFAULT REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
-                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, WsvcErrorBprt.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
+                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
                     break;
             }
 

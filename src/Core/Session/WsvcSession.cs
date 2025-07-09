@@ -16,11 +16,11 @@ namespace Outpost31.Core.Session
     ///<seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
     public class WsvcSession
     {
-        public ConfigRuntime RuntimeConfig { get; set; }
+        public RuntimeConfig RuntimeConfig { get; set; }
 
-        public ConfigCore CoreConfig { get; set; }
+        public CoreConfig CoreConfig { get; set; }
 
-        public ConfigModule ModuleConfig { get; set; }
+        public ModuleConfig ModuleConfig { get; set; }
 
         /// <summary>Gets or sets the optional object associated with the avatar.</summary>
         public AvtrOptionObject OptObj { get; set; }
@@ -43,9 +43,9 @@ namespace Outpost31.Core.Session
 
             var wsvcSession =  new WsvcSession
             {
-                RuntimeConfig = ConfigRuntime.New(wsvcVer, avtrSys),
-                CoreConfig    = ConfigCore.New(),
-                ModuleConfig  = ConfigModule.New(),
+                RuntimeConfig = RuntimeConfig.New(wsvcVer, avtrSys),
+                CoreConfig    = CoreConfig.New(),
+                ModuleConfig  = ModuleConfig.New(),
                 OptObj        = new AvtrOptionObject
                 {
                     Original  = origOptObj,

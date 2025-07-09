@@ -1,21 +1,20 @@
-﻿/* Outpost31.Core.Configuration.ConfigCore.cs
- * u250625_code
- * u250625_documentation
+﻿/* Outpost31.Core.Configuration.CoreConfig.cs
+ * u250709_code
+ * u250709_documentation
  */
 
 namespace Outpost31.Core.Runtime
 {
-    public class ConfigCore
+    public class CoreConfig
     {
             public string TraceLevel { get; set; }
 
-            public static ConfigCore New()
+            public static CoreConfig New()
             {
-                return new ConfigCore
+                return new CoreConfig
                 {
                     TraceLevel = "1"
                 };
             }
-     
     }
 }

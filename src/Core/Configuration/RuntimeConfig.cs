@@ -1,8 +1,7 @@
-﻿/* Outpost31.Core.ConfigRuntime.cs
- * u250625_code
- * u250625_documentation
+﻿/* Outpost31.Core.RuntimeConfig.cs
+ * u250709_code
+ * u250709_documentation
  */
-
 
 using System;
 using Outpost31.Core.Logger;
@@ -12,7 +11,7 @@ namespace Outpost31.Core.Runtime
     /// <summary>Runtime configuration logic.</summary>
     /// <remarks>TBD.</remarks>
     /// <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-    public class ConfigRuntime
+    public class RuntimeConfig
     {
         /// <summary>The current version of the Tingen Web Service.</summary>
         public string WsvcVer { get; set; }
@@ -38,11 +37,11 @@ namespace Outpost31.Core.Runtime
         /// <summary>The current time in HHMMSS format.</summary>
         public string CurrentTime { get; set; }
 
-        public static ConfigRuntime New(string wsvcVer, string avtrSys)
+        public static RuntimeConfig New(string wsvcVer, string avtrSys)
         {
             LogEvent.Debuggler(avtrSys, "[Outpost31.Core.Runtime.Configuration.Runtime.New()]");
 
-            return new ConfigRuntime
+            return new RuntimeConfig
             {
                 WsvcVer      = wsvcVer,
                 WsvcBuild    = "250701",

@@ -1,13 +1,14 @@
 ﻿/* Outpost31.Core.Avatar.AvtrSystemInfo.cs
- * u250625_code
- * u250625_documentation
+ * u250709_code
+ * u250709_documentation
  */
 
 namespace Outpost31.Core.Avatar
 {
-    /// <summary>Avatar system information.</summary>
+    /// <summary>Logic for Avatar system/system codes/environments/etc.</summary>
     /// <remarks>TBD</remarks>
     /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
+    /// <seealso href="https://spectrum-health-systems.github.io/tingen-documentation-project/api">Tingen API Documentation</seealso>
     public class AvtrSystemInfo
     {
         /// <summary>The Avatar System that the Tingen Web Service will interface with.</summary>
@@ -22,15 +23,16 @@ namespace Outpost31.Core.Avatar
         ///         <item>BUILD</item>
         ///     </list>
         /// </remarks>
-        /// <value>The Tingen Web Service works with the "LIVE" or "UAT" Avatar Systems.</value>
+        /// <value>The Tingen Web Service works with the <c>LIVE</c> or <c>UAT</c> Avatar Systems.</value>
         public string AvtrSys { get; set; }
 
         /// <summary>The Avatar System Code used to login to Avatar.</summary>
         /// <remarks>
-        ///     The Avatar <i>System Code</i> determines(in part) what Avatar functionality a user has access to while they are logged into an Avatar <i>System</i>.<br/>
+        ///     The Avatar <i>System Code</i> determines(in part) what Avatar functionality a user has access to while they are logged into
+        ///     an Avatar <i>System</i>.<br/>
         ///     <br/>
-        ///     Organizations may have many different Avatar <i>System Codes</i>, but only a few Avatar <i>Systems</i>.<br/>
-        ///     In addition, the Avatar System Code may be similar or the same as the Avatar System.<br/>
+        ///     Organizations may have many different Avatar <i>System Codes</i>, but only a few Avatar <i>Systems</i>. In addition, the
+        ///     Avatar System Code may be similar or the same as the Avatar System.
         /// </remarks>
         public string AvtrSysCode { get; set; }
     }

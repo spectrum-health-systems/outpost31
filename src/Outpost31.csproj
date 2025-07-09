@@ -81,21 +81,20 @@
   <ItemGroup>
     <Compile Include="Core\Avatar\AvtrSystemInfo.cs" />
     <Compile Include="Core\Avatar\AvtrParameter.cs" />
-    <Compile Include="Core\Blueprint\LogDetailBprt.cs" />
-    <Compile Include="Core\Blueprint\BprtError_.cs" />
+    <Compile Include="Core\Blueprint\LogContent.cs" />
+    <Compile Include="Core\Blueprint\LogTemplate.cs" />
     <Compile Include="Core\Logger\LogBuilder.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Avatar\AvtrOptionObject.cs" />
     <Compile Include="Core\Logger\LogWriter.cs" />
     <Compile Include="Core\Request\PrototypeRequest.cs" />
     <Compile Include="Core\Request\StandardRequest.cs" />
-    <Compile Include="Core\Configuration\ConfigModule.cs" />
-    <Compile Include="Core\Configuration\ConfigCore.cs" />
-    <Compile Include="Core\Configuration\ConfigRuntime.cs" />
+    <Compile Include="Core\Configuration\ModuleConfig.cs" />
+    <Compile Include="Core\Configuration\CoreConfig.cs" />
+    <Compile Include="Core\Configuration\RuntimeConfig.cs" />
     <Compile Include="Core\Configuration\Configuration_.cs" />
     <Compile Include="Core\Session\WsvcSession.cs" />
-    <Compile Include="Core\Blueprint\WsvcErrorBprt.cs" />
-    <Compile Include="Core\Blueprint\LogHeaderBprt.cs" />
+    <Compile Include="Core\Blueprint\ErrorContent.cs" />
     <Compile Include="Core\Tinplate\AvtrTinplate.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />

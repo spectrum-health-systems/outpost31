@@ -1,14 +1,13 @@
-﻿/* Outpost31.Core.Blueprint.LogDetailBrpt.cs
- * u250625_code
- * u250625_documentation
+﻿/* Outpost31.Core.Blueprint.LogMessage.cs
+ * u250709_code
+ * u250709_documentation
  */
 
 using System.IO;
 
 namespace Outpost31.Core.Blueprint
 {
-    /// <summary>Blueprints for log headers.</summary>
-    public class LogHeaderBprt
+    internal class LogContent
     {
         public static string BasicHeader()
         {

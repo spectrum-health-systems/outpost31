@@ -1,6 +1,6 @@
-﻿/* Outpost31.Core.Blueprint.WsvcErrorBprt.cs
- * u250625_code
- * u250625_documentation
+﻿/* Outpost31.Core.Blueprint.ErrorContent.cs
+ * u250709_code
+ * u250709_documentation
  */
 
 using System.IO;
@@ -9,8 +9,8 @@ using ScriptLinkStandard.Objects;
 namespace Outpost31.Core.Blueprint
 {
     /// <summary>Blueprints for Tingen Web Service error messages.</summary>
-    public class WsvcErrorBprt
-    {      
+    public class ErrorContent
+    {
         public static string WsvcCriticalUnknown()
         {
             return File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Tinplate\WebService\webservice-error-critical-unknown.tinplate");
@@ -21,7 +21,7 @@ namespace Outpost31.Core.Blueprint
             var tinplate = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Tinplate\WebService\webservice-error-critical-missing-arguments.tinplate");
 
             return tinplate.Replace("~OptObjStatus~", Avatar.AvtrOptionObject.CheckExistance(sentOptObj))
-                           .Replace("~ScriptParamStatus~", Avatar.AvtrParameter.CheckExistance(sentScriptParam));
+                           .Replace("~ScriptParamStatus~", Avatar.AvtrParameter.CheckExistence(sentScriptParam));
         }
 
         public static string WsvcInvalidRequest(string request)
