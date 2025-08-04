@@ -1,19 +1,16 @@
-﻿/* Du
- * ██████╗ ██╗   ██╗
- * ██╔══██╗██║   ██║
- * ██║  ██║██║   ██║
- * ██║  ██║██║   ██║
- * ██████╔╝╚██████╔╝
- * ╚═════╝  ╚═════╝
- *          Json.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* DuJSON.cs
+ * Does stuff with JSON data.
+ * b250625
+ * A Pretty Cool Program
+ * https://gist.github.com/APrettyCoolProgram/389006b4328b2f01b5c6da61e74d680d
  */
 
 /* IMPORTANT NOTE:
- * This does not work with System.Text.Json v9.0.5 or later.
- * Use System.Text.Json v9.0.4 .
+ * This code won't match the Gist linked above, and is specific to the Outpost31
+ * project because...
+ * 
+ * For some reason (as of July 2025), this does not work with System.Text.Json
+ * v9.0.5 or later. Use System.Text.Json v9.0.4.
  */
 
 using System.IO;

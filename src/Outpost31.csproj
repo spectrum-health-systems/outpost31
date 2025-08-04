@@ -79,23 +79,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Avatar\ScriptParameter.cs" />
-    <Compile Include="Core\Blueprint\OptObjErrorMessage.cs" />
+    <Compile Include="Core\Avatar\AvtrSystemInfo.cs" />
+    <Compile Include="Core\Avatar\AvtrParameter.cs" />
+    <Compile Include="Core\Blueprint\LogContent.cs" />
+    <Compile Include="Core\Blueprint\LogTemplate.cs" />
     <Compile Include="Core\Logger\LogBuilder.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
-    <Compile Include="Core\Avatar\OptionObjects.cs" />
+    <Compile Include="Core\Avatar\AvtrOptionObject.cs" />
     <Compile Include="Core\Logger\LogWriter.cs" />
     <Compile Include="Core\Request\PrototypeRequest.cs" />
     <Compile Include="Core\Request\StandardRequest.cs" />
-    <Compile Include="Core\Runtime\TngnWbsvRuntimeSettings.cs" />
-    <Compile Include="Core\Configuration\TngnWbsvConfiguration.cs" />
-    <Compile Include="Core\Session\TngnWbsvSession.cs" />
-    <Compile Include="Core\Blueprint\LogMessage.cs" />
-    <Compile Include="Core\Blueprint\LogDetail.cs" />
+    <Compile Include="Core\Configuration\ModuleConfig.cs" />
+    <Compile Include="Core\Configuration\CoreConfig.cs" />
+    <Compile Include="Core\Configuration\RuntimeConfig.cs" />
+    <Compile Include="Core\Configuration\Configuration_.cs" />
+    <Compile Include="Core\Session\WsvcSession.cs" />
+    <Compile Include="Core\Blueprint\ErrorContent.cs" />
+    <Compile Include="Core\Tinplate\AvtrTinplate.cs" />
     <Compile Include="Core\Utility\Du\DuDirectory.cs" />
     <Compile Include="Core\Utility\Du\DuFile.cs" />
     <Compile Include="Core\Utility\Du\DuJson.cs" />
-    <Compile Include="Core\Service\Spin.cs" />
     <Compile Include="Module\Admin\Parse.cs" />
     <Compile Include="Module\Admin\Reset.cs" />
     <Compile Include="Module\Admin\Status.cs" />
@@ -107,23 +110,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="WelcomeToOutpost31.cs" />
+    <Compile Include="ProjectInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="AppData\Runtime\" />
-    <Folder Include="Core\Template\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
-    <Content Include="AppData\XmlDoc\Module.Prototype.xml" />
-    <Content Include="AppData\XmlDoc\_Core.Catalog.Path.xml" />
-    <Content Include="AppData\XmlDoc\Core.Session.xml" />
-    <Content Include="AppData\XmlDoc\Core.Runtime.xml" />
-    <Content Include="AppData\XmlDoc\Core.Service.xml" />
-    <Content Include="AppData\XmlDoc\Core.Configuration.xml" />
+    <Content Include="AppData\XmlDoc\Core.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="AppData\Runtime\README.md" />
+    <None Include="AppData\XmlDoc\README.md" />
     <None Include="Module\Prototype\README.md" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

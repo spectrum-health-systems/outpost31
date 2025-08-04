@@ -1,12 +1,8 @@
-﻿/* Core
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *                Logger.LogBuilder.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Core.Logger.LogBuilder.cs
+ * u250625_code
+ * u250625_documentation
  */
+
 
 using System;
 using System.Collections.Generic;
@@ -89,7 +85,7 @@ namespace Outpost31.Core.Logger
         /// diagnostic or monitoring purposes. The returned dictionary provides both the storage location and the
         /// content of the log entry for further processing or display.</remarks>
         /// <param name="logType">The type of log to generate.</param>
-        /// <param name="traceLevel">The <see cref="Configuration.TngnWbsvConfiguration.TraceLevel"/> of the log</param>
+        /// <param name="traceLevel">The <see cref="Configuration.WsvcConfiguration.TraceLevel"/> of the log</param>
         /// <param name="avtrEnv">The Avatar environment that the Tingen Web Service has interfaced with.</param>
         /// <param name="exeAsm">The name of the assembly generating the log entry.</param>
         /// <param name="fromPath">The full path of the file being logged.</param>

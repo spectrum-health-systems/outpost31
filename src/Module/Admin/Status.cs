@@ -1,12 +1,8 @@
-﻿/* Module
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *                     Admin.Status.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Module.Admin.Status.cs
+* u250625_code
+ * u250625_documentation
  */
+
 
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
@@ -16,15 +12,17 @@ namespace Outpost31.Module.Admin
 {
     internal class Status
     {
-        public static void Current(TngnWbsvSession tngnWbsvSession)
+        public static void Current(WsvcSession tngnWbsvSession)
         {
-            LogEvent.Debuggler(tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvEnvironment, $"[PARSEING STATUS CURRENT REQUEST] '{tngnWbsvSession.SentScriptParam}'");
+            LogEvent.Debuggler(tngnWbsvSession.RuntimeConfig.AvtrSys, $"[PARSEING STATUS CURRENT REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
 
-            var path = $@"{tngnWbsvSession.TngnWbsvRuntimeSettings.TngnWbsvDataPath}\RuntimeDetails.txt";
+            var path = $@"{tngnWbsvSession.RuntimeConfig.AvtrSys}\RuntimeDetails.txt";
 
-            var details = Core.Blueprint.LogDetail.Runtime(tngnWbsvSession.TngnWbsvRuntimeSettings);
+            /* WTF */
+            ///var details = Core.Blueprint.LogHeaderBprt.Runtime(tngnWbsvSession.WsvcRun);
 
-            DuFile.WriteLocal(path, details, true);
+            /* WTF */
+            ///DuFile.WriteLocal(path, details, true);
         }
     }
 }

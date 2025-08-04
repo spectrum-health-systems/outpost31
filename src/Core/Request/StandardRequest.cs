@@ -1,12 +1,8 @@
-﻿/* Core
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *          Request.StandardRequest.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Core.Request.StandardRequest.cs
+ * u250625_code
+ * u250625_documentation
  */
+
 
 using System.Collections.Generic;
 using System.IO;
@@ -20,47 +16,47 @@ namespace Outpost31.Core.Request
     public class StandardRequest
     {
         /// <summary>Parse the request and call the appropriate module.</summary>
-        public static void Parse(TngnWbsvSession tngnWbsvSession)
+        public static void Parse(WsvcSession tngnWbsvSession)
         {
-            if (tngnWbsvSession.SentScriptParam.ToLower().StartsWith("admin"))
+            if (tngnWbsvSession.ScriptParam.Original.ToLower().StartsWith("admin"))
             {
                 Admin(tngnWbsvSession);
             }
-            else if (tngnWbsvSession.SentScriptParam.ToLower().StartsWith("formaccess"))
+            else if (tngnWbsvSession.ScriptParam.Original.ToLower().StartsWith("formaccess"))
             {
                 FormAccess(tngnWbsvSession);
             }
             else
             {
-                tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
             }
         }
 
         /// <summary>Admin requests.</summary>
-        private static void Admin(TngnWbsvSession tngnWbsvSession)
+        private static void Admin(WsvcSession tngnWbsvSession)
         {
-            switch (tngnWbsvSession.SentScriptParam.ToLower())
+            switch (tngnWbsvSession.ScriptParam.Original.ToLower())
             {
                 case "admin.status.current":
                     Module.Admin.Status.Current(tngnWbsvSession);// Handle the standard request
                     break;
 
                 default:
-                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
                     break;
             }
         }
 
         /// <summary>Form access requests.</summary>
-        private static void FormAccess(TngnWbsvSession tngnWbsvSession)
+        private static void FormAccess(WsvcSession tngnWbsvSession)
         {
-            if (tngnWbsvSession.SentScriptParam.ToLower().Contains("list"))
+            if (tngnWbsvSession.ScriptParam.Original.ToLower().Contains("list"))
             {
                 FormAccessFromList(tngnWbsvSession);
             }
             else
             {
-                switch (tngnWbsvSession.SentScriptParam.ToLower())
+                switch (tngnWbsvSession.ScriptParam.Original.ToLower())
                 {
                     case "formaccess.deny.syscodedoc":
                         Module.FormAccess.Deny.SysCodeDoc(tngnWbsvSession);
@@ -71,16 +67,16 @@ namespace Outpost31.Core.Request
                         break;
 
                     default:
-                        tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                        tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
                         break;
                 }
             }
         }
 
         /// <summary>Form access from a list.</summary>
-        private static void FormAccessFromList(TngnWbsvSession tngnWbsvSession)
+        private static void FormAccessFromList(WsvcSession tngnWbsvSession)
         {
-            var listNumber = tngnWbsvSession.SentScriptParam.Substring(tngnWbsvSession.SentScriptParam.Length - 2, 2);
+            var listNumber = tngnWbsvSession.ScriptParam.Original.Substring(tngnWbsvSession.ScriptParam.Original.Length - 2, 2);
 
             if (File.Exists($@"C:\Tingen_Data\WebService\UAT\Imports\Lists\FormAccess.Deny.{listNumber}.list"))
             {
@@ -90,7 +86,7 @@ namespace Outpost31.Core.Request
             }
             else
             {
-                tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, LogMessage.ServiceUnknownRequest(tngnWbsvSession.SentScriptParam));
+                tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, ErrorContent.WsvcInvalidRequest(tngnWbsvSession.ScriptParam.Original));
             }
         }
     }

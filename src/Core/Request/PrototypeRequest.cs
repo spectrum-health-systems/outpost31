@@ -1,12 +1,8 @@
-﻿/* Core
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *          Request.PrototypeRequest.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Core.Request.PrototypeRequest.cs
+ * u250625_code
+ * u250625_documentation
  */
+
 
 using Outpost31.Core.Session;
 
@@ -16,16 +12,16 @@ namespace Outpost31.Core.Request
     public class PrototypeRequest
     {
         /// <summary>Parse the request and call the appropriate module.</summary>
-        public static void Parse(TngnWbsvSession tngnWbsvSession)
+        public static void Parse(WsvcSession tngnWbsvSession)
         {
-            switch (tngnWbsvSession.SentScriptParam.ToLower())
+            switch (tngnWbsvSession.ScriptParam.Original.ToLower())
             {
                 case "_pformaccess.deny.docsyscode":
                     Module.Prototype.Code.FormAccessDocSysCodeDeny(tngnWbsvSession);
                     break;
 
                 default:
-                    tngnWbsvSession.ReturnOptObj = tngnWbsvSession.SentOptObj.ToReturnOptionObject(0, "Unknown request.");
+                    tngnWbsvSession.OptObj.Finalized = tngnWbsvSession.OptObj.Original.ToReturnOptionObject(0, "Unknown request.");
                     break;
             }
         }

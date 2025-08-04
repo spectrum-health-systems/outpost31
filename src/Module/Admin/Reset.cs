@@ -1,11 +1,6 @@
-﻿/* Module
- * ███ █ █ ███ ███ ███ ███  ███ ███ ██
- * █ █ █ █  █  ███ █ █ ████  █   ██  █
- * ███ ███  █  █   ███  ███  █  ███  █
- *                      Admin.Reset.cs
-
-/* u250603_code
- * u250603_documentation
+﻿/* Outpost31.Module.Admin.Reset.cs
+ * u250625_code
+ * u250625_documentation
  */
 
 using System;
@@ -31,7 +26,8 @@ namespace Outpost31.Module.Admin
         {
             LogEvent.Debuggler(tngnWbsvEnvironment, $"[PARSEING RESET CONFIG B]");
 
-            Core.Configuration.TngnWbsvConfiguration.CreateDefault(tngnWbsvEnvironment);
+            /* WTF */
+            ///Core.Configuration.ConfigCore.CreateDefault(tngnWbsvEnvironment);
         }
     }
 }
