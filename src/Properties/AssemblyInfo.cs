@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Outpost31")]
-[assembly: AssemblyDescription("The Tingen web service logic")]
+[assembly: AssemblyDescription("A class library that provides the back-end functionality for the Tingen Web Service.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("A Pretty Cool Program")]
 [assembly: AssemblyProduct("Outpost31")]
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("25.7.0.0")]
-[assembly: AssemblyFileVersion("25.7.0.0")]
+[assembly: AssemblyVersion("25.8.0.0")]
+[assembly: AssemblyFileVersion("25.8.0.0")]

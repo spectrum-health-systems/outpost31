@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.RuntimeConfig.cs
- * u250709_code
- * u250709_documentation
+ * u250804_code
+ * u250804_documentation
  */
 
 using System;
@@ -44,7 +44,7 @@ namespace Outpost31.Core.Runtime
             return new RuntimeConfig
             {
                 WsvcVer      = wsvcVer,
-                WsvcBuild    = "250701",
+                WsvcBuild    = "250804",
                 AvtrSys      = avtrSys,
                 WsvcMode     = null,
                 WsvcDataPath = $@"C:\Tingen_Data\WebService\{avtrSys}\Data",

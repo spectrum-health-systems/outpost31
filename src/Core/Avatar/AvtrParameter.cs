@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.Avatar.AvtrParameter.cs
- * u250709_code
- * u250709_documentation
+ * u250804_code
+ * u250804_documentation
  */
 
 using Outpost31.Core.Blueprint;
@@ -10,16 +10,29 @@ using Outpost31.Core.Session;
 namespace Outpost31.Core.Avatar
 {
     /// <summary>Logic for the Avatar script parameter.</summary>
-    /// <remarks>TBD</remarks>
-    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
-    /// <seealso href="https://spectrum-health-systems.github.io/tingen-documentation-project/api">Tingen API Documentation</seealso>
+    /// <remarks>
+    ///     The Avatar Script Parameter is a string that is sent from Avatar to the Tingen Web Service, and contains<br/>
+    ///     the information that the Tingen Web Service needs to do it's work.<br/>
+    ///     <br/>
+    ///     <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/Description/*'/><br/>
+    ///     <br/>
+    ///     <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/Example/*'/><br/>
+    ///     <br/>
+    ///     <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/ListOf/*'/>><br/>
+    ///     <br/>
+    ///     <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="ProjectInfo"]/Callback/*'/>
+    /// </remarks>
     public class AvtrParameter
     {
         /// <summary>The original script parameter sent from Avatar.</summary>
         public string Original { get; set; }
 
         /// <summary>Processes a request based on the parameters provided in the specified session.</summary>
-        /// <remarks>TBD</remarks>
+        /// <remarks>
+        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrParameter"]/Description/*'/><br/>
+        ///     <br/>
+        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrParameter"]/Example/*'/><br/>
+        /// </remarks>
         /// <param name="wsvcSession">The session object containing the request parameters and runtime settings</param>
         public static void Request(WsvcSession wsvcSession)
         {

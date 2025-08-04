@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.Blueprint.ErrorContent.cs
- * u250709_code
- * u250709_documentation
+ * u250804_code
+ * u250804_documentation
  */
 
 using System.IO;

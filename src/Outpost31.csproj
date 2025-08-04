@@ -114,7 +114,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="AppData\XmlDoc\Common.xml" />
     <Content Include="AppData\XmlDoc\Core.xml" />
+    <Content Include="AppData\XmlDoc\Outpost31.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

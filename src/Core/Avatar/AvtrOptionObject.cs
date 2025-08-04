@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.Avatar.AvtrOptionObject.cs
- * u250709_code
- * u250709_documentation
+ * u250804_code
+ * u250804_documentation
  */
 
 using System.Reflection;
@@ -11,10 +11,10 @@ namespace Outpost31.Core.Avatar
 {
     /// <summary>Logic for Avatar OptionObjects.</summary>
     /// <remarks>
-    ///     An <see cref="OptionObject2015">OptionObject</see> contains metadata of an Avatar form.
+    ///     An <see cref="OptionObject2015">OptionObject</see> contains metadata of an Avatar form.<br/>
+    ///     <br/>
+    ///     <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="ProjectInfo"]/Callback/*'/>
     /// </remarks>
-    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
-    /// <seealso href="https://spectrum-health-systems.github.io/tingen-documentation-project/api">Tingen API Documentation</seealso>
     public class AvtrOptionObject
     {
         /// <summary>The original OptionObject sent from Avatar.</summary>
@@ -30,9 +30,8 @@ namespace Outpost31.Core.Avatar
         public OptionObject2015 Finalized { get; set; }
 
         /// <summary>The executing assembly name.</summary>
-        /// <remarks>A required log component, defined here so it can be used throughout the class.</remarks>
-        public static string ExeAsm { get; set; } = Assembly.GetExecutingAssembly()
-                                                            .GetName().Name;
+        /// <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="Common"]/ExeAsmName/*'/>
+        public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Finalize an OptionObject so it can be returned to Avatar.</summary>
         /// <remarks>
@@ -44,8 +43,8 @@ namespace Outpost31.Core.Avatar
         ///         <item>Assigns an <i>error code</i> to the object</item>
         ///         <item>Assigns an <i>error message</i> to the object</item>
         ///     </list>
-        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.OptionObjects"]/Finalize.ErrorCodes/*'/>
-        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.OptionObjects"]/Finalize.Example/*'/>
+        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrOptionObject"]/Finalize.ErrorCodes/*'/>
+        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrOptionObject"]/Finalize.Example/*'/>
         /// </remarks>
         /// <param name="wsvcSession">The <see cref="WsvcSession">Tingen session</see> instance.</param>
         /// <param name="errorCode">The OptionObject error code.</param>
