@@ -13,29 +13,27 @@ u250805
         -->
         <Description>
             <para>
-                TODO - Add description.
-            </para>
+                The script parameter comprised of the following components:<br/>
+                <list type="bullet">
+                    <item>The requested <c>Module</c> (the <i>namespace</i>)</item>
+                    <item>The requested <c>Command</c> (the <i>class</i>)</item>
+                    <item>The requested <c>Request</c> (the <i>method</i>)</item>
+                    <item>The requested <c>Option</c></item>
+                </list>
+                In addition:
+                <list type="bullet">
+                    <item>The maximum length of a script parameter is 50 characters</item>
+                    <item>Components are separated by a "<c>.</c>"</item>
+                    <item>Prototype parameters start with "<c>_p</c>"</item>
+                </list>
+                Examples:
+                <list type="bullet">
+                    <item><c>Admin.Status.Current</c></item>
+                    <item><c>FormAccess.Deny.SysCodeDoc</c></item>
+                    <item><c>Another.Request.For.Tingen</c></item>
+                </list>
+                You can find a list of currently available parameters in the <see href=""</para>
         </Description>
-
-        <!--
-        Avatar Parameter examples
-        <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Example/*'/>
-        -->
-        <Example>
-            <para>
-                TODO - Add examples.
-            </para>
-        </Example>
-
-        <!--
-        List of valid Avatar Parameters
-        <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
-        -->
-        <ListOf>
-            <para>
-                TODO - Add a link to a list of valid parameters. (probably a link to the Avatar documentation)
-            </para>
-        </ListOf>
         
     </Class>
   

@@ -3,6 +3,7 @@
  * u250805_documentation
  */
 
+using System.ComponentModel;
 using Outpost31.Core.Blueprint;
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
@@ -11,8 +12,7 @@ namespace Outpost31.Core.Avatar
 {
     /// <summary>Logic for the Avatar script parameter.</summary>
     /// <remarks>
-    ///     The Avatar Script Parameter is a string that is sent from Avatar to the Tingen Web Service, and contains<br/>
-    ///     the information that the Tingen Web Service needs to do it's work.<br/>
+    ///      The Script Parameter sent from Avatar contains all of the information that the Tingen Web Service needs to do what it needs to do.<br/>
     ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/><br/>
     ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Example/*'/><br/>
     ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/><br/>
