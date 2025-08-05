@@ -30,10 +30,20 @@ u250805
                 <list type="bullet">
                     <item><c>Admin.Status.Current</c></item>
                     <item><c>FormAccess.Deny.SysCodeDoc</c></item>
-                    <item><c>Another.Request.For.Tingen</c></item>
+                    <item><c>_pRequest.Under.Development</c></item>
                 </list>
-                You can find a list of currently available parameters in the <see href=""</para>
+             </para>
         </Description>
+
+        <!--
+        List of valid Avatar Parameters
+        <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
+        -->
+        <ListOf>
+            <para>     
+                Script parameters must one of the <see href="https://github.com/spectrum-health-systems/tingen-documentation-project/blob/main/static/valid-parameters.md"> current valid parameters.</see>
+            </para>
+        </ListOf>
         
     </Class>
   
