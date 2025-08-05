@@ -12,7 +12,7 @@ namespace Outpost31.Core.Avatar
 {
     /// <summary>Logic for the Avatar script parameter.</summary>
     /// <remarks>
-    ///      The Script Parameter sent from Avatar contains all of the information that the Tingen Web Service needs to do what it needs to do.<br/>
+    ///      The Script Parameter sent from Avatar contains all of the information that the Tingen Web Service needs to do work.<br/>
     ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/><br/>
     ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
     ///     <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>

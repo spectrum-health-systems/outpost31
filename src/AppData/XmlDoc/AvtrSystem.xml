@@ -8,17 +8,10 @@ u250805
     <Class name="System">
 
         <!--
-        Detailed description of what an Avatar System is.
-        <include file='AppData/XmlDoc/AvtrSystem.xml' path='AvtrSystem/Class[@name="System"]/Description/*'/> 
+        Might not need this
         -->
-        <Description>
-            <para>
-                TODO - Add description.
-            </para>
-        </Description>
-        
-    </Class>
 
+    </Class>
 
     <Class name="SystemCode">
 
