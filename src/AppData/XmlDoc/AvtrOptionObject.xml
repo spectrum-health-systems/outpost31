@@ -24,7 +24,7 @@ u250805
         -->
         <ErrorCode>
             <para>
-                The <c>error code</c> must be one of the following:
+                <b>Error codes</b>
                 <list type="bullet">
                     <item>
                         <term>0</term>
@@ -56,15 +56,8 @@ u250805
                     </item>
                 </list>
             </para>
-        </ErrorCode>
-
-        <!--
-        Examples of OptionObject error codes
-        <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode.Example/*'/>
-        -->
-        <ErrorCode.Example>
-            <example>
-                Examples of common error codes:
+            <para>
+                <b>Common error codes</b>
                 <list type="bullet">
                     <item>
                         <term>1</term>
@@ -91,8 +84,8 @@ u250805
                         </description>
                     </item>
                 </list>
-            </example>
-        </ErrorCode.Example>
+            </para>
+        </ErrorCode>
 
     </Class>
 

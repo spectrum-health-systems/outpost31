@@ -20,7 +20,7 @@ namespace Outpost31.Core.Blueprint
         {
             var tinplate = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Tinplate\WebService\webservice-error-critical-missing-arguments.tinplate");
 
-            return tinplate.Replace("~OptObjStatus~", Avatar.AvtrOptionObject.CheckExistance(sentOptObj))
+            return tinplate.Replace("~OptObjStatus~", Avatar.AvtrOptionObject.CheckExistence(sentOptObj))
                            .Replace("~ScriptParamStatus~", Avatar.AvtrParameter.CheckExistence(sentScriptParam));
         }
 

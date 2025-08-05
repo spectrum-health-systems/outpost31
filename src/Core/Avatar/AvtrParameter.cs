@@ -13,13 +13,9 @@ namespace Outpost31.Core.Avatar
     /// <remarks>
     ///     The Avatar Script Parameter is a string that is sent from Avatar to the Tingen Web Service, and contains<br/>
     ///     the information that the Tingen Web Service needs to do it's work.<br/>
-    ///     <br/>
     ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/><br/>
-    ///     <br/>
     ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Example/*'/><br/>
-    ///     <br/>
     ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/><br/>
-    ///     <br/>
     ///     <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
     /// </remarks>
     public class AvtrParameter

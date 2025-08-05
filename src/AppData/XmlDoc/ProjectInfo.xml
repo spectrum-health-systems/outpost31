@@ -13,7 +13,7 @@ u250805
         -->
         <Callback>
             <para>
-                For more information, please see <see cref="ProjectInfo"/>.
+                For more information about <b>Outpost31</b>, please see <see cref="ProjectInfo"/>.
             </para>
         </Callback>
 
@@ -24,7 +24,7 @@ u250805
         <About>
             <para>
                 <b>About Outpost31</b><br/>
-                Outpost31 is a class library that provides the back-end functionality for the Tingen Web Service.
+                Outpost31 is a class library that provides the back-end functionality for the <see href="https://github.com/spectrum-health-systems/tingen-web-service">Tingen Web Service</see>.
             </para>
         </About>
 
