@@ -1,0 +1,31 @@
+﻿<!--
+External XML documentation for Outpost31.Core.Avatar.AvtrSystem.cs
+u250805
+-->
+
+<AvtrSystem>
+
+    <Class name="System">
+
+        <!--
+        Detailed description of what an Avatar System is.
+        <include file='AppData/XmlDoc/AvtrSystem.xml' path='AvtrSystem/Class[@name="System"]/Description/*'/> 
+        -->
+        <Description>
+            <para>
+                TODO - Add description.
+            </para>
+        </Description>
+        
+    </Class>
+
+
+    <Class name="SystemCode">
+
+        <!--
+        Might not need this
+        -->
+
+    </Class>
+  
+</AvtrSystem>

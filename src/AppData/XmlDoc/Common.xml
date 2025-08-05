@@ -1,111 +1,28 @@
 ﻿<!--
-    External XML documentation for Outpost31.Avatar.AvtrOptionObject.cs
-    u250804
+External XML documentation for common components of Outpost31
+u250805
 -->
 
-<Core.Avatar.AvtrOptionObject>
+<Common>
 
-    <Class name="OptionObject">
+    <!--
+    Common variables used throughout the Outpost31 project.
+    -->
+    <Class name="Variable">
 
-        <!-- <include file='AppData/XmlDoc/Core.Avatar.AvtrOptionObject.xml' path='Core.Avatar.AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/> -->
-        <ErrorCode>
-            <para>
-                The <c>error code</c> must be one of the following:
-                <list type="bullet">
-                    <item>
-                        <term>0</term>
-                        <description>No action taken</description>
-                    </item>
-                    <item>
-                        <term>1</term>
-                        <description>Returns an Error Message with an "Ok" button, and stops further processing of scripts.</description>
-                    </item>
-                    <item>
-                        <term>2</term>
-                        <description>Returns an Error Message with "OK" and "Cancel" buttons, and stops further scripts the user clicks "Cancel"</description>
-                    </item>
-                    <item>
-                        <term>3</term>
-                        <description>Returns an Error Message with "Ok" button</description>
-                    </item>
-                    <item>
-                        <term>4</term>
-                        <description> Returns an Error Message with "Yes" and "No" buttons and stops further scripts the user clicks "No"</description>
-                    </item>
-                    <item>
-                        <term>5</term>
-                        <description>Returns a URL to be opened in a new browser</description>
-                    </item>
-                    <item>
-                        <term>6</term>
-                        <description>Returns a form to be opened in Avatar</description>
-                    </item>
-                </list>
-            </para>
-        </ErrorCode>
-
-        <!-- <include file='AppData/XmlDoc/Core.Avatar.AvtrOptionObject.xml' path='Core.Avatar.AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode.Example/*'/> -->
-        <ErrorCode.Example>
-            <example>
-                Examples of common error codes:
-                <list type="bullet">
-                    <item>
-                        <term>1</term>
-                        <description>
-                            Typically used when you want to display some information to the user, and prevent them from taking an action.<br/>
-                            <br/>
-                            For example, you want to let the user know that a field contains invalid data, they cannot proceed until they correct it.
-                        </description>
-                    </item>
-                    <item>
-                        <term>3</term>
-                        <description>
-                            Typically used when you would like to notify the user of something, but it is not critical to their current task.<br/>
-                            <br/>
-                            For example, you want to wish the users a happy birthday!.
-                        </description>
-                    </item>
-                    <item>
-                        <term>4</term>
-                        <description>
-                            A combination of the above two, where you want to display a message to the user, but also allow them to take an action.<br/>
-                            <br/>
-                            For example, you want to let the user know that there is a potential misspelling in their text, but they can choose to ignore it and proceed anyway.
-                        </description>
-                    </item>
-                </list>
-            </example>
-        </ErrorCode.Example>
+        <!--
+        The name of the Executing Assembly
+        <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="Common"]/ExeAsmName/*'/>
+        -->
+        <ExeAsmName>
+            <remarks>
+                The name of the Executing Assembly is a required component of all log files, as it is used to identify
+                the class that is creating the log.<br/>
+                <br/>
+                This is defined at the start of each class, so it can be used at any time that a log needs to be created.<br/>
+            </remarks>
+        </ExeAsmName>
 
     </Class>
 
-    <!-- =============
-         AvtrParameter
-         ============= -->
-    
-    <Class name="AvtrParameter">
-
-        <!-- <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/Description/*'/> -->
-        <Description>
-            <para>
-                TODO - Add description.
-            </para>
-        </Description>
-
-        <!-- <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/Example/*'/> -->
-        <Example>
-            <para>
-                TODO - Add examples.
-            </para>
-        </Example>
-
-        <!-- <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/ListOf/*'/> -->
-        <ListOf>
-            <para>
-                TODO - Add a link to a list of valid parameters.
-            </para>
-        </ListOf>
-        
-    </Class>
-  
-</Core.Avatar.AvtrOptionObject>
+</Common>

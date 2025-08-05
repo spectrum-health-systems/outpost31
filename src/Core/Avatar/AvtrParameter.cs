@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.Avatar.AvtrParameter.cs
  * u250804_code
- * u250804_documentation
+ * u250805_documentation
  */
 
 using Outpost31.Core.Blueprint;
@@ -14,13 +14,13 @@ namespace Outpost31.Core.Avatar
     ///     The Avatar Script Parameter is a string that is sent from Avatar to the Tingen Web Service, and contains<br/>
     ///     the information that the Tingen Web Service needs to do it's work.<br/>
     ///     <br/>
-    ///     <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/Description/*'/><br/>
+    ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/><br/>
     ///     <br/>
-    ///     <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/Example/*'/><br/>
+    ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Example/*'/><br/>
     ///     <br/>
-    ///     <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Parameter"]/ListOf/*'/>><br/>
+    ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/><br/>
     ///     <br/>
-    ///     <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="ProjectInfo"]/Callback/*'/>
+    ///     <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
     /// </remarks>
     public class AvtrParameter
     {
@@ -29,9 +29,7 @@ namespace Outpost31.Core.Avatar
 
         /// <summary>Processes a request based on the parameters provided in the specified session.</summary>
         /// <remarks>
-        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrParameter"]/Description/*'/><br/>
-        ///     <br/>
-        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrParameter"]/Example/*'/><br/>
+        ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/><br/>
         /// </remarks>
         /// <param name="wsvcSession">The session object containing the request parameters and runtime settings</param>
         public static void Request(WsvcSession wsvcSession)

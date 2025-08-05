@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.Avatar.AvtrOptionObject.cs
  * u250804_code
- * u250804_documentation
+ * u250805_documentation
  */
 
 using System.Reflection;
@@ -13,7 +13,7 @@ namespace Outpost31.Core.Avatar
     /// <remarks>
     ///     An <see cref="OptionObject2015">OptionObject</see> contains metadata of an Avatar form.<br/>
     ///     <br/>
-    ///     <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="ProjectInfo"]/Callback/*'/>
+    ///     <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
     /// </remarks>
     public class AvtrOptionObject
     {
@@ -30,21 +30,21 @@ namespace Outpost31.Core.Avatar
         public OptionObject2015 Finalized { get; set; }
 
         /// <summary>The executing assembly name.</summary>
-        /// <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="Common"]/ExeAsmName/*'/>
+        /// <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Variable"]/ExeAsmName/*'/>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Finalize an OptionObject so it can be returned to Avatar.</summary>
         /// <remarks>
         ///     An <see cref="OptionObject2015">OptionObject</see> must be finalized before being returned to Avatar.<br/>
         ///     <br/>
-        ///     The <see cref="OptionObject2015.ToReturnOptionObject(int, string)"/> method:
+        ///     This method finalizes an OptionObject by:
         ///     <list type="bullet">
-        ///         <item>Ensures that all required components of the OptionObject are valid</item>
-        ///         <item>Assigns an <i>error code</i> to the object</item>
-        ///         <item>Assigns an <i>error message</i> to the object</item>
+        ///         <item>Ensuring that all required components of the OptionObject are valid</item>
+        ///         <item>Assigning an <i>error code</i> to the OptionObject</item>
+        ///         <item>Assigning an <i>error message</i> to the OptionObject</item>
         ///     </list>
-        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrOptionObject"]/Finalize.ErrorCodes/*'/>
-        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrOptionObject"]/Finalize.Example/*'/>
+        ///     <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/>
+        ///     <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode.Example/*'/>
         /// </remarks>
         /// <param name="wsvcSession">The <see cref="WsvcSession">Tingen session</see> instance.</param>
         /// <param name="errorCode">The OptionObject error code.</param>

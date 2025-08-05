@@ -1,21 +1,28 @@
-﻿<!--
-    External XML documentation for the Outpost31.Core namespace.
-
-    u250804
+﻿<!-- 
+External XML documentation for Outpost31.Core.Avatar.AvtrOptionObject.cs
+u250805
 -->
 
-<Core>
+<AvtrOptionObject>
 
-    <!--
-    Components of the Avatar.AvtrOptionObjects class:
-      * Finalize.ErrorCodes - Lists and describes the common error codes used in Avatar scripts.
-      * Finalize.Example    - Provides examples of common error codes and their typical usage.
-    -->
+    <Class name="OptionObject">
 
-    <Class name="Avatar.AvtrOptionObject">
-
-        <!-- <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrOptionObject"]/Finalize.ErrorCodes/*'/> -->
-        <Finalize.ErrorCodes>
+        <!--
+        Detailed description of the OptionObject
+        <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/Description/*'/> 
+        -->
+        <Description>
+            <para>
+                TODO - Add description.
+            </para>
+        </Description>
+        
+        
+        <!--
+        List of OptionObject error codes and their descriptions
+        <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/> 
+        -->
+        <ErrorCode>
             <para>
                 The <c>error code</c> must be one of the following:
                 <list type="bullet">
@@ -49,10 +56,13 @@
                     </item>
                 </list>
             </para>
-        </Finalize.ErrorCodes>
+        </ErrorCode>
 
-        <!-- <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.AvtrOptionObject"]/Finalize.Example/*'/> -->
-        <Finalize.Example>
+        <!--
+        Examples of OptionObject error codes
+        <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode.Example/*'/>
+        -->
+        <ErrorCode.Example>
             <example>
                 Examples of common error codes:
                 <list type="bullet">
@@ -82,10 +92,8 @@
                     </item>
                 </list>
             </example>
-        </Finalize.Example>
+        </ErrorCode.Example>
 
     </Class>
 
-
-
-</Core>
+</AvtrOptionObject>

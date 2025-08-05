@@ -19,7 +19,7 @@ namespace Outpost31.Core.Runtime
         /// <summary>The current build number of the Tingen Web Service.</summary>
         public string WsvcBuild { get; set; }
 
-        /// <summary>The Avatar <see cref="Outpost31.Core.Avatar.AvtrSystemInfo.AvtrSys"/>  System that the Tingen Web Service will interface with.</summary>
+        /// <summary>The Avatar <see cref="Outpost31.Core.Avatar.AvtrSystem.AvtrSys"/>  System that the Tingen Web Service will interface with.</summary>
         public string AvtrSys { get; set; }
 
         /// <summary>The Tingen Web Service mode.</summary>

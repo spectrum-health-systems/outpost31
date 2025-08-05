@@ -79,7 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Avatar\AvtrSystemInfo.cs" />
+    <Compile Include="Core\Avatar\AvtrSystem.cs" />
     <Compile Include="Core\Avatar\AvtrParameter.cs" />
     <Compile Include="Core\Blueprint\LogContent.cs" />
     <Compile Include="Core\Blueprint\LogTemplate.cs" />
@@ -114,9 +114,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="AppData\XmlDoc\AvtrSystem.xml" />
+    <Content Include="AppData\XmlDoc\AvtrParameter.xml" />
+    <Content Include="AppData\XmlDoc\AvtrOptionObject.xml" />
     <Content Include="AppData\XmlDoc\Common.xml" />
-    <Content Include="AppData\XmlDoc\Core.xml" />
-    <Content Include="AppData\XmlDoc\Outpost31.xml" />
+    <Content Include="AppData\XmlDoc\ProjectInfo.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

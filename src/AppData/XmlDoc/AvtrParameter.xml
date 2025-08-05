@@ -1,0 +1,42 @@
+﻿<!-- 
+External XML documentation for Outpost31.Core.Avatar.AvtrParameter.cs
+u250805
+-->
+
+<AvtrParameter>
+
+    <Class name="Parameter">
+
+        <!--
+        Detailed description of the Avatar Parameter
+        <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/>
+        -->
+        <Description>
+            <para>
+                TODO - Add description.
+            </para>
+        </Description>
+
+        <!--
+        Avatar Parameter examples
+        <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Example/*'/>
+        -->
+        <Example>
+            <para>
+                TODO - Add examples.
+            </para>
+        </Example>
+
+        <!--
+        List of valid Avatar Parameters
+        <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
+        -->
+        <ListOf>
+            <para>
+                TODO - Add a link to a list of valid parameters. (probably a link to the Avatar documentation)
+            </para>
+        </ListOf>
+        
+    </Class>
+  
+</AvtrParameter>

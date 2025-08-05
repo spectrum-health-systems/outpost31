@@ -1,0 +1,61 @@
+﻿<!-- 
+External XML documentation for Outpost31.ProjectInfo.cs
+u250805
+-->
+
+<ProjectInfo>
+
+    <Class name="Project">
+
+        <!--
+        Point to Outpost31.ProjectInfo.cs, which contains up-to-date information aboutthe Outpost31 project
+        <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+        -->
+        <Callback>
+            <para>
+                For more information, please see <see cref="ProjectInfo"/>.
+            </para>
+        </Callback>
+
+        <!--
+        Up-to-date information about the Outpost31 project
+        <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/About/*'/>
+        -->
+        <About>
+            <para>
+                <b>About Outpost31</b><br/>
+                Outpost31 is a class library that provides the back-end functionality for the Tingen Web Service.
+            </para>
+        </About>
+
+        <!--
+        List of Tingen-related repositories
+        <include file='AppData/XmlDoc/ProjectInfo.xml' path='Outpost31/Class[@name="Project"]/Repositories/*'/>
+        -->
+        <Repositories>
+            <para>
+                <b>Associated projects</b><br/>
+                <see href="https://github.com/spectrum-health-systems/tingen-web-service">Tingen Web Service</see> (front-end)<br/>
+                <see href="https://github.com/spectrum-health-systems/outpost31">Outpost32</see> (back-end)<br/>
+            </para>
+        </Repositories>
+
+        <!--
+        List of Tingen-related documentation
+        <include file='AppData/XmlDoc/ProjectInfo.xml' path='Outpost31/Class[@name="Project"]/Documentation/*'/>
+        -->
+        <Documentation>
+            <para>
+                <b>Documentation</b>
+                <br/>
+                <see href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</see>
+                <br/>
+                <see href="https://github.com/spectrum-health-systems/tingen-documentation-project/tree/main/manuals/tngnsrvc">Tingen Web Service Manual</see>
+                <br/>
+                <see href="https://github.com/spectrum-health-systems/tingen-documentation-project/tree/main/development">Development Documentation</see>
+            </para>
+        </Documentation>
+             
+    </Class>
+    
+</ProjectInfo>
