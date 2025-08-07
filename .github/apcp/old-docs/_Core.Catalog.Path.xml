@@ -1,0 +1,72 @@
+﻿<!--
+XML documentation for:
+    * Core.Catalog.Path.Directories.cs (u250227)
+    * Core.Catalog.Path.Files.cs (u250227)
+    * Core.Catalog.Path.Folders.cs (u250227)
+-->
+
+<Core.Catalog.Path>
+  
+    <!-- ======================================================================
+    Directories.cs
+    ======================================================================= -->    
+    <Class name="Directories">
+
+        <!-- Directories.cs -->
+        <Directories>
+            <!-- No additional XML documentation -->
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </Directories>
+
+        <!-- Required() -->
+        <Required>
+            <!-- No additional XML documentation -->
+        </Required>
+
+    </Class>
+
+    <!-- ======================================================================
+    Files.cs
+    ======================================================================= -->
+    <Class name="Files">
+
+        <!-- Files.cs -->
+        <Files>
+            <!-- No additional XML documentation -->
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </Files>   
+
+        <!-- Required() -->
+        <Required>
+            <remarks>
+                <para>
+                    When the Tingen Web Service starts, there are a few required file paths that we need to setup:
+                    <list type="bullet">
+                        <term>TngnSystemCode</term>
+                        <description>The Avatar System Code that the Tingen Web Service will interface with.</description>
+                    </list>
+                </para>
+            </remarks>
+        </Required>
+
+    </Class>
+
+    <!-- ======================================================================
+    Folders.cs
+    ======================================================================= -->
+    <Class name="Folders">
+
+        <!-- Folders.cs -->
+        <Directories>
+            <!-- No additional XML documentation -->
+            <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
+        </Directories>
+
+        <!-- Required() -->
+        <Required>
+            <!-- No additional XML documentation -->
+        </Required>
+        
+    </Class>
+
+</Core.Catalog.Path>
