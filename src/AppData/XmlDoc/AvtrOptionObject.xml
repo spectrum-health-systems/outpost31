@@ -1,16 +1,30 @@
 ﻿<!-- 
-    AppData\XMLDoc\Core.xml
-    This file used to provide additional XML documentation about the classes,
-    methods, and properties in the Outpost31.Core namespace.
-    
-    u250623
+External XML documentation for Outpost31.Core.Avatar.AvtrOptionObject.cs
+u250805
 -->
 
-<Core>
-    <Class name="Avatar.OptionObjects">
-        <Finalize.ErrorCodes>
+<AvtrOptionObject>
+
+    <Class name="OptionObject">
+
+        <!--
+        Detailed description of the OptionObject
+        <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/Description/*'/> 
+        -->
+        <Description>
             <para>
-                The <c>error code</c> must be one of the following:
+                TODO - Add description.
+            </para>
+        </Description>
+        
+        
+        <!--
+        List of OptionObject error codes and their descriptions
+        <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/> 
+        -->
+        <ErrorCode>
+            <para>
+                <b>Error codes</b>
                 <list type="bullet">
                     <item>
                         <term>0</term>
@@ -42,10 +56,8 @@
                     </item>
                 </list>
             </para>
-        </Finalize.ErrorCodes>
-        <Finalize.Example>
-            <example>
-                Examples of common error codes:
+            <para>
+                <b>Common error codes</b>
                 <list type="bullet">
                     <item>
                         <term>1</term>
@@ -72,7 +84,9 @@
                         </description>
                     </item>
                 </list>
-            </example>
-        </Finalize.Example>
+            </para>
+        </ErrorCode>
+
     </Class>
-</Core>
+
+</AvtrOptionObject>

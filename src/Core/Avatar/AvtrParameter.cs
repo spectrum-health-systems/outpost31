@@ -1,8 +1,9 @@
 ﻿/* Outpost31.Core.Avatar.AvtrParameter.cs
- * u250709_code
- * u250709_documentation
+ * u250804_code
+ * u250805_documentation
  */
 
+using System.ComponentModel;
 using Outpost31.Core.Blueprint;
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
@@ -10,17 +11,22 @@ using Outpost31.Core.Session;
 namespace Outpost31.Core.Avatar
 {
     /// <summary>Logic for the Avatar script parameter.</summary>
-    /// <remarks>TBD</remarks>
-    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
-    /// <seealso href="https://spectrum-health-systems.github.io/tingen-documentation-project/api">Tingen API Documentation</seealso>
+    /// <remarks>
+    ///      The Script Parameter sent from Avatar contains all of the information that the Tingen Web Service needs to do work.<br/>
+    ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/><br/>
+    ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
+    ///     <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+    /// </remarks>
     public class AvtrParameter
     {
-        /// <summary>The original script parameter sent from Avatar.</summary>
+        /// <summary>The original <see cref="AvtrParameter">script parameter</see> sent from Avatar.</summary>
         public string Original { get; set; }
 
-        /// <summary>Processes a request based on the parameters provided in the specified session.</summary>
-        /// <remarks>TBD</remarks>
-        /// <param name="wsvcSession">The session object containing the request parameters and runtime settings</param>
+        /// <summary>Parse a script parameter passed from Avatar.</summary>
+        /// <remarks>
+        ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
+        /// </remarks>
+        /// <param name="wsvcSession">The Tingen Web Service <see cref="WsvcSession">session</see> object containing the request parameters and runtime settings</param>
         public static void Request(WsvcSession wsvcSession)
         {
             LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSE REQUEST A] '{wsvcSession.ScriptParam.Original}'");  /* TESTING */
@@ -56,7 +62,7 @@ namespace Outpost31.Core.Avatar
             }
         }
 
-        /// <summary>Validates whether the provided script parameter is null, empty, or consists only of white-space characters.</summary>
+        /// <summary>Validates whether the provided <see cref="AvtrParameter">script parameter</see> is null, empty, or consists only of white-space characters.</summary>
         /// <param name="origParam">The script parameter to validate.</param>
         /// <returns>A message indicating whether the provided script parameter exists or does not exist.</returns>
         public static string CheckExistence(string origParam)

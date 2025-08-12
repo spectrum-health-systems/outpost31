@@ -29,7 +29,7 @@ namespace Outpost31.Core.Session
         public AvtrParameter ScriptParam { get; set; }
 
         /// <summary>The Avatar System Code that this instance of the Tingen Web Service will interface with.</summary>
-        public AvtrSystemInfo AvtrSysInfo { get; set; }
+        public AvtrSystem AvtrSysInfo { get; set; }
 
         /// <summary>Creates and initializes a new TngnWbsvSession object</summary>
         /// <param name="origOptObj">The OptionObject that is sent from Avatar.</param>
@@ -56,7 +56,7 @@ namespace Outpost31.Core.Session
                 {
                     Original = origScriptParam
                 },
-                AvtrSysInfo = new AvtrSystemInfo
+                AvtrSysInfo = new AvtrSystem
                 {
                     AvtrSys = avtrSys
                 },

@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.RuntimeConfig.cs
- * u250709_code
- * u250709_documentation
+ * u250804_code
+ * u250804_documentation
  */
 
 using System;
@@ -19,7 +19,7 @@ namespace Outpost31.Core.Runtime
         /// <summary>The current build number of the Tingen Web Service.</summary>
         public string WsvcBuild { get; set; }
 
-        /// <summary>The Avatar <see cref="Outpost31.Core.Avatar.AvtrSystemInfo.AvtrSys"/>  System that the Tingen Web Service will interface with.</summary>
+        /// <summary>The Avatar <see cref="Outpost31.Core.Avatar.AvtrSystem.AvtrSys"/>  System that the Tingen Web Service will interface with.</summary>
         public string AvtrSys { get; set; }
 
         /// <summary>The Tingen Web Service mode.</summary>
@@ -44,7 +44,7 @@ namespace Outpost31.Core.Runtime
             return new RuntimeConfig
             {
                 WsvcVer      = wsvcVer,
-                WsvcBuild    = "250701",
+                WsvcBuild    = "250804",
                 AvtrSys      = avtrSys,
                 WsvcMode     = null,
                 WsvcDataPath = $@"C:\Tingen_Data\WebService\{avtrSys}\Data",

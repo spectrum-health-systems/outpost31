@@ -1,0 +1,24 @@
+﻿<!--
+External XML documentation for Outpost31.Core.Avatar.AvtrSystem.cs
+u250805
+-->
+
+<AvtrSystem>
+
+    <Class name="System">
+
+        <!--
+        Might not need this
+        -->
+
+    </Class>
+
+    <Class name="SystemCode">
+
+        <!--
+        Might not need this
+        -->
+
+    </Class>
+  
+</AvtrSystem>

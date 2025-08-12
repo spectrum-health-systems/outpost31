@@ -1,6 +1,6 @@
 ﻿/* Outpost31.Core.Avatar.AvtrOptionObject.cs
- * u250709_code
- * u250709_documentation
+ * u250804_code
+ * u250805_documentation
  */
 
 using System.Reflection;
@@ -9,48 +9,46 @@ using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Avatar
 {
-    /// <summary>Logic for Avatar OptionObjects.</summary>
+    /// <summary>Logic for Avatar <see cref="OptionObject2015">OptionObjects</see>.</summary>
     /// <remarks>
-    ///     An <see cref="OptionObject2015">OptionObject</see> contains metadata of an Avatar form.
+    ///     An OptionObject contains metadata of an Avatar form.<br/>
+    ///     <br/>
+    ///     <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
     /// </remarks>
-    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
-    /// <seealso href="https://spectrum-health-systems.github.io/tingen-documentation-project/api">Tingen API Documentation</seealso>
     public class AvtrOptionObject
     {
-        /// <summary>The original OptionObject sent from Avatar.</summary>
-        /// <remarks>This <see cref="OptionObject2015">OptionObject</see> is <i>never</i> modified during a Tingen Web Service session.</remarks>
+        /// <summary>The original <see cref="OptionObject2015">OptionObject</see> sent from Avatar.</summary>
+        /// <remarks>This OptionObject is <i>never</i> modified during a Tingen Web Service session.</remarks>
         public OptionObject2015 Original { get; set; }
 
-        /// <summary>The OptionObject where work is done.</summary>
-        /// <remarks>This <see cref="OptionObject2015">OptionObject</see> is <i>potentially</i> modified during a Tingen Web Service session.</remarks>
+        /// <summary>The <see cref="OptionObject2015">OptionObject</see> where work is done.</summary>
+        /// <remarks>This OptionObject is <i>potentially</i> modified during a Tingen Web Service session.</remarks>
         public OptionObject2015 Worker { get; set; }
 
-        /// <summary>The finalized OptionObject that is returned to Avatar.</summary>
-        /// <remarks>This is the finalized <see cref="OptionObject2015">OptionObject</see>, ready to be returned to Avatar.</remarks>
+        /// <summary>The finalized <see cref="OptionObject2015">OptionObject</see> that is returned to Avatar.</summary>
+        /// <remarks>This is the finalized OptionObject, ready to be returned to Avatar.</remarks>
         public OptionObject2015 Finalized { get; set; }
 
         /// <summary>The executing assembly name.</summary>
-        /// <remarks>A required log component, defined here so it can be used throughout the class.</remarks>
-        public static string ExeAsm { get; set; } = Assembly.GetExecutingAssembly()
-                                                            .GetName().Name;
+        /// <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Variable"]/ExeAsmName/*'/>
+        public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
-        /// <summary>Finalize an OptionObject so it can be returned to Avatar.</summary>
+        /// <summary>Finalize an <see cref="OptionObject2015">OptionObject</see> so it can be returned to Avatar.</summary>
         /// <remarks>
-        ///     An <see cref="OptionObject2015">OptionObject</see> must be finalized before being returned to Avatar.<br/>
+        ///     An OptionObject must be finalized before being returned to Avatar.<br/>
         ///     <br/>
-        ///     The <see cref="OptionObject2015.ToReturnOptionObject(int, string)"/> method:
+        ///     This method finalizes an OptionObject by:
         ///     <list type="bullet">
-        ///         <item>Ensures that all required components of the OptionObject are valid</item>
-        ///         <item>Assigns an <i>error code</i> to the object</item>
-        ///         <item>Assigns an <i>error message</i> to the object</item>
+        ///         <item>Ensuring that all required components of the OptionObject are valid</item>
+        ///         <item>Assigning an <i>error code</i> to the OptionObject</item>
+        ///         <item>Assigning an <i>error message</i> to the OptionObject</item>
         ///     </list>
-        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.OptionObjects"]/Finalize.ErrorCodes/*'/>
-        ///     <include file='AppData/XmlDoc/Core.xml' path='Core/Class[@name="Avatar.OptionObjects"]/Finalize.Example/*'/>
+        ///     <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/>
         /// </remarks>
-        /// <param name="wsvcSession">The <see cref="WsvcSession">Tingen session</see> instance.</param>
+        /// <param name="wsvcSession">The Tingen Web Service <see cref="WsvcSession">session</see> instance.</param>
         /// <param name="errorCode">The OptionObject error code.</param>
-        /// <param name="errorMessage">The OptionObject error message.</param>
-        public static void Finalize(WsvcSession wsvcSession, int errorCode, string errorMessage = "")
+        /// <param name="errorMessage">The OptionObject error message to display to the user.</param>
+        public static void ToReturn(WsvcSession wsvcSession, int errorCode, string errorMessage = "")
         {
             //LogEvent.Trace(1, ExeAsm, tnSession.TraceInfo);
 
@@ -100,10 +98,10 @@ namespace Outpost31.Core.Avatar
             }
         }
 
-        /// <summary> Validates whether the provided OptionObject instance exists.</summary>
-        /// <param name="origOptObj">The <see cref="OptionObject2015">OptionObject</see> instance to validate.</param>
-        /// <returns>A string indicating the validation result.</returns>
-        public static string CheckExistance(OptionObject2015 origOptObj)
+        /// <summary> Validates whether the provided <see cref="OptionObject2015">OptionObject</see> instance exists.</summary>
+        /// <param name="origOptObj">The OptionObject instance to validate.</param>
+        /// <returns>A string indicating the existence of the OptionObject instance.</returns>
+        public static string CheckExistence(OptionObject2015 origOptObj)
         {
             return (origOptObj == null)
                 ? "An OptionObject was not sent."

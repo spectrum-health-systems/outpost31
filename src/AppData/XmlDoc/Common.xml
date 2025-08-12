@@ -1,0 +1,28 @@
+﻿<!--
+External XML documentation for common components of Outpost31
+u250805
+-->
+
+<Common>
+
+    <!--
+    Common variables used throughout the Outpost31 project.
+    -->
+    <Class name="Variable">
+
+        <!--
+        The name of the Executing Assembly
+        <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="Common"]/ExeAsmName/*'/>
+        -->
+        <ExeAsmName>
+            <remarks>
+                The name of the Executing Assembly is a required component of all log files, as it is used to identify
+                the class that is creating the log.<br/>
+                <br/>
+                This is defined at the start of each class, so it can be used at any time that a log needs to be created.<br/>
+            </remarks>
+        </ExeAsmName>
+
+    </Class>
+
+</Common>
