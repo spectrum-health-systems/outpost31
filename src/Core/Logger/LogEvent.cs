@@ -110,7 +110,7 @@ namespace Outpost31.Core.Logger
         {
             Thread.Sleep(1000);
 
-            Dictionary < string, string > logComponent = LogBuilder.BasicLog("Primeval", avtrEnv, logMsg);
+            Dictionary <string,string> logComponent = LogBuilder.BasicLog("Primeval", avtrEnv, logMsg);
 
             LogWriter.WriteLogToFile(logComponent);
         }
