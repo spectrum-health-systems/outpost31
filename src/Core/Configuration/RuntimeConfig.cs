@@ -39,8 +39,6 @@ namespace Outpost31.Core.Runtime
 
         public static RuntimeConfig New(string wsvcVer, string avtrSys)
         {
-            LogEvent.Debuggler(avtrSys, "[Outpost31.Core.Runtime.Configuration.Runtime.New()]");
-
             return new RuntimeConfig
             {
                 WsvcVer      = wsvcVer,

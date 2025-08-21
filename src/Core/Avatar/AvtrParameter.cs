@@ -1,9 +1,8 @@
 ﻿/* Outpost31.Core.Avatar.AvtrParameter.cs
- * u250804_code
- * u250805_documentation
+ * u250821_code
+ * u250821_documentation
  */
 
-using System.ComponentModel;
 using Outpost31.Core.Blueprint;
 using Outpost31.Core.Logger;
 using Outpost31.Core.Session;
@@ -13,9 +12,9 @@ namespace Outpost31.Core.Avatar
     /// <summary>Logic for the Avatar script parameter.</summary>
     /// <remarks>
     ///      The Script Parameter sent from Avatar contains all of the information that the Tingen Web Service needs to do work.<br/>
-    ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/><br/>
-    ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
-    ///     <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+    ///     <include file='AppData/XMLDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/><br/>
+    ///     <include file='AppData/XMLDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
+    ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
     /// </remarks>
     public class AvtrParameter
     {
@@ -24,32 +23,23 @@ namespace Outpost31.Core.Avatar
 
         /// <summary>Parse a script parameter passed from Avatar.</summary>
         /// <remarks>
-        ///     <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
+        ///     <include file='AppData/XMLDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
         /// </remarks>
         /// <param name="wsvcSession">The Tingen Web Service <see cref="WsvcSession">session</see> object containing the request parameters and runtime settings</param>
         public static void Request(WsvcSession wsvcSession)
         {
-            LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSE REQUEST A] '{wsvcSession.ScriptParam.Original}'");  /* TESTING */
-
             if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("_p"))
             {
-                LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSEING PROTOTYPE REQUEST] '{wsvcSession.ScriptParam.Original}'"); /* TESTING */
-
                 Core.Request.PrototypeRequest.Parse(wsvcSession);
             }
             else
             {
-                LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSEING STANDARD REQUEST] '{wsvcSession.ScriptParam.Original}'"); /* TESTING */
-
                 if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("admin"))
                 {
-                    LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSEING ADMIN REQUEST] '{wsvcSession.ScriptParam.Original}'"); /* TESTING */
-
                     Module.Admin.Parse.Request(wsvcSession);
                 }
                 else if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("formaccess"))
                 {
-                    LogEvent.Debuggler(wsvcSession.RuntimeConfig.AvtrSys, $"[PARSEING FORM ACCESS REQUEST] '{wsvcSession.ScriptParam.Original}'"); /* TESTING */
                     // TODO FormAccess(tngnWbsvSession);
                 }
                 else

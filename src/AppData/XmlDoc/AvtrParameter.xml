@@ -9,7 +9,7 @@ u250805
 
         <!--
         Detailed description of the Avatar Parameter
-        <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/>
+        <include file='AppData/XMLDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/Description/*'/>
         -->
         <Description>
             <para>
@@ -37,7 +37,7 @@ u250805
 
         <!--
         List of valid Avatar Parameters
-        <include file='AppData/XmlDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
+        <include file='AppData/XMLDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
         -->
         <ListOf>
             <para>     

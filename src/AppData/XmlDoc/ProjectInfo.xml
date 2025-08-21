@@ -9,7 +9,7 @@ u250805
 
         <!--
         Point to Outpost31.ProjectInfo.cs, which contains up-to-date information aboutthe Outpost31 project
-        <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+        <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
         -->
         <Callback>
             <para>
@@ -19,7 +19,7 @@ u250805
 
         <!--
         Up-to-date information about the Outpost31 project
-        <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/About/*'/>
+        <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/About/*'/>
         -->
         <About>
             <para>
@@ -30,7 +30,7 @@ u250805
 
         <!--
         List of Tingen-related repositories
-        <include file='AppData/XmlDoc/ProjectInfo.xml' path='Outpost31/Class[@name="Project"]/Repositories/*'/>
+        <include file='AppData/XMLDoc/ProjectInfo.xml' path='Outpost31/Class[@name="Project"]/Repositories/*'/>
         -->
         <Repositories>
             <para>
@@ -42,7 +42,7 @@ u250805
 
         <!--
         List of Tingen-related documentation
-        <include file='AppData/XmlDoc/ProjectInfo.xml' path='Outpost31/Class[@name="Project"]/Documentation/*'/>
+        <include file='AppData/XMLDoc/ProjectInfo.xml' path='Outpost31/Class[@name="Project"]/Documentation/*'/>
         -->
         <Documentation>
             <para>

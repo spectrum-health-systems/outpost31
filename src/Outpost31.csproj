@@ -122,7 +122,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="AppData\Runtime\README.md" />
+    <None Include="AppData\Runtime.TngnOpto\README.md" />
+    <None Include="AppData\Runtime.TngnOpto\test.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="AppData\XmlDoc\README.md" />
     <None Include="Module\Prototype\README.md" />
     <None Include="packages.config" />

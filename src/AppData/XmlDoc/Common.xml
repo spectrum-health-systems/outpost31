@@ -12,7 +12,7 @@ u250805
 
         <!--
         The name of the Executing Assembly
-        <include file='AppData/XmlDoc/Outpost31.xml' path='Outpost31/Class[@name="Common"]/ExeAsmName/*'/>
+        <include file='AppData/XMLDoc/Outpost31.xml' path='Outpost31/Class[@name="Common"]/ExeAsmName/*'/>
         -->
         <ExeAsmName>
             <remarks>

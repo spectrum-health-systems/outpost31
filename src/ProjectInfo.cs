@@ -14,9 +14,9 @@ namespace Outpost31
 {
     ///<summary>Provides additional information about Outpost31.</summary>
     ///<remarks>
-    ///    <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/About/*'/><br/>
-    ///    <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Repositories/*'/><br/>
-    ///    <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Documentation/*'/><br/>
+    ///    <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/About/*'/><br/>
+    ///    <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Repositories/*'/><br/>
+    ///    <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Documentation/*'/><br/>
     ///</remarks>
     internal class ProjectInfo
     {

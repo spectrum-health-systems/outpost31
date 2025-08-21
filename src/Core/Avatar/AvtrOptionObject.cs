@@ -13,7 +13,7 @@ namespace Outpost31.Core.Avatar
     /// <remarks>
     ///     An OptionObject contains metadata of an Avatar form.<br/>
     ///     <br/>
-    ///     <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+    ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
     /// </remarks>
     public class AvtrOptionObject
     {
@@ -30,7 +30,7 @@ namespace Outpost31.Core.Avatar
         public OptionObject2015 Finalized { get; set; }
 
         /// <summary>The executing assembly name.</summary>
-        /// <include file='AppData/XmlDoc/Common.xml' path='Common/Class[@name="Variable"]/ExeAsmName/*'/>
+        /// <include file='AppData/XMLDoc/Common.xml' path='Common/Class[@name="Variable"]/ExeAsmName/*'/>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Finalize an <see cref="OptionObject2015">OptionObject</see> so it can be returned to Avatar.</summary>
@@ -43,7 +43,7 @@ namespace Outpost31.Core.Avatar
         ///         <item>Assigning an <i>error code</i> to the OptionObject</item>
         ///         <item>Assigning an <i>error message</i> to the OptionObject</item>
         ///     </list>
-        ///     <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/>
+        ///     <include file='AppData/XMLDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/>
         /// </remarks>
         /// <param name="wsvcSession">The Tingen Web Service <see cref="WsvcSession">session</see> instance.</param>
         /// <param name="errorCode">The OptionObject error code.</param>

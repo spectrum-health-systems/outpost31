@@ -9,7 +9,7 @@ u250805
 
         <!--
         Detailed description of the OptionObject
-        <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/Description/*'/> 
+        <include file='AppData/XMLDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/Description/*'/> 
         -->
         <Description>
             <para>
@@ -20,7 +20,7 @@ u250805
         
         <!--
         List of OptionObject error codes and their descriptions
-        <include file='AppData/XmlDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/> 
+        <include file='AppData/XMLDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/> 
         -->
         <ErrorCode>
             <para>

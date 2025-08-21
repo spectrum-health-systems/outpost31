@@ -17,15 +17,11 @@ namespace Outpost31.Module.Admin
     {
         public static void All(string tngnWbsvEnvironment)
         {
-            LogEvent.Debuggler(tngnWbsvEnvironment, $"[PARSEING RESET ALL");
-
             Config(tngnWbsvEnvironment);
         }
 
         public static void Config(string tngnWbsvEnvironment)
         {
-            LogEvent.Debuggler(tngnWbsvEnvironment, $"[PARSEING RESET CONFIG B]");
-
             /* WTF */
             ///Core.Configuration.ConfigCore.CreateDefault(tngnWbsvEnvironment);
         }

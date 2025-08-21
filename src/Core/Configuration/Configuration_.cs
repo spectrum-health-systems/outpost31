@@ -18,7 +18,7 @@
 ////        /// <summary>Load the runtime settings for the Tingen Web Service.</summary>
 ////        /// <param name="tngnWbsvVersion">The Tingen Web Service version</param>
 ////        /// <returns>Runtime settings for the Tingen Web Service.</returns>
-////        /// <include file='AppData/XmlDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnWbsvConfiguration"]/ClassDescription/*'/>
+////        /// <include file='AppData/XMLDoc/Core.Runtime.xml' path='Core.Runtime/Class[@name="TngnWbsvConfiguration"]/ClassDescription/*'/>
 ////        public static RuntimeConfig New(string tngnWbsvEnvironment)
 ////        {
 ////            LogEvent.Debuggler(tngnWbsvEnvironment, $"[LOAD NEW CONFIG]");

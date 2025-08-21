@@ -95,7 +95,7 @@ namespace Outpost31.Core.Logger
         ///         Primeval logs should removed before deploying to production.<br/>
         ///         <br/>
         ///         Since primeval logs may be written very quickly, there is a 1000ms delay<br/>
-        ///         before committing data.
+        ///         before committing data. This can potentially cause performance issues.<br/>
         ///     </para>
         ///     <para>
         ///        Syntax:
