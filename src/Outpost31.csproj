@@ -73,16 +73,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Avatar\AvtrEnvironment.cs" />
+    <Compile Include="Core\DevDep\Deploy.cs" />
     <Compile Include="Core\Du\DuJson.cs" />
     <Compile Include="Core\Logger\LogBody.cs" />
     <Compile Include="Core\Logger\LogContent.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Logger\LogHeader.cs" />
     <Compile Include="Core\Logger\LogPath.cs" />
-    <Compile Include="Module\Development\Gamut.cs" />
-    <Compile Include="Module\Development\Test.cs" />
+    <Compile Include="Core\DevDep\Develop.cs" />
     <Compile Include="ProjectInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TngnWsvc\TngnWsvcMode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\XmlDoc\Common.xml" />
@@ -93,9 +94,22 @@
   <ItemGroup>
     <None Include="app.config" />
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
-    <None Include="AppData\Blueprint\Log\basic-log.body" />
-    <None Include="AppData\Blueprint\Log\basic-log.header" />
+    <None Include="AppData\Blueprint\Log\basic-log.body">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AppData\Blueprint\Log\basic-log.header">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\tingen-third-party\ScriptLinkStandard\ScriptLinkStandard.csproj">
+      <Project>{dbd6fc96-5960-ed2d-5a9b-005483b233f3}</Project>
+      <Name>ScriptLinkStandard</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
