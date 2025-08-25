@@ -15,18 +15,18 @@ namespace Outpost31.Core.Blueprint
 
         /// <summary>The summary of the Tingen Web Service configuration at runtime.</summary>
         /// <return>A summary of the Tingen Web Service configuration at runtime.</return>
-        public static string RuntimeConfig(RuntimeConfig runtimeConfig)
+        public static string RuntimeConfig(RuntimeConfiguration runtimeConfig)
         {
             var tinplate = File.ReadAllText(@"C:\Tingen_Data\WebService\UAT\Tinplate\Log\detail-runtime-configuration.tinplate");
 
             return $"{LogContent.BasicHeader()}" +
                     tinplate.Replace("~DateTime~", $"{runtimeConfig.CurrentDate}-{runtimeConfig.CurrentDate}")
-                            .Replace("~WsvcVer~", runtimeConfig.WsvcVer)
-                            .Replace("~WsvcBuild~", runtimeConfig.WsvcBuild)
+                            .Replace("~WsvcVer~", runtimeConfig.TngnWsvcVer)
+                            .Replace("~WsvcBuild~", runtimeConfig.TngnWsvcBuild)
                             .Replace("~AvtrSys~", runtimeConfig.AvtrSys)
-                            .Replace("~WsvcMode~", runtimeConfig.WsvcMode)
-                            .Replace("~WsvcDataPath~", runtimeConfig.WsvcDataPath)
-                            .Replace("~WsvcHostName~", runtimeConfig.WsvcHostName);
+                            .Replace("~WsvcMode~", runtimeConfig.TngnWsvcMode)
+                            .Replace("~WsvcDataPath~", runtimeConfig.TngnWsvcDataPath)
+                            .Replace("~WsvcHostName~", runtimeConfig.TngnWsvcHostName);
         }
     }
 }

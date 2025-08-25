@@ -17,7 +17,7 @@ namespace Outpost31.Module.Admin
     public class Parse
     {
         /// <summary>Admin requests.</summary>
-        public static void Request(WsvcSession tngnWbsvSession)
+        public static void Request(TngnWsvcSession tngnWbsvSession)
         {
             switch (tngnWbsvSession.ScriptParam.Original.ToLower())
             {

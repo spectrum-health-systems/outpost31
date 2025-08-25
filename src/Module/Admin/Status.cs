@@ -12,7 +12,7 @@ namespace Outpost31.Module.Admin
 {
     internal class Status
     {
-        public static void Current(WsvcSession tngnWbsvSession)
+        public static void Current(TngnWsvcSession tngnWbsvSession)
         {
             LogEvent.Debuggler(tngnWbsvSession.RuntimeConfig.AvtrSys, $"[PARSEING STATUS CURRENT REQUEST] '{tngnWbsvSession.ScriptParam.Original}'");
 

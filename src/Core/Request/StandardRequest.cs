@@ -16,7 +16,7 @@ namespace Outpost31.Core.Request
     public class StandardRequest
     {
         /// <summary>Parse the request and call the appropriate module.</summary>
-        public static void Parse(WsvcSession tngnWbsvSession)
+        public static void Parse(TngnWsvcSession tngnWbsvSession)
         {
             if (tngnWbsvSession.ScriptParam.Original.ToLower().StartsWith("admin"))
             {
@@ -33,7 +33,7 @@ namespace Outpost31.Core.Request
         }
 
         /// <summary>Admin requests.</summary>
-        private static void Admin(WsvcSession tngnWbsvSession)
+        private static void Admin(TngnWsvcSession tngnWbsvSession)
         {
             switch (tngnWbsvSession.ScriptParam.Original.ToLower())
             {
@@ -48,7 +48,7 @@ namespace Outpost31.Core.Request
         }
 
         /// <summary>Form access requests.</summary>
-        private static void FormAccess(WsvcSession tngnWbsvSession)
+        private static void FormAccess(TngnWsvcSession tngnWbsvSession)
         {
             if (tngnWbsvSession.ScriptParam.Original.ToLower().Contains("list"))
             {
@@ -74,7 +74,7 @@ namespace Outpost31.Core.Request
         }
 
         /// <summary>Form access from a list.</summary>
-        private static void FormAccessFromList(WsvcSession tngnWbsvSession)
+        private static void FormAccessFromList(TngnWsvcSession tngnWbsvSession)
         {
             var listNumber = tngnWbsvSession.ScriptParam.Original.Substring(tngnWbsvSession.ScriptParam.Original.Length - 2, 2);
 

@@ -3,7 +3,7 @@
  * u250625_documentation
  */
 
-
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -15,25 +15,32 @@ namespace Outpost31.Core.Logger
     ///     <note title="About this class">
     ///         The following types of logs are supported:
     ///         <list type="bullet">
-    ///             <item><see cref="Critical(string, string)"/></item>
+    ///             <item><see cref="Critical(string, string, string)"/></item>
     ///             <item><see cref="Debug(string, string, string, string, int, string)"/></item>
     ///             <item><see cref="Debuggler(string, string)"/></item>
     ///             <item><see cref="Primeval(string, string)"/></item>
     ///             <item><see cref="Trace(int, string, string, string, string, int, string)"/></item>
     ///         </list>
     ///     </note>
+    ///     <br/>
+    ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>   
     /// </remarks>
-    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation/blob/main/static/tngnwsvc/logging.md">Logging documentation</seealso>
-    /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
     public static class LogEvent
     {
         /// <summary>Critical logs indicate a significant failure with the Tingen Web Service.</summary>
-        /// <param name="avtrEnvironment">The Avatar environment that the Tingen Web Service has interfaced with.</param>
-        /// <param name="logMessage">The log message to write.</param>
+        /// <param name="avtrSys">The Avatar environment that the Tingen Web Service has interfaced with.</param>
+        /// <param name="logMsg">The log message to write.</param>
         /// <seealso href="https://github.com/spectrum-health-systems/tingen-documentation/blob/main/static/tngnwsvc/logging.md#critical-logs">Critical log documentation</seealso>
-        public static void Critical(string avtrEnvironment, string logMessage = "Critical log.")
+        public static void Critical(string avtrSys, string logMsg = "Unknown critical error.", string logName = "Unknown error")
         {
-            Dictionary < string, string > logComponent = LogBuilder.BasicLog("Critical", avtrEnvironment, logMessage);
+            const string logType = "Critical";
+
+            Dictionary <string,string> logComponent = new Dictionary<string, string>
+            {
+                {"Path",    LogPathBuilder.AppLogPath(avtrSys, logName, logType)},
+                {"Content", LogContentBuilder.BasicContent(logType, logMsg)}
+            };
+
             LogWriter.WriteLogToFile(logComponent);
         }
 
@@ -58,7 +65,7 @@ namespace Outpost31.Core.Logger
         /// <param name="logMsg">The log message, which defaults to "Debug log." if not specified.</param>
         public static void Debug(string avtrEnv, string exeAsm, [CallerFilePath] string fromPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0, string logMsg = "Debug log.")
         {
-            Dictionary<string, string> logComponent = LogBuilder.DetailedLog("Debug", avtrEnv, exeAsm, fromPath, fromMethod, fromLine, logMsg);
+            Dictionary<string, string> logComponent = LogContentBuilder.DetailedLog("Debug", avtrEnv, exeAsm, fromPath, fromMethod, fromLine, logMsg);
 
             LogWriter.WriteLogToFile(logComponent);
         }
@@ -84,7 +91,7 @@ namespace Outpost31.Core.Logger
         {
             Thread.Sleep(1000);
 
-            Dictionary<string, string> logComponent = LogBuilder.BasicLog("Debuggler", avtrEnv, logMsg);
+            Dictionary<string, string> logComponent = LogContentBuilder.BasicLog("Debuggler", avtrEnv, logMsg);
 
             LogWriter.WriteLogToFile(logComponent);
         }
@@ -104,14 +111,19 @@ namespace Outpost31.Core.Logger
         ///         </code>
         ///     </para>
         /// </remarks>
-        /// <param name="avtrEnv">The Avatar environment that the Tingen Web Service has interfaced with.</param>
+        /// <param name="avtrSys">The Avatar environment that the Tingen Web Service has interfaced with.</param>
         /// <param name="logMsg">The log message, which defaults to "Primeval log." if not specified.</param>
-        public static void Primeval(string avtrEnv, string logMsg = "Primeval log.")
+        public static void Primeval(string avtrSys, string logMsg = "Primeval log.")
         {
+            const string logType = "Primeval";
+
+            Dictionary <string,string> logComponent = new Dictionary<string, string>
+            {
+                {"Path",    LogPathBuilder.AppLogPath(avtrSys, $"{DateTime.Now:yyMMdd-HHmmss-fffffff}", logType)},
+                {"Content", LogContentBuilder.BasicContent(logType, logMsg)}
+            };
+
             Thread.Sleep(1000);
-
-            Dictionary <string,string> logComponent = LogBuilder.BasicLog("Primeval", avtrEnv, logMsg);
-
             LogWriter.WriteLogToFile(logComponent);
         }
 
@@ -153,7 +165,7 @@ namespace Outpost31.Core.Logger
         /// <param name="logMsg">The message to include in the trace log. Defaults to "No message." if not specified.</param>
         public static void Trace(int traceLevel, string avtrEnv, string exeAsm, [CallerFilePath] string fromPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0, string logMsg = "Trace log.")
         {
-            Dictionary<string, string> logComponent = LogBuilder.TraceLog("Trace", traceLevel, avtrEnv, exeAsm, fromPath, fromMethod, fromLine, logMsg);
+            Dictionary<string, string> logComponent = LogContentBuilder.TraceLog("Trace", traceLevel, avtrEnv, exeAsm, fromPath, fromMethod, fromLine, logMsg);
 
             LogWriter.WriteLogToFile(logComponent);
         }

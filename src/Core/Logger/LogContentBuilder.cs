@@ -21,10 +21,52 @@ namespace Outpost31.Core.Logger
     ///             <item><see cref="TraceLog(string, int, string, string, string, string, int, string)"/></item>
     ///         </list>
     ///     </note>
+    ///     <br/>
+    ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>  
     /// </remarks>
-    /// <seealso href="https://github.com/spectrum-health-systems/Tingen-Documentation">Tingen documentation</seealso>
-    public class LogBuilder
+    public class LogContentBuilder
     {
+        public static Dictionary<string, string> AppLog(string logType, string avtrSys, string logName, string logMsg = "")
+        {
+            return new Dictionary<string, string>
+            {
+                {"Path",    LogPathBuilder.AppLogPath(avtrSys, logName, logType)},
+                {"Content", BasicContent(logType, logMsg)}
+
+            };
+        }
+
+
+        ///////// <summary>Generates content for a basic log.</summary>
+        ///////// <param name="logType">The type of log to generate.</param>
+        ///////// <param name="logMsg">The log message, which defaults to an empty string if not provided.</param>
+        ///////// <returns>A string that contains basic log content.</returns>
+        //////private static string BasicContent(string logType, string logMsg = "")
+        //////{
+        //////    string logHeader = BasicHeader(logType);
+
+        //////    return logHeader +
+        //////           Environment.NewLine +
+        //////           $"[MESSAGE] {logMsg}";
+        //////}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// <summary>Generates a basic log.</summary>
         /// <remarks>
         ///     <para>
@@ -37,12 +79,12 @@ namespace Outpost31.Core.Logger
         ///     </para>
         /// </remarks>
         /// <param name="logType">The type of log to generate.</param>
-        /// <param name="avtrEnv">The Avatar environment that the Tingen Web Service has interfaced with.</param>
+        /// <param name="avtrSys">The Avatar environment that the Tingen Web Service has interfaced with.</param>
         /// <param name="logMsg">The log message, which defaults to an empty string if not provided.</param>
         /// <returns>A dictionary containing the log path and content.</returns>
-        public static Dictionary<string,string> BasicLog(string logType, string avtrEnv, string logMsg = "")
+        public static Dictionary<string,string> BasicLog(string logType, string avtrSys, string logMsg = "")
         {
-            string path    = FullPath(avtrEnv, logType);
+            string path    = FullPath(avtrSys, logType);
             string content = BasicContent(logType, logMsg);
 
             return new Dictionary<string, string>
@@ -51,6 +93,8 @@ namespace Outpost31.Core.Logger
                 {"Content", content}
             };
         }
+
+
 
         /// <summary>Generates a detailed log.</summary>
         /// <remarks>
@@ -167,7 +211,7 @@ namespace Outpost31.Core.Logger
         /// <param name="logType">The type of log to generate.</param>
         /// <param name="logMsg">The log message, which defaults to an empty string if not provided.</param>
         /// <returns>A string that contains basic log content.</returns>
-        private static string BasicContent(string logType, string logMsg = "")
+        public static string BasicContent(string logType, string logMsg = "")
         {
             string logHeader = BasicHeader(logType);
 

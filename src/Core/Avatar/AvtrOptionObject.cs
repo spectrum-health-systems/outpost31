@@ -45,10 +45,10 @@ namespace Outpost31.Core.Avatar
         ///     </list>
         ///     <include file='AppData/XMLDoc/AvtrOptionObject.xml' path='AvtrOptionObject/Class[@name="OptionObject"]/ErrorCode/*'/>
         /// </remarks>
-        /// <param name="wsvcSession">The Tingen Web Service <see cref="WsvcSession">session</see> instance.</param>
+        /// <param name="wsvcSession">The Tingen Web Service <see cref="TngnWsvcSession">session</see> instance.</param>
         /// <param name="errorCode">The OptionObject error code.</param>
         /// <param name="errorMessage">The OptionObject error message to display to the user.</param>
-        public static void ToReturn(WsvcSession wsvcSession, int errorCode, string errorMessage = "")
+        public static void ToReturn(TngnWsvcSession wsvcSession, int errorCode, string errorMessage = "")
         {
             //LogEvent.Trace(1, ExeAsm, tnSession.TraceInfo);
 

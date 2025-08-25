@@ -14,7 +14,7 @@ namespace Outpost31.Module.FormAccess
     public class Deny
     {
         /// <summary>Deny access to the form if the System Code is "DOC".</summary>
-        public static void SysCodeDoc(WsvcSession tngnWbsvSession)
+        public static void SysCodeDoc(TngnWsvcSession tngnWbsvSession)
         {
             if ((tngnWbsvSession.OptObj.Original.SystemCode == "DOC"))
             {
@@ -27,7 +27,7 @@ namespace Outpost31.Module.FormAccess
         }
 
         /// <summary>Deny access to the form if the System Code is "DOC" or starts with "HOC".</summary>
-        public static void SysCodeDocHoc(WsvcSession tngnWbsvSession)
+        public static void SysCodeDocHoc(TngnWsvcSession tngnWbsvSession)
         {
             if ((tngnWbsvSession.OptObj.Original.SystemCode == "DOC") || (tngnWbsvSession.OptObj.Original.SystemCode.Contains("HOC")))
             {
@@ -40,7 +40,7 @@ namespace Outpost31.Module.FormAccess
         }
 
         /// <summary>Deny access to the form if the System Code is a member of a list.</summary>
-        public static void SysCodeFromList(WsvcSession tngnWbsvSession, List<string> sysCodeList)
+        public static void SysCodeFromList(TngnWsvcSession tngnWbsvSession, List<string> sysCodeList)
         {
             if (sysCodeList.Contains(tngnWbsvSession.OptObj.Original.SystemCode))
             {

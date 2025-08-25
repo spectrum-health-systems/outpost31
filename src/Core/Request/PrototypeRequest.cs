@@ -12,7 +12,7 @@ namespace Outpost31.Core.Request
     public class PrototypeRequest
     {
         /// <summary>Parse the request and call the appropriate module.</summary>
-        public static void Parse(WsvcSession tngnWbsvSession)
+        public static void Parse(TngnWsvcSession tngnWbsvSession)
         {
             switch (tngnWbsvSession.ScriptParam.Original.ToLower())
             {

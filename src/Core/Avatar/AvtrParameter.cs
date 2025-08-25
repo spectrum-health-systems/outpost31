@@ -25,8 +25,8 @@ namespace Outpost31.Core.Avatar
         /// <remarks>
         ///     <include file='AppData/XMLDoc/AvtrParameter.xml' path='AvtrParameter/Class[@name="Parameter"]/ListOf/*'/>
         /// </remarks>
-        /// <param name="wsvcSession">The Tingen Web Service <see cref="WsvcSession">session</see> object containing the request parameters and runtime settings</param>
-        public static void Request(WsvcSession wsvcSession)
+        /// <param name="wsvcSession">The Tingen Web Service <see cref="TngnWsvcSession">session</see> object containing the request parameters and runtime settings</param>
+        public static void Request(TngnWsvcSession wsvcSession)
         {
             if (wsvcSession.ScriptParam.Original.ToLower().StartsWith("_p"))
             {

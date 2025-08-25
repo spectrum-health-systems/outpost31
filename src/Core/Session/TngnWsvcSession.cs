@@ -1,6 +1,6 @@
-﻿/* Outpost31.Core.Session.WsvcSession.cs
- * u250821_code
- * u250821_documentation
+﻿/* Outpost31.Core.Session.TngnWsvcSession.cs
+ * u250822_code
+ * u250822_documentation
  */
 
 using Outpost31.Core.Avatar;
@@ -16,10 +16,10 @@ namespace Outpost31.Core.Session
     ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
     /// </remarks>
     ///<seealso href="https://github.com/spectrum-health-systems/tingen-documentation-project">Tingen Documentation Project</seealso>
-    public class WsvcSession
+    public class TngnWsvcSession
     {
         /// <summary> Runtime configuration.</summary>
-        public RuntimeConfig RuntimeConfig { get; set; }
+        public RuntimeConfiguration RuntimeConfig { get; set; }
 
         /// <summary>Core functionality configuration.</summary>
         public CoreConfig CoreConfig { get; set; }
@@ -39,16 +39,19 @@ namespace Outpost31.Core.Session
         /// <summary>Creates and initializes a new TngnWbsvSession object</summary>
         /// <param name="origOptObj">The OptionObject that is sent from Avatar.</param>
         /// <param name="origScriptParam">The Script Parameter that is sent from Avatar.</param>
-        /// <param name="wsvcVer">The current version of the Tingen Web Service.</param>
+        /// <param name="tngnWsvcVer">The current version of the Tingen Web Service.</param>
         /// <param name="avtrSys">The Avatar <i>System</i> that the Tingen Web Service will interface with.</param>
         /// <returns>A new Tingen Web Service session object.</returns>
-        public static WsvcSession New(OptionObject2015 origOptObj, string origScriptParam, string wsvcVer, string avtrSys)
+        public static TngnWsvcSession New(OptionObject2015 origOptObj, string origScriptParam, string tngnWsvcVer, string avtrSys)
         {
-            //#DEVNOTE# We need to validate that these values are valid.
+            //TODO - We need to validate that these values are valid.
 
-            var wsvcSession =  new WsvcSession
+            var tngnWsvcDataPath  = $@"C:\Tingen_Data\WebService\{avtrSys}";
+            var runtimeConfigPath = @"\App\Runtime\TngnWsvc.RuntimeConfig";
+
+            return new TngnWsvcSession
             {
-                RuntimeConfig = RuntimeConfig.New(wsvcVer, avtrSys),
+                RuntimeConfig = RuntimeConfiguration.Load(tngnWsvcVer, avtrSys, tngnWsvcDataPath, runtimeConfigPath),
                 CoreConfig    = CoreConfig.New(),
                 ModuleConfig  = ModuleConfig.New(),
                 OptObj        = new AvtrOptionObject
@@ -66,8 +69,6 @@ namespace Outpost31.Core.Session
                     AvtrSys = avtrSys
                 },
             };
-
-            return wsvcSession;
         }
     }
 }
