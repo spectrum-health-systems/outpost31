@@ -7,6 +7,7 @@
 
 using System.IO;
 using System.Text.Json;
+using Outpost31.Core.Logger;
 
 namespace Outpost31.Core.Utility.Du
 {
@@ -38,14 +39,39 @@ namespace Outpost31.Core.Utility.Du
         /// </remarks>
         public static void ExportToFile<JsonObject>(JsonObject jsonObject, string filePath)
         {
-            var jsonFormat = new JsonSerializerOptions
+            DuFile.WriteLocal(@"C:\IT\TEST1.txt", filePath);
+
+            JsonSerializerOptions jsonFormat = new JsonSerializerOptions
             {
                 WriteIndented = true
             };
 
-            var fileContent = JsonSerializer.Serialize(jsonObject, jsonFormat);
+            DuFile.WriteLocal(@"C:\IT\TEST2.txt", $"HI");
+
+            string fileContent = JsonSerializer.Serialize(jsonObject);
+
+            DuFile.WriteLocal(@"C:\IT\TEST3.txt", $"{fileContent}");
 
             File.WriteAllText(filePath, fileContent);
+
+            DuFile.WriteLocal(@"C:\IT\TEST4.txt", $"HI");
+
+            ////LogEvent.Critical("UAT", $"hi", "Runtime 3");
+
+            ////var jsonFormat = new JsonSerializerOptions
+            ////{
+            ////    WriteIndented = true
+            ////};
+
+            ////LogEvent.Critical("UAT", $"hi", "Runtime 4");
+
+            ////var fileContent = JsonSerializer.Serialize(jsonObject, jsonFormat);
+
+            ////LogEvent.Critical("UAT", $"hi", "Runtime 5");
+            ////File.Create(filePath).Close();
+
+            ////LogEvent.Critical("UAT", $"hi", "Runtime 6");
+            ////File.WriteAllText(filePath, fileContent);
         }
 
         // [250801]

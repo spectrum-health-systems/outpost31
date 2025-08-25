@@ -79,14 +79,16 @@ namespace Outpost31.Core.Runtime
             {
                 LogEvent.Critical(avtrSys, $"Runtime configuration file not found at {runtimeConfigPath}", "Runtime configuration not found");
 
-                WriteBlank(runtimeConfigPath);
+                WriteBlank(runtimeConfigPath, avtrSys);
             }
         }
 
         /// <summary>Writes a blank runtimeConfig file.</summary>
         /// <param name="runtimeConfigPath"></param>
-        internal static void WriteBlank(string runtimeConfigPath)
+        internal static void WriteBlank(string runtimeConfigPath, string avtrSys)
         {
+            LogEvent.Critical(avtrSys, $"{runtimeConfigPath}", "Runtime 1");
+
             RuntimeConfiguration runtimeConfig = new RuntimeConfiguration
             {
                 TngnWsvcVer      = "set-at-runtime",
@@ -99,7 +101,9 @@ namespace Outpost31.Core.Runtime
                 CurrentTime      = "set-at-runtime",
             };
 
-            Utility.Du.DuJson.ExportToFile<RuntimeConfiguration>(runtimeConfig, runtimeConfigPath);
+            LogEvent.Critical(avtrSys, $"{runtimeConfig}", "Runtime 2");
+
+            Utility.Du.DuJson.ExportToFile(runtimeConfig, runtimeConfigPath);
         }
     }
 }

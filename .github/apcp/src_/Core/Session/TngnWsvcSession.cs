@@ -66,7 +66,8 @@ namespace Outpost31.Core.Session
                 },
                 AvtrSysInfo = new AvtrSystem
                 {
-                    AvtrSys = avtrSys
+                    AvtrSys = avtrSys,
+                    AvtrSysCode = null
                 },
             };
         }
