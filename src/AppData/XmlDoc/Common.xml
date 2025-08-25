@@ -1,28 +1,39 @@
 ﻿<!--
-External XML documentation for common components of Outpost31
-u250805
+    External XML documentation for common components of the Tingen Web Service/Outpost31.
+    u250825
 -->
 
-<Common>
+<TngnOpto>
+    
+    <Class name="Common">
 
-    <!--
-    Common variables used throughout the Outpost31 project.
-    -->
-    <Class name="Variable">
-
-        <!--
-        The name of the Executing Assembly
-        <include file='AppData/XMLDoc/Outpost31.xml' path='Outpost31/Class[@name="Common"]/ExeAsmName/*'/>
+        
+        <!-- 
+            <include file='../../outpost31/src/AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/ExeAsmName/*'/>
+            <include file='AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/ExeAsmName/*'/>
         -->
         <ExeAsmName>
-            <remarks>
+            <para>
                 The name of the Executing Assembly is a required component of all log files, as it is used to identify
                 the class that is creating the log.<br/>
                 <br/>
-                This is defined at the start of each class, so it can be used at any time that a log needs to be created.<br/>
-            </remarks>
+                This is defined at the start of each class, so it can be used at any time that a log needs to be created.
+            </para>
         </ExeAsmName>
+
+        <!--
+            <include file='../../outpost31/src/AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/AvtrSys/*'/>
+            <include file='AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/AvtrSys/*'/>
+        -->
+        <AvtrSys>      
+            <para>
+                The Avatar <see cref="Outpost31.Core.Avatar.AvtrSystem.AvtrSys"><i>System</i></see> is different than an
+                Avatar <see cref="Outpost31.Core.Avatar.AvtrSystem.AvtrSysCode"><i>System Code</i></see>.<br/>
+                <br/>
+
+            </para>
+        </AvtrSys>
 
     </Class>
 
-</Common>
+</TngnOpto>
