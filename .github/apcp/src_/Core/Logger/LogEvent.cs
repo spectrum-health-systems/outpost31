@@ -96,36 +96,6 @@ namespace Outpost31.Core.Logger
             LogWriter.WriteLogToFile(logComponent);
         }
 
-        /// <summary>Primeval logs are used when the advanced logging infrastructure isn't available.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         Primeval logs should removed before deploying to production.<br/>
-        ///         <br/>
-        ///         Since primeval logs may be written very quickly, there is a 1000ms delay<br/>
-        ///         before committing data. This can potentially cause performance issues.<br/>
-        ///     </para>
-        ///     <para>
-        ///        Syntax:
-        ///         <code>
-        ///             LogEvent.Primeval(wbsvEnvironment, "Your message here.");
-        ///         </code>
-        ///     </para>
-        /// </remarks>
-        /// <param name="avtrSys">The Avatar environment that the Tingen Web Service has interfaced with.</param>
-        /// <param name="logMsg">The log message, which defaults to "Primeval log." if not specified.</param>
-        public static void Primeval(string avtrSys, string logMsg = "Primeval log.")
-        {
-            const string logType = "Primeval";
-
-            Dictionary <string,string> logComponent = new Dictionary<string, string>
-            {
-                {"Path",    LogPathBuilder.AppLogPath(avtrSys, $"{DateTime.Now:yyMMdd-HHmmss-fffffff}", logType)},
-                {"Content", LogContentBuilder.BasicContent(logType, logMsg)}
-            };
-
-            Thread.Sleep(1000);
-            LogWriter.WriteLogToFile(logComponent);
-        }
 
         /// <summary>Trace Logs are used for debugging and tracking the flow of the application.</summary>
         /// <remarks>

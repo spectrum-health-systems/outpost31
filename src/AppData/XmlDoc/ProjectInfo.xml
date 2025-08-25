@@ -3,13 +3,12 @@ External XML documentation for Outpost31.ProjectInfo.cs
 u250805
 -->
 
-<ProjectInfo>
+<TngnOpto>
 
-    <Class name="Project">
+    <Class name="ProjectInfo">
 
         <!--
-        Point to Outpost31.ProjectInfo.cs, which contains up-to-date information aboutthe Outpost31 project
-        <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+            <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
         -->
         <Callback>
             <para>
@@ -58,4 +57,4 @@ u250805
              
     </Class>
     
-</ProjectInfo>
+</TngnOpto>

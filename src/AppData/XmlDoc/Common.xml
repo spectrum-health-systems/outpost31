@@ -21,19 +21,6 @@
             </para>
         </ExeAsmName>
 
-        <!--
-            <include file='../../outpost31/src/AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/AvtrSys/*'/>
-            <include file='AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/AvtrSys/*'/>
-        -->
-        <AvtrSys>      
-            <para>
-                The Avatar <see cref="Outpost31.Core.Avatar.AvtrSystem.AvtrSys"><i>System</i></see> is different than an
-                Avatar <see cref="Outpost31.Core.Avatar.AvtrSystem.AvtrSysCode"><i>System Code</i></see>.<br/>
-                <br/>
-
-            </para>
-        </AvtrSys>
-
     </Class>
 
 </TngnOpto>

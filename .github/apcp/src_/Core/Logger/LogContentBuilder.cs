@@ -173,19 +173,7 @@ namespace Outpost31.Core.Logger
             return $@"{basePath}\{fileName}";
         }
 
-        /// <summary>Generates a basic log header.</summary>
-        /// <param name="logType">The type of log to generate.</param>
-        /// <returns>A string containing a basic log header.</returns>
-        private static string BasicHeader(string logType)
-        {
-            string dateTimeStamp = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
 
-            return $"========================================{Environment.NewLine}" +
-                   $"{logType} Log{Environment.NewLine}" +
-                   $"========================================{Environment.NewLine}" +
-                   $"{dateTimeStamp}{Environment.NewLine}" +
-                   $"----------------------------------------{Environment.NewLine}";
-        }
 
         /// <summary>Generates a detailed log header.</summary>
         /// <param name="logType">The type of log to generate.</param>
@@ -207,18 +195,6 @@ namespace Outpost31.Core.Logger
                    Environment.NewLine;
         }
 
-        /// <summary>Generates content for a basic log.</summary>
-        /// <param name="logType">The type of log to generate.</param>
-        /// <param name="logMsg">The log message, which defaults to an empty string if not provided.</param>
-        /// <returns>A string that contains basic log content.</returns>
-        public static string BasicContent(string logType, string logMsg = "")
-        {
-            string logHeader = BasicHeader(logType);
-
-            return logHeader +
-                   Environment.NewLine +
-                   $"[MESSAGE] {logMsg}";
-        }
 
         /// <summary>Generates content for a detailed log.</summary>
         /// <param name="logType">The type of log to generate.</param>

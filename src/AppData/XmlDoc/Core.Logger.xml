@@ -1,0 +1,66 @@
+﻿<!--
+    External XML documentation for Core.Logger classes
+    u250825
+-->
+
+<TngnOpto>
+
+    <Class name="LogBody">
+
+        <!-- 
+            <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogBody"]/ClassDescription/*'/>
+        -->
+        <ClassDescription>
+            <para>
+                TBD
+            </para>
+        </ClassDescription>
+
+    </Class>
+
+    <Class name="LogBody">
+
+        <!-- 
+            <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogContent"]/ClassDescription/*'/>
+        -->
+        <ClassDescription>
+            <para>
+            </para>
+        </ClassDescription>
+
+    </Class>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Class name="Core.Logger.LogEvent">
+
+        <!-- 
+            <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="Core.Avatar.AvtrEnvironment"]/ClassDescription/*'/>
+        -->
+        <ClassDescription>
+            <para>
+                The Avatar Environment represents the <see cref="AvtrSys"><i>System</i></see> and Avatar <see cref="AvtrSysCode"><i>System <b>Code</b></i></see>.<br/>
+                <br/>
+                While both contain the word <i>System</i>, they are not the same! It is important to understand the difference between the two.<br/>
+                <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+            </para>
+        </ClassDescription>
+        
+        
+        <!-- 
+            <include file='AppData/XmlDoc/Core.Logger.LogEvent.xml' path='TngnOpto/Class[@name="Core.Logger.LogEvent"]/Primeval/*'/>
+        -->
+        <Primeval>
+
+        </Primeval>
+
+    </Class>
+
+</TngnOpto>

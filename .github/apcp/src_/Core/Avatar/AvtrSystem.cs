@@ -7,10 +7,7 @@ namespace Outpost31.Core.Avatar
 {
     /// <summary>Logic for Avatar systems and system codes.</summary>
     /// <remarks>
-    ///     The Tingen Web Service refers to Avatar <see cref="AvtrSys"> <i>System</i> </see> and Avatar <see cref="AvtrSysCode"> <i>System <b>Code</b></i></see>.<br/>
-    ///     <br/>
-    ///     While both contain the word <i>System</i>, they are not the same! It is important to understand the difference between the two.<br/>
-    ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+ 
     /// </remarks>
     public class AvtrSystem
     {

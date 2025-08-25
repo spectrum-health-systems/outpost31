@@ -13,6 +13,9 @@ namespace Outpost31.Core.Logger
         /// <param name="logType">The type of log to generate.</param>
         /// <returns>The base path for the log.</returns>
         /// <value>Example: "C:\Tingen_Data\WebService\UAT\Logs\Debug"</value>
+
+//-// XML DOC
+
         internal static string AppLogPath(string avtrSys, string logName, string logType)
         {
             return $@"C:\Tingen_Data\WebService\{avtrSys}\App\Log\{logType}\{logName}.{logType.ToLower()}";
