@@ -26,5 +26,15 @@ namespace Outpost31.Core.Logger
             return header.Replace("~LOG~TYPE~", logType)
                          .Replace("~CURRENT~DATE~TIME~", currentDateTime);
         }
+
+        internal static string Detailed(string avtrSys, string logType)
+        {
+            string currentDateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+
+            var header = File.ReadAllText($@"C:\Tingen_Data\WebService\{avtrSys}\App\Blueprint\Log\detailed-log.header");
+
+            return header.Replace("~LOG~TYPE~", logType)
+                         .Replace("~CURRENT~DATE~TIME~", currentDateTime);
+        }
     }
 }

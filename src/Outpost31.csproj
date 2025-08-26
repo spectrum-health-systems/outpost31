@@ -79,6 +79,7 @@
     <Compile Include="Core\Logger\LogBody.cs" />
     <Compile Include="Core\Logger\LogContent.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
+    <Compile Include="Core\Logger\LogFooter.cs" />
     <Compile Include="Core\Logger\LogHeader.cs" />
     <Compile Include="Core\Logger\LogPath.cs" />
     <Compile Include="Core\DevDep\Develop.cs" />
@@ -96,6 +97,18 @@
   <ItemGroup>
     <None Include="app.config" />
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
+    <None Include="AppData\Blueprint\Log\detailed-log.footer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AppData\Blueprint\Log\basic-log.footer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AppData\Blueprint\Log\detailed-log.body">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AppData\Blueprint\Log\detailed-log.header">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="AppData\Blueprint\Log\basic-log.body">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

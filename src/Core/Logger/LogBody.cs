@@ -22,5 +22,15 @@ namespace Outpost31.Core.Logger
 
             return content.Replace("~LOG~BODY~", logBody);
         }
+
+        /// <summary>Generates a basic log body.</summary>
+        /// <param name="logBody">The log body.</param>
+        /// <returns>A string that contains basic log body.</returns>
+        internal static string Detailed(string avtrSys, string logBody = "")
+        {
+            var content = File.ReadAllText($@"C:\Tingen_Data\WebService\{avtrSys}\App\Blueprint\Log\detailed-log.body");
+
+            return content.Replace("~LOG~BODY~", logBody);
+        }
     }
 }

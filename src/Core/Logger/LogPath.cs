@@ -2,6 +2,8 @@
  * u250825_documentation
  */
 
+using System;
+
 namespace Outpost31.Core.Logger
 {
     /// <summary>Generates log file path.</summary>
@@ -13,12 +15,12 @@ namespace Outpost31.Core.Logger
     {
         /// <summary>Constructs the file path for an application log based on the specified system, log name, and log type.</summary>
         /// <param name="avtrSys">The name of the system or application for which the log is associated.</param>
-        /// <param name="logName">The name of the log file, without extension.</param>
         /// <param name="logType">The type of the log file, used as both a folder name and file extension (e.g., "Error", "Info").</param>
+        /// <param name="logName">The name of the log file, without extension.</param>
         /// <returns>The full file path to the log file, including the directory structure and file extension.</returns>
-        internal static string AppLogPath(string avtrSys, string logName, string logType)
+        internal static string AppLogPath(string avtrSys, string logType, string logName = "")
         {
-            return $@"C:\Tingen_Data\WebService\{avtrSys}\App\Log\{logType}\{logName}.{logType.ToLower()}";
+            return $@"C:\Tingen_Data\WebService\{avtrSys}\App\Log\{logType}\{logName}{DateTime.Now:yyMMdd-HHmmss-fffffff}.{logType.ToLower()}";
         }
     }
 }
