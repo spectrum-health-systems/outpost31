@@ -1,0 +1,43 @@
+﻿<!--
+    External XML documentation for Core.TngnWbsvc classes.
+    u250825
+-->
+
+<TngnOpto>
+
+    <Class name="TngnWsvcMode">
+
+        <!-- 
+            <include file='AppData/XmlDoc/Core.TngnWsvc.xml' path='TngnOpto/Class[@name="TngnWsvcMode"]/ClassDescription/*'/>
+        -->
+        <ClassDescription>
+            <para>
+                Class description
+            </para>
+        </ClassDescription>
+
+
+        <!-- 
+            <include file='AppData/XmlDoc/Core.TngnWsvc.xml' path='TngnOpto/Class[@name="TngnWsvcMode"]/SetMode/*'/>
+        -->
+        <SetMode>
+            <para>  
+                The Tingen Web Service <c>Mode</c> is defined in the Web.Config file, and dictates the <i>overall behavior</i>
+                of the Tingen Web Service. Individual Module behavior is dictated by that Module's mode setting.<br/>
+                <br/>
+                The following modes are available:
+                <list type="bullet">
+                    <item>Enabled</item>
+                    <item>Disabled</item>
+                    <item>Passthrough</item>
+                    <item>RefreshBlueprint</item>
+                    <item>Regress</item>
+                </list>
+                For more information about these modes, please see the Tingen Web Service Manual:
+                <include file='../../tingen-web-service/src/AppData/XmlDoc/SolutionInfo.xml' path='TngnWsvc/Class[@name="SolutionInfo"]/Documentation/*'/>
+            </para>
+        </SetMode>
+    
+    </Class>
+
+</TngnOpto>

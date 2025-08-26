@@ -12,54 +12,75 @@
         -->
         <ClassDescription>
             <para>
-                TBD
+                Core.Logger.LogBody external XML
             </para>
         </ClassDescription>
 
     </Class>
 
-    <Class name="LogBody">
+    <Class name="LogContent">
 
         <!-- 
             <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogContent"]/ClassDescription/*'/>
         -->
         <ClassDescription>
             <para>
+                Core.Logger.LogContent external XML
             </para>
         </ClassDescription>
 
     </Class>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <Class name="Core.Logger.LogEvent">
+
+    <Class name="LogEvent">
 
         <!-- 
-            <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="Core.Avatar.AvtrEnvironment"]/ClassDescription/*'/>
+            <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogEvent"]/ClassDescription/*'/>
         -->
         <ClassDescription>
             <para>
-                The Avatar Environment represents the <see cref="AvtrSys"><i>System</i></see> and Avatar <see cref="AvtrSysCode"><i>System <b>Code</b></i></see>.<br/>
-                <br/>
-                While both contain the word <i>System</i>, they are not the same! It is important to understand the difference between the two.<br/>
-                <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
+                Core.Logger.LogEvent external XML
             </para>
         </ClassDescription>
-        
-        
+
         <!-- 
-            <include file='AppData/XmlDoc/Core.Logger.LogEvent.xml' path='TngnOpto/Class[@name="Core.Logger.LogEvent"]/Primeval/*'/>
+            <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogEvent"]/Primeval/*'/>
         -->
         <Primeval>
-
+            <para>
+                Primeval logs can be utilized prior to building the logging infrastructure.<br/>
+                <br/>
+                Since primeval logs may be written very quickly, there is a 1000ms delay<br/>
+                before committing data.This can potentially cause performance issues.<br/>
+                <br/>
+                Syntax: <c>LogEvent.Primeval(avtrSys, "Optional message.");</c>
+            </para>
         </Primeval>
+        
+    </Class>
+
+    <Class name="LogHeader">
+
+        <!-- 
+            <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogHeader"]/ClassDescription/*'/>
+        -->
+        <ClassDescription>
+            <para>
+                Core.Logger.LogHeader external XML
+            </para>
+        </ClassDescription>
+
+    </Class>
+
+    <Class name="LogPath">
+
+        <!-- 
+            <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogPath"]/ClassDescription/*'/>
+        -->
+        <ClassDescription>
+            <para>
+                Core.Logger.LogPath external XML
+            </para>
+        </ClassDescription>
 
     </Class>
 

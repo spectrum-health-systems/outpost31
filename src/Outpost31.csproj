@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Core\Avatar\AvtrEnvironment.cs" />
     <Compile Include="Core\DevDep\Deploy.cs" />
+    <Compile Include="Core\DevDep\Test.cs" />
     <Compile Include="Core\Du\DuJson.cs" />
     <Compile Include="Core\Logger\LogBody.cs" />
     <Compile Include="Core\Logger\LogContent.cs" />
@@ -89,6 +90,7 @@
     <Content Include="AppData\XmlDoc\Common.xml" />
     <Content Include="AppData\XmlDoc\Core.Logger.xml" />
     <Content Include="AppData\XmlDoc\ProjectInfo.xml" />
+    <Content Include="AppData\XmlDoc\Core.TngnWsvc.xml" />
     <Content Include="AppData\XmlDoc\template.xml" />
   </ItemGroup>
   <ItemGroup>
