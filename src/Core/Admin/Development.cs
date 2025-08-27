@@ -1,12 +1,12 @@
-﻿/* u250825_code
- * u250825_documentation
+﻿/* u250827_code
+ * u250827_documentation
  */
 
 using System.Reflection;
 
 namespace Outpost31.Module.Admin
 {
-    public class Develop
+    public class Development
     {
         /// <summary>The executing assembly name.</summary>
         /// <remarks>

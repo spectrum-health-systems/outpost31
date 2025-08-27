@@ -1,5 +1,5 @@
-﻿/* u250826_code
- * u250826_documentation
+﻿/* u250827_code
+ * u250827_documentation
  */
 
 using System.IO;
@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Outpost31.Core.Admin
 {
-    public class Deploy
+    public class Deployment
     {
         /// <summary>The executing assembly name.</summary>
         /// <remarks>

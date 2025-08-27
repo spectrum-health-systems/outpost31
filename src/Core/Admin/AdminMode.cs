@@ -1,5 +1,5 @@
-﻿/* u250826_code
- * u250826_documentation
+﻿/* u250827_code
+ * u250827_documentation
  */
 
 using System.Reflection;
@@ -9,31 +9,37 @@ namespace Outpost31.Core.Admin
 {
     /// <summary>Tingen Web Service mode logic.</summary>
     /// <remarks>
-    ///     <include file='AppData/XmlDoc/Core.TngnWsvc.xml' path='TngnOpto/Class[@name="TngnWsvcMode"]/ClassDescription/*'/>
+    ///     <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="AdminMode"]/ClassDescription/*'/>
     ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='TngnOpto/Class[@name="ProjectInfo"]/Callback/*'/>
     /// </remarks>
     public static class AdminMode
     {
         /// <summary>The executing assembly name.</summary>
         /// <remarks>
-        ///     <include file='/AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/ExeAsmName/*'/>
+        ///     <include file='AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/ExeAsmName/*'/>
         /// </remarks>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
+        /// <summary>Run one of the AdminModes.</summary>
+        /// <param name="origOptObj"></param>
+        /// <param name="origScriptParam"></param>
+        /// <param name="tngnWsvcVer"></param>
+        /// <param name="avtrSys"></param>
+        /// <param name="adminMode"></param>
         public static void Run(OptionObject2015 origOptObj, string origScriptParam, string tngnWsvcVer, string avtrSys, string adminMode)
         {
             switch (adminMode.ToLower())
             {
                 case "initialize":
-                    Deploy.InitializeTngnWsvc(avtrSys);
+                    Deployment.InitializeTngnWsvc(avtrSys);
                     break;
 
                 case "refreshappdata":
-                    Deploy.RefreshAppData(avtrSys);
+                    Deployment.RefreshAppData(avtrSys);
                     break;
 
-                case "testregress":
-                    Test.Regress(origOptObj, origScriptParam, tngnWsvcVer, avtrSys);
+                case "regressiontest":
+                    Testing.Regression(origOptObj, origScriptParam, tngnWsvcVer, avtrSys);
                     break;
             }
         }

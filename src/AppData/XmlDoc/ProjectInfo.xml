@@ -1,9 +1,4 @@
-﻿<!-- 
-    External XML documentation for Outpost31.ProjectInfo.cs.
-    u250826
--->
-
-<TngnOpto>
+﻿<TngnOpto>
 
     <Class name="ProjectInfo">
 
@@ -12,7 +7,7 @@
         -->
         <Callback> 
             <para>
-                For more information about Outpost31, please see the <see cref="Outpost31.ProjectInfo">Outpost31 <b>ProjectInfo</b></see> file.
+                For more information about Outpost31, please see the <see cref="Outpost31.ProjectInfo">Outpost31 <b>ProjectInfo</b></see>.
             </para>
         </Callback>
 

@@ -1,12 +1,6 @@
-﻿<!--
-    External XML documentation for common components of the Tingen Web Service/Outpost31.
-    u250825
--->
-
-<TngnOpto>
+﻿<TngnOpto>
     
     <Class name="Common">
-
         
         <!-- 
             <include file='../../outpost31/src/AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/ExeAsmName/*'/>
@@ -14,15 +8,12 @@
         -->
         <ExeAsmName>
             <para>
-                The name of the Executing Assembly is a required component of all log files, as it is used to identify
-                the class that is creating the log.<br/>
+                The name of the Executing Assembly is a required component of most log files, as it is used to identify
+                the project that is creating the log.<br/>
                 <br/>
                 This is defined at the start of each class, so it can be used at any time that a log needs to be created.
             </para>
         </ExeAsmName>
-
-        
-        
         
     </Class>
 
