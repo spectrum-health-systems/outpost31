@@ -1,0 +1,13 @@
+﻿========================================
+Error Log | ~CURRENT~DATE~TIME~
+========================================
+
+[ERROR CODE] ~ERROR~CODE~
+
+   [MESSAGE] ~ERROR~MESSAGE~
+
+----------------------------------------
+[ASSEMBLY] ~ASSEMBLY~
+   [CLASS] ~CLASS~
+  [METHOD] ~METHOD~
+    [LINE] ~LINE~
