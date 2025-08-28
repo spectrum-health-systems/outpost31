@@ -1,22 +1,62 @@
-﻿/* u250828_code
- * u250828_documentation
- */
+﻿// =============================================================================
+// Outpost31.Core.Admin.Deployment.cs
+// https://github.com/spectrum-health-systems/outpost31
+// Copyright (c) A Pretty Cool Program. All rights reserved.
+// Licensed under the Apache 2.0 license.
+// -----------------------------------------------------------------------------
+// u250828_code
+// u250828_documentation
+// =============================================================================
 
+using System;
 using System.IO;
 using System.Reflection;
+using Outpost31.Core.Avatar;
 
 namespace Outpost31.Core.Admin
 {
+    /// <summary>Logic for deployment processes.</summary>
+    /// <remarks>
+    ///   For more information about Outpost31, please see the <see cref="ProjectInfo"/> file.
+    /// </remarks>
     public class Deployment
     {
-        /// <summary>The executing assembly name.</summary>
-        /// <remarks>
-        ///     <include file='/AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/ExeAsmName/*'/>
-        /// </remarks>
+        /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
-        public static void InitializeTngnWsvc(string avtrSys)
+        public static void InitializeTngnWsvc(string avatarSystem)
         {
+            var assembly = Assembly.GetExecutingAssembly();
+
+            // Specify the full name of the embedded resource
+            string resourceName = "Outpost31.AppData.Blueprint.Framework.framework.folder";
+
+            string content;
+
+            // Open the resource stream
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                if (stream == null)
+                {
+                    File.WriteAllText(@"C:\IT\test.txt", "fail");
+                    return;
+                }
+
+                // Read the resource content
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    File.WriteAllText(@"C:\IT\test.txt", "yay");
+                    content = reader.ReadToEnd();
+                    File.WriteAllText(@"C:\IT\test2.txt", content);
+                }
+            }
+
+            foreach (var folder in content.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                Directory.CreateDirectory($@"C:\Tingen_Data\WebService\{avatarSystem}\{folder}");
+            }
+
+
             ///* For debugging only
             // */
             //LogEvent.Trace(avtrSys, ExeAsmName, $"");
@@ -51,15 +91,11 @@ namespace Outpost31.Core.Admin
             //}
         }
 
-        /// <summary>Refresh all AppData data/resources.</summary>
-        /// <param name="avtrSys"></param>
-        public static void RefreshAppData(string avtrSys)
+        /// <summary>Refresh application data that is required by the Tingen Web Service.</summary>
+        /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
+        public static void RefreshAppData(string avatarSystem)
         {
-            /* For debugging only
-             */
-            //LogEvent.Trace(avtrSys, ExeAsmName, $"");
-
-            var targetAppDataPath = $@"C:\Tingen_Data\WebService\{avtrSys}\AppData\";
+            var targetAppDataPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\";
 
             if (Directory.Exists(targetAppDataPath))
             {
@@ -68,7 +104,7 @@ namespace Outpost31.Core.Admin
 
             Directory.CreateDirectory(targetAppDataPath);
 
-            CopyDirectory($@"C:\Tingen_www\WebService\{avtrSys}\bin\AppData\", targetAppDataPath);
+            CopyDirectory($@"C:\Tingen_www\WebService\{avatarSystem}\bin\AppData\", targetAppDataPath);
         }
 
         /// TODO move to a utility class

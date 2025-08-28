@@ -73,7 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Avatar\AvtrEnvironment.cs" />
+    <Compile Include="Core\Avatar\AvatarEnvironment.cs" />
     <Compile Include="Core\Admin\Deployment.cs" />
     <Compile Include="Core\Admin\Testing.cs" />
     <Compile Include="Core\Du\DuJson.cs" />
@@ -84,18 +84,15 @@
     <Compile Include="Core\Admin\AdminMode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppData\XmlDoc\Common.xml" />
     <Content Include="AppData\XmlDoc\Core.Admin.xml" />
+    <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
     <Content Include="AppData\XmlDoc\Core.Logger.xml" />
-    <Content Include="AppData\XmlDoc\Manual.xml" />
     <Content Include="AppData\XmlDoc\Mode.xml" />
-    <Content Include="AppData\XmlDoc\ProjectInfo.xml" />
     <Content Include="AppData\XmlDoc\Core.TngnWsvc.xml" />
     <Content Include="AppData\XmlDoc\template.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
     <EmbeddedResource Include="AppData\Blueprint\Framework\framework.folder">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

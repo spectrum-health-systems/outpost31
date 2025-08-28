@@ -2,114 +2,47 @@
 
     <Class name="AdminMode">
 
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="AdminMode"]/ClassDescription/*'/>
-        -->
-        <ClassDescription>
-            <para>
-                The Tingen Web Service setting named <c>AdminMode</c>, which can be used to perform
-                several different administrative processes<br/>
-                <br/>
-                For more information on AdminMode and it's settings, please see the Tingen Web Service
-                <see href = "https://github.com/spectrum-health-systems/tingen-documentation-project/tree/main/manuals/tngnsrvc">Tingen Web Service Manual</see>
-            </para>
-        </ClassDescription>
+        <Parse>
+            <note title="Administrative mode options">
+                The following administrative modes are available:
+                <list type="bullet">
+                    <item>
+                        <see cref="Outpost31.Core.Admin.Deployment.RefreshAppData">RefreshAppData</see>
+                    </item>
+                    <item>
+                        <see cref="Outpost31.Core.Admin.Testing.Regression">RegressionTest</see>
+                    </item>
+                </list>
+            </note>
 
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="AdminMode"]/Run/*'/>
-        -->
-        <Run>
-            <para>
-                Run() description.
-            </para>
-        </Run>
+            <HowTo>
+                <note type="todo" title="How-To">
+                    <h3>Modify the AdminMode setting</h3>
+                    <list type="number">
+                        <item>
+                            Open the <c>Web.Config</c> file located in the root directory of the Tingen Web Service.
+                        </item>
+                        <item>
+                            Locate the <c>AvtrSys</c> setting within the <c>applicationSettings</c> section.
+                        </item>
+                        <item>
+                            Change the value of the <c>AdminMode</c> setting to the desired value.
+                        </item>
+                        <item>
+                            Save the changes to the <c>Web.Config</c> file.
+                        </item>
+                    </list>
+                    For example, to set the AdminMode to `RegressionTest`:
+                    <code>
+                        &lt;setting name="AdminMode" serializeAs="String"&gt;
+                            &lt;value&gt;RegressionTest&lt;/value&gt;
+                        &lt;/setting&gt;
+                    </code>
+                    Changes to the <c>AdminMode</c> setting will be applied the next time the Tingen Web Service is executed.<br/>
+                </note>
+            </HowTo>
 
-    </Class>
-
-    <Class name="Deployment">
-
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name=Deployment"]/ClassDescription/*'/>
-        -->
-        <ClassDescription>
-            <para>
-                Deployment.cs description.
-            </para>
-        </ClassDescription>
-
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Deployment"]/InitializeTngnWsvc/*'/>
-        -->
-        <InitializeTngnWsvc>
-            <para>
-                InitializeTngnWsvc() description.
-            </para>
-        </InitializeTngnWsvc>
-
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Deployment"]/RefreshAppData/*'/>
-        -->
-        <RefreshAppData>
-            <para>
-                RefreshAppData() description.
-            </para>
-        </RefreshAppData>
-
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Deployment"]/RefreshBlueprint/*'/>
-        -->
-        <RefreshBlueprint>
-            <para>
-                RefreshBlueprint() description.
-            </para>
-        </RefreshBlueprint>
-
-    </Class>
-
-
-    <Class name="Development">
-
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name=Development"]/ClassDescription/*'/>
-        -->
-        <ClassDescription>
-            <para>
-                Development.cs description.
-            </para>
-        </ClassDescription>
-
-    </Class>
-
-
-    <Class name="Testing">
-
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Testing"]/ClassDescription/*'/>
-        -->
-        <ClassDescription>
-            <para>
-                Testing.cs description
-            </para>
-        </ClassDescription>
-
-
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Testing"]/Regression/*'/>
-        -->
-        <Regression>
-            <para>
-                Regression() description.
-            </para>
-        </Regression>
-
-        <!--
-            <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Testing"]/GenerateAppLogs/*'/>
-        -->
-        <GenerateAppLogs>
-            <para>
-                GenerateAppLogs() description.
-            </para>
-        </GenerateAppLogs>
+        </Parse>
 
     </Class>
 
