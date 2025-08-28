@@ -91,7 +91,6 @@
     <Content Include="AppData\XmlDoc\Mode.xml" />
     <Content Include="AppData\XmlDoc\ProjectInfo.xml" />
     <Content Include="AppData\XmlDoc\Core.TngnWsvc.xml" />
-    <Content Include="AppData\XmlDoc\new-template.xml" />
     <Content Include="AppData\XmlDoc\template.xml" />
   </ItemGroup>
   <ItemGroup>

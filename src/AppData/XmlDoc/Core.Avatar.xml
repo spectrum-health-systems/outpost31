@@ -2,88 +2,29 @@
 
     <Class name="AvtrEnvironment">
 
-        <AvtrSys>
-            <Information>
-                <note type="information" title="About AvtrSys">
-                    Keep in mind that:
-                    <list type="bullet">
-                        <item>Information 1</item>
-                        <item>Information 2</item>
-                        <item>Information 3</item>
-                    </list>
-                    Another bit information.
-                </note>
-            </Information>
-
-            <Important>
-                    <note type="important" title="Important!">
-                        Don't forget!
-                        <list type="bullet">
-                            <item>Important 1</item>
-                            <item>Important 2</item>
-                            <item>Important 3</item>
-                        </list>
-                        This is also important.
-                    </note>
-            </Important>
-
-            <Warning>
-                    <note type="warning" title="Warning!">
-                        Be aware that:
-                        <list type="bullet">
-                            <item>Warning 1</item>
-                            <item>Warning 2</item>
-                            <item>Warning 3</item>
-                        </list>
-                        In addition to that, another warning.
-                    </note>
-            </Warning>
-
-            <Security>
-                    <note type="security" title="Security details">
-                        Make sure that:
-                        <list type="bullet">
-                            <item>Security 1</item>
-                            <item>Security</item>
-                            <item>Security</item>
-                        </list>
-                        There is also this to consider
-                    </note>
-            </Security>
-
+        <AvtrSys> <!-- <include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="AvtrEnvironment"]/AvtrSys/*'/> -->
+            
             <Manual>
-                <note title="Manual: topic">
-                    <h3>Thing One</h3>
-                    To do this:
+                <note title="How-To">
+                    <h3>Modify the AvtrSys setting</h3>
                     <list type="number">
-                        <item>First</item>
-                        <item>Second</item>
-                        <item>Third</item>
-                        <item>Fourth</item>
+                        <item>Open the <c>Web.Config</c> file located in the root directory of the Tingen Web Service.</item>
+                        <item>Locate the <c>AvtrSys</c> setting within the <c>applicationSettings</c> section.</item>
+                        <item>Change the value of the <c>AvtrSys</c> setting to the desired value.</item>
+                        <item>Save the changes to the <c>Web.Config</c> file.</item>
                     </list>
-                    For example, to set the Avatar System to `LIVE`, modify the setting as follows:
+                    For example, to set the Avatar System to `LIVE`:
                     <code>
                         &lt;setting name="AvtrSys" serializeAs="String"&gt;
-                        &lt;value&gt;LIVE&lt;/value&gt;
+                            &lt;value&gt;LIVE&lt;/value&gt;
                         &lt;/setting&gt;
                     </code>
+                    Changes to the<c> AvtrSys</c> setting will be applied the next time the Tingen Web Service is executed.<br/>      
                     <br/>
-                    <h4>Thing Two</h4>
-                    To do this:
-                    <list type="number">
-                        <item>First</item>
-                        <item>Second</item>
-                        <item>Third</item>
-                        <item>Fourth</item>
-                    </list>
-                    For example, to set the Avatar System to `LIVE`, modify the setting as follows:
-                    <code>
-                        &lt;setting name="AvtrSys" serializeAs="String"&gt;
-                        &lt;value&gt;LIVE&lt;/value&gt;
-                        &lt;/setting&gt;
-                    </code>
+                    ***
                 </note>
-            </Manual>
+            </Manual> 
+
         </AvtrSys>
 
     </Class>

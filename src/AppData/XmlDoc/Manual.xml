@@ -3,24 +3,10 @@
     <Topic name="AvtrSys">
 
 
-        <Information> <!-- <include file='AppData/XmlDoc/Manual.xml' path='Manual/Topic[@name="AvtrSys"]/Information/*'/> -->
+        <Information> 
             <para>
-                The <c>AvtrSys</c> setting specifies which Avatar <i>System</i> the Tingen Web Service will interface with.<br/>
-                It is <b><i>very important</i></b> that<br/><c>AvtrSys</c> is set correctly, otherwise lots of bad things can *and will* happen!<br/>
-                <note type="information" title="About AvtrSys">
-                    <list type="bullet">
-                        <item>
-                            Common Avatar Systems are: <c>UAT</c>, <c>LIVE</c>, <c>SBOX</c>, and <c>BUILD</c>.
-                        </item>
-                        <item>
-                            The Tingen Web Service is able to interface with the <c>UAT</c> and <c>LIVE</c> Avatar Systems.
-                        </item>
-                        <item>
-                            Changes to the <c>AvtrSys</c> setting will be applied the next time the Tingen Web Service is executed.
-                        </item>
 
-                    </list>
-                </note>
+       
             </para>
         </Information>
 
