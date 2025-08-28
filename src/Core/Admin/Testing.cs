@@ -18,7 +18,7 @@ namespace Outpost31.Core.Admin
         /// <remarks>
         ///     <include file='AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/ExeAsmName/*'/>
         /// </remarks>
-        public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
+        internal static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Runs regression tests.</summary>
         /// <remarks>
@@ -28,7 +28,7 @@ namespace Outpost31.Core.Admin
         /// <param name="origScriptParam"></param>
         /// <param name="tngnWsvcVer"></param>
         /// <param name="avtrSys"></param>
-        public static void Regression(OptionObject2015 origOptObj, string origScriptParam, string tngnWsvcVer, string avtrSys)
+        internal static void Regression(OptionObject2015 origOptObj, string origScriptParam, string tngnWsvcVer, string avtrSys)
         {
             GenerateAppLogs(avtrSys, 0);
         }

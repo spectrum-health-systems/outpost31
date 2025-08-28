@@ -20,8 +20,6 @@
                         &lt;/setting&gt;
                     </code>
                     Changes to the<c> AvtrSys</c> setting will be applied the next time the Tingen Web Service is executed.<br/>      
-                    <br/>
-                    ***
                 </note>
             </Manual> 
 

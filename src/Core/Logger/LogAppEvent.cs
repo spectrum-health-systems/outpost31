@@ -16,7 +16,7 @@ namespace Outpost31.Core.Logger
     ///     <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogEvent"]/ClassDescription/*'/>
     ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='TngnOpto/Class[@name="ProjectInfo"]/Callback/*'/>
     /// </remarks>
-    internal static class LogAppEvent
+    public static class LogAppEvent
     {
         /// <summary>The executing assembly name.</summary>
         /// <remarks>
@@ -26,7 +26,7 @@ namespace Outpost31.Core.Logger
 
         /// <summary>Generate a critical log.</summary>
         /// <remarks>
-        ///
+        /// This is public because TngnWsvc may need to call it.
         /// </remarks>
         /// <param name="avtrSys"></param>
         /// <param name="exeAsmName"></param>
@@ -36,7 +36,7 @@ namespace Outpost31.Core.Logger
         /// <param name="fromClassPath"></param>
         /// <param name="fromMethod"></param>
         /// <param name="fromLine"></param>
-        internal static void Critical(string avtrSys, string exeAsmName, int msec = 0, string logName = "Unknown critical issue", string logBody = "Unknown critical issue.", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0)
+        public static void Critical(string avtrSys, string exeAsmName, int msec = 0, string logName = "Unknown critical issue", string logBody = "Unknown critical issue.", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0)
         {
             Thread.Sleep(msec);
 
