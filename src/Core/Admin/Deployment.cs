@@ -1,5 +1,5 @@
-﻿/* u250827_code
- * u250827_documentation
+﻿/* u250828_code
+ * u250828_documentation
  */
 
 using System.IO;
@@ -59,25 +59,16 @@ namespace Outpost31.Core.Admin
              */
             //LogEvent.Trace(avtrSys, ExeAsmName, $"");
 
-            RefreshBlueprint(avtrSys);
-        }
+            var targetAppDataPath = $@"C:\Tingen_Data\WebService\{avtrSys}\AppData\";
 
-        public static void RefreshBlueprint(string avtrSys)
-        {
-            /* For debugging only
-             */
-            //LogEvent.Trace(avtrSys, ExeAsmName, $"");
-
-            var blueprintPath = $@"C:\Tingen_Data\WebService\{avtrSys}\AppData\Blueprint\";
-
-            if (Directory.Exists(blueprintPath))
+            if (Directory.Exists(targetAppDataPath))
             {
-                Directory.Delete(blueprintPath, true);
+                Directory.Delete(targetAppDataPath, true);
             }
 
-            Directory.CreateDirectory(blueprintPath);
+            Directory.CreateDirectory(targetAppDataPath);
 
-            CopyDirectory($@"C:\Tingen_www\WebService\{avtrSys}\bin\AppData\TngnWsvc\Blueprint\", blueprintPath);
+            CopyDirectory($@"C:\Tingen_www\WebService\{avtrSys}\bin\AppData\", targetAppDataPath);
         }
 
         /// TODO move to a utility class

@@ -87,23 +87,26 @@
     <Content Include="AppData\XmlDoc\Common.xml" />
     <Content Include="AppData\XmlDoc\Core.Admin.xml" />
     <Content Include="AppData\XmlDoc\Core.Logger.xml" />
+    <Content Include="AppData\XmlDoc\Manual.xml" />
+    <Content Include="AppData\XmlDoc\Mode.xml" />
     <Content Include="AppData\XmlDoc\ProjectInfo.xml" />
     <Content Include="AppData\XmlDoc\Core.TngnWsvc.xml" />
+    <Content Include="AppData\XmlDoc\new-template.xml" />
     <Content Include="AppData\XmlDoc\template.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
-    <EmbeddedResource Include="AppData\TngnWsvc\Blueprint\Framework\framework.folder">
+    <EmbeddedResource Include="AppData\Blueprint\Framework\framework.folder">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="AppData\TngnWsvc\Blueprint\Log\log.error">
+    <None Include="AppData\Blueprint\Log\log.error">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\TngnWsvc\Blueprint\Log\log.critical">
+    <None Include="AppData\Blueprint\Log\log.critical">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\TngnWsvc\Blueprint\Log\log.debuggler">
+    <None Include="AppData\Blueprint\Log\log.debuggler">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

@@ -1,29 +1,91 @@
-﻿<TngnOpto>
+﻿<namespace> <!-- Core.Avatar-->-->
 
-    <Class name="ClassName">
+    <Topic name="topic"> <!-- AvtrSys -->
 
-        <!--
-            <include file='AppData/XmlDoc/%Namespace%.xml' path='TngnOpto/Class[@name="%ClassName%"]/ClassDescription/*'/>
-        -->
-        <ClassDescription>
+        <Information>
             <para>
-                Class description
+                <note type="information" title="About topic">
+                    <list type="bullet">
+                        <item>Item 1</item>
+                        <item>Item 2</item>
+                        <item>Item 3</item>
+                    </list>
+                </note>
             </para>
-        </ClassDescription>
-
-
-        <!--
-            <include file='AppData/XmlDoc/%ClassName%.xml' path='TngnOpto/Class[@name="%ClassName%"]/%MethodName%/*'/>
-        -->
-        <MethodName>
+        </Information>
+        
+        <Important>
             <para>
-                The name of the Executing Assembly is a required component of all log files, as it is used to identify
-                the class that is creating the log.<br/>
-                <br/>
-                This is defined at the start of each class, so it can be used at any time that a log needs to be created.
+                <note type="important" title="Important!">
+                    <list type="bullet">
+                        <item>Item 1</item>
+                        <item>Item 2</item>
+                        <item>Item 3</item>
+                    </list>
+                </note>
             </para>
-        </MethodName>
+        </Important>
 
-    </Class>
+        <Warning>
+            <para>
+                <note type="warning" title="Warning!">
+                    <list type="bullet">
+                        <item>Item 1</item>
+                        <item>Item 2</item>
+                        <item>Item 3</item>
+                    </list>
+                </note>
+            </para>
+        </Warning>
 
-</TngnOpto>
+        <Security>
+            <para>
+                <note type="security" title="Security information">
+                    <list type="bullet">
+                        <item>Item 1</item>
+                        <item>Item 2</item>
+                        <item>Item 3</item>
+                    </list>
+                </note>
+            </para>
+        </Security>
+
+        <Manual>
+            <para>
+                <note title="Manual: topic">
+                    <h3>Thing One</h3>
+                    To do this:
+                    <list type="number">
+                        <item>First</item>
+                        <item>Second</item>
+                        <item>Third</item>
+                        <item>Fourth</item>
+                    </list>
+                    For example, to set the Avatar System to `LIVE`, modify the setting as follows:
+                    <code>
+                        &lt;setting name="AvtrSys" serializeAs="String"&gt;
+                        &lt;value&gt;LIVE&lt;/value&gt;
+                        &lt;/setting&gt;
+                    </code>
+                    <br/>
+                    <h4>Thing Two</h4>
+                    To do this:
+                    <list type="number">
+                        <item>First</item>
+                        <item>Second</item>
+                        <item>Third</item>
+                        <item>Fourth</item>
+                    </list>
+                    For example, to set the Avatar System to `LIVE`, modify the setting as follows:
+                    <code>
+                        &lt;setting name="AvtrSys" serializeAs="String"&gt;
+                        &lt;value&gt;LIVE&lt;/value&gt;
+                        &lt;/setting&gt;
+                    </code>
+                </note>
+            </para>
+        </Manual>
+    
+</Topic>
+
+</namespace>

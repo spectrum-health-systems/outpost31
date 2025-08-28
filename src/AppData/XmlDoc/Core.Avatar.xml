@@ -1,50 +1,91 @@
-﻿<TngnOpto>
+﻿<Core.Avatar>
 
     <Class name="AvtrEnvironment">
 
-        <!--
-            <include file='AppData/XmlDoc/Core.Avatar.xml' path='TngnOpto/Class[@name="AvtrEnvironment"]/ClassDescription/*'/>
-        -->
-        <ClassDescription>
-            <para>
-                The Avatar Environment represents the <see cref="AvtrSys"><i>System</i></see> and Avatar <see cref="AvtrSysCode"><i>System <b>Code</b></i></see>.<br/>
-                <br/>
-                While both contain the word <i>System</i>, they are not the same! It is important to understand the difference between the two.<br/>
-                <include file='AppData/XmlDoc/ProjectInfo.xml' path='ProjectInfo/Class[@name="Project"]/Callback/*'/>
-            </para>
-        </ClassDescription>
-
-        <!--
-            <include file='../../outpost31/src/AppData/XmlDoc/Core.Avatar.AvtrEnvironment.xml' path='TngnOpto/Class[@name="Core.Avatar.AvtrEnvironment"]/AvtrSys/*'/>
-            <include file='AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/AvtrSys/*'/>
-        -->
         <AvtrSys>
-            <para>
-                The Avatar <see cref="Outpost31.Core.Avatar.AvtrSystem.AvtrSys">
-                    <i>System</i>
-                </see> represents the <br/>
-                Avatar <i>environment</i> that the Tingen Web Service interfaces with.<br/>
-                <br/>
-                Common Avatar Systems include <c>UAT</c> and <c>LIVE</c>.
-                <br/>
-                The Avatar <i>System</i> is different than the Avatar <i>System Code</i>.<br/>
-            </para>
+            <Information>
+                <note type="information" title="About AvtrSys">
+                    Keep in mind that:
+                    <list type="bullet">
+                        <item>Information 1</item>
+                        <item>Information 2</item>
+                        <item>Information 3</item>
+                    </list>
+                    Another bit information.
+                </note>
+            </Information>
+
+            <Important>
+                    <note type="important" title="Important!">
+                        Don't forget!
+                        <list type="bullet">
+                            <item>Important 1</item>
+                            <item>Important 2</item>
+                            <item>Important 3</item>
+                        </list>
+                        This is also important.
+                    </note>
+            </Important>
+
+            <Warning>
+                    <note type="warning" title="Warning!">
+                        Be aware that:
+                        <list type="bullet">
+                            <item>Warning 1</item>
+                            <item>Warning 2</item>
+                            <item>Warning 3</item>
+                        </list>
+                        In addition to that, another warning.
+                    </note>
+            </Warning>
+
+            <Security>
+                    <note type="security" title="Security details">
+                        Make sure that:
+                        <list type="bullet">
+                            <item>Security 1</item>
+                            <item>Security</item>
+                            <item>Security</item>
+                        </list>
+                        There is also this to consider
+                    </note>
+            </Security>
+
+            <Manual>
+                <note title="Manual: topic">
+                    <h3>Thing One</h3>
+                    To do this:
+                    <list type="number">
+                        <item>First</item>
+                        <item>Second</item>
+                        <item>Third</item>
+                        <item>Fourth</item>
+                    </list>
+                    For example, to set the Avatar System to `LIVE`, modify the setting as follows:
+                    <code>
+                        &lt;setting name="AvtrSys" serializeAs="String"&gt;
+                        &lt;value&gt;LIVE&lt;/value&gt;
+                        &lt;/setting&gt;
+                    </code>
+                    <br/>
+                    <h4>Thing Two</h4>
+                    To do this:
+                    <list type="number">
+                        <item>First</item>
+                        <item>Second</item>
+                        <item>Third</item>
+                        <item>Fourth</item>
+                    </list>
+                    For example, to set the Avatar System to `LIVE`, modify the setting as follows:
+                    <code>
+                        &lt;setting name="AvtrSys" serializeAs="String"&gt;
+                        &lt;value&gt;LIVE&lt;/value&gt;
+                        &lt;/setting&gt;
+                    </code>
+                </note>
+            </Manual>
         </AvtrSys>
-
-
-
-        <!--
-            <include file='AppData/XmlDoc/%ClassName%.xml' path='TngnOpto/Class[@name="%ClassName%"]/%MethodName%/*'/>
-        -->
-        <MethodName>
-            <para>
-                The name of the Executing Assembly is a required component of all log files, as it is used to identify
-                the class that is creating the log.<br/>
-                <br/>
-                This is defined at the start of each class, so it can be used at any time that a log needs to be created.
-            </para>
-        </MethodName>
 
     </Class>
 
-</TngnOpto>
+</Core.Avatar>

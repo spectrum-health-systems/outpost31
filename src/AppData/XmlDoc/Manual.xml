@@ -1,0 +1,52 @@
+﻿<Manual>
+
+    <Topic name="AvtrSys">
+
+
+        <Information> <!-- <include file='AppData/XmlDoc/Manual.xml' path='Manual/Topic[@name="AvtrSys"]/Information/*'/> -->
+            <para>
+                The <c>AvtrSys</c> setting specifies which Avatar <i>System</i> the Tingen Web Service will interface with.<br/>
+                It is <b><i>very important</i></b> that<br/><c>AvtrSys</c> is set correctly, otherwise lots of bad things can *and will* happen!<br/>
+                <note type="information" title="About AvtrSys">
+                    <list type="bullet">
+                        <item>
+                            Common Avatar Systems are: <c>UAT</c>, <c>LIVE</c>, <c>SBOX</c>, and <c>BUILD</c>.
+                        </item>
+                        <item>
+                            The Tingen Web Service is able to interface with the <c>UAT</c> and <c>LIVE</c> Avatar Systems.
+                        </item>
+                        <item>
+                            Changes to the <c>AvtrSys</c> setting will be applied the next time the Tingen Web Service is executed.
+                        </item>
+
+                    </list>
+                </note>
+            </para>
+        </Information>
+
+        <Modify> <!-- <include file='AppData/XmlDoc/Manual.xml' path='Manual/Topic[@name="AvtrSys"]/Modify/*'/> -->
+            <para>
+
+                <note title="Modifying AvtrSys">
+                    To modify the AvtrSys setting:
+                    <list type="number">
+                        <item>Open the <c>Web.Config</c> file located in the root directory of the Tingen Web Service.</item>
+                        <item>Locate the <c>AvtrSys</c> setting within the <c>applicationSettings</c> section.</item>
+                        <item>Change the value of the <c>AvtrSys</c> setting to the desired value.</item>
+                        <item>Save the changes to the <c>Web.Config</c> file.</item>
+                    </list>
+                    For example, to set the Avatar System to `LIVE`, modify the setting as follows:
+                    <code>
+                &lt;setting name="AvtrSys" serializeAs="String"&gt;
+                    &lt;value&gt;LIVE&lt;/value&gt;
+                &lt;/setting&gt;
+                    </code>
+                    <br/>
+        
+                </note>
+            </para>
+        </Modify>
+
+    </Topic>
+
+</Manual>
