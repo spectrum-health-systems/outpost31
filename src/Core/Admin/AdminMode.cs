@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250828_code
-// u250828_documentation
+// u250829_code
+// u250829_documentation
 // =============================================================================
 
 using System.Reflection;
@@ -15,18 +15,14 @@ using Outpost31.Core.Avatar;
 namespace Outpost31.Core.Admin
 {
     /// <summary>Logic for administrative mode options.</summary>
-    /// <remarks>
-    ///   For more information on AdminMode and it's settings, please see the Tingen Web Service Manual.<br/>
-    ///   <br/>
-    ///   For more information about Outpost31, please see the <see cref="ProjectInfo"/> file.
-    /// </remarks>
+    /// <remarks>For more information about Outpost31, please see the <see cref="ProjectInfo"/> file. </remarks>
     public static class AdminMode
     {
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Determines if a administrative mode should be executed.</summary>
-        /// <remarks> <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="AdminMode"]/Parse/*'/></remarks>
+        /// <remarks> <include file='AppData/XmlDoc/Core.Admin.xml' path='Manual/Topic[@name="AdminMode"]/Parse/*'/></remarks>
         /// <param name="origOptObj">The <see cref="OptionObject2015"/> sent from Avatar.</param>
         /// <param name="origScriptParam">The original Script Parameter that is sent from Avatar.</param>
         /// <param name="tngnWsvcVer">The current version of the Tingen Web Service.</param>
@@ -36,15 +32,15 @@ namespace Outpost31.Core.Admin
         {
             switch (adminMode.ToLower())
             {
-                case "initialize":
-                    Deployment.InitializeTngnWsvc(avatarSystem);
+                case "deploy":
+                    Deployment.Deploy(avatarSystem);
                     break;
 
-                case "refreshappdata":
+                case "refresh":
                     Deployment.RefreshAppData(avatarSystem);
                     break;
 
-                case "regressiontest":
+                case "regression":
                     Testing.Regression(origOptObj, origScriptParam, tngnWsvcVer, avatarSystem);
                     break;
             }

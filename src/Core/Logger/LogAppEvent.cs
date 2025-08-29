@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250828_code
-// u250828_documentation
+// u250829_code
+// u250829_documentation
 // =============================================================================
 
 using System;
@@ -18,22 +18,14 @@ using System.Threading;
 namespace Outpost31.Core.Logger
 {
     /// <summary>Logs an application event.</summary>
-    /// <remarks>
-    ///     <include file='AppData/XmlDoc/Core.Logger.xml' path='TngnOpto/Class[@name="LogEvent"]/ClassDescription/*'/>
-    ///     <include file='AppData/XMLDoc/ProjectInfo.xml' path='TngnOpto/Class[@name="ProjectInfo"]/Callback/*'/>
-    /// </remarks>
+    /// <remarks>For more information about Outpost31, please see the <see cref="ProjectInfo"/> file.</remarks>
     public static class LogAppEvent
     {
-        /// <summary>The executing assembly name.</summary>
-        /// <remarks>
-        ///     <include file='AppData/XmlDoc/Common.xml' path='TngnOpto/Class[@name="Common"]/ExeAsmName/*'/>
-        /// </remarks>
+        /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Generate a critical log.</summary>
-        /// <remarks>
-        /// This is public because TngnWsvc may need to call it.
-        /// </remarks>
+        /// <remarks>This is public because TngnWsvc may need to call it.</remarks>
         /// <param name="avatarSystem"></param>
         /// <param name="exeAsmName"></param>
         /// <param name="msec"></param>
@@ -48,7 +40,7 @@ namespace Outpost31.Core.Logger
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.critical");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-critical.bp");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~LOG~BODY~", logBody)
@@ -57,7 +49,7 @@ namespace Outpost31.Core.Logger
                                       .Replace("~METHOD~", fromMethod)
                                       .Replace("~LINE~", fromLine.ToString());
 
-            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Admin\AppLog\Critical\{logName}-{DateTime.Now:ddHHmmss}.critical";
+            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Log\Critical\{logName}-{DateTime.Now:ddHHmmss}.critical";
 
             File.WriteAllText(logPath, logContent);
         }
@@ -68,7 +60,7 @@ namespace Outpost31.Core.Logger
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.debuggler");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-debuggler.bp");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~LOG~BODY~", logBody)
@@ -79,7 +71,7 @@ namespace Outpost31.Core.Logger
 
             string logName = $"{exeAsmName}-{fromClass}-{fromMethod}-{fromLine}-{DateTime.Now:ddHHmmss}";
 
-            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Admin\AppLog\Debuggler\{logName}.debuggler";
+            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Log\Debuggler\{logName}.debuggler";
 
             File.WriteAllText(logPath, logContent);
         }
@@ -90,7 +82,7 @@ namespace Outpost31.Core.Logger
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.error");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-error.bp");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~ERROR~CODE~", errorCode)
@@ -102,7 +94,7 @@ namespace Outpost31.Core.Logger
 
             var logName = $"{exeAsmName}-{fromClass}-{fromMethod}-{fromLine}-{DateTime.Now:ddHHmmss}";
 
-            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Admin\AppLog\Error\{logName}.error";
+            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Log\Error\{logName}.error";
 
             File.WriteAllText(logPath, logContent);
         }
@@ -117,7 +109,7 @@ namespace Outpost31.Core.Logger
         {
             Thread.Sleep(msec);
 
-            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Admin\AppLog\Primeval\{DateTime.Now:ddHHmmss}.primeval";
+            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Log\Primeval\{DateTime.Now:ddHHmmss}.primeval";
 
             File.WriteAllText(logPath, "");
         }
@@ -129,16 +121,16 @@ namespace Outpost31.Core.Logger
             var fromClass = GetClassName(fromClassPath);
 
             var logName    = $"{exeAsmName}-{fromClass}-{fromMethod}-{fromLine}-{DateTime.Now:ddHHmmss}";
-            var logPath    = $@"C:\Tingen_Data\WebService\{avatarSystem}\Admin\AppLog\Trace\{logName}.trace";
+            var logPath    = $@"C:\Tingen_Data\WebService\{avatarSystem}\Log\Trace\{logName}.trace";
 
             File.WriteAllText(logPath, "");
         }
 
         internal static string GetClassName(string fromClassPath)
         {
-            var segments = fromClassPath.Split(new char[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries);
-            var className = segments.Last();
-            return className.Replace(".cs", "");
+            var fullClassPath = fromClassPath.Split(new char[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            //var className = fullClassPath.Last();
+            return fullClassPath.Last().Replace(".cs", "");
         }
     }
 }

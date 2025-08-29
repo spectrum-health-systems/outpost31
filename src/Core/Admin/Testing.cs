@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250828_code
-// u250828_documentation
+// u250829_code
+// u250829_documentation
 // =============================================================================
 
 using System.Reflection;
@@ -15,36 +15,29 @@ using ScriptLinkStandard.Objects;
 namespace Outpost31.Core.Admin
 {
     /// <summary>Provides testing and debugging operations.</summary>
-    /// <remarks>
-    ///     <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Testing"]/ClassDescription/*'/>
-    /// </remarks>
+    /// <remarks>For more information about Outpost31, please see the <see cref="ProjectInfo"/> file.</remarks>
     internal static class Testing
     {
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary>Runs regression tests.</summary>
-        /// <remarks>
-        ///     <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Testing"]/Regression/*'/>
-        /// </remarks>
         /// <param name="sentOptionObject">The <see cref="OptionObject2015"/> sent from Avatar.</param>
         /// <param name="sentScriptParameter">The original Script Parameter that is sent from Avatar.</param>
         /// <param name="wsvcVer">The current version of the Tingen Web Service.</param>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/>Avatar system that the Tingen Web Service will interface with.</param>
         internal static void Regression(OptionObject2015 sentOptionObject, string sentScriptParameter, string wsvcVer, string avatarSystem)
         {
-            GenerateAppLogs(avatarSystem, 0);
+            GenerateAppLogs(avatarSystem, 1000);
         }
 
         /// <summary>Generates various application logs.</summary>
-        /// <remarks>
-        ///     <include file='AppData/XmlDoc/Core.Admin.xml' path='Core.Admin/Class[@name="Testing"]/GenerateAppLogs/*'/>
-        /// </remarks>
         /// <param name="avatarSystem">The identifier for the avatar system or application context in which the logging operations are performed.</param>
         /// <param name="msec">Pause, in milliseconds.</param>
         internal static void GenerateAppLogs(string avatarSystem, int msec)
         {
-            //10 file
+            /* This should create 10 logfiles. If it does not, increase the msec value.
+             */
             LogAppEvent.Primeval(avatarSystem, msec);
 
             LogAppEvent.Critical(avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "Regression test");

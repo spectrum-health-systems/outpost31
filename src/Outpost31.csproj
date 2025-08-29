@@ -93,16 +93,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EmbeddedResource Include="AppData\Blueprint\Framework\framework.folder">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <None Include="AppData\Blueprint\Log\log.error">
+    <EmbeddedResource Include="AppData\Blueprint\framework-folder.embp" />
+    <None Include="AppData\Blueprint\log-error.bp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\Blueprint\Log\log.critical">
+    <None Include="AppData\Blueprint\log-critical.bp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\Blueprint\Log\log.debuggler">
+    <None Include="AppData\Blueprint\log-debuggler.bp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
