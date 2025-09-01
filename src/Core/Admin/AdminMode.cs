@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250829_code
-// u250829_documentation
+// u250901_code
+// u250901_documentation
 // =============================================================================
 
 using System.Reflection;
@@ -40,7 +40,7 @@ namespace Outpost31.Core.Admin
                     Deployment.RefreshAppData(avatarSystem);
                     break;
 
-                case "regression":
+                case "regress":
                     Testing.Regression(origOptObj, origScriptParam, tngnWsvcVer, avatarSystem);
                     break;
             }
