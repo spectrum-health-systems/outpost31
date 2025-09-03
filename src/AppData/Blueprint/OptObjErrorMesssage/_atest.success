@@ -1,0 +1,11 @@
+﻿========================================
+Critical Log | ~CURRENT~DATE~TIME~
+========================================
+
+~LOG~BODY~
+
+----------------------------------------
+[ASSEMBLY] ~ASSEMBLY~
+   [CLASS] ~CLASS~
+  [METHOD] ~METHOD~
+    [LINE] ~LINE~

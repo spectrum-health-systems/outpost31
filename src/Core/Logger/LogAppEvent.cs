@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250829_code
-// u250829_documentation
+// u250903_code
+// u250903_documentation
 // =============================================================================
 
 using System;
@@ -40,7 +40,7 @@ namespace Outpost31.Core.Logger
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-critical.bp");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.critical");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~LOG~BODY~", logBody)
@@ -54,13 +54,45 @@ namespace Outpost31.Core.Logger
             File.WriteAllText(logPath, logContent);
         }
 
-        internal static void Debuggler(string avatarSystem, string exeAsmName, string logBody = "Standard debuggler log.", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0, int msec = 0)
+        /// <summary>Generate a trace log.</summary>
+        /// <param name="traceLevel"></param>
+        /// <param name="traceLimit"></param>
+        /// <param name="avatarSystem"></param>
+        /// <param name="exeAsmName"></param>
+        /// <param name="msec"></param>
+        /// <param name="fromClassPath"></param>
+        /// <param name="fromMethod"></param>
+        /// <param name="fromLine"></param>
+        public static void Trace(int traceLevel, int traceLimit, string avatarSystem, string exeAsmName, int msec = 0, [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0)
+        {
+            if (traceLimit != 0 || (traceLevel <= traceLimit))
+            {
+                Thread.Sleep(msec);
+
+                var fromClass = GetClassName(fromClassPath);
+
+                var logName    = $"{DateTime.Now:ddHHmmssffffff}-{exeAsmName}-{fromClass}-{fromMethod}-{fromLine}";
+                var logPath    = $@"C:\Tingen_Data\WebService\{avatarSystem}\Log\Trace\{logName}.trace";
+
+                File.WriteAllText(logPath, "");
+            }
+        }
+
+        /// <summary>Generate a debug log.</summary>
+        /// <param name="avatarSystem"></param>
+        /// <param name="exeAsmName"></param>
+        /// <param name="msec"></param>
+        /// <param name="logBody"></param>
+        /// <param name="fromClassPath"></param>
+        /// <param name="fromMethod"></param>
+        /// <param name="fromLine"></param>
+        internal static void Debuggler(string avatarSystem, string exeAsmName, int msec = 0, string logBody = "Standard debuggler log.", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0)
         {
             Thread.Sleep(msec);
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-debuggler.bp");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.debuggler");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~LOG~BODY~", logBody)
@@ -76,13 +108,22 @@ namespace Outpost31.Core.Logger
             File.WriteAllText(logPath, logContent);
         }
 
-        internal static void Error(string avatarSystem, string exeAsmName, string errorMsg = "Standard error log.", string errorCode = "---", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0, int msec = 0)
+        /// <summary>Generate an error log.</summary>
+        /// <param name="avatarSystem"></param>
+        /// <param name="exeAsmName"></param>
+        /// <param name="msec"></param>
+        /// <param name="errorMsg"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="fromClassPath"></param>
+        /// <param name="fromMethod"></param>
+        /// <param name="fromLine"></param>
+        internal static void Error(string avatarSystem, string exeAsmName, int msec = 0, string errorMsg = "Standard error log.", string errorCode = "---", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0)
         {
             Thread.Sleep(msec);
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-error.bp");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.error");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~ERROR~CODE~", errorCode)
@@ -114,18 +155,9 @@ namespace Outpost31.Core.Logger
             File.WriteAllText(logPath, "");
         }
 
-        internal static void Trace(string avatarSystem, string exeAsmName, [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0, int msec = 0)
-        {
-            Thread.Sleep(2000);
-
-            var fromClass = GetClassName(fromClassPath);
-
-            var logName    = $"{exeAsmName}-{fromClass}-{fromMethod}-{fromLine}-{DateTime.Now:ddHHmmss}";
-            var logPath    = $@"C:\Tingen_Data\WebService\{avatarSystem}\Log\Trace\{logName}.trace";
-
-            File.WriteAllText(logPath, "");
-        }
-
+        /// <summary>Get the class name from the full class path.</summary>
+        /// <param name="fromClassPath"></param>
+        /// <returns></returns>
         internal static string GetClassName(string fromClassPath)
         {
             var fullClassPath = fromClassPath.Split(new char[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries);
