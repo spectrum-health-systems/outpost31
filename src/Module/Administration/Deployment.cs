@@ -24,32 +24,31 @@ namespace Outpost31.Module.Administration
 
         /// <summary>Deploy the Tingen Web Service framework.</summary>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
-        public static void FullDeploy(string tngnWsvcDataFolder, string avatarSystem, int traceLimit)
+        public static void Deploy(string baseWwwFolder, string baseDataFolder, string blueprintFolder, int traceLogLimit)
         {
-            LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
+            //LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
 
-            CreateFolderFramework(avatarSystem, traceLimit);
-            RefreshAppData(avatarSystem, traceLimit);
-            Testing.GenerateAppLogs(tngnWsvcDataFolder, avatarSystem, traceLimit, 1000);
+            CreateFolderFramework(baseDataFolder, traceLogLimit);
+            RefreshAppData(baseWwwFolder, blueprintFolder, traceLogLimit);
         }
 
         /// <summary>Create the Tingen Web Service folder framework.</summary>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
-        internal static void CreateFolderFramework(string avatarSystem, int traceLimit)
+        internal static void CreateFolderFramework(string baseDataFolder, int traceLogLimit)
         {
-            LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
+            //LogEvent.Trace(2, traceLogLimit, avatarSystem, ExeAsmName, 0);
 
             var assembly = Assembly.GetExecutingAssembly();
 
             string folderFramwork;
 
-            var folderFrameworkFile = @"Outpost31.AppData.EmbeddedBlueprint.Framework.framework.folder";
+            var folderFrameworkFile = @"Outpost31.AppData.Blueprint.Framework-folder.embp";
 
             using (Stream folderFrameworkStream = assembly.GetManifestResourceStream(folderFrameworkFile))
             {
                 if (folderFrameworkStream == null)
                 {
-                    File.WriteAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\Missing folder framework file", "E39635");
+                    File.WriteAllText($@"{baseDataFolder}\Missing folder framework file", "E39635");
                     return;
                 }
 
@@ -61,19 +60,19 @@ namespace Outpost31.Module.Administration
 
             foreach (var folder in folderFramwork.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                Directory.CreateDirectory($@"C:\Tingen_Data\WebService\{avatarSystem}\{folder}");
+                Directory.CreateDirectory($@"{baseDataFolder}\{folder}");
             }
         }
 
         /// <summary>Refresh application data that is required by the Tingen Web Service.</summary>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
-        public static void RefreshAppData(string avatarSystem, int traceLimit)
+        public static void RefreshAppData(string baseWwwFolder, string blueprintFolder, int traceLogLimit)
         {
-            LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
+            //LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
 
             // TODO - This doesn't work right. You need to run this a few times to get all the files copied.
-            var source = $@"C:\Tingen_www\WebService\{avatarSystem}\bin\AppData";
-            var target = $@"C:\Tingen_Data\WebService\{avatarSystem}\AppData";
+            var source = $@"{baseWwwFolder}\bin\AppData";
+            var target = blueprintFolder;
 
             if (Directory.Exists(target))
             {
@@ -86,24 +85,24 @@ namespace Outpost31.Module.Administration
         }
 
         /// TODO move to a utility class
-        internal static void CopyDirectory(string sourceDir, string destinationDir)
+        internal static void CopyDirectory(string source, string target)
         {
             // No logging here, would generate too much stuff.
 
             // Ensure the destination directory exists
-            Directory.CreateDirectory(destinationDir);
+            Directory.CreateDirectory(target);
 
             // Copy all files
-            foreach (string file in Directory.GetFiles(sourceDir))
+            foreach (string file in Directory.GetFiles(source))
             {
-                string destFile = Path.Combine(destinationDir, Path.GetFileName(file));
+                string destFile = Path.Combine(target, Path.GetFileName(file));
                 File.Copy(file, destFile, true); // Overwrite if file exists
             }
 
             // Recursively copy subdirectories
-            foreach (string subDir in Directory.GetDirectories(sourceDir))
+            foreach (string subDir in Directory.GetDirectories(source))
             {
-                string destSubDir = Path.Combine(destinationDir, Path.GetFileName(subDir));
+                string destSubDir = Path.Combine(target, Path.GetFileName(subDir));
                 CopyDirectory(subDir, destSubDir);
             }
         }

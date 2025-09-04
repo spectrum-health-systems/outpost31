@@ -3,7 +3,6 @@
     <Topic name="Avatar">
 
         <AvatarSystem> <!-- <include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="AvatarEnvironment"]/AvtrSys/*'/> -->
-            <HowTo>
                 <note type="todo" title="How-To">
                     <h3>Modify the AvtrSys setting</h3>
                     <list type="number">
@@ -28,9 +27,16 @@
                     </code>
                     Changes to the <c>AvtrSys</c> setting will be applied the next time the Tingen Web Service is executed.<br/>
                 </note>
-            </HowTo>
         </AvatarSystem>
 
+        <OptionObjectErrorCodes>
+                <note type="todo" title="How-To">
+                    <h3>Modify the AvtrSys setting</h3>
+                    <!---Todo-->
+                </note>
+            
+        </OptionObjectErrorCodes>
+        
     </Topic>
 
 </Manual>

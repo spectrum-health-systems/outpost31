@@ -76,7 +76,6 @@
     <Compile Include="Core\Avatar\AvatarEnvironment.cs" />
     <Compile Include="Core\Avatar\AvatarOptionObject.cs" />
     <Compile Include="Core\Avatar\AvatarScriptParameter.cs" />
-    <Compile Include="Core\Du\DuJson.cs" />
     <Compile Include="Core\Framework\Folders.cs" />
     <Compile Include="Core\Logger\CriticalLog.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />

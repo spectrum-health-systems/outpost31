@@ -55,17 +55,17 @@ namespace Outpost31.Core.Request
 
             if (session.ScriptParameter.Original.ToLower() == "_atest")
             {
-                Module.Administration.Testing.Regression(session.Folder.Data, session.AvatarSystem, session.Log.TraceLogLimit);
+                Module.Administration.Testing.Regression(session.Folder.BaseData, session.AvatarSystem, session.Log.TraceLogLimit);
                 Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Regression test complete.");
             }
             else if (session.ScriptParameter.Original.ToLower() == "_adeploy")
             {
-                Module.Administration.Deployment.FullDeploy(session.Folder.Data, session.AvatarSystem, session.Log.TraceLogLimit);
+                Module.Administration.Deployment.Deploy(session.Folder.BaseWww, session.Folder.BaseData, session.Folder.Blueprint, session.Log.TraceLogLimit);
                 Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Deployment complete!");
             }
             else if (session.ScriptParameter.Original.ToLower() == "_arefresh")
             {
-                Module.Administration.Deployment.RefreshAppData(session.AvatarSystem, session.Log.TraceLogLimit);
+                Module.Administration.Deployment.RefreshAppData(session.Folder.BaseWww, session.Folder.Blueprint, session.Log.TraceLogLimit);
                 Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Refresh complete!");
             }
             else

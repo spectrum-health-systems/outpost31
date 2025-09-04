@@ -1,11 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// =============================================================================
+// Outpost31.Core.Logger.CriticalLog.cs
+// https://github.com/spectrum-health-systems/outpost31
+// Copyright (c) A Pretty Cool Program. All rights reserved.
+// Licensed under the Apache 2.0 license.
+// -----------------------------------------------------------------------------
+// u250904_code
+// u250904_documentation
+// =============================================================================
+
+using System;
 using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Outpost31.Core.Logger
 {

@@ -33,6 +33,8 @@ namespace Outpost31.Core.Avatar
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
+
+
         public static void ToReturn(Instance session, int errorCode, string errorMessage = "")
         {
             //LogEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
@@ -77,6 +79,9 @@ namespace Outpost31.Core.Avatar
             }
         }
 
+        /// <summary>Verify if an OptionObject was sent from Avatar.</summary>
+        /// <param name="origOptObj">The original OptionObject sent from Avatar.</param>
+        /// <returns>A string indicating if an OptionObject was sent or not.</returns>
         public static string VerifyExistence(OptionObject2015 origOptObj) =>
             (origOptObj == null)
                 ? "An OptionObject was not sent."

@@ -1,5 +1,5 @@
 ﻿// =============================================================================
-// Outpost31.Core.Instance.Session.cs
+// Outpost31.Core.Session.Instance.cs
 // https://github.com/spectrum-health-systems/outpost31
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
@@ -62,7 +62,7 @@ namespace Outpost31.Core.Session
                 Version       = runtimeConfig["Version"],
                 AvatarSystem  = runtimeConfig["AvatarSystem"],
                 Mode          = runtimeConfig["Mode"],
-                Folder        = Folders.Load(runtimeConfig["DataFolder"], avatarUser, currentDate, currentTime),
+                Folder        = Folders.Load(runtimeConfig["BaseDataFolder"], runtimeConfig["BaseWwwFolder"], avatarUser, currentDate, currentTime),
                 Log           = Logs.Load(runtimeConfig["TraceLogLimit"]),
                 OptionObject  = new AvatarOptionObject()
                 {

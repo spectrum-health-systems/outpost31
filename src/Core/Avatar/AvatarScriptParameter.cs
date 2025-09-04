@@ -14,6 +14,9 @@ namespace Outpost31.Core.Avatar
     {
         public string Original { get; set; }
 
+        /// <summary>Verify if a Script Parameter was sent from Avatar.</summary>
+        /// <param name="origParam">The original Script Parameter sent from Avatar.</param>
+        /// <returns>A string indicating if an Script Parameter was sent or not.</returns>
         public static string VerifyExistence(string origParam) =>
             string.IsNullOrWhiteSpace(origParam)
                 ? $"The sent script parameter ('{origParam}') does not exist."

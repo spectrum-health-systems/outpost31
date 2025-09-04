@@ -8,10 +8,18 @@
 // u250904_documentation
 // =============================================================================
 
+using System.ComponentModel;
+
 namespace Outpost31.Core.Avatar
 {
     /// <summary>Logic for Avatar environment components.</summary>
-    /// <remarks><include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="AvatarEnvironment"]/Description/*'/></remarks>
+    /// <remarks>
+    ///     An Avatar environment consists of two components: the <see cref="AvatarSystem">Avatar System</see> and <see cref="AvatarSystemCode">Avatar System Code</see>.<br/>
+    ///     <br/>
+    ///     While both contain the word<i> system</i>, they are not the same! It is important to understand the difference between the two.<br/>
+    ///     <br/>
+    ///     For more information about Outpost31, please see the<see cref = "Outpost31.ProjectInfo"/> file.
+    /// </remarks>
     internal class AvatarEnvironment
     {
         /// <summary>The Avatar System that the Tingen Web Service will interface with.</summary>
