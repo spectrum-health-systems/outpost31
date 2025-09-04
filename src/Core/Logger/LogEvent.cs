@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250903_code
-// u250903_documentation
+// u250904_code
+// u250904_documentation
 // =============================================================================
 
 using System;
@@ -19,7 +19,7 @@ namespace Outpost31.Core.Logger
 {
     /// <summary>Logs an application event.</summary>
     /// <remarks>For more information about Outpost31, please see the <see cref="ProjectInfo"/> file.</remarks>
-    public static class LogAppEvent
+    public static class LogEvent
     {
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
@@ -34,24 +34,9 @@ namespace Outpost31.Core.Logger
         /// <param name="fromClassPath"></param>
         /// <param name="fromMethod"></param>
         /// <param name="fromLine"></param>
-        public static void Critical(string avatarSystem, string exeAsmName, int msec = 0, string logName = "Unknown critical issue", string logBody = "Unknown critical issue.", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0)
+        public static void Critical(string tngnWsvcDataFolder, string avatarSystem, string exeAsmName, int msec = 0, string logName = "Unknown critical issue", string logBody = "Unknown critical issue.", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0)
         {
-            Thread.Sleep(msec);
-
-            var fromClass = GetClassName(fromClassPath);
-
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.critical");
-
-            var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
-                                      .Replace("~LOG~BODY~", logBody)
-                                      .Replace("~ASSEMBLY~", exeAsmName)
-                                      .Replace("~CLASS~", fromClass)
-                                      .Replace("~METHOD~", fromMethod)
-                                      .Replace("~LINE~", fromLine.ToString());
-
-            string logPath = $@"C:\Tingen_Data\WebService\{avatarSystem}\Log\Critical\{logName}-{DateTime.Now:ddHHmmss}.critical";
-
-            File.WriteAllText(logPath, logContent);
+            //CriticalLog.Create(tngnWsvcDataFolder, avatarSystem, exeAsmName, msec, logName, logBody, fromClassPath, fromMethod, fromLine);
         }
 
         /// <summary>Generate a trace log.</summary>
@@ -92,7 +77,7 @@ namespace Outpost31.Core.Logger
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.debuggler");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-debuggler.bp");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~LOG~BODY~", logBody)
@@ -123,7 +108,7 @@ namespace Outpost31.Core.Logger
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\log.error");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-error.bp");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~ERROR~CODE~", errorCode)

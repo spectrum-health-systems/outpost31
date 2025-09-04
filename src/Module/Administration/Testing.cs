@@ -4,14 +4,13 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250903_code
-// u250903_documentation
+// u250904_code
+// u250904_documentation
 // =============================================================================
 
 using System.Reflection;
 using Outpost31.Core.Avatar;
 using Outpost31.Core.Logger;
-using Outpost31.Core.Session;
 using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Module.Administration
@@ -27,15 +26,15 @@ namespace Outpost31.Module.Administration
         /// <param name="sentScriptParameter">The original Script Parameter that is sent from Avatar.</param>
         /// <param name="tngnWsvcVer">The current version of the Tingen Web Service.</param>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/>Avatar system that the Tingen Web Service will interface with.</param>
-        internal static void Regression(string avatarSystem, int traceLimit)
+        internal static void Regression(string tngnWsvcDataFolder, string avatarSystem, int traceLimit)
         {
-            GenerateAppLogs(avatarSystem, traceLimit, 1000);
+            GenerateAppLogs(tngnWsvcDataFolder, avatarSystem, traceLimit, 1000);
         }
 
         /// <summary>Generates various application logs.</summary>
         /// <param name="avatarSystem">The identifier for the avatar system or application context in which the logging operations are performed.</param>
         /// <param name="msec">Pause, in milliseconds.</param>
-        internal static void GenerateAppLogs(string avatarSystem, int traceLimit, int msec)
+        internal static void GenerateAppLogs(string tngnWsvcDataFolder, string avatarSystem, int traceLimit, int msec)
         {
             // No logging done here.
 
@@ -43,29 +42,29 @@ namespace Outpost31.Module.Administration
              *
              * This should create 19 logfiles. If it does not, increase the msec value.
              */
-            LogAppEvent.Primeval(avatarSystem, msec);
+            LogEvent.Primeval(avatarSystem, msec);
 
-            LogAppEvent.Critical(avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "Regression test");
-            LogAppEvent.Critical(avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "");
-            LogAppEvent.Critical(avatarSystem, ExeAsmName, msec);
+            LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "Regression test");
+            LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "");
+            LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec);
 
-            LogAppEvent.Debuggler(avatarSystem, ExeAsmName);
-            LogAppEvent.Debuggler(avatarSystem, ExeAsmName, logBody: "Regression test");
+            LogEvent.Debuggler(avatarSystem, ExeAsmName);
+            LogEvent.Debuggler(avatarSystem, ExeAsmName, logBody: "Regression test");
 
-            LogAppEvent.Error(avatarSystem, ExeAsmName, errorMsg: "Regression test");
-            LogAppEvent.Error(avatarSystem, ExeAsmName, errorMsg: "Regression test", errorCode: "000");
-            LogAppEvent.Error(avatarSystem, ExeAsmName);
+            LogEvent.Error(avatarSystem, ExeAsmName, errorMsg: "Regression test");
+            LogEvent.Error(avatarSystem, ExeAsmName, errorMsg: "Regression test", errorCode: "000");
+            LogEvent.Error(avatarSystem, ExeAsmName);
 
-            LogAppEvent.Trace(0, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(1, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(3, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(4, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(5, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(6, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(7, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(8, traceLimit, avatarSystem, ExeAsmName);
-            LogAppEvent.Trace(9, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(0, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(1, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(3, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(4, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(5, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(6, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(7, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(8, traceLimit, avatarSystem, ExeAsmName);
+            LogEvent.Trace(9, traceLimit, avatarSystem, ExeAsmName);
         }
     }
 }

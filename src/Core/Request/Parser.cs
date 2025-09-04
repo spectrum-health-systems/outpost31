@@ -4,15 +4,11 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250903_code
-// u250903_documentation
+// u250904_code
+// u250904_documentation
 // =============================================================================
 
-using System.IO;
 using System.Reflection;
-using Outpost31.Core.Avatar;
-using Outpost31.Core.Logger;
-using Outpost31.Core.Session;
 
 namespace Outpost31.Core.Request
 {
@@ -22,59 +18,59 @@ namespace Outpost31.Core.Request
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         /// <summary></summary>
-        /// <param name="tngnWsvcSession"></param>
-        public static void ParseRequest(TngnWsvcSession tngnWsvcSession)
+        /// <param name="session"></param>
+        public static void ParseRequest(Session session)
         {
-            LogAppEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
+           // LogEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
 
-            if (tngnWsvcSession.ScriptParameter.Original.ToLower().StartsWith("_p"))
+            if (session.ScriptParameter.Original.ToLower().StartsWith("_p"))
             {
-                ParsePrototypeRequest(tngnWsvcSession);
+                ParsePrototypeRequest(session);
             }
-            else if (tngnWsvcSession.ScriptParameter.Original.ToLower().StartsWith("_a"))
+            else if (session.ScriptParameter.Original.ToLower().StartsWith("_a"))
             {
-                ParseAdminRequest(tngnWsvcSession);
+                ParseAdminRequest(session);
             }
             else
             {
-                ParseStandardRequest(tngnWsvcSession);
+                ParseStandardRequest(session);
             }
         }
 
 
-        internal static void ParsePrototypeRequest(TngnWsvcSession tngnWsvcSession)
+        internal static void ParsePrototypeRequest(Session session)
         {
-            LogAppEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
+            //LogEvent.Trace(2, session.TraceLimit, session.AvatarSystem, ExeAsmName, 0);
         }
 
-        internal static void ParseStandardRequest(TngnWsvcSession tngnWsvcSession)
+        internal static void ParseStandardRequest(Session session)
         {
-            LogAppEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
+            //LogEvent.Trace(2, session.TraceLimit, session.AvatarSystem, ExeAsmName, 0);
         }
 
-        internal static void ParseAdminRequest(TngnWsvcSession tngnWsvcSession)
+        internal static void ParseAdminRequest(Session session)
         {
-            LogAppEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
+            //LogEvent.Trace(2, session.TraceLimit, session.AvatarSystem, ExeAsmName, 0);
 
-            if (tngnWsvcSession.ScriptParameter.Original.ToLower() == "_atest")
+            if (session.ScriptParameter.Original.ToLower() == "_atest")
             {
-                Module.Administration.Testing.Regression(tngnWsvcSession.AvatarSystem, tngnWsvcSession.TraceLimit);
-                AvatarOptionObject.ToReturn(tngnWsvcSession, 3, "Regression test complete.");
+                Module.Administration.Testing.Regression(session.Folder.Data, session.AvatarSystem, session.Log.TraceLogLimit);
+                Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Regression test complete.");
             }
-            else if (tngnWsvcSession.ScriptParameter.Original.ToLower() == "_adeploy")
+            else if (session.ScriptParameter.Original.ToLower() == "_adeploy")
             {
-                Module.Administration.Deployment.FullDeploy(tngnWsvcSession.AvatarSystem, tngnWsvcSession.TraceLimit);
-                AvatarOptionObject.ToReturn(tngnWsvcSession, 3, "Deployment complete!");
+                Module.Administration.Deployment.FullDeploy(session.Folder.Data, session.AvatarSystem, session.Log.TraceLogLimit);
+                Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Deployment complete!");
             }
-            else if (tngnWsvcSession.ScriptParameter.Original.ToLower() == "_arefresh")
+            else if (session.ScriptParameter.Original.ToLower() == "_arefresh")
             {
-                Module.Administration.Deployment.RefreshAppData(tngnWsvcSession.AvatarSystem, tngnWsvcSession.TraceLimit);
-                AvatarOptionObject.ToReturn(tngnWsvcSession, 3, "Refresh complete!");
+                Module.Administration.Deployment.RefreshAppData(session.AvatarSystem, session.Log.TraceLogLimit);
+                Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Refresh complete!");
             }
             else
             {
                 // Critial log here.
-                AvatarOptionObject.ToReturn(tngnWsvcSession, 3, $"Unknown request: {tngnWsvcSession.ScriptParameter.Original}");
+                Core.Avatar.AvatarOptionObject.ToReturn(session, 3, $"Unknown request: {session.ScriptParameter.Original}");
             }
         }
     }

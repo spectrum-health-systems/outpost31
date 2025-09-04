@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250903_code
-// u250903_documentation
+// u250904_code
+// u250904_documentation
 // =============================================================================
 
 using System;
@@ -24,20 +24,20 @@ namespace Outpost31.Module.Administration
 
         /// <summary>Deploy the Tingen Web Service framework.</summary>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
-        public static void FullDeploy(string avatarSystem, int traceLimit)
+        public static void FullDeploy(string tngnWsvcDataFolder, string avatarSystem, int traceLimit)
         {
-            LogAppEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
+            LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
 
             CreateFolderFramework(avatarSystem, traceLimit);
             RefreshAppData(avatarSystem, traceLimit);
-            Testing.GenerateAppLogs(avatarSystem, traceLimit, 1000);
+            Testing.GenerateAppLogs(tngnWsvcDataFolder, avatarSystem, traceLimit, 1000);
         }
 
         /// <summary>Create the Tingen Web Service folder framework.</summary>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
         internal static void CreateFolderFramework(string avatarSystem, int traceLimit)
         {
-            LogAppEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
+            LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
 
             var assembly = Assembly.GetExecutingAssembly();
 
@@ -69,7 +69,7 @@ namespace Outpost31.Module.Administration
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
         public static void RefreshAppData(string avatarSystem, int traceLimit)
         {
-            LogAppEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
+            LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
 
             // TODO - This doesn't work right. You need to run this a few times to get all the files copied.
             var source = $@"C:\Tingen_www\WebService\{avatarSystem}\bin\AppData";

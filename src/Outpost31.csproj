@@ -77,11 +77,12 @@
     <Compile Include="Core\Avatar\AvatarOptionObject.cs" />
     <Compile Include="Core\Avatar\AvatarScriptParameter.cs" />
     <Compile Include="Core\Du\DuJson.cs" />
-    <Compile Include="Core\Logger\LogAppEvent.cs" />
+    <Compile Include="Core\Framework\Folders.cs" />
+    <Compile Include="Core\Logger\CriticalLog.cs" />
+    <Compile Include="Core\Logger\LogEvent.cs" />
+    <Compile Include="Core\Logger\Logs.cs" />
     <Compile Include="Core\Request\Parser.cs" />
-    <Compile Include="Core\Request\Prototype.cs" />
-    <Compile Include="Core\Request\Standard.cs" />
-    <Compile Include="Core\Session\TngnWsvcSession.cs" />
+    <Compile Include="Core\Session.cs" />
     <Compile Include="Module\Administration\Deployment.cs" />
     <Compile Include="Module\Administration\Development.cs" />
     <Compile Include="Module\Administration\Testing.cs" />
@@ -98,23 +99,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EmbeddedResource Include="AppData\EmbeddedBlueprint\Framework\framework.folder" />
-    <None Include="AppData\Blueprint\OptObjErrorMesssage\_atest.success">
+    <EmbeddedResource Include="AppData\Blueprint\framework-folder.empb" />
+    <None Include="AppData\Blueprint\command-_atest-success.bp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\Blueprint\Log\log.error">
+    <None Include="AppData\Blueprint\log-error.bp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\Blueprint\Log\log.critical">
+    <None Include="AppData\Blueprint\log-critical.bp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\Blueprint\Log\log.debuggler">
+    <None Include="AppData\Blueprint\log-debuggler.bp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Configuration\" />
+    <Folder Include="Core\Session\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\tingen-third-party\ScriptLinkStandard\ScriptLinkStandard.csproj">

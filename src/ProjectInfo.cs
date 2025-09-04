@@ -5,8 +5,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// Release 25.8
-// u250829
+// Release 25.9
+// u250901
 // =============================================================================
 
 namespace Outpost31

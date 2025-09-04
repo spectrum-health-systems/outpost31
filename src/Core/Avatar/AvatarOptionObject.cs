@@ -4,13 +4,11 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250903_code
-// u250903_documentation
+// u250904_code
+// u250904_documentation
 // =============================================================================
 
 using System.Reflection;
-using Outpost31.Core.Logger;
-using Outpost31.Core.Session;
 using ScriptLinkStandard.Objects;
 
 namespace Outpost31.Core.Avatar
@@ -32,42 +30,42 @@ namespace Outpost31.Core.Avatar
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
-        public static void ToReturn(TngnWsvcSession tngnWsvcSession, int errorCode, string errorMessage = "")
+        public static void ToReturn(Session session, int errorCode, string errorMessage = "")
         {
-            LogAppEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
+            //LogEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
 
-            tngnWsvcSession.OptionObject.Completed = tngnWsvcSession.OptionObject.Worker.Clone();
+            session.OptionObject.Completed = session.OptionObject.Worker.Clone();
 
             // Put logs in switch?
 
             switch (errorCode)
             {
                 case 0:
-                    tngnWsvcSession.OptionObject.Completed.ToReturnOptionObject(0, errorMessage);
+                    session.OptionObject.Completed.ToReturnOptionObject(0, errorMessage);
                     break;
 
                 case 1:
-                    tngnWsvcSession.OptionObject.Completed.ToReturnOptionObject(1, errorMessage);
+                    session.OptionObject.Completed.ToReturnOptionObject(1, errorMessage);
                     break;
 
                 case 2:
-                    tngnWsvcSession.OptionObject.Completed.ToReturnOptionObject(2, errorMessage);
+                    session.OptionObject.Completed.ToReturnOptionObject(2, errorMessage);
                     break;
 
                 case 3:
-                    tngnWsvcSession.OptionObject.Completed.ToReturnOptionObject(3, errorMessage);
+                    session.OptionObject.Completed.ToReturnOptionObject(3, errorMessage);
                     break;
 
                 case 4:
-                    tngnWsvcSession.OptionObject.Completed.ToReturnOptionObject(4, errorMessage);
+                    session.OptionObject.Completed.ToReturnOptionObject(4, errorMessage);
                     break;
 
                 case 5:
-                    tngnWsvcSession.OptionObject.Completed.ToReturnOptionObject(5, errorMessage);
+                    session.OptionObject.Completed.ToReturnOptionObject(5, errorMessage);
                     break;
 
                 case 6:
-                    tngnWsvcSession.OptionObject.Completed.ToReturnOptionObject(6, errorMessage);
+                    session.OptionObject.Completed.ToReturnOptionObject(6, errorMessage);
                     break;
 
                 default:
