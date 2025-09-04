@@ -20,6 +20,7 @@ namespace Outpost31.Core.Session
 {
     public class Instance
     {
+        /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
         public string AvatarUser { get; set; }
