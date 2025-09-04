@@ -82,7 +82,7 @@
     <Compile Include="Core\Logger\LogEvent.cs" />
     <Compile Include="Core\Logger\Logs.cs" />
     <Compile Include="Core\Request\Parser.cs" />
-    <Compile Include="Core\Session.cs" />
+    <Compile Include="Core\Session\Instance.cs" />
     <Compile Include="Module\Administration\Deployment.cs" />
     <Compile Include="Module\Administration\Development.cs" />
     <Compile Include="Module\Administration\Testing.cs" />
@@ -93,6 +93,7 @@
     <Content Include="AppData\XmlDoc\Core.Admin.xml" />
     <Content Include="AppData\XmlDoc\Core.Avatar.xml" />
     <Content Include="AppData\XmlDoc\Core.Logger.xml" />
+    <Content Include="AppData\XmlDoc\Manual.xml" />
     <Content Include="AppData\XmlDoc\Mode.xml" />
     <Content Include="AppData\XmlDoc\Core.TngnWsvc.xml" />
     <Content Include="AppData\XmlDoc\template.xml" />
@@ -116,7 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Configuration\" />
-    <Folder Include="Core\Session\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\tingen-third-party\ScriptLinkStandard\ScriptLinkStandard.csproj">

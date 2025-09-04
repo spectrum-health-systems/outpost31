@@ -8,18 +8,24 @@ namespace Outpost31.Core.Framework
 {
     public class Folders
     {
-        public string Www { get; set; }
-        public string Data { get; set; }
+        public string Archive { get; set; }
+        public string Blueprint { get; set; }
+        public string Configuration { get; set; }
+        public string Export { get; set; }
+        public string Import { get; set; }
         public string Session { get; set; }
 
-        public static Folders Load(string baseWww, string baseData, string sessionDate)
+        public static Folders Load(string baseFolder, string avatarUser, string date, string time)
         {
             return new Folders
             {
-                Www     = baseWww,
-                Data    = baseData,
-                Session = $@"{baseData}\Session\{sessionDate}"
+                Archive       = $@"{baseFolder}\Archive",
+                Blueprint     = $@"{baseFolder}\AppData\Blueprint",
+                Configuration = $@"{baseFolder}\Config",
+                Export        = $@"{baseFolder}\Export",
+                Import        = $@"{baseFolder}\Import",
+                Session       = $@"{baseFolder}\Session\{date}\{avatarUser}\{time}"
             };
         }
-    } 
+    }
 }

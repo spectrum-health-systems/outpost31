@@ -14,13 +14,9 @@ namespace Outpost31.Core.Avatar
     {
         public string Original { get; set; }
 
-        public static string CheckExistence(string origParam)
-        {
-            // put log here
-
-            return string.IsNullOrWhiteSpace(origParam)
+        public static string VerifyExistence(string origParam) =>
+            string.IsNullOrWhiteSpace(origParam)
                 ? $"The sent script parameter ('{origParam}') does not exist."
                 : $"The sent script parameter ('{origParam}') does exist.";
-        }
     }
 }

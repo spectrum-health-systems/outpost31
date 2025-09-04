@@ -10,9 +10,12 @@
 
 using System.Reflection;
 using ScriptLinkStandard.Objects;
+using Outpost31.Core.Session;
 
 namespace Outpost31.Core.Avatar
 {
+    /// <summary>The AvatarOptionObject contains metadata about the Avatar environment.</summary>
+    /// <remarks>For more information about Outpost31, please see the <see cref="Outpost31.ProjectInfo"/> file.</remarks>
     public class AvatarOptionObject
     {
         /// <summary>The original <see cref="OptionObject2015">OptionObject</see> sent from Avatar.</summary>
@@ -30,7 +33,7 @@ namespace Outpost31.Core.Avatar
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
-        public static void ToReturn(Session session, int errorCode, string errorMessage = "")
+        public static void ToReturn(Instance session, int errorCode, string errorMessage = "")
         {
             //LogEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
 
@@ -74,13 +77,9 @@ namespace Outpost31.Core.Avatar
             }
         }
 
-        public static string CheckExistence(OptionObject2015 origOptObj)
-        {
-            // Put a log here.
-
-            return (origOptObj == null)
+        public static string VerifyExistence(OptionObject2015 origOptObj) =>
+            (origOptObj == null)
                 ? "An OptionObject was not sent."
                 : "An OptionObject was sent.";
-        }
     }
 }

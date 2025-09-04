@@ -13,11 +13,5 @@
 \Export\Report
 \Import
 \Log
-\Log\Critical
-\Log\Debuggler
-\Log\Error
-\Log\Primeval
-\Log\Trace
-\Runtime
 \Session
 \Temp

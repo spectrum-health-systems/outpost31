@@ -1,0 +1,36 @@
+﻿<Manual>
+
+    <Topic name="Avatar">
+
+        <AvatarSystem> <!-- <include file='AppData/XmlDoc/Core.Avatar.xml' path='Core.Avatar/Class[@name="AvatarEnvironment"]/AvtrSys/*'/> -->
+            <HowTo>
+                <note type="todo" title="How-To">
+                    <h3>Modify the AvtrSys setting</h3>
+                    <list type="number">
+                        <item>
+                            Open the <c>Web.Config</c> file located in the root directory of the Tingen Web Service.
+                        </item>
+                        <item>
+                            Locate the <c>AvtrSys</c> setting within the <c>applicationSettings</c> section.
+                        </item>
+                        <item>
+                            Change the value of the <c>AvtrSys</c> setting to the desired value.
+                        </item>
+                        <item>
+                            Save the changes to the <c>Web.Config</c> file.
+                        </item>
+                    </list>
+                    For example, to set the Avatar System to `LIVE`:
+                    <code>
+                        &lt;setting name="AvtrSys" serializeAs="String"&gt;
+                            &lt;value&gt;LIVE&lt;/value&gt;
+                        &lt;/setting&gt;
+                    </code>
+                    Changes to the <c>AvtrSys</c> setting will be applied the next time the Tingen Web Service is executed.<br/>
+                </note>
+            </HowTo>
+        </AvatarSystem>
+
+    </Topic>
+
+</Manual>

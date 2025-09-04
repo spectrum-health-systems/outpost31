@@ -9,6 +9,7 @@
 // =============================================================================
 
 using System.Reflection;
+using Outpost31.Core.Session;
 
 namespace Outpost31.Core.Request
 {
@@ -19,7 +20,7 @@ namespace Outpost31.Core.Request
 
         /// <summary></summary>
         /// <param name="session"></param>
-        public static void ParseRequest(Session session)
+        public static void ParseRequest(Instance session)
         {
            // LogEvent.Trace(2, tngnWsvcSession.TraceLimit, tngnWsvcSession.AvatarSystem, ExeAsmName, 0);
 
@@ -38,17 +39,17 @@ namespace Outpost31.Core.Request
         }
 
 
-        internal static void ParsePrototypeRequest(Session session)
+        internal static void ParsePrototypeRequest(Instance session)
         {
             //LogEvent.Trace(2, session.TraceLimit, session.AvatarSystem, ExeAsmName, 0);
         }
 
-        internal static void ParseStandardRequest(Session session)
+        internal static void ParseStandardRequest(Instance session)
         {
             //LogEvent.Trace(2, session.TraceLimit, session.AvatarSystem, ExeAsmName, 0);
         }
 
-        internal static void ParseAdminRequest(Session session)
+        internal static void ParseAdminRequest(Instance session)
         {
             //LogEvent.Trace(2, session.TraceLimit, session.AvatarSystem, ExeAsmName, 0);
 
