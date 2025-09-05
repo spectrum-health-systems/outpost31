@@ -17,20 +17,17 @@
 # Release 25.9
 
 * `NEW` The **Administration Module**
-* `MODIFIED` The **AdminMode** functionality has been moved to the Administration Module
-* `NEW` The **_aDeploy** command
-* `NEW` The **_aRefresh** command
-* `NEW` The **_aRegress** command
-* `DEPRECIATED` AdminMode
-* `NEW` **traceLogLimit**
+* `NEW` Administrative commands: **_aDeploy**,  **_aRefresh**, and **_aRegress**
+* `NEW` **traceLogLimit** setting
 * `NEW` The **Tingen_www\WebService** and **Tingen_Data\WebService** base folders are now defined in Web.config
-* `NEW` Session data now includes the current day/time when the Tingen Web Service is executed, as well as the Avatar UserName
+* `NEW` Session data now includes the current day/time, the Avatar UserName, and framework details
+* `MODIFIED` The **AdminMode** functionality has been moved to the Administration Module
+* `DEPRECIATED` AdminMode
 
 <details>
   <summary>Development notes</summary>
 
-* I've moved the **AdminMode** functionality out of `Web.config`, and into the new **Administrattion Module**.  
-  This way, the administrative functionality can be integrated into Avatar forms via ScriptLink events.
+* The **AdminMode** functionality has been moved out of `Web.config`, and into new **Administrattion Module**. This way, the administrative functionality can be integrated into Avatar forms via ScriptLink events.
     * I've also removed the regression testing from the **_aDeploy** command
 
 * Trace logs now have a **traceLevel** and a global **traceLevelLimit**. This allows you to specify what trace  

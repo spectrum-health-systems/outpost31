@@ -23,7 +23,7 @@ namespace Outpost31.Core.Session
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
-        public string AvatarUser { get; set; }
+        public string AvatarUserName { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
         public string Version { get; set; }
@@ -51,13 +51,13 @@ namespace Outpost31.Core.Session
             // Can't have a trace log here yet, but should log something.
             //LogEvent.Trace(2, traceLogLimitAsInt, runtimeConfig["AvatarSystem"], ExeAsmName, 0);
 
-            var currentDate = DateTime.Now.ToString("yyMMdd");
-            var currentTime = DateTime.Now.ToString("HHmm");
-            var avatarUser  = originalOptionObject.OptionUserId;
+            var currentDate    = DateTime.Now.ToString("yyMMdd");
+            var currentTime    = DateTime.Now.ToString("HHmm");
+            var avatarUserName = originalOptionObject.OptionUserId;
 
             return new Instance()
             {
-                AvatarUser    = avatarUser,
+                AvatarUserName    = avatarUser,
                 Date          = currentDate,
                 Time          = currentTime,
                 Version       = runtimeConfig["Version"],
