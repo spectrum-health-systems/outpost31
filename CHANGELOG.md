@@ -22,6 +22,7 @@
 * `NEW` The **Tingen_www\WebService** and **Tingen_Data\WebService** base folders are now defined in Web.config
 * `NEW` Session data now includes the current day/time, the Avatar UserName, and framework details
 * `MODIFIED` The **AdminMode** functionality has been moved to the Administration Module
+* `UPDATED` XML/API Documentation
 * `REMOVED` AdminMode
 * `REMOVED` The popup that appears when the Tingen Web Service is disabled.
 
@@ -39,26 +40,8 @@
   organized, blueprint files are rarely touched, so this will hopefully have little impact. Standard blueprint  
   files have a **.bp** extension, while embedded blueprint files have a **.embp** extension.
 
-* Misc
-  * Removed the popup when the Tingen Web Service is disabled, since that would actually cause havoc. Instead,  
-    a critical log is written.
-
-
-
-
-
-
-* Renaming variables to be more descriptive
-* Updating XML documentation (and therefore API documentation)
-  * There are a bunch of logs in TingenWebService.asmx.cs that are for debugging use, and I've worked to reduce the
-  amount of space they take up. I want them to be in the code, since they are helpful during development, but at the
-  same time, I don't want them to be distracting.
-
-
-  * Updated XML documentation (and therefore API documentation)
-
-- [ ] Get current date when service starts
-
+* Removed the popup when the Tingen Web Service is disabled, since that would actually cause havoc. Instead, a  
+  critical log is written.
 
 </details>
 
