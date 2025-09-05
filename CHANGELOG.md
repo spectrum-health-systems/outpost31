@@ -16,22 +16,31 @@
 
 # Release 25.9
 
-* `MODIFIED` The **AdminMode** functionality has been moved to the **Administration Module**
+* `NEW` The **Administration Module**
+* `MODIFIED` The **AdminMode** functionality has been moved to the Administration Module
 * `NEW` The **_aDeploy** command
 * `NEW` The **_aRefresh** command
 * `NEW` The **_aRegress** command
 * `DEPRECIATED` AdminMode
-* `NEW` Trace log limit value
+* `NEW` **traceLogLimit**
 * `NEW` The **Tingen_www\WebService** and **Tingen_Data\WebService** base folders are now defined in Web.config
-* `NEW` Session data now includes the current day/time when the Tingen Web Service is executed
-
+* `NEW` Session data now includes the current day/time when the Tingen Web Service is executed, as well as the Avatar UserName
 
 <details>
   <summary>Development notes</summary>
 
-* Improved the logging functionality
-  * Trace logs now have a *level* and a global *limit*. This allows you to specify what trace logs are created, and in turn the volume of trace logs that are created.
-  
+* I've moved the **AdminMode** functionality out of `Web.config`, and into the new **Administrattion Module**.  
+  This way, the administrative functionality can be integrated into Avatar forms via ScriptLink events.
+    * I've also removed the regression testing from the **_aDeploy** command
+
+* Trace logs now have a **traceLevel** and a global **traceLevelLimit**. This allows you to specify what trace  
+  logs are created, and   in turn the volume of trace logs that are created.  The **traceLevel** is defined on  
+  a per-log basis, and indicates what *trace level* that log is. The **traceLevelLimit** is defined in `Web.config`,  
+  and determines what trace levels are created. A trace log is created when it's *traceLevel* < the *traceLevelLimit*.
+
+
+
+
 * Updating the administrative functionality
 * Renaming variables to be more descriptive
 * Updating XML documentation (and therefore API documentation)
