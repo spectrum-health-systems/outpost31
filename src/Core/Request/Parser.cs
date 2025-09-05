@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250904_code
-// u250904_documentation
+// u250905_code
+// u250905_documentation
 // =============================================================================
 
 using System.Reflection;
@@ -18,7 +18,7 @@ namespace Outpost31.Core.Request
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
-        /// <summary></summary>
+        /// <summary>Parse a request.</summary>
         /// <param name="session"></param>
         public static void ParseRequest(Instance session)
         {
@@ -55,17 +55,17 @@ namespace Outpost31.Core.Request
 
             if (session.ScriptParameter.Original.ToLower() == "_atest")
             {
-                Module.Administration.Testing.Regression(session.Folder.BaseData, session.AvatarSystem, session.Log.TraceLogLimit);
+                Module.Administration.Testing.Regression(session.Folder.SystemData, session.AvatarSystem, session.LogSetting.TraceLogLimit);
                 Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Regression test complete.");
             }
             else if (session.ScriptParameter.Original.ToLower() == "_adeploy")
             {
-                Module.Administration.Deployment.Deploy(session.Folder.BaseWww, session.Folder.BaseData, session.Folder.Blueprint, session.Log.TraceLogLimit);
+                Module.Administration.Deployment.Deploy(session.Folder, session.Folder.SystemWww, session.Folder.SystemData, session.Folder.AppData, session.LogSetting.TraceLogLimit);
                 Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Deployment complete!");
             }
             else if (session.ScriptParameter.Original.ToLower() == "_arefresh")
             {
-                Module.Administration.Deployment.RefreshAppData(session.Folder.BaseWww, session.Folder.Blueprint, session.Log.TraceLogLimit);
+                Module.Administration.Deployment.RefreshAppData(session.Folder.SystemWww, session.Folder.Blueprint, session.LogSetting.TraceLogLimit);
                 Core.Avatar.AvatarOptionObject.ToReturn(session, 3, "Refresh complete!");
             }
             else

@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250904_code
-// u250904_documentation
+// u250905_code
+// u250905_documentation
 // =============================================================================
 
 using System.Reflection;
@@ -44,9 +44,9 @@ namespace Outpost31.Module.Administration
              */
             LogEvent.Primeval(avatarSystem, msec);
 
-            LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "Regression test");
-            LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "");
-            LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec);
+            //LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "Regression test");
+            //LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec, logName: "Regression test", logBody: "");
+            //LogEvent.Critical(tngnWsvcDataFolder, avatarSystem, ExeAsmName, msec);
 
             LogEvent.Debuggler(avatarSystem, ExeAsmName);
             LogEvent.Debuggler(avatarSystem, ExeAsmName, logBody: "Regression test");

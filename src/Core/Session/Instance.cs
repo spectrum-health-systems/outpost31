@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250904_code
-// u250904_documentation
+// u250905_code
+// u250905_documentation
 // =============================================================================
 
 using System;
@@ -23,14 +23,14 @@ namespace Outpost31.Core.Session
         /// <summary>A required log file component.</summary>
         public static string ExeAsmName { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;
 
-        public string AvatarUserName { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
         public string Version { get; set; }
-        public string AvatarSystem { get; set; }
         public string Mode { get; set; }
+        public string AvatarSystem { get; set; }
+        public string AvatarUserName { get; set; }
         public Folders Folder { get; set; }
-        public Logs Log { get; set; }
+        public LogSettings LogSetting { get; set; }
         public AvatarOptionObject OptionObject { get; set; }
         public AvatarScriptParameter ScriptParameter { get; set; }
 
@@ -39,11 +39,11 @@ namespace Outpost31.Core.Session
 
         public static Instance Start(OptionObject2015 originalOptionObject, string originalScriptParameter, Dictionary<string, string> runtimeConfig)
         {
-            Instance stateSession = Load(originalOptionObject, originalScriptParameter, runtimeConfig);
+            Instance session = Load(originalOptionObject, originalScriptParameter, runtimeConfig);
 
-            CreateSessionFolder($@"{stateSession.Folder.Session}");
+            Folders.CreateSessionFolder($@"{session.Folder.Session}");
 
-            return stateSession;
+            return session;
         }
 
         internal static Instance Load(OptionObject2015 originalOptionObject, string originalScriptParameter, Dictionary<string, string> runtimeConfig)
@@ -51,21 +51,24 @@ namespace Outpost31.Core.Session
             // Can't have a trace log here yet, but should log something.
             //LogEvent.Trace(2, traceLogLimitAsInt, runtimeConfig["AvatarSystem"], ExeAsmName, 0);
 
-            var currentDate    = DateTime.Now.ToString("yyMMdd");
-            var currentTime    = DateTime.Now.ToString("HHmm");
-            var avatarUserName = originalOptionObject.OptionUserId;
+            string currentDate    = DateTime.Now.ToString("yyMMdd");
+            string currentTime    = DateTime.Now.ToString("HHmm");
+            string avatarUserName = originalOptionObject.OptionUserId;
+
+            Folders folder         = Folders.Load(runtimeConfig["SystemDataFolder"], runtimeConfig["SystemWwwFolder"], avatarUserName, currentDate, currentTime);
+            LogSettings logSetting = LogSettings.Load(runtimeConfig["TraceLogLimit"]);
 
             return new Instance()
             {
-                AvatarUserName    = avatarUser,
-                Date          = currentDate,
-                Time          = currentTime,
-                Version       = runtimeConfig["Version"],
-                AvatarSystem  = runtimeConfig["AvatarSystem"],
-                Mode          = runtimeConfig["Mode"],
-                Folder        = Folders.Load(runtimeConfig["BaseDataFolder"], runtimeConfig["BaseWwwFolder"], avatarUser, currentDate, currentTime),
-                Log           = Logs.Load(runtimeConfig["TraceLogLimit"]),
-                OptionObject  = new AvatarOptionObject()
+                Date           = currentDate,
+                Time           = currentTime,
+                Version        = runtimeConfig["Version"],
+                Mode           = runtimeConfig["Mode"],
+                AvatarSystem   = runtimeConfig["AvatarSystem"],
+                AvatarUserName = avatarUserName,
+                Folder         = folder,
+                LogSetting     = logSetting,
+                OptionObject   = new AvatarOptionObject()
                 {
                     Original  = originalOptionObject,
                     Worker    = originalOptionObject.Clone(),
@@ -78,12 +81,12 @@ namespace Outpost31.Core.Session
             };
         }
 
-        internal static void CreateSessionFolder(string sessionFolder)
-        {
-            if (!System.IO.Directory.Exists(sessionFolder))
-            {
-                System.IO.Directory.CreateDirectory(sessionFolder);
-            }
-        }
+        //internal static void CreateSessionFolder(string sessionFolder)
+        //{
+        //    if (!System.IO.Directory.Exists(sessionFolder))
+        //    {
+        //        System.IO.Directory.CreateDirectory(sessionFolder);
+        //    }
+        //}
     }
 }

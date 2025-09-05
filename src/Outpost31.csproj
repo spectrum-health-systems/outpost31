@@ -79,7 +79,8 @@
     <Compile Include="Core\Framework\Folders.cs" />
     <Compile Include="Core\Logger\CriticalLog.cs" />
     <Compile Include="Core\Logger\LogEvent.cs" />
-    <Compile Include="Core\Logger\Logs.cs" />
+    <Compile Include="Core\Logger\LogSettings.cs" />
+    <Compile Include="Core\Logger\LogWriter.cs" />
     <Compile Include="Core\Request\Parser.cs" />
     <Compile Include="Core\Session\Instance.cs" />
     <Compile Include="Module\Administration\Deployment.cs" />
@@ -99,17 +100,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EmbeddedResource Include="AppData\Blueprint\framework-folder.empb" />
-    <None Include="AppData\Blueprint\command-_atest-success.bp">
+    <EmbeddedResource Include="AppData\Blueprint\Embedded\framework-folder.embprint" />
+    <None Include="AppData\Blueprint\Command\_atest-success.blueprint">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\Blueprint\log-error.bp">
+    <None Include="AppData\Blueprint\Log\error.blueprint">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\Blueprint\log-critical.bp">
+    <None Include="AppData\Blueprint\Log\critical.blueprint">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="AppData\Blueprint\log-debuggler.bp">
+    <None Include="AppData\Blueprint\Log\debuggler.blueprint">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

@@ -4,8 +4,8 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250904_code
-// u250904_documentation
+// u250905_code
+// u250905_documentation
 // =============================================================================
 
 using System;
@@ -26,17 +26,31 @@ namespace Outpost31.Core.Logger
 
         /// <summary>Generate a critical log.</summary>
         /// <remarks>This is public because TngnWsvc may need to call it.</remarks>
-        /// <param name="avatarSystem"></param>
-        /// <param name="exeAsmName"></param>
-        /// <param name="msec"></param>
-        /// <param name="logName"></param>
-        /// <param name="logBody"></param>
-        /// <param name="fromClassPath"></param>
-        /// <param name="fromMethod"></param>
-        /// <param name="fromLine"></param>
-        public static void Critical(string tngnWsvcDataFolder, string avatarSystem, string exeAsmName, int msec = 0, string logName = "Unknown critical issue", string logBody = "Unknown critical issue.", [CallerFilePath] string fromClassPath = "", [CallerMemberName] string fromMethod = "", [CallerLineNumber] int fromLine = 0)
+        public static void Critical(string baseDataFolder,
+                                    string blueprintFolder,
+                                    string sessionFolder,
+                                    string sessionDateTime,
+                                    string avatarUserName,
+                                    string exeAsmName,
+                                    int msec = 0,
+                                    string logName = "Unknown critical issue",
+                                    string logBody = "Unknown critical issue.",
+                                    [CallerFilePath] string fromClassPath = "",
+                                    [CallerMemberName] string fromMethod = "",
+                                    [CallerLineNumber] int fromLine = 0)
         {
-            //CriticalLog.Create(tngnWsvcDataFolder, avatarSystem, exeAsmName, msec, logName, logBody, fromClassPath, fromMethod, fromLine);
+            CriticalLog.CreateStandard(baseDataFolder,
+                                       blueprintFolder,
+                                       sessionFolder,
+                                       sessionDateTime,
+                                       avatarUserName,
+                                       exeAsmName,
+                                       msec,
+                                       logName,
+                                       logBody,
+                                       fromClassPath,
+                                       fromMethod,
+                                       fromLine);
         }
 
         /// <summary>Generate a trace log.</summary>
@@ -77,7 +91,7 @@ namespace Outpost31.Core.Logger
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-debuggler.bp");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\debuggler.blueprint");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~LOG~BODY~", logBody)
@@ -108,7 +122,7 @@ namespace Outpost31.Core.Logger
 
             var fromClass = GetClassName(fromClassPath);
 
-            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\log-error.bp");
+            var proxyText = File.ReadAllText($@"C:\Tingen_Data\WebService\{avatarSystem}\AppData\Blueprint\Log\error.blueprint");
 
             var logContent = proxyText.Replace("~CURRENT~DATE~TIME~", DateTime.Now.ToString("MM/dd/yyyy-HH:mm:ss"))
                                       .Replace("~ERROR~CODE~", errorCode)

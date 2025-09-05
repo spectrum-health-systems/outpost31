@@ -4,14 +4,15 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250904_code
-// u250904_documentation
+// u250905_code
+// u250905_documentation
 // =============================================================================
 
 using System;
 using System.IO;
 using System.Reflection;
 using Outpost31.Core.Avatar;
+using Outpost31.Core.Framework;
 using Outpost31.Core.Logger;
 
 namespace Outpost31.Module.Administration
@@ -24,55 +25,60 @@ namespace Outpost31.Module.Administration
 
         /// <summary>Deploy the Tingen Web Service framework.</summary>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
-        public static void Deploy(string baseWwwFolder, string baseDataFolder, string blueprintFolder, int traceLogLimit)
+        public static void Deploy(Folders folders, string baseWwwFolder, string baseDataFolder, string appDataFolder, int traceLogLimit)
         {
             //LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
 
-            CreateFolderFramework(baseDataFolder, traceLogLimit);
-            RefreshAppData(baseWwwFolder, blueprintFolder, traceLogLimit);
+            CreateFolderFramework(folders, traceLogLimit);
+            RefreshAppData(baseWwwFolder, appDataFolder, traceLogLimit);
         }
 
         /// <summary>Create the Tingen Web Service folder framework.</summary>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
-        internal static void CreateFolderFramework(string baseDataFolder, int traceLogLimit)
+        internal static void CreateFolderFramework(Folders folders, int traceLogLimit)
         {
             //LogEvent.Trace(2, traceLogLimit, avatarSystem, ExeAsmName, 0);
 
-            var assembly = Assembly.GetExecutingAssembly();
+           
 
-            string folderFramwork;
+            Outpost31.Core.Framework.Folders.CreateFolderFramework(folders, traceLogLimit);
 
-            var folderFrameworkFile = @"Outpost31.AppData.Blueprint.Framework-folder.embp";
+            //var assembly = Assembly.GetExecutingAssembly();
 
-            using (Stream folderFrameworkStream = assembly.GetManifestResourceStream(folderFrameworkFile))
-            {
-                if (folderFrameworkStream == null)
-                {
-                    File.WriteAllText($@"{baseDataFolder}\Missing folder framework file", "E39635");
-                    return;
-                }
+            //string folderFramwork;
 
-                using (StreamReader reader = new StreamReader(folderFrameworkStream))
-                {
-                    folderFramwork = reader.ReadToEnd();
-                }
-            }
+            //var folderFrameworkFile = "Outpost31.AppData.Blueprint.Embedded.framework-folder.emblueprint";
 
-            foreach (var folder in folderFramwork.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
-            {
-                Directory.CreateDirectory($@"{baseDataFolder}\{folder}");
-            }
+            //using (Stream folderFrameworkStream = assembly.GetManifestResourceStream(folderFrameworkFile))
+            //{
+            //    File.WriteAllText($@"{baseDataFolder}\Missing file", "E39635");
+            //    if (folderFrameworkStream == null)
+            //    {
+            //        File.WriteAllText($@"{baseDataFolder}\Missing folder framework file", "E39635");
+            //        return;
+            //    }
+
+            //    using (StreamReader reader = new StreamReader(folderFrameworkStream))
+            //    {
+            //        folderFramwork = reader.ReadToEnd();
+            //    }
+            //}
+
+            //foreach (var folder in folderFramwork.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
+            //{
+            //    Directory.CreateDirectory($@"{baseDataFolder}\{folder}");
+            //}
         }
 
         /// <summary>Refresh application data that is required by the Tingen Web Service.</summary>
         /// <param name="avatarSystem">The <see cref="AvatarEnvironment.AvatarSystem"/></param>
-        public static void RefreshAppData(string baseWwwFolder, string blueprintFolder, int traceLogLimit)
+        public static void RefreshAppData(string baseWwwFolder, string appDataFolder, int traceLogLimit)
         {
             //LogEvent.Trace(2, traceLimit, avatarSystem, ExeAsmName, 0);
 
             // TODO - This doesn't work right. You need to run this a few times to get all the files copied.
             var source = $@"{baseWwwFolder}\bin\AppData";
-            var target = blueprintFolder;
+            var target = appDataFolder;
 
             if (Directory.Exists(target))
             {
