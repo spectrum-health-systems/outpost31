@@ -4,7 +4,7 @@
 // Copyright (c) A Pretty Cool Program. All rights reserved.
 // Licensed under the Apache 2.0 license.
 // -----------------------------------------------------------------------------
-// u250905_code
+// u250906_code
 // u250905_documentation
 // =============================================================================
 
@@ -99,20 +99,37 @@ namespace Outpost31.Core.Framework
         /// <param name="traceLogLimit">The trace log limit.</param>
         internal static void CreateFolderFramework(Folders folders, int traceLogLimit)
         {
+            File.AppendAllText($@"C:\Tingen_Data\folders1.txt", $"");
+
             Type type = folders.GetType();
+
+            File.AppendAllText($@"C:\Tingen_Data\folders1a.txt", $"");
 
             foreach (PropertyInfo property in type.GetProperties())
             {
                 if (!property.Name.ToLower().Contains("system"))
                 {
-                    File.AppendAllText($@"C:\Tingen_Data\folders.txt", $"{ Environment.NewLine}{property.Name}");
-                    
-                    if (!Directory.Exists(property.Name))
-                    { 
-                        Directory.CreateDirectory(property.Name); 
+                    var folderPath = property.GetValue(folders)?.ToString();
+                    File.AppendAllText($@"C:\Tingen_Data\folders3.txt", $"{Environment.NewLine}{folderPath}");
+
+                    if (!Directory.Exists(folderPath))
+                    {
+                        File.AppendAllText($@"C:\Tingen_Data\folders4.txt", $"{Environment.NewLine}{folderPath}");
+                        Directory.CreateDirectory(folderPath);
                     }
-                        
                 }
+                //if (!property.Name.ToLower().Contains("system"))
+                //{
+                //    File.AppendAllText($@"C:\Tingen_Data\folders3.txt", $"{ Environment.NewLine}{$@"C:\Tingen_Data\WebService\UAT\{property.GetValue(type).ToString()}"}");
+
+                //    if (!Directory.Exists($@"C:\Tingen_Data\WebService\UAT\{property.GetValue(type).ToString()}"));
+                //    {
+
+                //        File.AppendAllText($@"C:\Tingen_Data\folders4.txt", $"{Environment.NewLine}{$@"C:\Tingen_Data\WebService\UAT\{property.GetValue(type).ToString()}"}");
+                //        Directory.CreateDirectory($@"C:\Tingen_Data\WebService\UAT\{property.GetValue(type).ToString()}");
+                //    }
+
+                //}
             }
 
             //var assembly = Assembly.GetExecutingAssembly();
